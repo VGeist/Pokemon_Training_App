@@ -29,10 +29,8 @@ namespace Pokemon_Training_App.Views
             // construct query
             // query database
             // open frmSearchResult with query results
-            /*
             frmSearchResultPokemon form = new frmSearchResultPokemon();
             form.Show();
-            */
         }
 
         private void radNumber_CheckedChanged(object sender, EventArgs e)
