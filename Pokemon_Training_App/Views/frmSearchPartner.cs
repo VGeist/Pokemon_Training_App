@@ -29,7 +29,7 @@ namespace Pokemon_Training_App.Views
             // construct query
             // query database
             // open frmSearchResult with query results
-            frmSearchResultPokemon form = new frmSearchResultPokemon();
+            frmSearchResultPartner form = new frmSearchResultPartner();
             form.Show();
         }
     }

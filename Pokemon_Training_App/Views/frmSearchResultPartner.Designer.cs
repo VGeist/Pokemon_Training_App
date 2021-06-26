@@ -1,6 +1,6 @@
 ﻿namespace Pokemon_Training_App.Views
 {
-    partial class frmSearchResultPokemon
+    partial class frmSearchResultPartner
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // frmSearchResultPokemon
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "frmSearchResultPokemon";
-            this.Text = "frmSearchResultPokemon";
-            this.ResumeLayout(false);
-
+            this.Text = "frmSearchResultPartner";
         }
 
         #endregion
