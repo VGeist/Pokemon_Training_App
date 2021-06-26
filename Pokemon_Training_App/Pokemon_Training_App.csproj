@@ -66,6 +66,12 @@
     <Compile Include="Views\frmAddPokemon.Designer.cs">
       <DependentUpon>frmAddPokemon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmEditPartner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmEditPartner.Designer.cs">
+      <DependentUpon>frmEditPartner.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\frmEditPartner.resx">
+      <DependentUpon>frmEditPartner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmSearchResultPokemon.resx">
       <DependentUpon>frmSearchResultPokemon.cs</DependentUpon>
     </EmbeddedResource>
