@@ -19,11 +19,9 @@ namespace Pokemon_Training_App.Views
 
         private void btnAddForm_Click(object sender, EventArgs e)
         {
-            /*
             // open frmAddForm as a modal window
             frmAddForm form = new frmAddForm();
             form.ShowDialog();
-            */
         }
 
         // TODO: implement add button
