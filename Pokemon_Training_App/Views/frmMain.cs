@@ -24,7 +24,6 @@ namespace Pokemon_Training_App.Views
 
         private void btnAddPartner_Click(object sender, EventArgs e)
         {
-            /* 
             // create and open an add partner form
             frmAddPartner form = new frmAddPartner();
             form.ShowDialog();
