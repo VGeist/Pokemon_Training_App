@@ -35,11 +35,9 @@ namespace Pokemon_Training_App.Views
 
         private void btnAddPokemon_Click(object sender, EventArgs e)
         {
-            /* 
             // create and open an add pokemon form
             frmAddPokemon form = new frmAddPokemon();
             form.ShowDialog();
-            */
         }
 
         private void btnSearchPokemon_Click(object sender, EventArgs e)
