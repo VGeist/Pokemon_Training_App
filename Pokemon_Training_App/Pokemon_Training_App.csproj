@@ -66,6 +66,12 @@
     <Compile Include="Views\frmAddPokemon.Designer.cs">
       <DependentUpon>frmAddPokemon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmChangeForm.Designer.cs">
+      <DependentUpon>frmChangeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmEditPartner.cs">
       <SubType>Form</SubType>
     </Compile>
