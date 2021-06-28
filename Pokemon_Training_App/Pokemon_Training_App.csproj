@@ -61,6 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PokemonDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PokemonDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\frmAddForm.cs">
@@ -202,6 +207,17 @@
     <EmbeddedResource Include="Views\frmTraining.resx">
       <DependentUpon>frmTraining.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="PokemonDataSet.xsc">
+      <DependentUpon>PokemonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PokemonDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PokemonDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PokemonDataSet.xss">
+      <DependentUpon>PokemonDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
