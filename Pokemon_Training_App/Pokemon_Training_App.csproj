@@ -197,6 +197,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\frmAddPokemon.resx">
+      <DependentUpon>frmAddPokemon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmEditPartner.resx">
       <DependentUpon>frmEditPartner.cs</DependentUpon>
     </EmbeddedResource>

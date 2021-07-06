@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pokemon_Training_App.Classes;
 
 namespace Pokemon_Training_App.Views
 {
-    public partial class frmAddPokemon : Form
+    public partial class frmAddPokemon : System.Windows.Forms.Form
     {
         public frmAddPokemon()
         {
@@ -21,29 +22,66 @@ namespace Pokemon_Training_App.Views
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // validate data,
-            // send data to database
-            // display success or faliure message
+            if (InputsValid())
+            {
+                // do insert
+                try
+                {
+                    pokemonTableAdapter.Insert((int)numPokeNum.Value, txtPokemonName.Text);
+                    pokemonTableAdapter.Update(pokemonDataSet);
+                    MessageBox.Show("Successful operation!", "Success", MessageBoxButtons.OK);
+                } catch
+                {
+                    MessageBox.Show("There was a problem with the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-            // PLACEHOLDER message box
-            MessageBox.Show("Button working.", "Temporary Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else
+            {
+                // display error message
+                MessageBox.Show("Invalid Inputs", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            // clear values from all textboxes
-            var controls = this.Controls.OfType<TextBox>();
-            foreach (TextBox textBox in controls)
+            // set number values to 0
+            foreach (NumericUpDown numericUpDown in this.Controls.OfType<NumericUpDown>())
             {
-                textBox.Clear();
+                numericUpDown.Value = 0;
             }
-            // focus on first textbox
-            txtPokemonNum.Focus();
+
+            // clear text from name textbox
+            txtPokemonName.Clear();
+
+            // focus on pokemon number input
+            numPokeNum.Focus();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             // close this window
             this.Close();
+        }
+
+        private Boolean InputsValid()
+        {
+            // check number values are positive
+            foreach (NumericUpDown numericUpDown in this.Controls.OfType<NumericUpDown>())
+            {
+                if (numericUpDown.Value < 0)
+                {
+                    return false;
+                }
+            }
+
+            // check pokename is not null or empty
+            if (String.IsNullOrEmpty(txtPokemonName.Text))
+            {
+                return false;
+            }
+
+            // valid
+            return true;
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.slblBaseSpeed = new System.Windows.Forms.Label();
             this.slblBaseSpDef = new System.Windows.Forms.Label();
             this.slblBaseSpAtk = new System.Windows.Forms.Label();
@@ -44,12 +45,18 @@
             this.txtBaseDefense = new System.Windows.Forms.TextBox();
             this.txtBaseAttack = new System.Windows.Forms.TextBox();
             this.txtPokemonName = new System.Windows.Forms.TextBox();
-            this.txtPokemonNum = new System.Windows.Forms.TextBox();
             this.slblBaseHealth = new System.Windows.Forms.Label();
             this.txtBaseHealth = new System.Windows.Forms.TextBox();
             this.slblStatsNotice = new System.Windows.Forms.Label();
             this.slblFormName = new System.Windows.Forms.Label();
             this.txtFormName = new System.Windows.Forms.TextBox();
+            this.pokemonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pokemonDataSet = new Pokemon_Training_App.Data.PokemonDataSet();
+            this.pokemonTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.PokemonTableAdapter();
+            this.numPokeNum = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).BeginInit();
             this.SuspendLayout();
             // 
             // slblBaseSpeed
@@ -187,13 +194,6 @@
             this.txtPokemonName.Size = new System.Drawing.Size(185, 30);
             this.txtPokemonName.TabIndex = 2;
             // 
-            // txtPokemonNum
-            // 
-            this.txtPokemonNum.Location = new System.Drawing.Point(190, 14);
-            this.txtPokemonNum.Name = "txtPokemonNum";
-            this.txtPokemonNum.Size = new System.Drawing.Size(185, 30);
-            this.txtPokemonNum.TabIndex = 1;
-            // 
             // slblBaseHealth
             // 
             this.slblBaseHealth.AutoSize = true;
@@ -236,11 +236,33 @@
             this.txtFormName.Size = new System.Drawing.Size(185, 30);
             this.txtFormName.TabIndex = 3;
             // 
+            // pokemonBindingSource
+            // 
+            this.pokemonBindingSource.DataSource = this.pokemonDataSet;
+            this.pokemonBindingSource.Position = 0;
+            // 
+            // pokemonDataSet
+            // 
+            this.pokemonDataSet.DataSetName = "PokemonDataSet";
+            this.pokemonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pokemonTableAdapter
+            // 
+            this.pokemonTableAdapter.ClearBeforeFill = true;
+            // 
+            // numPokeNum
+            // 
+            this.numPokeNum.Location = new System.Drawing.Point(190, 14);
+            this.numPokeNum.Name = "numPokeNum";
+            this.numPokeNum.Size = new System.Drawing.Size(185, 30);
+            this.numPokeNum.TabIndex = 40;
+            // 
             // frmAddPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 487);
+            this.Controls.Add(this.numPokeNum);
             this.Controls.Add(this.slblFormName);
             this.Controls.Add(this.txtFormName);
             this.Controls.Add(this.slblStatsNotice);
@@ -262,11 +284,13 @@
             this.Controls.Add(this.txtBaseDefense);
             this.Controls.Add(this.txtBaseAttack);
             this.Controls.Add(this.txtPokemonName);
-            this.Controls.Add(this.txtPokemonNum);
             this.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmAddPokemon";
             this.Text = "New Pokemon Entry";
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,11 +314,14 @@
         private System.Windows.Forms.TextBox txtBaseDefense;
         private System.Windows.Forms.TextBox txtBaseAttack;
         private System.Windows.Forms.TextBox txtPokemonName;
-        private System.Windows.Forms.TextBox txtPokemonNum;
         private System.Windows.Forms.Label slblBaseHealth;
         private System.Windows.Forms.TextBox txtBaseHealth;
         private System.Windows.Forms.Label slblStatsNotice;
         private System.Windows.Forms.Label slblFormName;
         private System.Windows.Forms.TextBox txtFormName;
+        private System.Windows.Forms.BindingSource pokemonBindingSource;
+        private Data.PokemonDataSet pokemonDataSet;
+        private Data.PokemonDataSetTableAdapters.PokemonTableAdapter pokemonTableAdapter;
+        private System.Windows.Forms.NumericUpDown numPokeNum;
     }
 }
