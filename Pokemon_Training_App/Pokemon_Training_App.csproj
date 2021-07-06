@@ -206,6 +206,9 @@
     <EmbeddedResource Include="Views\frmPreview.resx">
       <DependentUpon>frmPreview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmSearchPokemon.resx">
+      <DependentUpon>frmSearchPokemon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmSearchResultPartner.resx">
       <DependentUpon>frmSearchResultPartner.cs</DependentUpon>
     </EmbeddedResource>

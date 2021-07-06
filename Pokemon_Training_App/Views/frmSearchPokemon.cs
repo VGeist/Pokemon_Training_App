@@ -25,12 +25,20 @@ namespace Pokemon_Training_App.Views
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            // validate inputs
-            // construct query
-            // query database
             // open frmSearchResult with query results
-            frmSearchResultPokemon form = new frmSearchResultPokemon();
-            form.Show();
+            // query database
+            Data.PokemonDataSet.PokemonDataTable result = searchPokemon();
+            // open form with result
+            openResultsForm(result);
+        }
+
+        private void btnGetAll_Click(object sender, EventArgs e)
+        {
+            // open frmSearchResult with all data
+            // get data
+            Data.PokemonDataSet.PokemonDataTable result = pokemonTableAdapter.GetData();
+            // open form with result
+            openResultsForm(result);
         }
 
         private void radNumber_CheckedChanged(object sender, EventArgs e)
@@ -43,11 +51,11 @@ namespace Pokemon_Training_App.Views
                 slblPokemonName.Enabled = false;
 
                 // enable pokemon number controls
-                txtPokemonNum.Enabled = true;
+                numPokeNum.Enabled = true;
                 slblPokemonNum.Enabled = true;
 
                 // set focus to pokemon number textbox
-                txtPokemonNum.Focus();
+                numPokeNum.Focus();
 
                 // clear pokemon name textbox
                 txtPokemonName.Clear();
@@ -60,7 +68,7 @@ namespace Pokemon_Training_App.Views
             if (radName.Checked)
             {
                 // disable pokemon number controls
-                txtPokemonNum.Enabled = false;
+                numPokeNum.Enabled = false;
                 slblPokemonNum.Enabled = false;
 
                 // enable pokemon name controls
@@ -70,9 +78,29 @@ namespace Pokemon_Training_App.Views
                 // set focus to pokemon name textbox
                 txtPokemonName.Focus();
 
-                // clear pokemon number textbox
-                txtPokemonNum.Clear();
+                // set number to 1
+                numPokeNum.Value = 1;
             }
+        }
+
+        private Data.PokemonDataSet.PokemonDataTable searchPokemon()
+        {
+            if(radNumber.Checked)
+            {
+                // if number is checked and has a value, search by number
+                return pokemonTableAdapter.GetPokemonByPokeNum((int)numPokeNum.Value);
+            }
+            else
+            {
+                // if Name is checked, search by name
+                return pokemonTableAdapter.GetPokemonByName(txtPokemonName.Text);
+            }
+        }
+
+        private void openResultsForm(Data.PokemonDataSet.PokemonDataTable result)
+        {
+            frmSearchResultPokemon form = new frmSearchResultPokemon(result);
+            form.Show();
         }
     }
 }
