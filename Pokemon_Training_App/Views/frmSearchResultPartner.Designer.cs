@@ -28,10 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmSearchResultPartner
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1333, 762);
+            this.Font = new System.Drawing.Font("Cambria", 14.25F);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Name = "frmSearchResultPartner";
             this.Text = "frmSearchResultPartner";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
