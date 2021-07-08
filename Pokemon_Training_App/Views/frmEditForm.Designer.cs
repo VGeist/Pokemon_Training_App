@@ -34,19 +34,26 @@
             this.slblFormName = new System.Windows.Forms.Label();
             this.txtFormName = new System.Windows.Forms.TextBox();
             this.slblBaseHealth = new System.Windows.Forms.Label();
-            this.txtBaseHealth = new System.Windows.Forms.TextBox();
             this.slblBaseSpeed = new System.Windows.Forms.Label();
             this.slblBaseSpDef = new System.Windows.Forms.Label();
             this.slblBaseSpAtk = new System.Windows.Forms.Label();
             this.slblBaseDefense = new System.Windows.Forms.Label();
             this.slblBaseAttack = new System.Windows.Forms.Label();
-            this.txtBaseSpeed = new System.Windows.Forms.TextBox();
-            this.txtBaseSpDef = new System.Windows.Forms.TextBox();
-            this.txtBaseSpAtk = new System.Windows.Forms.TextBox();
-            this.txtBaseDefense = new System.Windows.Forms.TextBox();
-            this.txtBaseAttack = new System.Windows.Forms.TextBox();
             this.slblPokemonNumber = new System.Windows.Forms.Label();
-            this.txtPokemonNum = new System.Windows.Forms.TextBox();
+            this.numBaseSpeed = new System.Windows.Forms.NumericUpDown();
+            this.numBaseSpDefense = new System.Windows.Forms.NumericUpDown();
+            this.numBaseSpAttack = new System.Windows.Forms.NumericUpDown();
+            this.numBaseHealth = new System.Windows.Forms.NumericUpDown();
+            this.numBaseAttack = new System.Windows.Forms.NumericUpDown();
+            this.numBaseDefense = new System.Windows.Forms.NumericUpDown();
+            this.numPokeNum = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numBaseSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBaseSpDefense)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBaseSpAttack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBaseHealth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBaseAttack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBaseDefense)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClear
@@ -101,13 +108,6 @@
             this.slblBaseHealth.TabIndex = 71;
             this.slblBaseHealth.Text = "Base Health";
             // 
-            // txtBaseHealth
-            // 
-            this.txtBaseHealth.Location = new System.Drawing.Point(190, 97);
-            this.txtBaseHealth.Name = "txtBaseHealth";
-            this.txtBaseHealth.Size = new System.Drawing.Size(185, 30);
-            this.txtBaseHealth.TabIndex = 3;
-            // 
             // slblBaseSpeed
             // 
             this.slblBaseSpeed.AutoSize = true;
@@ -153,41 +153,6 @@
             this.slblBaseAttack.TabIndex = 66;
             this.slblBaseAttack.Text = "Base Attack Stat";
             // 
-            // txtBaseSpeed
-            // 
-            this.txtBaseSpeed.Location = new System.Drawing.Point(190, 312);
-            this.txtBaseSpeed.Name = "txtBaseSpeed";
-            this.txtBaseSpeed.Size = new System.Drawing.Size(185, 30);
-            this.txtBaseSpeed.TabIndex = 8;
-            // 
-            // txtBaseSpDef
-            // 
-            this.txtBaseSpDef.Location = new System.Drawing.Point(190, 269);
-            this.txtBaseSpDef.Name = "txtBaseSpDef";
-            this.txtBaseSpDef.Size = new System.Drawing.Size(185, 30);
-            this.txtBaseSpDef.TabIndex = 7;
-            // 
-            // txtBaseSpAtk
-            // 
-            this.txtBaseSpAtk.Location = new System.Drawing.Point(190, 226);
-            this.txtBaseSpAtk.Name = "txtBaseSpAtk";
-            this.txtBaseSpAtk.Size = new System.Drawing.Size(185, 30);
-            this.txtBaseSpAtk.TabIndex = 6;
-            // 
-            // txtBaseDefense
-            // 
-            this.txtBaseDefense.Location = new System.Drawing.Point(190, 183);
-            this.txtBaseDefense.Name = "txtBaseDefense";
-            this.txtBaseDefense.Size = new System.Drawing.Size(185, 30);
-            this.txtBaseDefense.TabIndex = 5;
-            // 
-            // txtBaseAttack
-            // 
-            this.txtBaseAttack.Location = new System.Drawing.Point(190, 140);
-            this.txtBaseAttack.Name = "txtBaseAttack";
-            this.txtBaseAttack.Size = new System.Drawing.Size(185, 30);
-            this.txtBaseAttack.TabIndex = 4;
-            // 
             // slblPokemonNumber
             // 
             this.slblPokemonNumber.AutoSize = true;
@@ -197,41 +162,185 @@
             this.slblPokemonNumber.TabIndex = 65;
             this.slblPokemonNumber.Text = "Pokemon Number";
             // 
-            // txtPokemonNum
+            // numBaseSpeed
             // 
-            this.txtPokemonNum.Location = new System.Drawing.Point(190, 11);
-            this.txtPokemonNum.Name = "txtPokemonNum";
-            this.txtPokemonNum.Size = new System.Drawing.Size(185, 30);
-            this.txtPokemonNum.TabIndex = 1;
+            this.numBaseSpeed.Location = new System.Drawing.Point(190, 314);
+            this.numBaseSpeed.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numBaseSpeed.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numBaseSpeed.Name = "numBaseSpeed";
+            this.numBaseSpeed.Size = new System.Drawing.Size(185, 30);
+            this.numBaseSpeed.TabIndex = 8;
+            this.numBaseSpeed.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numBaseSpDefense
+            // 
+            this.numBaseSpDefense.Location = new System.Drawing.Point(190, 271);
+            this.numBaseSpDefense.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numBaseSpDefense.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numBaseSpDefense.Name = "numBaseSpDefense";
+            this.numBaseSpDefense.Size = new System.Drawing.Size(185, 30);
+            this.numBaseSpDefense.TabIndex = 7;
+            this.numBaseSpDefense.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numBaseSpAttack
+            // 
+            this.numBaseSpAttack.Location = new System.Drawing.Point(190, 228);
+            this.numBaseSpAttack.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numBaseSpAttack.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numBaseSpAttack.Name = "numBaseSpAttack";
+            this.numBaseSpAttack.Size = new System.Drawing.Size(185, 30);
+            this.numBaseSpAttack.TabIndex = 6;
+            this.numBaseSpAttack.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numBaseHealth
+            // 
+            this.numBaseHealth.Location = new System.Drawing.Point(190, 99);
+            this.numBaseHealth.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numBaseHealth.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numBaseHealth.Name = "numBaseHealth";
+            this.numBaseHealth.Size = new System.Drawing.Size(185, 30);
+            this.numBaseHealth.TabIndex = 3;
+            this.numBaseHealth.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numBaseAttack
+            // 
+            this.numBaseAttack.Location = new System.Drawing.Point(190, 142);
+            this.numBaseAttack.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numBaseAttack.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numBaseAttack.Name = "numBaseAttack";
+            this.numBaseAttack.Size = new System.Drawing.Size(185, 30);
+            this.numBaseAttack.TabIndex = 4;
+            this.numBaseAttack.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numBaseDefense
+            // 
+            this.numBaseDefense.Location = new System.Drawing.Point(190, 185);
+            this.numBaseDefense.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numBaseDefense.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numBaseDefense.Name = "numBaseDefense";
+            this.numBaseDefense.Size = new System.Drawing.Size(185, 30);
+            this.numBaseDefense.TabIndex = 5;
+            this.numBaseDefense.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numPokeNum
+            // 
+            this.numPokeNum.Location = new System.Drawing.Point(190, 13);
+            this.numPokeNum.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numPokeNum.Name = "numPokeNum";
+            this.numPokeNum.Size = new System.Drawing.Size(185, 30);
+            this.numPokeNum.TabIndex = 1;
             // 
             // frmEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 401);
+            this.Controls.Add(this.numBaseSpeed);
+            this.Controls.Add(this.numBaseSpDefense);
+            this.Controls.Add(this.numBaseSpAttack);
+            this.Controls.Add(this.numBaseHealth);
+            this.Controls.Add(this.numBaseAttack);
+            this.Controls.Add(this.numBaseDefense);
+            this.Controls.Add(this.numPokeNum);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.slblFormName);
             this.Controls.Add(this.txtFormName);
             this.Controls.Add(this.slblBaseHealth);
-            this.Controls.Add(this.txtBaseHealth);
             this.Controls.Add(this.slblBaseSpeed);
             this.Controls.Add(this.slblBaseSpDef);
             this.Controls.Add(this.slblBaseSpAtk);
             this.Controls.Add(this.slblBaseDefense);
             this.Controls.Add(this.slblBaseAttack);
-            this.Controls.Add(this.txtBaseSpeed);
-            this.Controls.Add(this.txtBaseSpDef);
-            this.Controls.Add(this.txtBaseSpAtk);
-            this.Controls.Add(this.txtBaseDefense);
-            this.Controls.Add(this.txtBaseAttack);
             this.Controls.Add(this.slblPokemonNumber);
-            this.Controls.Add(this.txtPokemonNum);
             this.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmEditForm";
             this.Text = "Edit Form";
+            ((System.ComponentModel.ISupportInitialize)(this.numBaseSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBaseSpDefense)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBaseSpAttack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBaseHealth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBaseAttack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBaseDefense)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,18 +354,18 @@
         private System.Windows.Forms.Label slblFormName;
         private System.Windows.Forms.TextBox txtFormName;
         private System.Windows.Forms.Label slblBaseHealth;
-        private System.Windows.Forms.TextBox txtBaseHealth;
         private System.Windows.Forms.Label slblBaseSpeed;
         private System.Windows.Forms.Label slblBaseSpDef;
         private System.Windows.Forms.Label slblBaseSpAtk;
         private System.Windows.Forms.Label slblBaseDefense;
         private System.Windows.Forms.Label slblBaseAttack;
-        private System.Windows.Forms.TextBox txtBaseSpeed;
-        private System.Windows.Forms.TextBox txtBaseSpDef;
-        private System.Windows.Forms.TextBox txtBaseSpAtk;
-        private System.Windows.Forms.TextBox txtBaseDefense;
-        private System.Windows.Forms.TextBox txtBaseAttack;
         private System.Windows.Forms.Label slblPokemonNumber;
-        private System.Windows.Forms.TextBox txtPokemonNum;
+        private System.Windows.Forms.NumericUpDown numBaseSpeed;
+        private System.Windows.Forms.NumericUpDown numBaseSpDefense;
+        private System.Windows.Forms.NumericUpDown numBaseSpAttack;
+        private System.Windows.Forms.NumericUpDown numBaseHealth;
+        private System.Windows.Forms.NumericUpDown numBaseAttack;
+        private System.Windows.Forms.NumericUpDown numBaseDefense;
+        private System.Windows.Forms.NumericUpDown numPokeNum;
     }
 }

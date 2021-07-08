@@ -35,22 +35,24 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cmbNature = new System.Windows.Forms.ComboBox();
-            this.txtPokemonNum = new System.Windows.Forms.TextBox();
-            this.txtLevelMin = new System.Windows.Forms.TextBox();
-            this.txtLevelMax = new System.Windows.Forms.TextBox();
             this.slblToLevel = new System.Windows.Forms.Label();
-            this.slblIVTotal = new System.Windows.Forms.Label();
             this.slblEvTotal = new System.Windows.Forms.Label();
             this.slblNickname = new System.Windows.Forms.Label();
-            this.slblToIV = new System.Windows.Forms.Label();
-            this.txtIVMax = new System.Windows.Forms.TextBox();
-            this.txtIVMin = new System.Windows.Forms.TextBox();
             this.slblToEV = new System.Windows.Forms.Label();
-            this.txtEVMax = new System.Windows.Forms.TextBox();
-            this.txtEVMin = new System.Windows.Forms.TextBox();
             this.txtNickname = new System.Windows.Forms.TextBox();
-            this.chkHasPokerus = new System.Windows.Forms.CheckBox();
             this.ttpPokerus = new System.Windows.Forms.ToolTip(this.components);
+            this.slblPokerus = new System.Windows.Forms.Label();
+            this.chkHasPokerus = new System.Windows.Forms.CheckBox();
+            this.numNumber = new System.Windows.Forms.NumericUpDown();
+            this.numMinLevel = new System.Windows.Forms.NumericUpDown();
+            this.numMaxLevel = new System.Windows.Forms.NumericUpDown();
+            this.numMaxEV = new System.Windows.Forms.NumericUpDown();
+            this.numMinEV = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMaxLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMaxEV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinEV)).BeginInit();
             this.SuspendLayout();
             // 
             // slblPokemonNum
@@ -83,10 +85,10 @@
             // btnSearch
             // 
             this.btnSearch.AutoSize = true;
-            this.btnSearch.Location = new System.Drawing.Point(315, 157);
+            this.btnSearch.Location = new System.Drawing.Point(335, 142);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 32);
-            this.btnSearch.TabIndex = 11;
+            this.btnSearch.Size = new System.Drawing.Size(85, 32);
+            this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -94,10 +96,10 @@
             // btnCancel
             // 
             this.btnCancel.AutoSize = true;
-            this.btnCancel.Location = new System.Drawing.Point(421, 157);
+            this.btnCancel.Location = new System.Drawing.Point(426, 142);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(85, 32);
-            this.btnCancel.TabIndex = 12;
+            this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -118,44 +120,14 @@
             this.cmbNature.TabIndex = 3;
             this.cmbNature.Text = "Hardy";
             // 
-            // txtPokemonNum
-            // 
-            this.txtPokemonNum.Location = new System.Drawing.Point(181, 6);
-            this.txtPokemonNum.Name = "txtPokemonNum";
-            this.txtPokemonNum.Size = new System.Drawing.Size(71, 30);
-            this.txtPokemonNum.TabIndex = 1;
-            // 
-            // txtLevelMin
-            // 
-            this.txtLevelMin.Location = new System.Drawing.Point(131, 102);
-            this.txtLevelMin.Name = "txtLevelMin";
-            this.txtLevelMin.Size = new System.Drawing.Size(44, 30);
-            this.txtLevelMin.TabIndex = 6;
-            // 
-            // txtLevelMax
-            // 
-            this.txtLevelMax.Location = new System.Drawing.Point(208, 102);
-            this.txtLevelMax.Name = "txtLevelMax";
-            this.txtLevelMax.Size = new System.Drawing.Size(44, 30);
-            this.txtLevelMax.TabIndex = 7;
-            // 
             // slblToLevel
             // 
             this.slblToLevel.AutoSize = true;
-            this.slblToLevel.Location = new System.Drawing.Point(177, 105);
+            this.slblToLevel.Location = new System.Drawing.Point(164, 105);
             this.slblToLevel.Name = "slblToLevel";
             this.slblToLevel.Size = new System.Drawing.Size(26, 22);
             this.slblToLevel.TabIndex = 9;
             this.slblToLevel.Text = "to";
-            // 
-            // slblIVTotal
-            // 
-            this.slblIVTotal.AutoSize = true;
-            this.slblIVTotal.Location = new System.Drawing.Point(275, 105);
-            this.slblIVTotal.Name = "slblIVTotal";
-            this.slblIVTotal.Size = new System.Drawing.Size(75, 22);
-            this.slblIVTotal.TabIndex = 12;
-            this.slblIVTotal.Text = "IV Total:";
             // 
             // slblEvTotal
             // 
@@ -175,94 +147,153 @@
             this.slblNickname.TabIndex = 10;
             this.slblNickname.Text = "Nickname:";
             // 
-            // slblToIV
-            // 
-            this.slblToIV.AutoSize = true;
-            this.slblToIV.Location = new System.Drawing.Point(431, 108);
-            this.slblToIV.Name = "slblToIV";
-            this.slblToIV.Size = new System.Drawing.Size(26, 22);
-            this.slblToIV.TabIndex = 15;
-            this.slblToIV.Text = "to";
-            // 
-            // txtIVMax
-            // 
-            this.txtIVMax.Location = new System.Drawing.Point(462, 105);
-            this.txtIVMax.Name = "txtIVMax";
-            this.txtIVMax.Size = new System.Drawing.Size(44, 30);
-            this.txtIVMax.TabIndex = 9;
-            // 
-            // txtIVMin
-            // 
-            this.txtIVMin.Location = new System.Drawing.Point(385, 105);
-            this.txtIVMin.Name = "txtIVMin";
-            this.txtIVMin.Size = new System.Drawing.Size(44, 30);
-            this.txtIVMin.TabIndex = 8;
-            // 
             // slblToEV
             // 
             this.slblToEV.AutoSize = true;
-            this.slblToEV.Location = new System.Drawing.Point(431, 57);
+            this.slblToEV.Location = new System.Drawing.Point(423, 57);
             this.slblToEV.Name = "slblToEV";
             this.slblToEV.Size = new System.Drawing.Size(26, 22);
             this.slblToEV.TabIndex = 18;
             this.slblToEV.Text = "to";
             // 
-            // txtEVMax
-            // 
-            this.txtEVMax.Location = new System.Drawing.Point(462, 54);
-            this.txtEVMax.Name = "txtEVMax";
-            this.txtEVMax.Size = new System.Drawing.Size(44, 30);
-            this.txtEVMax.TabIndex = 5;
-            // 
-            // txtEVMin
-            // 
-            this.txtEVMin.Location = new System.Drawing.Point(385, 54);
-            this.txtEVMin.Name = "txtEVMin";
-            this.txtEVMin.Size = new System.Drawing.Size(44, 30);
-            this.txtEVMin.TabIndex = 4;
-            // 
             // txtNickname
             // 
-            this.txtNickname.Location = new System.Drawing.Point(377, 9);
+            this.txtNickname.Location = new System.Drawing.Point(382, 6);
             this.txtNickname.Name = "txtNickname";
             this.txtNickname.Size = new System.Drawing.Size(129, 30);
             this.txtNickname.TabIndex = 2;
-            // 
-            // chkHasPokerus
-            // 
-            this.chkHasPokerus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.chkHasPokerus.Image = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
-            this.chkHasPokerus.Location = new System.Drawing.Point(102, 149);
-            this.chkHasPokerus.Name = "chkHasPokerus";
-            this.chkHasPokerus.Size = new System.Drawing.Size(73, 51);
-            this.chkHasPokerus.TabIndex = 10;
-            this.ttpPokerus.SetToolTip(this.chkHasPokerus, "Check if pokemon has (or had) Pokerus.");
-            this.chkHasPokerus.UseVisualStyleBackColor = true;
             // 
             // ttpPokerus
             // 
             this.ttpPokerus.ToolTipTitle = "Pokerus";
             // 
+            // slblPokerus
+            // 
+            this.slblPokerus.AutoSize = true;
+            this.slblPokerus.Location = new System.Drawing.Point(275, 105);
+            this.slblPokerus.Name = "slblPokerus";
+            this.slblPokerus.Size = new System.Drawing.Size(116, 22);
+            this.slblPokerus.TabIndex = 19;
+            this.slblPokerus.Text = "Has Pokerus:";
+            // 
+            // chkHasPokerus
+            // 
+            this.chkHasPokerus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.chkHasPokerus.Image = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
+            this.chkHasPokerus.Location = new System.Drawing.Point(410, 92);
+            this.chkHasPokerus.Name = "chkHasPokerus";
+            this.chkHasPokerus.Size = new System.Drawing.Size(73, 51);
+            this.chkHasPokerus.TabIndex = 8;
+            this.ttpPokerus.SetToolTip(this.chkHasPokerus, "Check if pokemon has (or had) Pokerus.");
+            this.chkHasPokerus.UseVisualStyleBackColor = true;
+            // 
+            // numNumber
+            // 
+            this.numNumber.Location = new System.Drawing.Point(196, 7);
+            this.numNumber.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numNumber.Name = "numNumber";
+            this.numNumber.Size = new System.Drawing.Size(56, 30);
+            this.numNumber.TabIndex = 1;
+            // 
+            // numMinLevel
+            // 
+            this.numMinLevel.Location = new System.Drawing.Point(102, 103);
+            this.numMinLevel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMinLevel.Name = "numMinLevel";
+            this.numMinLevel.Size = new System.Drawing.Size(56, 30);
+            this.numMinLevel.TabIndex = 6;
+            this.numMinLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numMaxLevel
+            // 
+            this.numMaxLevel.Location = new System.Drawing.Point(196, 103);
+            this.numMaxLevel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMaxLevel.Name = "numMaxLevel";
+            this.numMaxLevel.Size = new System.Drawing.Size(56, 30);
+            this.numMaxLevel.TabIndex = 7;
+            this.numMaxLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numMaxEV
+            // 
+            this.numMaxEV.Location = new System.Drawing.Point(455, 54);
+            this.numMaxEV.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numMaxEV.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMaxEV.Name = "numMaxEV";
+            this.numMaxEV.Size = new System.Drawing.Size(56, 30);
+            this.numMaxEV.TabIndex = 5;
+            this.numMaxEV.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numMinEV
+            // 
+            this.numMinEV.Location = new System.Drawing.Point(361, 54);
+            this.numMinEV.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numMinEV.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMinEV.Name = "numMinEV";
+            this.numMinEV.Size = new System.Drawing.Size(56, 30);
+            this.numMinEV.TabIndex = 4;
+            this.numMinEV.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // frmSearchPartner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 201);
+            this.ClientSize = new System.Drawing.Size(522, 181);
+            this.Controls.Add(this.numMinEV);
+            this.Controls.Add(this.numMaxEV);
+            this.Controls.Add(this.numMaxLevel);
+            this.Controls.Add(this.numMinLevel);
+            this.Controls.Add(this.numNumber);
+            this.Controls.Add(this.slblPokerus);
             this.Controls.Add(this.chkHasPokerus);
             this.Controls.Add(this.txtNickname);
             this.Controls.Add(this.slblToEV);
-            this.Controls.Add(this.txtEVMax);
-            this.Controls.Add(this.txtEVMin);
-            this.Controls.Add(this.slblToIV);
-            this.Controls.Add(this.txtIVMax);
-            this.Controls.Add(this.txtIVMin);
-            this.Controls.Add(this.slblIVTotal);
             this.Controls.Add(this.slblEvTotal);
             this.Controls.Add(this.slblNickname);
             this.Controls.Add(this.slblToLevel);
-            this.Controls.Add(this.txtLevelMax);
-            this.Controls.Add(this.txtLevelMin);
-            this.Controls.Add(this.txtPokemonNum);
             this.Controls.Add(this.cmbNature);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSearch);
@@ -273,6 +304,11 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmSearchPartner";
             this.Text = "Find Partner";
+            ((System.ComponentModel.ISupportInitialize)(this.numNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMaxLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMaxEV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinEV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,21 +322,18 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox cmbNature;
-        private System.Windows.Forms.TextBox txtPokemonNum;
-        private System.Windows.Forms.TextBox txtLevelMin;
-        private System.Windows.Forms.TextBox txtLevelMax;
         private System.Windows.Forms.Label slblToLevel;
-        private System.Windows.Forms.Label slblIVTotal;
         private System.Windows.Forms.Label slblEvTotal;
         private System.Windows.Forms.Label slblNickname;
-        private System.Windows.Forms.Label slblToIV;
-        private System.Windows.Forms.TextBox txtIVMax;
-        private System.Windows.Forms.TextBox txtIVMin;
         private System.Windows.Forms.Label slblToEV;
-        private System.Windows.Forms.TextBox txtEVMax;
-        private System.Windows.Forms.TextBox txtEVMin;
         private System.Windows.Forms.TextBox txtNickname;
         private System.Windows.Forms.CheckBox chkHasPokerus;
         private System.Windows.Forms.ToolTip ttpPokerus;
+        private System.Windows.Forms.Label slblPokerus;
+        private System.Windows.Forms.NumericUpDown numNumber;
+        private System.Windows.Forms.NumericUpDown numMinLevel;
+        private System.Windows.Forms.NumericUpDown numMaxLevel;
+        private System.Windows.Forms.NumericUpDown numMaxEV;
+        private System.Windows.Forms.NumericUpDown numMinEV;
     }
 }

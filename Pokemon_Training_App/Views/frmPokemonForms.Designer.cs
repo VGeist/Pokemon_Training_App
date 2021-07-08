@@ -32,9 +32,11 @@
             // 
             // frmPokemonForms
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 298);
+            this.ClientSize = new System.Drawing.Size(519, 379);
+            this.Font = new System.Drawing.Font("Cambria", 14.25F);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "frmPokemonForms";
             this.Text = "Forms | #[###] [POKEMONNAME]";
             this.ResumeLayout(false);

@@ -134,9 +134,14 @@
             // numPokeNum
             // 
             this.numPokeNum.Location = new System.Drawing.Point(216, 20);
+            this.numPokeNum.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numPokeNum.Name = "numPokeNum";
             this.numPokeNum.Size = new System.Drawing.Size(85, 30);
-            this.numPokeNum.TabIndex = 11;
+            this.numPokeNum.TabIndex = 1;
             // 
             // btnGetAll
             // 

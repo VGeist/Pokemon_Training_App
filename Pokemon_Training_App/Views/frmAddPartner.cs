@@ -27,6 +27,7 @@ namespace Pokemon_Training_App.Views
         // TODO: implement add button
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            /* TODO: implement */
             // validate data
             // send data to database
             // display success or faliure message
@@ -40,6 +41,7 @@ namespace Pokemon_Training_App.Views
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            /* TODO: redo this method to work with new control types
             // clear values from all inputs
             // clear values from text boxes
             foreach (TextBox textBox in this.Controls.OfType<TextBox>())
@@ -62,7 +64,8 @@ namespace Pokemon_Training_App.Views
             }
 
             // focus on first textbox
-            txtPokemonNum.Focus();
+            numPokeNum.Focus();
+            */
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

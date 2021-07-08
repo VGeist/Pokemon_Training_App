@@ -47,7 +47,7 @@ namespace Pokemon_Training_App.Views
             // set number values to 0
             foreach (NumericUpDown numericUpDown in this.Controls.OfType<NumericUpDown>())
             {
-                numericUpDown.Value = 0;
+                numericUpDown.Value = 1;
             }
 
             // clear text from name textbox

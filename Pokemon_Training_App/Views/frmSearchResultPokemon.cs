@@ -53,6 +53,10 @@ namespace Pokemon_Training_App.Views
 
                     // add to lvwResults items
                     lvwResults.Items.Add(item);
+
+                    // PokeNum is the row ID for the pokemon table
+                    // set item tag as row ID, item tags are used to associate a database entry with a selected item
+                    item.Tag = row[0];
                 }
             } else
             {
@@ -63,7 +67,11 @@ namespace Pokemon_Training_App.Views
 
         private ListViewItem convertDataRowToItem(DataRow row)
         {
-            string[] item = { row[0].ToString(), row[1].ToString() };
+            // pokeNum index = 0
+            // name index = 1
+            string pokeNum = row[0].ToString();
+            string name = row[1].ToString();
+            string[] item = { pokeNum, name };
             return new ListViewItem(item);
         }
     }

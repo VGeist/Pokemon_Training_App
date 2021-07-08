@@ -34,7 +34,8 @@
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtPokemonName = new System.Windows.Forms.TextBox();
-            this.txtPokemonNum = new System.Windows.Forms.TextBox();
+            this.numPokeNum = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).BeginInit();
             this.SuspendLayout();
             // 
             // slblPokemonName
@@ -89,29 +90,35 @@
             this.txtPokemonName.Size = new System.Drawing.Size(185, 30);
             this.txtPokemonName.TabIndex = 2;
             // 
-            // txtPokemonNum
+            // numPokeNum
             // 
-            this.txtPokemonNum.Location = new System.Drawing.Point(190, 12);
-            this.txtPokemonNum.Name = "txtPokemonNum";
-            this.txtPokemonNum.Size = new System.Drawing.Size(185, 30);
-            this.txtPokemonNum.TabIndex = 1;
+            this.numPokeNum.Location = new System.Drawing.Point(190, 13);
+            this.numPokeNum.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numPokeNum.Name = "numPokeNum";
+            this.numPokeNum.Size = new System.Drawing.Size(185, 30);
+            this.numPokeNum.TabIndex = 1;
             // 
             // frmEditPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 138);
+            this.Controls.Add(this.numPokeNum);
             this.Controls.Add(this.slblPokemonName);
             this.Controls.Add(this.slblPokemonNumber);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtPokemonName);
-            this.Controls.Add(this.txtPokemonNum);
             this.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmEditPokemon";
             this.Text = "Edit Pokemon Entry";
+            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,6 +131,6 @@
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtPokemonName;
-        private System.Windows.Forms.TextBox txtPokemonNum;
+        private System.Windows.Forms.NumericUpDown numPokeNum;
     }
 }

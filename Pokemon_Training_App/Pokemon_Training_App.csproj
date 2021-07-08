@@ -197,17 +197,38 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\frmAddForm.resx">
+      <DependentUpon>frmAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmAddPartner.resx">
+      <DependentUpon>frmAddPartner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmAddPokemon.resx">
       <DependentUpon>frmAddPokemon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmEditForm.resx">
+      <DependentUpon>frmEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmEditPartner.resx">
       <DependentUpon>frmEditPartner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmEditPokemon.resx">
+      <DependentUpon>frmEditPokemon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmEvolve.resx">
+      <DependentUpon>frmEvolve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmLevelUp.resx">
+      <DependentUpon>frmLevelUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmPokemonForms.resx">
       <DependentUpon>frmPokemonForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmPreview.resx">
       <DependentUpon>frmPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmSearchPartner.resx">
+      <DependentUpon>frmSearchPartner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmSearchPokemon.resx">
       <DependentUpon>frmSearchPokemon.cs</DependentUpon>

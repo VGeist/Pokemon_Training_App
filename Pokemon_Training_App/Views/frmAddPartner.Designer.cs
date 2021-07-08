@@ -36,19 +36,30 @@
             this.slblNickname = new System.Windows.Forms.Label();
             this.slblNature = new System.Windows.Forms.Label();
             this.slblLevel = new System.Windows.Forms.Label();
-            this.txtPokemonNum = new System.Windows.Forms.TextBox();
             this.txtNickname = new System.Windows.Forms.TextBox();
-            this.txtLevel = new System.Windows.Forms.TextBox();
             this.cmbNature = new System.Windows.Forms.ComboBox();
             this.tabStats = new System.Windows.Forms.TabControl();
+            this.tpgStats = new System.Windows.Forms.TabPage();
+            this.numSpeedStat = new System.Windows.Forms.NumericUpDown();
+            this.numSpDefenseStat = new System.Windows.Forms.NumericUpDown();
+            this.numSpAttackStat = new System.Windows.Forms.NumericUpDown();
+            this.numDefenseStat = new System.Windows.Forms.NumericUpDown();
+            this.numAttackStat = new System.Windows.Forms.NumericUpDown();
+            this.numHealthStat = new System.Windows.Forms.NumericUpDown();
+            this.slblHealthStat = new System.Windows.Forms.Label();
+            this.slblSpeedStat = new System.Windows.Forms.Label();
+            this.slblSpDefenseStat = new System.Windows.Forms.Label();
+            this.slblSpAttackStat = new System.Windows.Forms.Label();
+            this.slblDefenseStat = new System.Windows.Forms.Label();
+            this.slblAttackStat = new System.Windows.Forms.Label();
             this.tpgEV = new System.Windows.Forms.TabPage();
-            this.txtHealthEV = new System.Windows.Forms.TextBox();
+            this.numSpeedEV = new System.Windows.Forms.NumericUpDown();
+            this.numSpDefenseEV = new System.Windows.Forms.NumericUpDown();
+            this.numSpAttackEV = new System.Windows.Forms.NumericUpDown();
+            this.numDefenseEV = new System.Windows.Forms.NumericUpDown();
+            this.numAttackEV = new System.Windows.Forms.NumericUpDown();
+            this.numHealthEV = new System.Windows.Forms.NumericUpDown();
             this.slblHealthEV = new System.Windows.Forms.Label();
-            this.txtSpeedEV = new System.Windows.Forms.TextBox();
-            this.txtSpDefenseEV = new System.Windows.Forms.TextBox();
-            this.txtSpAttackEV = new System.Windows.Forms.TextBox();
-            this.txtDefenseEV = new System.Windows.Forms.TextBox();
-            this.txtAttackEV = new System.Windows.Forms.TextBox();
             this.slblSpeedEV = new System.Windows.Forms.Label();
             this.slblSpDefenseEV = new System.Windows.Forms.Label();
             this.slblSpAttackEV = new System.Windows.Forms.Label();
@@ -57,33 +68,36 @@
             this.cmbForm = new System.Windows.Forms.ComboBox();
             this.slblForm = new System.Windows.Forms.Label();
             this.btnAddForm = new System.Windows.Forms.Button();
-            this.tpgStats = new System.Windows.Forms.TabPage();
-            this.txtSpeedStat = new System.Windows.Forms.TextBox();
-            this.slblSpeedStat = new System.Windows.Forms.Label();
-            this.slblSpDefenseStat = new System.Windows.Forms.Label();
-            this.txtSpDefenseStat = new System.Windows.Forms.TextBox();
-            this.txtSpAttackStat = new System.Windows.Forms.TextBox();
-            this.slblSpAttackStat = new System.Windows.Forms.Label();
-            this.slblDefenseStat = new System.Windows.Forms.Label();
-            this.txtDefenseStat = new System.Windows.Forms.TextBox();
-            this.txtAttackStat = new System.Windows.Forms.TextBox();
-            this.slblAttackStat = new System.Windows.Forms.Label();
-            this.slblHealthStat = new System.Windows.Forms.Label();
-            this.txtHealthStat = new System.Windows.Forms.TextBox();
-            this.chkHasPokerus = new System.Windows.Forms.CheckBox();
             this.ttpPokerus = new System.Windows.Forms.ToolTip(this.components);
+            this.chkHasPokerus = new System.Windows.Forms.CheckBox();
+            this.numPokeNum = new System.Windows.Forms.NumericUpDown();
+            this.numLevel = new System.Windows.Forms.NumericUpDown();
             this.tabStats.SuspendLayout();
-            this.tpgEV.SuspendLayout();
             this.tpgStats.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpeedStat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpDefenseStat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpAttackStat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDefenseStat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAttackStat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHealthStat)).BeginInit();
+            this.tpgEV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpeedEV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpDefenseEV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpAttackEV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDefenseEV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAttackEV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHealthEV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLevel)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
             this.btnAdd.AutoSize = true;
-            this.btnAdd.Location = new System.Drawing.Point(280, 311);
+            this.btnAdd.Location = new System.Drawing.Point(292, 311);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(85, 32);
-            this.btnAdd.TabIndex = 15;
+            this.btnAdd.Size = new System.Drawing.Size(91, 32);
+            this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -91,10 +105,10 @@
             // btnClear
             // 
             this.btnClear.AutoSize = true;
-            this.btnClear.Location = new System.Drawing.Point(280, 349);
+            this.btnClear.Location = new System.Drawing.Point(292, 349);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(85, 32);
-            this.btnClear.TabIndex = 16;
+            this.btnClear.Size = new System.Drawing.Size(91, 32);
+            this.btnClear.TabIndex = 15;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -102,10 +116,10 @@
             // btnCancel
             // 
             this.btnCancel.AutoSize = true;
-            this.btnCancel.Location = new System.Drawing.Point(280, 387);
+            this.btnCancel.Location = new System.Drawing.Point(292, 387);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(85, 32);
-            this.btnCancel.TabIndex = 17;
+            this.btnCancel.Size = new System.Drawing.Size(91, 32);
+            this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -146,26 +160,12 @@
             this.slblLevel.TabIndex = 6;
             this.slblLevel.Text = "Level";
             // 
-            // txtPokemonNum
-            // 
-            this.txtPokemonNum.Location = new System.Drawing.Point(185, 12);
-            this.txtPokemonNum.Name = "txtPokemonNum";
-            this.txtPokemonNum.Size = new System.Drawing.Size(180, 30);
-            this.txtPokemonNum.TabIndex = 1;
-            // 
             // txtNickname
             // 
             this.txtNickname.Location = new System.Drawing.Point(185, 53);
             this.txtNickname.Name = "txtNickname";
             this.txtNickname.Size = new System.Drawing.Size(180, 30);
             this.txtNickname.TabIndex = 2;
-            // 
-            // txtLevel
-            // 
-            this.txtLevel.Location = new System.Drawing.Point(325, 94);
-            this.txtLevel.Name = "txtLevel";
-            this.txtLevel.Size = new System.Drawing.Size(40, 30);
-            this.txtLevel.TabIndex = 4;
             // 
             // cmbNature
             // 
@@ -195,15 +195,223 @@
             this.tabStats.TabIndex = 7;
             this.tabStats.TabStop = false;
             // 
+            // tpgStats
+            // 
+            this.tpgStats.Controls.Add(this.numSpeedStat);
+            this.tpgStats.Controls.Add(this.numSpDefenseStat);
+            this.tpgStats.Controls.Add(this.numSpAttackStat);
+            this.tpgStats.Controls.Add(this.numDefenseStat);
+            this.tpgStats.Controls.Add(this.numAttackStat);
+            this.tpgStats.Controls.Add(this.numHealthStat);
+            this.tpgStats.Controls.Add(this.slblHealthStat);
+            this.tpgStats.Controls.Add(this.slblSpeedStat);
+            this.tpgStats.Controls.Add(this.slblSpDefenseStat);
+            this.tpgStats.Controls.Add(this.slblSpAttackStat);
+            this.tpgStats.Controls.Add(this.slblDefenseStat);
+            this.tpgStats.Controls.Add(this.slblAttackStat);
+            this.tpgStats.Location = new System.Drawing.Point(4, 31);
+            this.tpgStats.Name = "tpgStats";
+            this.tpgStats.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgStats.Size = new System.Drawing.Size(250, 213);
+            this.tpgStats.TabIndex = 0;
+            this.tpgStats.Text = "Stats";
+            this.tpgStats.UseVisualStyleBackColor = true;
+            // 
+            // numSpeedStat
+            // 
+            this.numSpeedStat.Location = new System.Drawing.Point(142, 175);
+            this.numSpeedStat.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numSpeedStat.Minimum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.numSpeedStat.Name = "numSpeedStat";
+            this.numSpeedStat.Size = new System.Drawing.Size(100, 30);
+            this.numSpeedStat.TabIndex = 12;
+            this.numSpeedStat.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // numSpDefenseStat
+            // 
+            this.numSpDefenseStat.Location = new System.Drawing.Point(142, 142);
+            this.numSpDefenseStat.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numSpDefenseStat.Minimum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.numSpDefenseStat.Name = "numSpDefenseStat";
+            this.numSpDefenseStat.Size = new System.Drawing.Size(100, 30);
+            this.numSpDefenseStat.TabIndex = 11;
+            this.numSpDefenseStat.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // numSpAttackStat
+            // 
+            this.numSpAttackStat.Location = new System.Drawing.Point(142, 109);
+            this.numSpAttackStat.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numSpAttackStat.Minimum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.numSpAttackStat.Name = "numSpAttackStat";
+            this.numSpAttackStat.Size = new System.Drawing.Size(100, 30);
+            this.numSpAttackStat.TabIndex = 10;
+            this.numSpAttackStat.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // numDefenseStat
+            // 
+            this.numDefenseStat.Location = new System.Drawing.Point(142, 76);
+            this.numDefenseStat.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numDefenseStat.Minimum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.numDefenseStat.Name = "numDefenseStat";
+            this.numDefenseStat.Size = new System.Drawing.Size(100, 30);
+            this.numDefenseStat.TabIndex = 9;
+            this.numDefenseStat.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // numAttackStat
+            // 
+            this.numAttackStat.Location = new System.Drawing.Point(142, 43);
+            this.numAttackStat.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numAttackStat.Minimum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.numAttackStat.Name = "numAttackStat";
+            this.numAttackStat.Size = new System.Drawing.Size(100, 30);
+            this.numAttackStat.TabIndex = 8;
+            this.numAttackStat.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // numHealthStat
+            // 
+            this.numHealthStat.Location = new System.Drawing.Point(142, 10);
+            this.numHealthStat.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numHealthStat.Minimum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.numHealthStat.Name = "numHealthStat";
+            this.numHealthStat.Size = new System.Drawing.Size(100, 30);
+            this.numHealthStat.TabIndex = 7;
+            this.numHealthStat.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // slblHealthStat
+            // 
+            this.slblHealthStat.AutoSize = true;
+            this.slblHealthStat.Location = new System.Drawing.Point(8, 12);
+            this.slblHealthStat.Name = "slblHealthStat";
+            this.slblHealthStat.Size = new System.Drawing.Size(62, 22);
+            this.slblHealthStat.TabIndex = 10;
+            this.slblHealthStat.Text = "Health";
+            // 
+            // slblSpeedStat
+            // 
+            this.slblSpeedStat.AutoSize = true;
+            this.slblSpeedStat.Location = new System.Drawing.Point(8, 177);
+            this.slblSpeedStat.Name = "slblSpeedStat";
+            this.slblSpeedStat.Size = new System.Drawing.Size(59, 22);
+            this.slblSpeedStat.TabIndex = 4;
+            this.slblSpeedStat.Text = "Speed";
+            // 
+            // slblSpDefenseStat
+            // 
+            this.slblSpDefenseStat.AutoSize = true;
+            this.slblSpDefenseStat.Location = new System.Drawing.Point(8, 144);
+            this.slblSpDefenseStat.Name = "slblSpDefenseStat";
+            this.slblSpDefenseStat.Size = new System.Drawing.Size(95, 22);
+            this.slblSpDefenseStat.TabIndex = 3;
+            this.slblSpDefenseStat.Text = "SpDefense";
+            // 
+            // slblSpAttackStat
+            // 
+            this.slblSpAttackStat.AutoSize = true;
+            this.slblSpAttackStat.Location = new System.Drawing.Point(8, 111);
+            this.slblSpAttackStat.Name = "slblSpAttackStat";
+            this.slblSpAttackStat.Size = new System.Drawing.Size(81, 22);
+            this.slblSpAttackStat.TabIndex = 2;
+            this.slblSpAttackStat.Text = "SpAttack";
+            // 
+            // slblDefenseStat
+            // 
+            this.slblDefenseStat.AutoSize = true;
+            this.slblDefenseStat.Location = new System.Drawing.Point(8, 78);
+            this.slblDefenseStat.Name = "slblDefenseStat";
+            this.slblDefenseStat.Size = new System.Drawing.Size(75, 22);
+            this.slblDefenseStat.TabIndex = 1;
+            this.slblDefenseStat.Text = "Defense";
+            // 
+            // slblAttackStat
+            // 
+            this.slblAttackStat.AutoSize = true;
+            this.slblAttackStat.Location = new System.Drawing.Point(8, 45);
+            this.slblAttackStat.Name = "slblAttackStat";
+            this.slblAttackStat.Size = new System.Drawing.Size(61, 22);
+            this.slblAttackStat.TabIndex = 0;
+            this.slblAttackStat.Text = "Attack";
+            // 
             // tpgEV
             // 
-            this.tpgEV.Controls.Add(this.txtHealthEV);
+            this.tpgEV.Controls.Add(this.numSpeedEV);
+            this.tpgEV.Controls.Add(this.numSpDefenseEV);
+            this.tpgEV.Controls.Add(this.numSpAttackEV);
+            this.tpgEV.Controls.Add(this.numDefenseEV);
+            this.tpgEV.Controls.Add(this.numAttackEV);
+            this.tpgEV.Controls.Add(this.numHealthEV);
             this.tpgEV.Controls.Add(this.slblHealthEV);
-            this.tpgEV.Controls.Add(this.txtSpeedEV);
-            this.tpgEV.Controls.Add(this.txtSpDefenseEV);
-            this.tpgEV.Controls.Add(this.txtSpAttackEV);
-            this.tpgEV.Controls.Add(this.txtDefenseEV);
-            this.tpgEV.Controls.Add(this.txtAttackEV);
             this.tpgEV.Controls.Add(this.slblSpeedEV);
             this.tpgEV.Controls.Add(this.slblSpDefenseEV);
             this.tpgEV.Controls.Add(this.slblSpAttackEV);
@@ -217,12 +425,77 @@
             this.tpgEV.Text = "EVs";
             this.tpgEV.UseVisualStyleBackColor = true;
             // 
-            // txtHealthEV
+            // numSpeedEV
             // 
-            this.txtHealthEV.Location = new System.Drawing.Point(142, 9);
-            this.txtHealthEV.Name = "txtHealthEV";
-            this.txtHealthEV.Size = new System.Drawing.Size(100, 30);
-            this.txtHealthEV.TabIndex = 8;
+            this.numSpeedEV.Location = new System.Drawing.Point(142, 175);
+            this.numSpeedEV.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numSpeedEV.Name = "numSpeedEV";
+            this.numSpeedEV.Size = new System.Drawing.Size(100, 30);
+            this.numSpeedEV.TabIndex = 12;
+            // 
+            // numSpDefenseEV
+            // 
+            this.numSpDefenseEV.Location = new System.Drawing.Point(142, 142);
+            this.numSpDefenseEV.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numSpDefenseEV.Name = "numSpDefenseEV";
+            this.numSpDefenseEV.Size = new System.Drawing.Size(100, 30);
+            this.numSpDefenseEV.TabIndex = 11;
+            // 
+            // numSpAttackEV
+            // 
+            this.numSpAttackEV.Location = new System.Drawing.Point(142, 109);
+            this.numSpAttackEV.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numSpAttackEV.Name = "numSpAttackEV";
+            this.numSpAttackEV.Size = new System.Drawing.Size(100, 30);
+            this.numSpAttackEV.TabIndex = 10;
+            // 
+            // numDefenseEV
+            // 
+            this.numDefenseEV.Location = new System.Drawing.Point(142, 76);
+            this.numDefenseEV.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numDefenseEV.Name = "numDefenseEV";
+            this.numDefenseEV.Size = new System.Drawing.Size(100, 30);
+            this.numDefenseEV.TabIndex = 9;
+            // 
+            // numAttackEV
+            // 
+            this.numAttackEV.Location = new System.Drawing.Point(142, 43);
+            this.numAttackEV.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numAttackEV.Name = "numAttackEV";
+            this.numAttackEV.Size = new System.Drawing.Size(100, 30);
+            this.numAttackEV.TabIndex = 8;
+            // 
+            // numHealthEV
+            // 
+            this.numHealthEV.Location = new System.Drawing.Point(142, 10);
+            this.numHealthEV.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numHealthEV.Name = "numHealthEV";
+            this.numHealthEV.Size = new System.Drawing.Size(100, 30);
+            this.numHealthEV.TabIndex = 7;
             // 
             // slblHealthEV
             // 
@@ -232,41 +505,6 @@
             this.slblHealthEV.Size = new System.Drawing.Size(62, 22);
             this.slblHealthEV.TabIndex = 22;
             this.slblHealthEV.Text = "Health";
-            // 
-            // txtSpeedEV
-            // 
-            this.txtSpeedEV.Location = new System.Drawing.Point(142, 174);
-            this.txtSpeedEV.Name = "txtSpeedEV";
-            this.txtSpeedEV.Size = new System.Drawing.Size(100, 30);
-            this.txtSpeedEV.TabIndex = 13;
-            // 
-            // txtSpDefenseEV
-            // 
-            this.txtSpDefenseEV.Location = new System.Drawing.Point(142, 141);
-            this.txtSpDefenseEV.Name = "txtSpDefenseEV";
-            this.txtSpDefenseEV.Size = new System.Drawing.Size(100, 30);
-            this.txtSpDefenseEV.TabIndex = 12;
-            // 
-            // txtSpAttackEV
-            // 
-            this.txtSpAttackEV.Location = new System.Drawing.Point(142, 108);
-            this.txtSpAttackEV.Name = "txtSpAttackEV";
-            this.txtSpAttackEV.Size = new System.Drawing.Size(100, 30);
-            this.txtSpAttackEV.TabIndex = 11;
-            // 
-            // txtDefenseEV
-            // 
-            this.txtDefenseEV.Location = new System.Drawing.Point(142, 75);
-            this.txtDefenseEV.Name = "txtDefenseEV";
-            this.txtDefenseEV.Size = new System.Drawing.Size(100, 30);
-            this.txtDefenseEV.TabIndex = 10;
-            // 
-            // txtAttackEV
-            // 
-            this.txtAttackEV.Location = new System.Drawing.Point(142, 42);
-            this.txtAttackEV.Name = "txtAttackEV";
-            this.txtAttackEV.Size = new System.Drawing.Size(100, 30);
-            this.txtAttackEV.TabIndex = 9;
             // 
             // slblSpeedEV
             // 
@@ -351,153 +589,64 @@
             this.btnAddForm.UseVisualStyleBackColor = true;
             this.btnAddForm.Click += new System.EventHandler(this.btnAddForm_Click);
             // 
-            // tpgStats
+            // ttpPokerus
             // 
-            this.tpgStats.Controls.Add(this.txtHealthStat);
-            this.tpgStats.Controls.Add(this.slblHealthStat);
-            this.tpgStats.Controls.Add(this.txtSpeedStat);
-            this.tpgStats.Controls.Add(this.txtSpDefenseStat);
-            this.tpgStats.Controls.Add(this.txtSpAttackStat);
-            this.tpgStats.Controls.Add(this.txtDefenseStat);
-            this.tpgStats.Controls.Add(this.txtAttackStat);
-            this.tpgStats.Controls.Add(this.slblSpeedStat);
-            this.tpgStats.Controls.Add(this.slblSpDefenseStat);
-            this.tpgStats.Controls.Add(this.slblSpAttackStat);
-            this.tpgStats.Controls.Add(this.slblDefenseStat);
-            this.tpgStats.Controls.Add(this.slblAttackStat);
-            this.tpgStats.Location = new System.Drawing.Point(4, 31);
-            this.tpgStats.Name = "tpgStats";
-            this.tpgStats.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgStats.Size = new System.Drawing.Size(250, 213);
-            this.tpgStats.TabIndex = 0;
-            this.tpgStats.Text = "Stats";
-            this.tpgStats.UseVisualStyleBackColor = true;
-            // 
-            // txtSpeedStat
-            // 
-            this.txtSpeedStat.Location = new System.Drawing.Point(142, 174);
-            this.txtSpeedStat.Name = "txtSpeedStat";
-            this.txtSpeedStat.Size = new System.Drawing.Size(100, 30);
-            this.txtSpeedStat.TabIndex = 13;
-            // 
-            // slblSpeedStat
-            // 
-            this.slblSpeedStat.AutoSize = true;
-            this.slblSpeedStat.Location = new System.Drawing.Point(8, 177);
-            this.slblSpeedStat.Name = "slblSpeedStat";
-            this.slblSpeedStat.Size = new System.Drawing.Size(59, 22);
-            this.slblSpeedStat.TabIndex = 4;
-            this.slblSpeedStat.Text = "Speed";
-            // 
-            // slblSpDefenseStat
-            // 
-            this.slblSpDefenseStat.AutoSize = true;
-            this.slblSpDefenseStat.Location = new System.Drawing.Point(8, 144);
-            this.slblSpDefenseStat.Name = "slblSpDefenseStat";
-            this.slblSpDefenseStat.Size = new System.Drawing.Size(95, 22);
-            this.slblSpDefenseStat.TabIndex = 3;
-            this.slblSpDefenseStat.Text = "SpDefense";
-            // 
-            // txtSpDefenseStat
-            // 
-            this.txtSpDefenseStat.Location = new System.Drawing.Point(142, 141);
-            this.txtSpDefenseStat.Name = "txtSpDefenseStat";
-            this.txtSpDefenseStat.Size = new System.Drawing.Size(100, 30);
-            this.txtSpDefenseStat.TabIndex = 12;
-            // 
-            // txtSpAttackStat
-            // 
-            this.txtSpAttackStat.Location = new System.Drawing.Point(142, 108);
-            this.txtSpAttackStat.Name = "txtSpAttackStat";
-            this.txtSpAttackStat.Size = new System.Drawing.Size(100, 30);
-            this.txtSpAttackStat.TabIndex = 11;
-            // 
-            // slblSpAttackStat
-            // 
-            this.slblSpAttackStat.AutoSize = true;
-            this.slblSpAttackStat.Location = new System.Drawing.Point(8, 111);
-            this.slblSpAttackStat.Name = "slblSpAttackStat";
-            this.slblSpAttackStat.Size = new System.Drawing.Size(81, 22);
-            this.slblSpAttackStat.TabIndex = 2;
-            this.slblSpAttackStat.Text = "SpAttack";
-            // 
-            // slblDefenseStat
-            // 
-            this.slblDefenseStat.AutoSize = true;
-            this.slblDefenseStat.Location = new System.Drawing.Point(8, 78);
-            this.slblDefenseStat.Name = "slblDefenseStat";
-            this.slblDefenseStat.Size = new System.Drawing.Size(75, 22);
-            this.slblDefenseStat.TabIndex = 1;
-            this.slblDefenseStat.Text = "Defense";
-            // 
-            // txtDefenseStat
-            // 
-            this.txtDefenseStat.Location = new System.Drawing.Point(142, 75);
-            this.txtDefenseStat.Name = "txtDefenseStat";
-            this.txtDefenseStat.Size = new System.Drawing.Size(100, 30);
-            this.txtDefenseStat.TabIndex = 10;
-            // 
-            // txtAttackStat
-            // 
-            this.txtAttackStat.Location = new System.Drawing.Point(142, 42);
-            this.txtAttackStat.Name = "txtAttackStat";
-            this.txtAttackStat.Size = new System.Drawing.Size(100, 30);
-            this.txtAttackStat.TabIndex = 9;
-            // 
-            // slblAttackStat
-            // 
-            this.slblAttackStat.AutoSize = true;
-            this.slblAttackStat.Location = new System.Drawing.Point(8, 45);
-            this.slblAttackStat.Name = "slblAttackStat";
-            this.slblAttackStat.Size = new System.Drawing.Size(61, 22);
-            this.slblAttackStat.TabIndex = 0;
-            this.slblAttackStat.Text = "Attack";
-            // 
-            // slblHealthStat
-            // 
-            this.slblHealthStat.AutoSize = true;
-            this.slblHealthStat.Location = new System.Drawing.Point(8, 12);
-            this.slblHealthStat.Name = "slblHealthStat";
-            this.slblHealthStat.Size = new System.Drawing.Size(62, 22);
-            this.slblHealthStat.TabIndex = 10;
-            this.slblHealthStat.Text = "Health";
-            // 
-            // txtHealthStat
-            // 
-            this.txtHealthStat.Location = new System.Drawing.Point(142, 9);
-            this.txtHealthStat.Name = "txtHealthStat";
-            this.txtHealthStat.Size = new System.Drawing.Size(100, 30);
-            this.txtHealthStat.TabIndex = 8;
+            this.ttpPokerus.ToolTipTitle = "Pokerus";
             // 
             // chkHasPokerus
             // 
             this.chkHasPokerus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.chkHasPokerus.Image = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
-            this.chkHasPokerus.Location = new System.Drawing.Point(292, 204);
+            this.chkHasPokerus.Location = new System.Drawing.Point(301, 204);
             this.chkHasPokerus.Name = "chkHasPokerus";
             this.chkHasPokerus.Size = new System.Drawing.Size(73, 51);
-            this.chkHasPokerus.TabIndex = 14;
+            this.chkHasPokerus.TabIndex = 13;
             this.ttpPokerus.SetToolTip(this.chkHasPokerus, "Check if pokemon has (or had) Pokerus.\r\nPokemon with Pokerus gain EVs faster.");
             this.chkHasPokerus.UseVisualStyleBackColor = true;
             // 
-            // ttpPokerus
+            // numPokeNum
             // 
-            this.ttpPokerus.ToolTipTitle = "Pokerus";
+            this.numPokeNum.Location = new System.Drawing.Point(185, 13);
+            this.numPokeNum.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numPokeNum.Name = "numPokeNum";
+            this.numPokeNum.Size = new System.Drawing.Size(180, 30);
+            this.numPokeNum.TabIndex = 1;
+            // 
+            // numLevel
+            // 
+            this.numLevel.Location = new System.Drawing.Point(325, 94);
+            this.numLevel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numLevel.Name = "numLevel";
+            this.numLevel.Size = new System.Drawing.Size(58, 30);
+            this.numLevel.TabIndex = 4;
+            this.numLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // frmAddPartner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 428);
+            this.ClientSize = new System.Drawing.Size(395, 428);
+            this.Controls.Add(this.numLevel);
+            this.Controls.Add(this.numPokeNum);
             this.Controls.Add(this.chkHasPokerus);
             this.Controls.Add(this.btnAddForm);
             this.Controls.Add(this.cmbForm);
             this.Controls.Add(this.slblForm);
             this.Controls.Add(this.tabStats);
             this.Controls.Add(this.cmbNature);
-            this.Controls.Add(this.txtLevel);
             this.Controls.Add(this.txtNickname);
-            this.Controls.Add(this.txtPokemonNum);
             this.Controls.Add(this.slblLevel);
             this.Controls.Add(this.slblNature);
             this.Controls.Add(this.slblNickname);
@@ -510,10 +659,24 @@
             this.Name = "frmAddPartner";
             this.Text = "New Partner Entry";
             this.tabStats.ResumeLayout(false);
-            this.tpgEV.ResumeLayout(false);
-            this.tpgEV.PerformLayout();
             this.tpgStats.ResumeLayout(false);
             this.tpgStats.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpeedStat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpDefenseStat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpAttackStat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDefenseStat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAttackStat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHealthStat)).EndInit();
+            this.tpgEV.ResumeLayout(false);
+            this.tpgEV.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpeedEV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpDefenseEV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpAttackEV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDefenseEV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAttackEV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHealthEV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLevel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,19 +691,11 @@
         private System.Windows.Forms.Label slblNickname;
         private System.Windows.Forms.Label slblNature;
         private System.Windows.Forms.Label slblLevel;
-        private System.Windows.Forms.TextBox txtPokemonNum;
         private System.Windows.Forms.TextBox txtNickname;
-        private System.Windows.Forms.TextBox txtLevel;
         private System.Windows.Forms.ComboBox cmbNature;
         private System.Windows.Forms.TabControl tabStats;
         private System.Windows.Forms.TabPage tpgEV;
-        private System.Windows.Forms.TextBox txtHealthEV;
         private System.Windows.Forms.Label slblHealthEV;
-        private System.Windows.Forms.TextBox txtSpeedEV;
-        private System.Windows.Forms.TextBox txtSpDefenseEV;
-        private System.Windows.Forms.TextBox txtSpAttackEV;
-        private System.Windows.Forms.TextBox txtDefenseEV;
-        private System.Windows.Forms.TextBox txtAttackEV;
         private System.Windows.Forms.Label slblSpeedEV;
         private System.Windows.Forms.Label slblSpDefenseEV;
         private System.Windows.Forms.Label slblSpAttackEV;
@@ -550,13 +705,7 @@
         private System.Windows.Forms.Label slblForm;
         private System.Windows.Forms.Button btnAddForm;
         private System.Windows.Forms.TabPage tpgStats;
-        private System.Windows.Forms.TextBox txtHealthStat;
         private System.Windows.Forms.Label slblHealthStat;
-        private System.Windows.Forms.TextBox txtSpeedStat;
-        private System.Windows.Forms.TextBox txtSpDefenseStat;
-        private System.Windows.Forms.TextBox txtSpAttackStat;
-        private System.Windows.Forms.TextBox txtDefenseStat;
-        private System.Windows.Forms.TextBox txtAttackStat;
         private System.Windows.Forms.Label slblSpeedStat;
         private System.Windows.Forms.Label slblSpDefenseStat;
         private System.Windows.Forms.Label slblSpAttackStat;
@@ -564,5 +713,19 @@
         private System.Windows.Forms.Label slblAttackStat;
         private System.Windows.Forms.CheckBox chkHasPokerus;
         private System.Windows.Forms.ToolTip ttpPokerus;
+        private System.Windows.Forms.NumericUpDown numPokeNum;
+        private System.Windows.Forms.NumericUpDown numSpeedStat;
+        private System.Windows.Forms.NumericUpDown numSpDefenseStat;
+        private System.Windows.Forms.NumericUpDown numSpAttackStat;
+        private System.Windows.Forms.NumericUpDown numDefenseStat;
+        private System.Windows.Forms.NumericUpDown numAttackStat;
+        private System.Windows.Forms.NumericUpDown numHealthStat;
+        private System.Windows.Forms.NumericUpDown numSpeedEV;
+        private System.Windows.Forms.NumericUpDown numSpDefenseEV;
+        private System.Windows.Forms.NumericUpDown numSpAttackEV;
+        private System.Windows.Forms.NumericUpDown numDefenseEV;
+        private System.Windows.Forms.NumericUpDown numAttackEV;
+        private System.Windows.Forms.NumericUpDown numHealthEV;
+        private System.Windows.Forms.NumericUpDown numLevel;
     }
 }
