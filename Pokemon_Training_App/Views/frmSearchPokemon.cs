@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pokemon_Training_App.Data;
 
 namespace Pokemon_Training_App.Views
 {
     public partial class frmSearchPokemon : Form
     {
+        public PokemonFilter Filter;
+        public bool DoFilter = true;    // used to determin if the user does not want to apply a fliter
+
         public frmSearchPokemon()
         {
             InitializeComponent();
@@ -20,25 +24,40 @@ namespace Pokemon_Training_App.Views
         private void btnCancel_Click(object sender, EventArgs e)
         {
             // clsoe this window
+            DoFilter = false;   // cancel filter application
             this.Close();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnApply_Click(object sender, EventArgs e)
         {
-            // open frmSearchResult with query results
-            // query database
-            Data.PokemonDataSet.PokemonDataTable result = searchPokemon();
-            // open form with result
-            openResultsForm(result);
+            // validate value
+            if (radNumber.Checked)
+            {
+                // searching by Number
+                // check if valid
+                if(isPokeNumValid())
+                {
+                    Filter = PokemonFilter.Number;
+                    this.Close();
+                }
+            } else
+            {
+                // searching by Name
+                // check if valid
+                if (isPokeNameValid())
+                {
+                    // set filter and close
+                    Filter = PokemonFilter.Name;
+                    this.Close();
+                }
+            }
         }
 
         private void btnGetAll_Click(object sender, EventArgs e)
         {
-            // open frmSearchResult with all data
-            // get data
-            Data.PokemonDataSet.PokemonDataTable result = pokemonTableAdapter.GetData();
-            // open form with result
-            openResultsForm(result);
+            // set filter to none
+            Filter = PokemonFilter.None;
+            this.Close();
         }
 
         private void radNumber_CheckedChanged(object sender, EventArgs e)
@@ -83,24 +102,39 @@ namespace Pokemon_Training_App.Views
             }
         }
 
-        private Data.PokemonDataSet.PokemonDataTable searchPokemon()
+        private bool isPokeNumValid()
         {
-            if(radNumber.Checked)
+            // check if the number is positive
+            if (numPokeNum.Value < 0)
             {
-                // if number is checked and has a value, search by number
-                return pokemonTableAdapter.GetPokemonByPokeNum((int)numPokeNum.Value);
+                // value is negative, invalid
+                MessageBox.Show("Number must be greater than zero.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            else
+            return true;
+        }
+
+        private bool isPokeNameValid()
+        {
+            // check if null or empty
+            if (String.IsNullOrEmpty(txtPokemonName.Text))
             {
-                // if Name is checked, search by name
-                return pokemonTableAdapter.GetPokemonByName(txtPokemonName.Text);
+                MessageBox.Show("Name cannot be empty.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            } else
+            {
+                return true;
             }
         }
 
-        private void openResultsForm(Data.PokemonDataSet.PokemonDataTable result)
+        public string getNameText()
         {
-            frmSearchResultPokemon form = new frmSearchResultPokemon(result);
-            form.Show();
+            return txtPokemonName.Text;
+        }
+
+        public int getNumberValue()
+        {
+            return (int)numPokeNum.Value; // removes any decimal value
         }
     }
 }

@@ -32,7 +32,7 @@
             this.slblPokemonName = new System.Windows.Forms.Label();
             this.slblPokemonNum = new System.Windows.Forms.Label();
             this.txtPokemonName = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnApply = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.radName = new System.Windows.Forms.RadioButton();
             this.radNumber = new System.Windows.Forms.RadioButton();
@@ -73,16 +73,16 @@
             this.txtPokemonName.Size = new System.Drawing.Size(201, 30);
             this.txtPokemonName.TabIndex = 2;
             // 
-            // btnSearch
+            // btnApply
             // 
-            this.btnSearch.AutoSize = true;
-            this.btnSearch.Location = new System.Drawing.Point(173, 126);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(85, 32);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnApply.AutoSize = true;
+            this.btnApply.Location = new System.Drawing.Point(173, 126);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(85, 32);
+            this.btnApply.TabIndex = 3;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // btnCancel
             // 
@@ -163,7 +163,7 @@
             this.Controls.Add(this.radNumber);
             this.Controls.Add(this.radName);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnApply);
             this.Controls.Add(this.txtPokemonName);
             this.Controls.Add(this.slblPokemonNum);
             this.Controls.Add(this.slblPokemonName);
@@ -184,7 +184,7 @@
         private System.Windows.Forms.Label slblPokemonName;
         private System.Windows.Forms.Label slblPokemonNum;
         private System.Windows.Forms.TextBox txtPokemonName;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.RadioButton radName;
         private System.Windows.Forms.RadioButton radNumber;

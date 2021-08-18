@@ -7,72 +7,119 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pokemon_Training_App.Data;
 
 namespace Pokemon_Training_App.Views
 {
+    public enum PokemonFilter
+    {
+        None = 0,
+        Number = 1,
+        Name = 2
+    }
+
     public partial class frmSearchResultPokemon : Form
     {
-        private Data.PokemonDataSet.PokemonDataTable Results;
+        public int PokeNum = 0;
+        public string PokeName = "";
+        PokemonFilter Filter = PokemonFilter.None;
 
-        public frmSearchResultPokemon(Data.PokemonDataSet.PokemonDataTable results)
+        public frmSearchResultPokemon()
         {
             InitializeComponent();
-            Results = results;
+
+            searchPokemon();
         }
 
-        private void frmSearchResultPokemon_Load(object sender, EventArgs e)
+        /*** HELPERS ***/
+        private void getData()
         {
-            displayResult();
-        }
-
-        private void displayNoResult()
-        {
-            lvwResults.HeaderStyle = ColumnHeaderStyle.None;
-            lblNoResult.Show();
-        }
-
-        private void displayResult()
-        {
-            // display results in lvwResults
-            // clear any previous results
-            lvwResults.Items.Clear();
-
-            // check if at least one result
-            if (Results.Rows.Count > 0)
+            // filter data
+            if (Filter == PokemonFilter.Number)
             {
-                // prepare to display results
-                // set lvwResult styles
-                lvwResults.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-                lblNoResult.Hide();
-
-                // enter data
-                foreach (DataRow row in Results.Rows)
-                {
-                    // convert row into item
-                    ListViewItem item = convertDataRowToItem(row);
-
-                    // add to lvwResults items
-                    lvwResults.Items.Add(item);
-
-                    // PokeNum is the row ID for the pokemon table
-                    // set item tag as row ID, item tags are used to associate a database entry with a selected item
-                    item.Tag = row[0];
-                }
+                this.pokemonTableAdapter.FillByPokeNum(this.pokemonDataSet.Pokemon, PokeNum);
+            }
+            else if (Filter == PokemonFilter.Name)
+            {
+                this.pokemonTableAdapter.FillByPokeName(this.pokemonDataSet.Pokemon, PokeName);
             } else
             {
-                // no results
-                displayNoResult();
+                this.pokemonTableAdapter.Fill(this.pokemonDataSet.Pokemon);
+            }
+
+            // if no result display message
+            if (dgvPokemon.RowCount == 0)
+            {
+                // display no results message
+                dataMessage("No Results");
+            } else
+            {
+                // remove any exisiting messages
+                clearDataMessage();
             }
         }
 
-        private ListViewItem convertDataRowToItem(DataRow row)
+        private void dataMessage(string text)
         {
-            // pokeNum index = 0
-            // name index = 1
-            string pokeNum = row[0].ToString();
-            string name = row[1].ToString();
-            string[] item = { pokeNum, name };
-            return new ListViewItem(item);
+            // show a message in the dataGridView
+            lblMessage.Text = text;
+            lblMessage.Show();
+        }
+
+        private void clearDataMessage()
+        {
+            lblMessage.Hide();
+        }
+
+        private void searchPokemon()
+        {
+            // get parameters from user
+            frmSearchPokemon searchDialog = new frmSearchPokemon();
+            searchDialog.ShowDialog();
+
+            // check if should apply the filter
+            if (searchDialog.DoFilter)
+            {
+                // set parameters
+                Filter = searchDialog.Filter;
+                if (Filter == PokemonFilter.Number)
+                {
+                    PokeNum = searchDialog.getNumberValue();
+                }
+                else if (Filter == PokemonFilter.Name)
+                {
+                    PokeName = searchDialog.getNameText();
+                }
+
+                getData();
+            }
+        }
+
+        /*** EVENTS ***/
+        private void frmSearchResultPokemon_Load(object sender, EventArgs e)
+        {
+            getData();
+        }
+
+        private async void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dataMessage("Refreshing...");
+            await Task.Delay(1000);
+            getData();
+        }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            // update data
+            this.Validate();
+            this.pokemonBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.pokemonDataSet);
+            this.Close();
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            searchPokemon();
         }
     }
 }

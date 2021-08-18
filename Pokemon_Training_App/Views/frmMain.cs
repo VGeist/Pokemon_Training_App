@@ -43,7 +43,7 @@ namespace Pokemon_Training_App.Views
         private void btnSearchPokemon_Click(object sender, EventArgs e)
         {
             // create and open an search pokemon form
-            frmSearchPokemon form = new frmSearchPokemon();
+            frmSearchResultPokemon form = new frmSearchResultPokemon();
             form.Show();
         }
 
