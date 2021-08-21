@@ -27,7 +27,7 @@ namespace Pokemon_Training_App.Views
         public frmSearchResultPokemon()
         {
             InitializeComponent();
-
+            // open search form
             searchPokemon();
         }
 
@@ -98,11 +98,13 @@ namespace Pokemon_Training_App.Views
         /*** EVENTS ***/
         private void frmSearchResultPokemon_Load(object sender, EventArgs e)
         {
+            // load data
             getData();
         }
 
         private async void btnRefresh_Click(object sender, EventArgs e)
         {
+            // refreshes the data in dgvPokemon, displays a message to the user showing that it is refreshing
             dataMessage("Refreshing...");
             await Task.Delay(1000);
             getData();
@@ -120,6 +122,21 @@ namespace Pokemon_Training_App.Views
         private void btnFilter_Click(object sender, EventArgs e)
         {
             searchPokemon();
+        }
+
+        private void dgvPokemon_SelectionChanged(object sender, EventArgs e)
+        {
+            // enable or disable btnEdit and btnForms if no rows are selected
+            // chck if rows are selected
+            if (dgvPokemon.SelectedRows.Count > 0)
+            {
+                btnEdit.Enabled = true;
+                btnForms.Enabled = true;
+            } else
+            {
+                btnEdit.Enabled = false;
+                btnForms.Enabled = false;
+            }
         }
     }
 }

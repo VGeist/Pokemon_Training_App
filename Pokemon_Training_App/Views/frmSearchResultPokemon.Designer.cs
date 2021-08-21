@@ -52,6 +52,7 @@
             this.pokeNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPokemon = new System.Windows.Forms.DataGridView();
             this.btnFilter = new System.Windows.Forms.Button();
+            this.btnForms = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonBindingNavigator)).BeginInit();
@@ -156,7 +157,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -199,10 +199,10 @@
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(296, 188);
+            this.btnDone.Location = new System.Drawing.Point(295, 189);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(80, 31);
-            this.btnDone.TabIndex = 3;
+            this.btnDone.TabIndex = 4;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
@@ -212,16 +212,17 @@
             this.btnNew.Location = new System.Drawing.Point(296, 141);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(80, 31);
-            this.btnNew.TabIndex = 4;
+            this.btnNew.TabIndex = 3;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(296, 94);
+            this.btnEdit.Enabled = false;
+            this.btnEdit.Location = new System.Drawing.Point(296, 12);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(80, 31);
-            this.btnEdit.TabIndex = 5;
+            this.btnEdit.TabIndex = 0;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
@@ -260,22 +261,35 @@
             this.dgvPokemon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPokemon.Size = new System.Drawing.Size(282, 220);
             this.dgvPokemon.TabIndex = 2;
+            this.dgvPokemon.TabStop = false;
+            this.dgvPokemon.SelectionChanged += new System.EventHandler(this.dgvPokemon_SelectionChanged);
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(296, 47);
+            this.btnFilter.Location = new System.Drawing.Point(296, 104);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(80, 31);
-            this.btnFilter.TabIndex = 6;
+            this.btnFilter.TabIndex = 2;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
+            // btnForms
+            // 
+            this.btnForms.Enabled = false;
+            this.btnForms.Location = new System.Drawing.Point(296, 49);
+            this.btnForms.Name = "btnForms";
+            this.btnForms.Size = new System.Drawing.Size(80, 31);
+            this.btnForms.TabIndex = 1;
+            this.btnForms.Text = "Forms";
+            this.btnForms.UseVisualStyleBackColor = true;
             // 
             // frmSearchResultPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 249);
+            this.Controls.Add(this.btnForms);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnNew);
@@ -322,5 +336,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pokeNumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dgvPokemon;
         private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.Button btnForms;
     }
 }
