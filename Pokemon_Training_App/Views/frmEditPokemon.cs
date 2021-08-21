@@ -76,7 +76,9 @@ namespace Pokemon_Training_App.Views
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (InputsValid())
+            // show confirmation message
+            DialogResult confirm = MessageBox.Show("Are you sure? Data can not be recovered.", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (confirm == DialogResult.Yes)
             {
                 try
                 {
@@ -89,11 +91,6 @@ namespace Pokemon_Training_App.Views
                     // exception message
                     MessageBox.Show("A problem occured: " + Environment.NewLine + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else
-            {
-                // invalid message
-                MessageBox.Show("Invalid inputs.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
