@@ -48,9 +48,9 @@
             this.btnDone = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pokeNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPokemon = new System.Windows.Forms.DataGridView();
+            this.colPokeNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFilter = new System.Windows.Forms.Button();
             this.btnForms = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
@@ -157,6 +157,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -225,20 +226,7 @@
             this.btnEdit.TabIndex = 0;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pokeNumDataGridViewTextBoxColumn
-            // 
-            this.pokeNumDataGridViewTextBoxColumn.DataPropertyName = "PokeNum";
-            this.pokeNumDataGridViewTextBoxColumn.HeaderText = "PokeNum";
-            this.pokeNumDataGridViewTextBoxColumn.Name = "pokeNumDataGridViewTextBoxColumn";
-            this.pokeNumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // dgvPokemon
             // 
@@ -249,8 +237,8 @@
             this.dgvPokemon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPokemon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPokemon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pokeNumDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn});
+            this.colPokeNum,
+            this.colName});
             this.dgvPokemon.DataSource = this.pokemonBindingSource;
             this.dgvPokemon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPokemon.Location = new System.Drawing.Point(0, 0);
@@ -263,6 +251,20 @@
             this.dgvPokemon.TabIndex = 2;
             this.dgvPokemon.TabStop = false;
             this.dgvPokemon.SelectionChanged += new System.EventHandler(this.dgvPokemon_SelectionChanged);
+            // 
+            // colPokeNum
+            // 
+            this.colPokeNum.DataPropertyName = "PokeNum";
+            this.colPokeNum.HeaderText = "PokeNum";
+            this.colPokeNum.Name = "colPokeNum";
+            this.colPokeNum.ReadOnly = true;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "Name";
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
             // 
             // btnFilter
             // 
@@ -301,6 +303,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmSearchResultPokemon";
             this.Text = "Pokemon";
+            this.Activated += new System.EventHandler(this.frmSearchResultPokemon_Activated);
             this.Load += new System.EventHandler(this.frmSearchResultPokemon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonBindingSource)).EndInit();
@@ -332,10 +335,10 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.ToolStripButton btnRefresh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pokeNumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dgvPokemon;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Button btnForms;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPokeNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
     }
 }

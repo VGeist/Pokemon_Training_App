@@ -18,7 +18,29 @@ namespace Pokemon_Training_App.Views
             InitializeComponent();
         }
 
-        // TODO: implement Add button
+        /*** HELPERS ***/
+        private bool InputsValid()
+        {
+            // check number values are positive
+            foreach (NumericUpDown numericUpDown in this.Controls.OfType<NumericUpDown>())
+            {
+                if (numericUpDown.Value < 0)
+                {
+                    return false;
+                }
+            }
+
+            // check pokename is not null or empty
+            if (String.IsNullOrEmpty(txtPokemonName.Text))
+            {
+                return false;
+            }
+
+            // valid
+            return true;
+        }
+
+        /*** EVENTS ***/
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // validate data,
@@ -61,27 +83,6 @@ namespace Pokemon_Training_App.Views
         {
             // close this window
             this.Close();
-        }
-
-        private Boolean InputsValid()
-        {
-            // check number values are positive
-            foreach (NumericUpDown numericUpDown in this.Controls.OfType<NumericUpDown>())
-            {
-                if (numericUpDown.Value < 0)
-                {
-                    return false;
-                }
-            }
-
-            // check pokename is not null or empty
-            if (String.IsNullOrEmpty(txtPokemonName.Text))
-            {
-                return false;
-            }
-
-            // valid
-            return true;
         }
     }
 }
