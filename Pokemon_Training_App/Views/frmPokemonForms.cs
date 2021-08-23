@@ -12,9 +12,28 @@ namespace Pokemon_Training_App.Views
 {
     public partial class frmPokemonForms : Form
     {
-        public frmPokemonForms()
+        int PokeNum;
+
+        public frmPokemonForms(int pokeNum)
         {
             InitializeComponent();
+            PokeNum = pokeNum;
+        }
+
+        /*** EVENTS ***/
+        private void frmPokemonForms_Load(object sender, EventArgs e)
+        {
+            this.formsTableAdapter.FillByPokeNum(this.pokemonDataSet.Forms, PokeNum);
+        }
+
+        private void frmPokemonForms_Activated(object sender, EventArgs e)
+        {
+            this.formsTableAdapter.FillByPokeNum(this.pokemonDataSet.Forms, PokeNum);
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
