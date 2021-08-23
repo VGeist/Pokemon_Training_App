@@ -12,9 +12,12 @@ namespace Pokemon_Training_App.Views
 {
     public partial class frmEditForm : Form
     {
-        public frmEditForm()
+        int FormID;
+
+        public frmEditForm(int formID)
         {
             InitializeComponent();
+            FormID = formID;
         }
     }
 }

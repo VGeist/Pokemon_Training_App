@@ -286,6 +286,7 @@
             this.btnForms.TabIndex = 1;
             this.btnForms.Text = "Forms";
             this.btnForms.UseVisualStyleBackColor = true;
+            this.btnForms.Click += new System.EventHandler(this.btnForms_Click);
             // 
             // frmSearchResultPokemon
             // 

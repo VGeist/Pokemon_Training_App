@@ -130,8 +130,10 @@ namespace Pokemon_Training_App.Views
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            // get selected pokemon
             int pokeNum = (int)dgvPokemon.SelectedRows[0].Cells[colPokeNum.Index].Value;
 
+            // open form
             frmEditPokemon form = new frmEditPokemon(pokeNum);
             form.ShowDialog();
         }
@@ -142,10 +144,21 @@ namespace Pokemon_Training_App.Views
             form.ShowDialog();
         }
 
+        private void btnForms_Click(object sender, EventArgs e)
+        {
+            // get selected pokemon
+            int pokeNum = (int)dgvPokemon.SelectedRows[0].Cells[colPokeNum.Index].Value;
+            string pokeName = dgvPokemon.SelectedRows[0].Cells[colName.Index].Value.ToString();
+
+            // open form
+            frmPokemonForms form = new frmPokemonForms(pokeNum, pokeName);
+            form.ShowDialog();
+        }
+
         private void dgvPokemon_SelectionChanged(object sender, EventArgs e)
         {
             // enable or disable btnEdit and btnForms if no rows are selected
-            // chck if rows are selected
+            // check if rows are selected
             if (dgvPokemon.SelectedRows.Count > 0)
             {
                 btnEdit.Enabled = true;
