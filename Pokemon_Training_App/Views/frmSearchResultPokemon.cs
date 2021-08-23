@@ -136,6 +136,12 @@ namespace Pokemon_Training_App.Views
             form.ShowDialog();
         }
 
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            frmAddPokemon form = new frmAddPokemon();
+            form.ShowDialog();
+        }
+
         private void dgvPokemon_SelectionChanged(object sender, EventArgs e)
         {
             // enable or disable btnEdit and btnForms if no rows are selected
