@@ -47,6 +47,8 @@
             this.numBaseSpAttack = new System.Windows.Forms.NumericUpDown();
             this.numBaseSpDefense = new System.Windows.Forms.NumericUpDown();
             this.numBaseSpeed = new System.Windows.Forms.NumericUpDown();
+            this.formsTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.FormsTableAdapter();
+            this.pokemonDataSet = new Pokemon_Training_App.Data.PokemonDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseDefense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseAttack)).BeginInit();
@@ -54,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpDefense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // slblPokemonNumber
@@ -143,6 +146,7 @@
             this.btnClear.TabIndex = 10;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnAdd
             // 
@@ -152,6 +156,7 @@
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCancel
             // 
@@ -161,6 +166,7 @@
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // numPokeNum
             // 
@@ -306,6 +312,15 @@
             0,
             0});
             // 
+            // formsTableAdapter
+            // 
+            this.formsTableAdapter.ClearBeforeFill = true;
+            // 
+            // pokemonDataSet
+            // 
+            this.pokemonDataSet.DataSetName = "PokemonDataSet";
+            this.pokemonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // frmAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -341,6 +356,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpAttack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpDefense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,5 +383,7 @@
         private System.Windows.Forms.NumericUpDown numBaseSpAttack;
         private System.Windows.Forms.NumericUpDown numBaseSpDefense;
         private System.Windows.Forms.NumericUpDown numBaseSpeed;
+        private Data.PokemonDataSetTableAdapters.FormsTableAdapter formsTableAdapter;
+        private Data.PokemonDataSet pokemonDataSet;
     }
 }

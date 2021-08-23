@@ -66,7 +66,7 @@ namespace Pokemon_Training_App.Views
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            // set number values to 0
+            // set number values to 1
             foreach (NumericUpDown numericUpDown in this.Controls.OfType<NumericUpDown>())
             {
                 numericUpDown.Value = 1;
