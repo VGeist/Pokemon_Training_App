@@ -40,7 +40,6 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.numPokeNum = new System.Windows.Forms.NumericUpDown();
             this.numBaseDefense = new System.Windows.Forms.NumericUpDown();
             this.numBaseAttack = new System.Windows.Forms.NumericUpDown();
             this.numBaseHealth = new System.Windows.Forms.NumericUpDown();
@@ -49,7 +48,7 @@
             this.numBaseSpeed = new System.Windows.Forms.NumericUpDown();
             this.formsTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.FormsTableAdapter();
             this.pokemonDataSet = new Pokemon_Training_App.Data.PokemonDataSet();
-            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).BeginInit();
+            this.lblPokeNum = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseDefense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseHealth)).BeginInit();
@@ -167,18 +166,6 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // numPokeNum
-            // 
-            this.numPokeNum.Location = new System.Drawing.Point(190, 13);
-            this.numPokeNum.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numPokeNum.Name = "numPokeNum";
-            this.numPokeNum.Size = new System.Drawing.Size(185, 30);
-            this.numPokeNum.TabIndex = 1;
             // 
             // numBaseDefense
             // 
@@ -321,18 +308,27 @@
             this.pokemonDataSet.DataSetName = "PokemonDataSet";
             this.pokemonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // lblPokeNum
+            // 
+            this.lblPokeNum.AutoSize = true;
+            this.lblPokeNum.Location = new System.Drawing.Point(186, 15);
+            this.lblPokeNum.Name = "lblPokeNum";
+            this.lblPokeNum.Size = new System.Drawing.Size(22, 22);
+            this.lblPokeNum.TabIndex = 54;
+            this.lblPokeNum.Text = "#";
+            // 
             // frmAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 401);
+            this.Controls.Add(this.lblPokeNum);
             this.Controls.Add(this.numBaseSpeed);
             this.Controls.Add(this.numBaseSpDefense);
             this.Controls.Add(this.numBaseSpAttack);
             this.Controls.Add(this.numBaseHealth);
             this.Controls.Add(this.numBaseAttack);
             this.Controls.Add(this.numBaseDefense);
-            this.Controls.Add(this.numPokeNum);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnCancel);
@@ -349,7 +345,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmAddForm";
             this.Text = "New Form";
-            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).EndInit();
+            this.Load += new System.EventHandler(this.frmAddForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numBaseDefense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseAttack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseHealth)).EndInit();
@@ -376,7 +372,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.NumericUpDown numPokeNum;
         private System.Windows.Forms.NumericUpDown numBaseDefense;
         private System.Windows.Forms.NumericUpDown numBaseAttack;
         private System.Windows.Forms.NumericUpDown numBaseHealth;
@@ -385,5 +380,6 @@
         private System.Windows.Forms.NumericUpDown numBaseSpeed;
         private Data.PokemonDataSetTableAdapters.FormsTableAdapter formsTableAdapter;
         private Data.PokemonDataSet pokemonDataSet;
+        private System.Windows.Forms.Label lblPokeNum;
     }
 }

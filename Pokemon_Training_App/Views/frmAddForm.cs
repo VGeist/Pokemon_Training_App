@@ -12,9 +12,12 @@ namespace Pokemon_Training_App.Views
 {
     public partial class frmAddForm : Form
     {
-        public frmAddForm()
+        int PokeNum;
+
+        public frmAddForm(int pokeNum)
         {
             InitializeComponent();
+            PokeNum = pokeNum;
         }
 
         /*** HELPERS ***/
@@ -40,6 +43,12 @@ namespace Pokemon_Training_App.Views
         }
 
         /*** EVENTS ***/
+        private void frmAddForm_Load(object sender, EventArgs e)
+        {
+            // set poke num display
+            lblPokeNum.Text = '#' + PokeNum.ToString();
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // validate then insert data into database
@@ -50,7 +59,7 @@ namespace Pokemon_Training_App.Views
                 {
                     // insert data into table
                     formsTableAdapter.InsertForm(
-                        (int)numPokeNum.Value,
+                        PokeNum,
                         txtFormName.Text,
                         (int)numBaseHealth.Value,
                         (int)numBaseAttack.Value,

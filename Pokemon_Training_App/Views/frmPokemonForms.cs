@@ -53,7 +53,7 @@ namespace Pokemon_Training_App.Views
         private void btnNew_Click(object sender, EventArgs e)
         {
             // open frmAddForm
-            frmAddForm form = new frmAddForm();
+            frmAddForm form = new frmAddForm(PokeNum);
             form.ShowDialog();
         }
 

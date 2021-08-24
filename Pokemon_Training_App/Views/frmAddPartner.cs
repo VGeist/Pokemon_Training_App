@@ -20,7 +20,7 @@ namespace Pokemon_Training_App.Views
         private void btnAddForm_Click(object sender, EventArgs e)
         {
             // open frmAddForm as a modal window
-            frmAddForm form = new frmAddForm();
+            frmAddForm form = new frmAddForm(-1);
             form.ShowDialog();
         }
 
