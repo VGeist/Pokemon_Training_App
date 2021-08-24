@@ -71,5 +71,80 @@ namespace Pokemon_Training_App.Classes
             _baseSpeed = baseSpeed;
             _formName = name;
         }
+
+        #region ErrorChecking
+        // function to validate all fields, returns a list of errors
+        public static string[] GetErrors(string formName,
+                                        int baseHealth, 
+                                        int baseAttack,
+                                        int baseDefense,
+                                        int baseSpAttack,
+                                        int baseSpDefense,
+                                        int baseSpeed,
+                                        string formNameLabel = "Form Name",
+                                        string baseHealthLabel = "Base Health",
+                                        string baseAttackLabel = "Base Attack",
+                                        string baseDefenseLabel = "Base Defense",
+                                        string baseSpAttackLabel = "Base Sp. Attack",
+                                        string baseSpDefenseLabel = "Base Sp. Defense",
+                                        string baseSpeedLabel = "Base Speed")
+        {
+            List<string> errors = new List<string>();
+
+            // check form name
+            errors.Add(GetFormNameError(formName, formNameLabel));
+
+            // check base health
+            errors.Add(GetBaseStatError(baseHealth, baseHealthLabel));
+
+            // check base attack
+            errors.Add(GetBaseStatError(baseAttack, baseAttackLabel));
+
+            // check base defense
+            errors.Add(GetBaseStatError(baseDefense, baseDefenseLabel));
+
+            // check base sp attack
+            errors.Add(GetBaseStatError(baseSpAttack, baseSpAttackLabel));
+
+            // check base sp defense
+            errors.Add(GetBaseStatError(baseSpDefense, baseSpDefenseLabel));
+
+            // check base speed
+            errors.Add(GetBaseStatError(baseSpeed, baseSpeedLabel));
+
+            // filter out NULL values
+            errors.RemoveAll(error => error == null);
+
+            // convert to array
+            string[] output = errors.ToArray();
+
+            return output;
+        }
+        
+        // funcitons that check one property - return error messages, if no error is found retuns null 
+        public static string GetBaseStatError(int stat, string displayString)
+        {
+            // checks that a value is valid for 'stats', if not valid sends an error to Errors
+            if (stat <= 0)
+            {
+                return displayString + " must be greater than zero.";
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static string GetFormNameError(string formName, string displayString)
+        {
+            if (String.IsNullOrEmpty(formName))
+            {
+                return displayString + " is required.";
+            } else
+            {
+                return null;
+            }
+        }
+        #endregion
     }
 }

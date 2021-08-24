@@ -381,10 +381,9 @@ namespace Pokemon_Training_App.Classes
             return ev / 4;
         }
 
-        /*****************
-         * Error checking
+        #region Error Checking
         // function to validate all Partner fields, returns a list of errors
-        public override string[] GetErrors(string healthStatLabel = "Health",
+        public string[] GetErrors(string healthStatLabel = "Health",
                                         string attackStatLabel = "Attack",
                                         string defenseStatLabel = "Defense",
                                         string spAttackStatLabel = "Sp. Attack",
@@ -398,14 +397,6 @@ namespace Pokemon_Training_App.Classes
 
             // check level
             errors.Add(GetLevelError());
-
-            // stat error checking
-            errors.Add(GetStatError(Health, healthStatLabel));
-            errors.Add(GetStatError(Attack, attackStatLabel));
-            errors.Add(GetStatError(Defense, defenseStatLabel));
-            errors.Add(GetStatError(SpAttack, spAttackStatLabel));
-            errors.Add(GetStatError(SpDefense, spDefenseStatLabel));
-            errors.Add(GetStatError(Speed, speedStatLabel));
 
             // EV error checking
             errors.Add(GetEVError(this.HealthEV, healthStatLabel + " EV"));
@@ -472,7 +463,7 @@ namespace Pokemon_Training_App.Classes
             {
                 return "Nickname is required.";
             }
-            else if (this.Nickname == "undefined")
+            else if (String.Equals(this.Nickname, "undefined", StringComparison.OrdinalIgnoreCase))
             {
                 return "Nickname cannot be 'undefined'";
             }
@@ -481,7 +472,6 @@ namespace Pokemon_Training_App.Classes
                 return null;
             }
         }
-        * END OF ERROR CHECKING
-        ************************/
+        #endregion
     }
 }

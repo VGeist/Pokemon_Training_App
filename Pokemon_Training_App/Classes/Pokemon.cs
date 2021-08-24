@@ -33,10 +33,13 @@ namespace Pokemon_Training_App.Classes
             this.FormList = species.FormList;
         }
 
-        /*****************
-         * ERROR CHECKING
+        #region Error Checking
         // function to validate all fields, returns a list of errors
-        public virtual string[] GetErrors(string baseHealthLabel = "Base Health", 
+        public static string[] GetErrors(int pokeNum,
+                                        string pokeName,
+                                        string numberLabel = "Pokemon Number",
+                                        string nameLabel = "Pokemon Name",
+                                        string baseHealthLabel = "Base Health", 
                                         string baseAttackLabel = "Base Attack", 
                                         string baseDefenseLabel = "Base Defense", 
                                         string baseSpAttackLabel = "Base Sp. Attack",
@@ -46,28 +49,10 @@ namespace Pokemon_Training_App.Classes
             List<string> errors = new List<string>();
 
             // check number
-            errors.Add(GetNumberError());
+            errors.Add(GetNumberError(pokeNum));
 
             // check name
-            errors.Add(GetNameError());
-
-            // check base health
-            errors.Add(GetStatError(this.BaseHealth, baseHealthLabel));
-
-            // check base attack
-            errors.Add(GetStatError(this.BaseAttack, baseAttackLabel));
-
-            // check base defense
-            errors.Add(GetStatError(this.BaseDefense, baseDefenseLabel));
-
-            // check base sp attack
-            errors.Add(GetStatError(this.BaseSpAttack, baseSpAttackLabel));
-
-            // check base sp defense
-            errors.Add(GetStatError(this.BaseSpDefense, baseSpDefenseLabel));
-
-            // check base speed
-            errors.Add(GetStatError(this.BaseSpeed, baseSpeedLabel));
+            errors.Add(GetNameError(pokeName));
 
             // filter out NULL values
             errors.RemoveAll(error => error == null);
@@ -79,10 +64,9 @@ namespace Pokemon_Training_App.Classes
         }
 
         // funcitons that check one property - return error messages, if no error is found retuns null 
-        public string GetNumberError()
+        public static string GetNumberError(int num, string displayString = "Pokemon number")
         {
-            string displayString = "Pokemon number";
-            if (PokeNumber < 0) {
+            if (num < 0) {
                 return displayString + " must be positive.";
             }
             else {
@@ -90,14 +74,13 @@ namespace Pokemon_Training_App.Classes
             }
         }
 
-        public string GetNameError()
+        public static string GetNameError(string nameString, string displayString = "Pokemon name")
         {
             // if invalid returns false and sends error to Erros
-            string displayString = "Name";
-            if (PokeName.Length == 0) {
+            if (String.IsNullOrEmpty(nameString)) {
                 return displayString + " is required.";
             }
-            else if ( PokeName == "undefined" )
+            else if (String.Equals(nameString, "undefined", StringComparison.OrdinalIgnoreCase))
             {
                 return displayString + " cannot be 'undefined'";
             }
@@ -105,20 +88,6 @@ namespace Pokemon_Training_App.Classes
                 return null;
             }
         }
-
-        public string GetStatError(float stat, string displayString)
-        {
-            // checks that a value is valid for 'stats', if not valid sends an error to Errors
-            if (stat <= 0)
-            {
-                return displayString + " must be greater than zero.";
-            }
-            else
-            {
-                return null;
-            }
-        }
-        * END OF ERROR CHECKING
-        ***********************/
+        #endregion
     }
 }
