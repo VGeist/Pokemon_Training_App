@@ -257,7 +257,7 @@ SELECT FormID, PokeNum, Name, BaseHealth, BaseAttack, BaseDefense, BaseSpAttack,
               <Mapping SourceColumn="BaseSpeed" DataSetColumn="BaseSpeed" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="PokemonDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteByID" Modifier="Public" Name="DeleteByID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteByID">
+              <DbSource ConnectionRef="PokemonDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteByID" Modifier="Public" Name="DeleteByID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteByID">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Forms
@@ -268,7 +268,7 @@ WHERE        (FormID = @FormID);</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="PokemonDBConnectionString (Settings)" DbObjectName="dbo.Forms" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByID">
+              <DbSource ConnectionRef="PokemonDBConnectionString (Settings)" DbObjectName="dbo.Forms" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT FormID, PokeNum, Name, BaseHealth, BaseAttack, BaseDefense, BaseSpAttack, BaseSpDefense, BaseSpeed 
@@ -280,7 +280,7 @@ WHERE (FormID = @FormID);</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PokemonDBConnectionString (Settings)" DbObjectName="dbo.Forms" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByPokeNum" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByPokeNum" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByPokeNum">
+              <DbSource ConnectionRef="PokemonDBConnectionString (Settings)" DbObjectName="dbo.Forms" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByPokeNum" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByPokeNum" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByPokeNum">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        FormID, PokeNum, Name, BaseHealth, BaseAttack, BaseDefense, BaseSpAttack, BaseSpDefense, BaseSpeed
@@ -292,7 +292,7 @@ WHERE        (PokeNum = @PokeNum);</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PokemonDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertForm" Modifier="Public" Name="InsertForm" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertForm">
+              <DbSource ConnectionRef="PokemonDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertForm" Modifier="Public" Name="InsertForm" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InsertForm">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Forms
@@ -311,7 +311,24 @@ VALUES(@PokeNum,@Name,@BaseHealth,@BaseAttack,@BaseDefense,@BaseSpAttack,@BaseSp
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="PokemonDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateForm" Modifier="Public" Name="UpdateForm" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateForm">
+              <DbSource ConnectionRef="PokemonDBConnectionString (Settings)" DbObjectName="dbo.Forms" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="UpdateForm" Modifier="Public" Name="UpdateForm" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateForm">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       Forms
+SET                Name = @Name, BaseHealth = @BaseHealth, BaseAttack = @BaseAttack, BaseDefense = @BaseDefense, BaseSpAttack = @BaseSpAttack, BaseSpDefense = @BaseSpDefense, BaseSpeed = @BaseSpeed
+WHERE        (FormID = @FormID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="FormID" ColumnName="FormID" DataSourceName="[E:\PROJECTS\POKEMON TRAINING APP\APP\POKEMON_TRAINING_APP\POKEMON_TRAINING_APP\DATA\POKEMON.MDF].dbo.Forms" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@FormID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="FormID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Name" ColumnName="Name" DataSourceName="[E:\PROJECTS\POKEMON TRAINING APP\APP\POKEMON_TRAINING_APP\POKEMON_TRAINING_APP\DATA\POKEMON.MDF].dbo.Forms" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="BaseHealth" ColumnName="BaseHealth" DataSourceName="[E:\PROJECTS\POKEMON TRAINING APP\APP\POKEMON_TRAINING_APP\POKEMON_TRAINING_APP\DATA\POKEMON.MDF].dbo.Forms" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@BaseHealth" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="BaseHealth" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="BaseAttack" ColumnName="BaseAttack" DataSourceName="[E:\PROJECTS\POKEMON TRAINING APP\APP\POKEMON_TRAINING_APP\POKEMON_TRAINING_APP\DATA\POKEMON.MDF].dbo.Forms" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@BaseAttack" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="BaseAttack" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="BaseDefense" ColumnName="BaseDefense" DataSourceName="[E:\PROJECTS\POKEMON TRAINING APP\APP\POKEMON_TRAINING_APP\POKEMON_TRAINING_APP\DATA\POKEMON.MDF].dbo.Forms" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@BaseDefense" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="BaseDefense" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="BaseSpAttack" ColumnName="BaseSpAttack" DataSourceName="[E:\PROJECTS\POKEMON TRAINING APP\APP\POKEMON_TRAINING_APP\POKEMON_TRAINING_APP\DATA\POKEMON.MDF].dbo.Forms" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@BaseSpAttack" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="BaseSpAttack" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="BaseSpDefense" ColumnName="BaseSpDefense" DataSourceName="[E:\PROJECTS\POKEMON TRAINING APP\APP\POKEMON_TRAINING_APP\POKEMON_TRAINING_APP\DATA\POKEMON.MDF].dbo.Forms" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@BaseSpDefense" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="BaseSpDefense" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="BaseSpeed" ColumnName="BaseSpeed" DataSourceName="[E:\PROJECTS\POKEMON TRAINING APP\APP\POKEMON_TRAINING_APP\POKEMON_TRAINING_APP\DATA\POKEMON.MDF].dbo.Forms" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@BaseSpeed" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="BaseSpeed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Forms

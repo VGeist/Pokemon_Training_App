@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.slblFormName = new System.Windows.Forms.Label();
             this.txtFormName = new System.Windows.Forms.TextBox();
@@ -46,33 +46,31 @@
             this.numBaseHealth = new System.Windows.Forms.NumericUpDown();
             this.numBaseAttack = new System.Windows.Forms.NumericUpDown();
             this.numBaseDefense = new System.Windows.Forms.NumericUpDown();
-            this.numPokeNum = new System.Windows.Forms.NumericUpDown();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.lblPokeNum = new System.Windows.Forms.Label();
+            this.pokemonDataSet = new Pokemon_Training_App.Data.PokemonDataSet();
+            this.formsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.formsTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.FormsTableAdapter();
+            this.tableAdapterManager = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpDefense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseHealth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseDefense)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnClear
+            // btnConfirm
             // 
-            this.btnClear.Location = new System.Drawing.Point(218, 359);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 30);
-            this.btnClear.TabIndex = 10;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(137, 359);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 30);
-            this.btnAdd.TabIndex = 9;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnConfirm.Location = new System.Drawing.Point(125, 359);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(87, 30);
+            this.btnConfirm.TabIndex = 9;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnCancel
             // 
@@ -82,6 +80,7 @@
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // slblFormName
             // 
@@ -94,6 +93,7 @@
             // 
             // txtFormName
             // 
+            this.txtFormName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.formsBindingSource, "Name", true));
             this.txtFormName.Location = new System.Drawing.Point(190, 54);
             this.txtFormName.Name = "txtFormName";
             this.txtFormName.Size = new System.Drawing.Size(185, 30);
@@ -164,6 +164,7 @@
             // 
             // numBaseSpeed
             // 
+            this.numBaseSpeed.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.formsBindingSource, "BaseSpeed", true));
             this.numBaseSpeed.Location = new System.Drawing.Point(190, 314);
             this.numBaseSpeed.Maximum = new decimal(new int[] {
             255,
@@ -186,6 +187,7 @@
             // 
             // numBaseSpDefense
             // 
+            this.numBaseSpDefense.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.formsBindingSource, "BaseSpDefense", true));
             this.numBaseSpDefense.Location = new System.Drawing.Point(190, 271);
             this.numBaseSpDefense.Maximum = new decimal(new int[] {
             255,
@@ -208,6 +210,7 @@
             // 
             // numBaseSpAttack
             // 
+            this.numBaseSpAttack.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.formsBindingSource, "BaseSpAttack", true));
             this.numBaseSpAttack.Location = new System.Drawing.Point(190, 228);
             this.numBaseSpAttack.Maximum = new decimal(new int[] {
             255,
@@ -230,6 +233,7 @@
             // 
             // numBaseHealth
             // 
+            this.numBaseHealth.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.formsBindingSource, "BaseHealth", true));
             this.numBaseHealth.Location = new System.Drawing.Point(190, 99);
             this.numBaseHealth.Maximum = new decimal(new int[] {
             255,
@@ -252,6 +256,7 @@
             // 
             // numBaseAttack
             // 
+            this.numBaseAttack.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.formsBindingSource, "BaseAttack", true));
             this.numBaseAttack.Location = new System.Drawing.Point(190, 142);
             this.numBaseAttack.Maximum = new decimal(new int[] {
             255,
@@ -274,6 +279,7 @@
             // 
             // numBaseDefense
             // 
+            this.numBaseDefense.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.formsBindingSource, "BaseDefense", true));
             this.numBaseDefense.Location = new System.Drawing.Point(190, 185);
             this.numBaseDefense.Maximum = new decimal(new int[] {
             255,
@@ -294,32 +300,63 @@
             0,
             0});
             // 
-            // numPokeNum
+            // btnDelete
             // 
-            this.numPokeNum.Location = new System.Drawing.Point(190, 13);
-            this.numPokeNum.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numPokeNum.Name = "numPokeNum";
-            this.numPokeNum.Size = new System.Drawing.Size(185, 30);
-            this.numPokeNum.TabIndex = 1;
+            this.btnDelete.Location = new System.Drawing.Point(218, 359);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 30);
+            this.btnDelete.TabIndex = 10;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // lblPokeNum
+            // 
+            this.lblPokeNum.AutoSize = true;
+            this.lblPokeNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.formsBindingSource, "PokeNum", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "\\#000"));
+            this.lblPokeNum.Location = new System.Drawing.Point(186, 15);
+            this.lblPokeNum.Name = "lblPokeNum";
+            this.lblPokeNum.Size = new System.Drawing.Size(22, 22);
+            this.lblPokeNum.TabIndex = 73;
+            this.lblPokeNum.Text = "#";
+            // 
+            // pokemonDataSet
+            // 
+            this.pokemonDataSet.DataSetName = "PokemonDataSet";
+            this.pokemonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // formsBindingSource
+            // 
+            this.formsBindingSource.DataMember = "Forms";
+            this.formsBindingSource.DataSource = this.pokemonDataSet;
+            // 
+            // formsTableAdapter
+            // 
+            this.formsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.FormsTableAdapter = this.formsTableAdapter;
+            this.tableAdapterManager.NaturesTableAdapter = null;
+            this.tableAdapterManager.PartnersTableAdapter = null;
+            this.tableAdapterManager.PokemonTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Pokemon_Training_App.Data.PokemonDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // frmEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 401);
+            this.Controls.Add(this.lblPokeNum);
             this.Controls.Add(this.numBaseSpeed);
             this.Controls.Add(this.numBaseSpDefense);
             this.Controls.Add(this.numBaseSpAttack);
             this.Controls.Add(this.numBaseHealth);
             this.Controls.Add(this.numBaseAttack);
             this.Controls.Add(this.numBaseDefense);
-            this.Controls.Add(this.numPokeNum);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.slblFormName);
             this.Controls.Add(this.txtFormName);
@@ -334,22 +371,22 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmEditForm";
             this.Text = "Edit Form";
+            this.Load += new System.EventHandler(this.frmEditForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpDefense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpAttack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseHealth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseAttack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseDefense)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label slblFormName;
         private System.Windows.Forms.TextBox txtFormName;
@@ -366,6 +403,11 @@
         private System.Windows.Forms.NumericUpDown numBaseHealth;
         private System.Windows.Forms.NumericUpDown numBaseAttack;
         private System.Windows.Forms.NumericUpDown numBaseDefense;
-        private System.Windows.Forms.NumericUpDown numPokeNum;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label lblPokeNum;
+        private Data.PokemonDataSet pokemonDataSet;
+        private System.Windows.Forms.BindingSource formsBindingSource;
+        private Data.PokemonDataSetTableAdapters.FormsTableAdapter formsTableAdapter;
+        private Data.PokemonDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

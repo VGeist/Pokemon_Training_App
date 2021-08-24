@@ -3715,12 +3715,12 @@ SELECT FormID, PokeNum, Name, BaseHealth, BaseAttack, BaseDefense, BaseSpAttack,
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BaseSpeed", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "BaseSpeed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"UPDATE       Forms
-SET               PokeNum = @PokeNum, Name = @Name, BaseHealth = @BaseHealth, BaseAttack = @BaseAttack, BaseDefense = @BaseDefense, BaseSpAttack = @BaseSpAttack, BaseSpDefense = @BaseSpDefense, BaseSpeed = @BaseSpeed
-WHERE        (FormID = @FormID);";
+            this._commandCollection[5].CommandText = "UPDATE       Forms\r\nSET                Name = @Name, BaseHealth = @BaseHealth, Ba" +
+                "seAttack = @BaseAttack, BaseDefense = @BaseDefense, BaseSpAttack = @BaseSpAttack" +
+                ", BaseSpDefense = @BaseSpDefense, BaseSpeed = @BaseSpeed\r\nWHERE        (FormID =" +
+                " @FormID)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FormID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FormID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PokeNum", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PokeNum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BaseHealth", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "BaseHealth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BaseAttack", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "BaseAttack", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4035,23 +4035,21 @@ WHERE        (FormID = @FormID);";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateForm(int FormID, int PokeNum, string Name, int BaseHealth, int BaseAttack, int BaseDefense, int BaseSpAttack, int BaseSpDefense, int BaseSpeed) {
+        public virtual int UpdateForm(int FormID, string Name, int BaseHealth, int BaseAttack, int BaseDefense, int BaseSpAttack, int BaseSpDefense, int BaseSpeed) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             command.Parameters[0].Value = ((int)(FormID));
-            command.Parameters[1].Value = ((int)(PokeNum));
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
             else {
-                command.Parameters[2].Value = ((string)(Name));
+                command.Parameters[1].Value = ((string)(Name));
             }
-            command.Parameters[3].Value = ((int)(BaseHealth));
-            command.Parameters[4].Value = ((int)(BaseAttack));
-            command.Parameters[5].Value = ((int)(BaseDefense));
-            command.Parameters[6].Value = ((int)(BaseSpAttack));
-            command.Parameters[7].Value = ((int)(BaseSpDefense));
-            command.Parameters[8].Value = ((int)(BaseSpeed));
+            command.Parameters[2].Value = ((int)(BaseHealth));
+            command.Parameters[3].Value = ((int)(BaseAttack));
+            command.Parameters[4].Value = ((int)(BaseDefense));
+            command.Parameters[5].Value = ((int)(BaseSpAttack));
+            command.Parameters[6].Value = ((int)(BaseSpDefense));
+            command.Parameters[7].Value = ((int)(BaseSpeed));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
