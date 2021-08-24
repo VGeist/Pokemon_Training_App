@@ -67,7 +67,6 @@ namespace Pokemon_Training_App.Views
                         (int)numBaseSpDefense.Value,
                         (int)numBaseSpeed.Value
                         );
-                    //formsTableAdapter.Update(pokemonDataSet);
 
                     // success message
                     MessageBox.Show("Successful operation!", "Success", MessageBoxButtons.OK);

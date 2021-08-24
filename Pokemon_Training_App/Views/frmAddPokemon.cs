@@ -30,10 +30,13 @@ namespace Pokemon_Training_App.Views
                 }
             }
 
-            // check pokename is not null or empty
-            if (String.IsNullOrEmpty(txtPokemonName.Text))
+            // check textboxes are not empty
+            foreach (TextBox textBox in this.Controls.OfType<TextBox>())
             {
-                return false;
+                if (String.IsNullOrEmpty(textBox.Text))
+                {
+                    return false;
+                }
             }
 
             // valid
@@ -49,15 +52,26 @@ namespace Pokemon_Training_App.Views
                 // do insert
                 try
                 {
+                    // add pokemon data
                     pokemonTableAdapter.Insert((int)numPokeNum.Value, txtPokemonName.Text);
-                    pokemonTableAdapter.Update(pokemonDataSet);
+
+                    // add form data
+                    formsTableAdapter.InsertForm((int)numPokeNum.Value, txtFormName.Text, (int)numBaseHealth.Value, (int)numBaseAttack.Value, (int)numBaseDefense.Value, (int)numBaseSpAttack.Value, (int)numBaseSpDefense.Value, (int)numBaseSpeed.Value);
+
                     MessageBox.Show("Successful operation!", "Success", MessageBoxButtons.OK);
                 } catch
                 {
                     MessageBox.Show("There was a problem with the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
-            } else
+                // prepare inputs for new entry
+                numPokeNum.Value++;
+                txtPokemonName.Clear();
+                txtPokemonName.Focus();
+                txtFormName.Text = "default";
+            }
+            else
             {
                 // display error message
                 MessageBox.Show("Invalid Inputs", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -71,6 +85,9 @@ namespace Pokemon_Training_App.Views
             {
                 numericUpDown.Value = 1;
             }
+
+            // set form name to 'default'
+            txtFormName.Text = "default";
 
             // clear text from name textbox
             txtPokemonName.Clear();

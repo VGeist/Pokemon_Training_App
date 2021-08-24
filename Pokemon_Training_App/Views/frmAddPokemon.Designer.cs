@@ -54,6 +54,7 @@
             this.numBaseSpDefense = new System.Windows.Forms.NumericUpDown();
             this.numBaseSpeed = new System.Windows.Forms.NumericUpDown();
             this.txtFormName = new System.Windows.Forms.TextBox();
+            this.formsTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.FormsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).BeginInit();
@@ -357,6 +358,11 @@
             this.txtFormName.Name = "txtFormName";
             this.txtFormName.Size = new System.Drawing.Size(185, 30);
             this.txtFormName.TabIndex = 3;
+            this.txtFormName.Text = "default";
+            // 
+            // formsTableAdapter
+            // 
+            this.formsTableAdapter.ClearBeforeFill = true;
             // 
             // frmAddPokemon
             // 
@@ -430,5 +436,6 @@
         private System.Windows.Forms.NumericUpDown numBaseSpDefense;
         private System.Windows.Forms.NumericUpDown numBaseSpeed;
         private System.Windows.Forms.TextBox txtFormName;
+        private Data.PokemonDataSetTableAdapters.FormsTableAdapter formsTableAdapter;
     }
 }
