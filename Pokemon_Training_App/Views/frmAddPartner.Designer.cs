@@ -72,6 +72,10 @@
             this.chkHasPokerus = new System.Windows.Forms.CheckBox();
             this.numPokeNum = new System.Windows.Forms.NumericUpDown();
             this.numLevel = new System.Windows.Forms.NumericUpDown();
+            this.partnersTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.PartnersTableAdapter();
+            this.pokemonDataSet = new Pokemon_Training_App.Data.PokemonDataSet();
+            this.naturesTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.NaturesTableAdapter();
+            this.formsTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.FormsTableAdapter();
             this.tabStats.SuspendLayout();
             this.tpgStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSpeedStat)).BeginInit();
@@ -89,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numHealthEV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -633,6 +638,23 @@
             0,
             0});
             // 
+            // partnersTableAdapter
+            // 
+            this.partnersTableAdapter.ClearBeforeFill = true;
+            // 
+            // pokemonDataSet
+            // 
+            this.pokemonDataSet.DataSetName = "PokemonDataSet";
+            this.pokemonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // naturesTableAdapter
+            // 
+            this.naturesTableAdapter.ClearBeforeFill = true;
+            // 
+            // formsTableAdapter
+            // 
+            this.formsTableAdapter.ClearBeforeFill = true;
+            // 
             // frmAddPartner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -677,6 +699,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numHealthEV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -727,5 +750,9 @@
         private System.Windows.Forms.NumericUpDown numAttackEV;
         private System.Windows.Forms.NumericUpDown numHealthEV;
         private System.Windows.Forms.NumericUpDown numLevel;
+        private Data.PokemonDataSetTableAdapters.PartnersTableAdapter partnersTableAdapter;
+        private Data.PokemonDataSet pokemonDataSet;
+        private Data.PokemonDataSetTableAdapters.NaturesTableAdapter naturesTableAdapter;
+        private Data.PokemonDataSetTableAdapters.FormsTableAdapter formsTableAdapter;
     }
 }

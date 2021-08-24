@@ -16,7 +16,15 @@ namespace Pokemon_Training_App.Views
         {
             InitializeComponent();
         }
+        
+        /*** HELPERS ***/
+        private bool inputsValid()
+        {
+            // validate
+            return true;
+        }
 
+        /*** EVENTS ***/
         private void btnAddForm_Click(object sender, EventArgs e)
         {
             // open frmAddForm as a modal window
