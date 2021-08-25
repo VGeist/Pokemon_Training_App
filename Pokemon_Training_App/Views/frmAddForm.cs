@@ -22,27 +22,6 @@ namespace Pokemon_Training_App.Views
         }
 
         /*** HELPERS ***/
-        private bool inputsValid(out string[] errList)
-        {
-            // check number values are positive
-            errList = PokeForm.GetErrors(txtFormName.Text, 
-                                                (int)numBaseHealth.Value,
-                                                (int)numBaseAttack.Value,
-                                                (int)numBaseDefense.Value,
-                                                (int)numBaseSpAttack.Value,
-                                                (int)numBaseSpDefense.Value, 
-                                                (int)numBaseSpeed.Value);
-
-            if (errList.Length > 0)
-            {
-                // an error was found, invalid
-                return false;
-            } else
-            {
-                // no errors, valid
-                return true;
-            }
-        }
 
         /*** EVENTS ***/
         private void frmAddForm_Load(object sender, EventArgs e)
@@ -53,9 +32,15 @@ namespace Pokemon_Training_App.Views
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string[] errors;
-            // validate then insert data into database
-            if (inputsValid(out errors))
+            string[] errors = PokeForm.GetErrors(txtFormName.Text,
+                                                (int)numBaseHealth.Value,
+                                                (int)numBaseAttack.Value,
+                                                (int)numBaseDefense.Value,
+                                                (int)numBaseSpAttack.Value,
+                                                (int)numBaseSpDefense.Value,
+                                                (int)numBaseSpeed.Value); ;
+
+            if (errors.Length == 0)
             {
                 // no errors, insert data
                 try
@@ -71,7 +56,6 @@ namespace Pokemon_Training_App.Views
                         (int)numBaseSpDefense.Value,
                         (int)numBaseSpeed.Value
                         );
-                    //formsTableAdapter.Update(pokemonDataSet);
 
                     // success message
                     MessageBox.Show("Successful operation!", "Success", MessageBoxButtons.OK);
@@ -87,20 +71,7 @@ namespace Pokemon_Training_App.Views
             {
                 // errors have occured
                 // build error message
-                string errorMsg = "There is a problem with this information:" + Environment.NewLine;
-
-                for (int i = 0; i < errors.Length; i++)
-                {
-                    // add error
-                    errorMsg += errors[i];
-
-                    // check if there is another error
-                    if (i < errors.Length)
-                    {
-                        // another error exists, put on a new line
-                        errorMsg += Environment.NewLine;
-                    }
-                }
+                string errorMsg = Program.buildErrorListMessage(errors);
 
                 // display message
                 MessageBox.Show(errorMsg, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
