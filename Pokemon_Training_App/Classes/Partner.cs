@@ -18,7 +18,7 @@ namespace Pokemon_Training_App.Classes
         private string _favoredStat;   // used to calculaate IVs, MUST match the name of the stat EXACTLY
         private string _hinderedStat;  // used to calculate IVs, MUST match the name of the stat EXACTLY
 
-        private Form _currentForm;
+        private PokeForm _currentForm;
 
         public bool HasPokerus { get; set; }
 
@@ -158,7 +158,7 @@ namespace Pokemon_Training_App.Classes
             _hinderedStat = hindered;
         }
 
-        public void SetForm(Form newForm)
+        public void SetForm(PokeForm newForm)
         {
             // set current form of this parter to the new form
             // check if this pokemon can become the new form
@@ -202,7 +202,7 @@ namespace Pokemon_Training_App.Classes
             FormToDefault();
         }
 
-        public void Evolve(Pokemon nextStage, int hp, int attack, int defense, int spAttack, int spDefense, int speed, Form form)
+        public void Evolve(Pokemon nextStage, int hp, int attack, int defense, int spAttack, int spDefense, int speed, PokeForm form)
         {
             // Evolve a pokemon
             Evolve(nextStage, hp, attack, defense, spAttack, spDefense, speed);

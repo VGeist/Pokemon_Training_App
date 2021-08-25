@@ -11,12 +11,12 @@ namespace Pokemon_Training_App.Classes
         /*** POKEMON PROPERTIES ***/
         public int PokeNumber { get; set; }
         public string PokeName { get; set; }
-        public Form[] FormList { get; set; }
+        public PokeForm[] FormList { get; set; }
 
         /*** CONSTRUCTORS ***/
         protected Pokemon() { }
 
-        public Pokemon(int number, string name, Form[] forms)
+        public Pokemon(int number, string name, PokeForm[] forms)
         {
             PokeNumber = number;
             PokeName = name;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pokemon_Training_App.Classes
 {
-    class Form
+    class PokeForm
     {
         // Properties
         private int _baseHealth;
@@ -18,7 +18,7 @@ namespace Pokemon_Training_App.Classes
         private string _formName;
 
         /** CONSTRUCTORS **/
-        public Form(int baseHealth, int baseAttack, int baseDefense, int baseSpAttack, int baseSpDefense, int baseSpeed, string name = "Default")
+        public PokeForm(int baseHealth, int baseAttack, int baseDefense, int baseSpAttack, int baseSpDefense, int baseSpeed, string name = "Default")
         {
             Change(baseHealth, baseAttack, baseDefense, baseSpAttack, baseSpDefense, baseSpeed, name);
         }

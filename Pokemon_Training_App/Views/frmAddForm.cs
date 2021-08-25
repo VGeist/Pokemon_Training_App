@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pokemon_Training_App.Classes;
 
 namespace Pokemon_Training_App.Views
 {
@@ -21,25 +22,26 @@ namespace Pokemon_Training_App.Views
         }
 
         /*** HELPERS ***/
-        private bool inputsValid()
+        private bool inputsValid(out string[] errList)
         {
             // check number values are positive
-            foreach (NumericUpDown numericUpDown in this.Controls.OfType<NumericUpDown>())
-            {
-                if (numericUpDown.Value < 0)
-                {
-                    return false;
-                }
-            }
+            errList = PokeForm.GetErrors(txtFormName.Text, 
+                                                (int)numBaseHealth.Value,
+                                                (int)numBaseAttack.Value,
+                                                (int)numBaseDefense.Value,
+                                                (int)numBaseSpAttack.Value,
+                                                (int)numBaseSpDefense.Value, 
+                                                (int)numBaseSpeed.Value);
 
-            // check name is not null or empty
-            if (String.IsNullOrEmpty(txtFormName.Text))
+            if (errList.Length > 0)
             {
+                // an error was found, invalid
                 return false;
+            } else
+            {
+                // no errors, valid
+                return true;
             }
-
-            // valid
-            return true;
         }
 
         /*** EVENTS ***/
@@ -51,10 +53,11 @@ namespace Pokemon_Training_App.Views
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string[] errors;
             // validate then insert data into database
-            if (inputsValid())
+            if (inputsValid(out errors))
             {
-                // valid inputs, try to send to database
+                // no errors, insert data
                 try
                 {
                     // insert data into table
@@ -82,8 +85,25 @@ namespace Pokemon_Training_App.Views
                 }
             } else
             {
-                // invalid, display error message
-                MessageBox.Show("Inputs invalid.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // errors have occured
+                // build error message
+                string errorMsg = "There is a problem with this information:" + Environment.NewLine;
+
+                for (int i = 0; i < errors.Length; i++)
+                {
+                    // add error
+                    errorMsg += errors[i];
+
+                    // check if there is another error
+                    if (i < errors.Length)
+                    {
+                        // another error exists, put on a new line
+                        errorMsg += Environment.NewLine;
+                    }
+                }
+
+                // display message
+                MessageBox.Show(errorMsg, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
