@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pokemon_Training_App.Classes;
 
 namespace Pokemon_Training_App.Views
 {
@@ -24,17 +25,6 @@ namespace Pokemon_Training_App.Views
         }
 
         /*** HELPERS ***/
-        private bool InputsValid()
-        {
-            // check that pokeName input is valid
-            if (String.IsNullOrEmpty(txtPokemonName.Text))
-            {
-                // invalid
-                return false;
-            }
-
-            return true;
-        }
 
         /*** EVENTS ***/
         private void frmEditPokemon_Load(object sender, EventArgs e)
@@ -52,8 +42,11 @@ namespace Pokemon_Training_App.Views
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (InputsValid())
+            string[] errors = Pokemon.GetErrors(PokeNum, txtPokemonName.Text);
+
+            if (errors.Length == 0)
             {
+                // no errors, do update
                 try
                 {
                     string newName = txtPokemonName.Text;
@@ -69,8 +62,9 @@ namespace Pokemon_Training_App.Views
                 }
             } else
             {
-                // invalid message
-                MessageBox.Show("Invalid inputs.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // errors, build message and display
+                string errorMsg = Program.buildErrorListMessage(errors);
+                MessageBox.Show(errorMsg, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -19,37 +19,23 @@ namespace Pokemon_Training_App.Views
         }
 
         /*** HELPERS ***/
-        private bool InputsValid()
-        {
-            // check number values are positive
-            foreach (NumericUpDown numericUpDown in this.Controls.OfType<NumericUpDown>())
-            {
-                if (numericUpDown.Value < 0)
-                {
-                    return false;
-                }
-            }
-
-            // check textboxes are not empty
-            foreach (TextBox textBox in this.Controls.OfType<TextBox>())
-            {
-                if (String.IsNullOrEmpty(textBox.Text))
-                {
-                    return false;
-                }
-            }
-
-            // valid
-            return true;
-        }
 
         /*** EVENTS ***/
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            // validate data,
-            if (InputsValid())
+            // get errors
+            string[] pokeErrors = Pokemon.GetErrors((int)numPokeNum.Value, txtPokemonName.Text);
+            string[] formErrors = PokeForm.GetErrors(txtFormName.Text, (int)numBaseHealth.Value, (int)numBaseAttack.Value, (int)numBaseDefense.Value, (int)numBaseSpAttack.Value, (int)numBaseSpDefense.Value, (int)numBaseSpeed.Value);
+
+            // put errors into one list
+            string[] errors = new string[pokeErrors.Length + formErrors.Length];
+            pokeErrors.CopyTo(errors, 0);
+            formErrors.CopyTo(errors, pokeErrors.Length);
+
+            // check for errors
+            if (errors.Length == 0)
             {
-                // do insert
+                // no errors, do insert
                 try
                 {
                     // add pokemon data
@@ -73,8 +59,9 @@ namespace Pokemon_Training_App.Views
             }
             else
             {
-                // display error message
-                MessageBox.Show("Invalid Inputs", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // errors found, create and display error message
+                string errorMsg = Program.buildErrorListMessage(errors);
+                MessageBox.Show(errorMsg, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
