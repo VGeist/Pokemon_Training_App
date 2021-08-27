@@ -65,6 +65,7 @@ namespace Pokemon_Training_App.Views
             partner.PokeNumber = (int)cmbPokeNum.SelectedValue;
             partner.Nickname = txtNickname.Text;
             partner.Level = (int)numLevel.Value;
+            partner.HasPokerus = chkHasPokerus.Checked;
 
             // Stats
             partner.Health = (int)numHealthStat.Value;
@@ -106,6 +107,34 @@ namespace Pokemon_Training_App.Views
             if (errors.Length == 0)
             {
                 // no errors, add to database
+                try
+                {
+                    partnersTableAdapter.Insert(partner.Nickname,
+                        partner.PokeNumber,
+                        (int)cmbForm.SelectedValue,
+                        (int)cmbNature.SelectedValue,
+                        partner.Level,
+                        partner.HasPokerus,
+                        partner.Health,     // stat start
+                        partner.Attack,
+                        partner.Defense,
+                        partner.SpAttack,
+                        partner.SpDefense,
+                        partner.Speed,      // stat end
+                        partner.HealthEV,   // ev start
+                        partner.AttackEV,
+                        partner.DefenseEV,
+                        partner.SpAttackEV,
+                        partner.SpDefenseEV,
+                        partner.SpeedEV);
+
+                    // success message
+                    MessageBox.Show("Successful operation", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } catch
+                {
+                    // database error 
+                    MessageBox.Show("The database encounterd an error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             } else
             {
                 // errors found, display message
@@ -116,8 +145,24 @@ namespace Pokemon_Training_App.Views
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            // TODO: redo this method to work with new control types
+            // reset values
+            cmbPokeNum.SelectedIndex = 0;   // form should not be open if no options are available for cmbPokeNum
+            txtNickname.Clear();
+            numLevel.Value = 1;
+            chkHasPokerus.Checked = false;
 
+
+            // set EVs to 0
+            foreach (NumericUpDown numInput in tpgEV.Controls.OfType<NumericUpDown>())
+            {
+                numInput.Value = 0;
+            }
+
+            // set Stats to 4
+            foreach (NumericUpDown numInput in tpgStats.Controls.OfType<NumericUpDown>())
+            {
+                numInput.Value = 4;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
