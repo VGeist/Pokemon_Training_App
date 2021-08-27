@@ -62,7 +62,7 @@ namespace Pokemon_Training_App.Views
             Partner partner = new Partner(species);
 
             // Info
-            partner.PokeNumber = (int)cmbPokeNum.SelectedItem;
+            partner.PokeNumber = (int)cmbPokeNum.SelectedValue;
             partner.Nickname = txtNickname.Text;
             partner.Level = (int)numLevel.Value;
 
@@ -92,7 +92,7 @@ namespace Pokemon_Training_App.Views
             if (!combosSelected())
             {
                 // ask user to select values, do not continue
-                MessageBox.Show("Check that you have selected an item in each dropdon list.", "Form Not Filled Out", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Check that you have selected an item in each dropdown list.", "Form Not Filled Out", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return;
             }

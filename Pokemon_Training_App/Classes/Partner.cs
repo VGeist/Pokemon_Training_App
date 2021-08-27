@@ -432,7 +432,7 @@ namespace Pokemon_Training_App.Classes
             if (this.Level <= 0)
             {
                 return "Level must be greater than zero.";
-            } else if (this.Level < 100)
+            } else if (this.Level > 100)
             {
                 return "Level cannot be more than 100.";
             } else
