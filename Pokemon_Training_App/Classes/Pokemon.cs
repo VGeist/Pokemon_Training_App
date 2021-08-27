@@ -14,7 +14,10 @@ namespace Pokemon_Training_App.Classes
         public PokeForm[] FormList { get; set; }
 
         /*** CONSTRUCTORS ***/
-        protected Pokemon() { }
+        public Pokemon()
+        {
+
+        }
 
         public Pokemon(int number, string name, PokeForm[] forms)
         {

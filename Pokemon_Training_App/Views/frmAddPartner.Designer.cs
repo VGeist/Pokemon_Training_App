@@ -38,6 +38,7 @@
             this.slblLevel = new System.Windows.Forms.Label();
             this.txtNickname = new System.Windows.Forms.TextBox();
             this.cmbNature = new System.Windows.Forms.ComboBox();
+            this.pokemonDataSet = new Pokemon_Training_App.Data.PokemonDataSet();
             this.tabStats = new System.Windows.Forms.TabControl();
             this.tpgStats = new System.Windows.Forms.TabPage();
             this.numSpeedStat = new System.Windows.Forms.NumericUpDown();
@@ -70,12 +71,13 @@
             this.btnAddForm = new System.Windows.Forms.Button();
             this.ttpPokerus = new System.Windows.Forms.ToolTip(this.components);
             this.chkHasPokerus = new System.Windows.Forms.CheckBox();
-            this.numPokeNum = new System.Windows.Forms.NumericUpDown();
             this.numLevel = new System.Windows.Forms.NumericUpDown();
             this.partnersTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.PartnersTableAdapter();
-            this.pokemonDataSet = new Pokemon_Training_App.Data.PokemonDataSet();
             this.naturesTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.NaturesTableAdapter();
             this.formsTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.FormsTableAdapter();
+            this.cmbPokeNum = new System.Windows.Forms.ComboBox();
+            this.pokemonTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.PokemonTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
             this.tabStats.SuspendLayout();
             this.tpgStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSpeedStat)).BeginInit();
@@ -91,9 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numDefenseEV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAttackEV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHealthEV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLevel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -174,20 +174,20 @@
             // 
             // cmbNature
             // 
+            this.cmbNature.DataSource = this.pokemonDataSet;
+            this.cmbNature.DisplayMember = "Natures.Name";
             this.cmbNature.FormattingEnabled = true;
-            this.cmbNature.Items.AddRange(new object[] {
-            "Calm",
-            "Bold",
-            "Hardy",
-            "Bashful",
-            "Relaxed",
-            "TEMPORARY"});
             this.cmbNature.Location = new System.Drawing.Point(84, 93);
             this.cmbNature.MaxDropDownItems = 32;
             this.cmbNature.Name = "cmbNature";
             this.cmbNature.Size = new System.Drawing.Size(159, 30);
             this.cmbNature.TabIndex = 3;
-            this.cmbNature.Text = "Hardy";
+            this.cmbNature.ValueMember = "Natures.NatureID";
+            // 
+            // pokemonDataSet
+            // 
+            this.pokemonDataSet.DataSetName = "PokemonDataSet";
+            this.pokemonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabStats
             // 
@@ -558,21 +558,14 @@
             // 
             // cmbForm
             // 
+            this.cmbForm.DataSource = this.pokemonDataSet;
+            this.cmbForm.DisplayMember = "Pokemon.FK__Forms__PokeNum__300424B4.Name";
             this.cmbForm.FormattingEnabled = true;
-            this.cmbForm.Items.AddRange(new object[] {
-            "Default",
-            "Calm",
-            "Bold",
-            "Hardy",
-            "Bashful",
-            "Relaxed",
-            "TEMPORARY"});
             this.cmbForm.Location = new System.Drawing.Point(84, 136);
             this.cmbForm.MaxDropDownItems = 32;
             this.cmbForm.Name = "cmbForm";
             this.cmbForm.Size = new System.Drawing.Size(159, 30);
             this.cmbForm.TabIndex = 5;
-            this.cmbForm.Text = "Default";
             // 
             // slblForm
             // 
@@ -609,18 +602,6 @@
             this.ttpPokerus.SetToolTip(this.chkHasPokerus, "Check if pokemon has (or had) Pokerus.\r\nPokemon with Pokerus gain EVs faster.");
             this.chkHasPokerus.UseVisualStyleBackColor = true;
             // 
-            // numPokeNum
-            // 
-            this.numPokeNum.Location = new System.Drawing.Point(185, 13);
-            this.numPokeNum.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numPokeNum.Name = "numPokeNum";
-            this.numPokeNum.Size = new System.Drawing.Size(180, 30);
-            this.numPokeNum.TabIndex = 1;
-            // 
             // numLevel
             // 
             this.numLevel.Location = new System.Drawing.Point(325, 94);
@@ -642,11 +623,6 @@
             // 
             this.partnersTableAdapter.ClearBeforeFill = true;
             // 
-            // pokemonDataSet
-            // 
-            this.pokemonDataSet.DataSetName = "PokemonDataSet";
-            this.pokemonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // naturesTableAdapter
             // 
             this.naturesTableAdapter.ClearBeforeFill = true;
@@ -655,13 +631,30 @@
             // 
             this.formsTableAdapter.ClearBeforeFill = true;
             // 
+            // cmbPokeNum
+            // 
+            this.cmbPokeNum.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbPokeNum.DataSource = this.pokemonDataSet;
+            this.cmbPokeNum.DisplayMember = "Pokemon.PokeNum";
+            this.cmbPokeNum.FormattingEnabled = true;
+            this.cmbPokeNum.Location = new System.Drawing.Point(185, 12);
+            this.cmbPokeNum.MaxDropDownItems = 32;
+            this.cmbPokeNum.Name = "cmbPokeNum";
+            this.cmbPokeNum.Size = new System.Drawing.Size(180, 30);
+            this.cmbPokeNum.TabIndex = 17;
+            this.cmbPokeNum.ValueMember = "Pokemon.PokeNum";
+            // 
+            // pokemonTableAdapter
+            // 
+            this.pokemonTableAdapter.ClearBeforeFill = true;
+            // 
             // frmAddPartner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 428);
+            this.Controls.Add(this.cmbPokeNum);
             this.Controls.Add(this.numLevel);
-            this.Controls.Add(this.numPokeNum);
             this.Controls.Add(this.chkHasPokerus);
             this.Controls.Add(this.btnAddForm);
             this.Controls.Add(this.cmbForm);
@@ -680,6 +673,8 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmAddPartner";
             this.Text = "New Partner Entry";
+            this.Load += new System.EventHandler(this.frmAddPartner_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
             this.tabStats.ResumeLayout(false);
             this.tpgStats.ResumeLayout(false);
             this.tpgStats.PerformLayout();
@@ -697,9 +692,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numDefenseEV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAttackEV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHealthEV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLevel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -736,7 +729,6 @@
         private System.Windows.Forms.Label slblAttackStat;
         private System.Windows.Forms.CheckBox chkHasPokerus;
         private System.Windows.Forms.ToolTip ttpPokerus;
-        private System.Windows.Forms.NumericUpDown numPokeNum;
         private System.Windows.Forms.NumericUpDown numSpeedStat;
         private System.Windows.Forms.NumericUpDown numSpDefenseStat;
         private System.Windows.Forms.NumericUpDown numSpAttackStat;
@@ -754,5 +746,7 @@
         private Data.PokemonDataSet pokemonDataSet;
         private Data.PokemonDataSetTableAdapters.NaturesTableAdapter naturesTableAdapter;
         private Data.PokemonDataSetTableAdapters.FormsTableAdapter formsTableAdapter;
+        private System.Windows.Forms.ComboBox cmbPokeNum;
+        private Data.PokemonDataSetTableAdapters.PokemonTableAdapter pokemonTableAdapter;
     }
 }

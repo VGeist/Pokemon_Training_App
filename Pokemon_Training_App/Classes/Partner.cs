@@ -18,7 +18,7 @@ namespace Pokemon_Training_App.Classes
         private string _favoredStat;   // used to calculaate IVs, MUST match the name of the stat EXACTLY
         private string _hinderedStat;  // used to calculate IVs, MUST match the name of the stat EXACTLY
 
-        private PokeForm _currentForm;
+        public PokeForm Form { get; set; }
 
         public bool HasPokerus { get; set; }
 
@@ -158,23 +158,9 @@ namespace Pokemon_Training_App.Classes
             _hinderedStat = hindered;
         }
 
-        public void SetForm(PokeForm newForm)
-        {
-            // set current form of this parter to the new form
-            // check if this pokemon can become the new form
-            if (this.FormList.Contains(newForm))
-            {
-                _currentForm = newForm;
-            }
-            else {
-                // if not a valid form, set to first valid form
-                FormToDefault();
-            }
-        }
-
         public void FormToDefault()
         {
-            _currentForm = this.FormList[0];
+            Form = this.FormList[0];
         }
 
         /* TRAINING methods */
@@ -206,7 +192,7 @@ namespace Pokemon_Training_App.Classes
         {
             // Evolve a pokemon
             Evolve(nextStage, hp, attack, defense, spAttack, spDefense, speed);
-            SetForm(form);
+            Form = form;
         }
 
         public void AddEVs(string statName, int value)
@@ -262,27 +248,27 @@ namespace Pokemon_Training_App.Classes
             // gets the base stat of the given stat, if invalid retuns -1
             if (statName.Equals("Health"))
             {
-                return _currentForm.GetBaseHealth();
+                return Form.GetBaseHealth();
             }
             else if (statName.Equals("Attack"))
             {
-                return _currentForm.GetBaseAttack();
+                return Form.GetBaseAttack();
             }
             else if (statName.Equals("Defense"))
             {
-                return _currentForm.GetBaseDefense();
+                return Form.GetBaseDefense();
             }
             else if (statName.Equals("SpAttack"))
             {
-                return _currentForm.GetBaseSpAttack();
+                return Form.GetBaseSpAttack();
             }
             else if (statName.Equals("SpDefense"))
             {
-                return _currentForm.GetBaseSpDefense();
+                return Form.GetBaseSpDefense();
             }
             else if (statName.Equals("Speed"))
             {
-                return _currentForm.GetBaseSpeed();
+                return Form.GetBaseSpeed();
             }
             else
             {
@@ -353,7 +339,7 @@ namespace Pokemon_Training_App.Classes
              * MAX possible IV.
              */
             // get base health
-            int baseValue = _currentForm.GetBaseHealth();
+            int baseValue = Form.GetBaseHealth();
 
             // calculate
             value /= Level;
@@ -410,9 +396,7 @@ namespace Pokemon_Training_App.Classes
             // filter out NULL values
             errors.RemoveAll(error => error == null);
 
-            string[] output = errors.ToArray();
-
-            return output;
+            return errors.ToArray();
         }
 
         // funcitons that check a single field - return error messages; if no error is found retuns null 
@@ -466,6 +450,10 @@ namespace Pokemon_Training_App.Classes
             else if (String.Equals(this.Nickname, "undefined", StringComparison.OrdinalIgnoreCase))
             {
                 return "Nickname cannot be 'undefined'";
+            }
+            else if (this.Nickname.Length > 12)
+            {
+                return "Nickname cannot be more than 12 characters.";
             }
             else
             {
