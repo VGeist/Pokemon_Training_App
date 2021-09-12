@@ -86,7 +86,6 @@ namespace Pokemon_Training_App.Views
             return partner;
         }
 
-        // TODO: implement add button
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // check combo boxes have a selected value
@@ -109,7 +108,7 @@ namespace Pokemon_Training_App.Views
                 // no errors, add to database
                 try
                 {
-                    partnersTableAdapter.Insert(partner.Nickname,
+                    partnersTableAdapter.InsertData(partner.Nickname,
                         partner.PokeNumber,
                         (int)cmbForm.SelectedValue,
                         (int)cmbNature.SelectedValue,
@@ -130,7 +129,7 @@ namespace Pokemon_Training_App.Views
 
                     // success message
                     MessageBox.Show("Successful operation", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                } catch
+                } catch 
                 {
                     // database error 
                     MessageBox.Show("The database encounterd an error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

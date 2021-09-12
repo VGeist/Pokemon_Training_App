@@ -566,6 +566,7 @@
             this.cmbForm.Name = "cmbForm";
             this.cmbForm.Size = new System.Drawing.Size(159, 30);
             this.cmbForm.TabIndex = 5;
+            this.cmbForm.ValueMember = "Forms.FormID";
             // 
             // slblForm
             // 

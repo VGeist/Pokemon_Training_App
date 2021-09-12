@@ -70,7 +70,6 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.FormsTableAdapter = this.formsTableAdapter;
             this.tableAdapterManager.NaturesTableAdapter = null;
-            this.tableAdapterManager.PartnersTableAdapter = null;
             this.tableAdapterManager.PokemonTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Pokemon_Training_App.Data.PokemonDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 

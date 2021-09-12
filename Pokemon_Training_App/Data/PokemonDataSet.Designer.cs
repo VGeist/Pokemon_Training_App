@@ -1418,6 +1418,14 @@ namespace Pokemon_Training_App.Data {
             
             private global::System.Data.DataColumn columnEVSpeed;
             
+            private global::System.Data.DataColumn columnPokeName;
+            
+            private global::System.Data.DataColumn columnName;
+            
+            private global::System.Data.DataColumn columnNatureName;
+            
+            private global::System.Data.DataColumn columnTotalEV;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PartnersDataTable() {
@@ -1605,6 +1613,38 @@ namespace Pokemon_Training_App.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PokeNameColumn {
+                get {
+                    return this.columnPokeName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NatureNameColumn {
+                get {
+                    return this.columnNatureName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TotalEVColumn {
+                get {
+                    return this.columnTotalEV;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1658,7 +1698,11 @@ namespace Pokemon_Training_App.Data {
                         int EVDefense, 
                         int EVSpAttack, 
                         int EVSpDefense, 
-                        int EVSpeed) {
+                        int EVSpeed, 
+                        string PokeName, 
+                        string Name, 
+                        string NatureName, 
+                        int TotalEV) {
                 PartnersRow rowPartnersRow = ((PartnersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1679,7 +1723,11 @@ namespace Pokemon_Training_App.Data {
                         EVDefense,
                         EVSpAttack,
                         EVSpDefense,
-                        EVSpeed};
+                        EVSpeed,
+                        PokeName,
+                        Name,
+                        NatureName,
+                        TotalEV};
                 if ((parentPokemonRowByFK__Partners__PokeNu__30F848ED != null)) {
                     columnValuesArray[2] = parentPokemonRowByFK__Partners__PokeNu__30F848ED[0];
                 }
@@ -1737,6 +1785,10 @@ namespace Pokemon_Training_App.Data {
                 this.columnEVSpAttack = base.Columns["EVSpAttack"];
                 this.columnEVSpDefense = base.Columns["EVSpDefense"];
                 this.columnEVSpeed = base.Columns["EVSpeed"];
+                this.columnPokeName = base.Columns["PokeName"];
+                this.columnName = base.Columns["Name"];
+                this.columnNatureName = base.Columns["NatureName"];
+                this.columnTotalEV = base.Columns["TotalEV"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1780,6 +1832,14 @@ namespace Pokemon_Training_App.Data {
                 base.Columns.Add(this.columnEVSpDefense);
                 this.columnEVSpeed = new global::System.Data.DataColumn("EVSpeed", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEVSpeed);
+                this.columnPokeName = new global::System.Data.DataColumn("PokeName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPokeName);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
+                this.columnNatureName = new global::System.Data.DataColumn("NatureName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNatureName);
+                this.columnTotalEV = new global::System.Data.DataColumn("TotalEV", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalEV);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPartnerID}, true));
                 this.columnPartnerID.AutoIncrement = true;
@@ -1807,6 +1867,13 @@ namespace Pokemon_Training_App.Data {
                 this.columnEVSpAttack.AllowDBNull = false;
                 this.columnEVSpDefense.AllowDBNull = false;
                 this.columnEVSpeed.AllowDBNull = false;
+                this.columnPokeName.AllowDBNull = false;
+                this.columnPokeName.MaxLength = 50;
+                this.columnName.AllowDBNull = false;
+                this.columnName.MaxLength = 50;
+                this.columnNatureName.AllowDBNull = false;
+                this.columnNatureName.MaxLength = 50;
+                this.columnTotalEV.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2457,6 +2524,55 @@ namespace Pokemon_Training_App.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PokeName {
+                get {
+                    return ((string)(this[this.tablePartners.PokeNameColumn]));
+                }
+                set {
+                    this[this.tablePartners.PokeNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Name {
+                get {
+                    return ((string)(this[this.tablePartners.NameColumn]));
+                }
+                set {
+                    this[this.tablePartners.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NatureName {
+                get {
+                    return ((string)(this[this.tablePartners.NatureNameColumn]));
+                }
+                set {
+                    this[this.tablePartners.NatureNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int TotalEV {
+                get {
+                    try {
+                        return ((int)(this[this.tablePartners.TotalEVColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalEV\' in table \'Partners\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePartners.TotalEVColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public FormsRow FormsRow {
                 get {
                     return ((FormsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Partners__FormID__32E0915F"])));
@@ -2486,6 +2602,18 @@ namespace Pokemon_Training_App.Data {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__Partners__PokeNu__30F848ED"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTotalEVNull() {
+                return this.IsNull(this.tablePartners.TotalEVColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTotalEVNull() {
+                this[this.tablePartners.TotalEVColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4208,96 +4336,11 @@ SELECT FormID, PokeNum, Name, BaseHealth, BaseAttack, BaseDefense, BaseSpAttack,
             tableMapping.ColumnMappings.Add("EVSpAttack", "EVSpAttack");
             tableMapping.ColumnMappings.Add("EVSpDefense", "EVSpDefense");
             tableMapping.ColumnMappings.Add("EVSpeed", "EVSpeed");
+            tableMapping.ColumnMappings.Add("PokeName", "PokeName");
+            tableMapping.ColumnMappings.Add("Name", "Name");
+            tableMapping.ColumnMappings.Add("NatureName", "NatureName");
+            tableMapping.ColumnMappings.Add("TotalEV", "TotalEV");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Partners] WHERE (([PartnerID] = @Original_PartnerID) AND ([Nickname] = @Original_Nickname) AND ([PokeNum] = @Original_PokeNum) AND ([FormID] = @Original_FormID) AND ([NatureID] = @Original_NatureID) AND ([Level] = @Original_Level) AND ([HasPokerus] = @Original_HasPokerus) AND ([Health] = @Original_Health) AND ([Attack] = @Original_Attack) AND ([Defense] = @Original_Defense) AND ([SpAttack] = @Original_SpAttack) AND ([SpDefense] = @Original_SpDefense) AND ([Speed] = @Original_Speed) AND ([EVHealth] = @Original_EVHealth) AND ([EVAttack] = @Original_EVAttack) AND ([EVDefense] = @Original_EVDefense) AND ([EVSpAttack] = @Original_EVSpAttack) AND ([EVSpDefense] = @Original_EVSpDefense) AND ([EVSpeed] = @Original_EVSpeed))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PartnerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PartnerID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nickname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nickname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PokeNum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PokeNum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FormID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FormID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NatureID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NatureID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Level", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Level", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HasPokerus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HasPokerus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Health", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Health", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Attack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attack", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Defense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Defense", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SpAttack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpAttack", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SpDefense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpDefense", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Speed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speed", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EVHealth", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVHealth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EVAttack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVAttack", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EVDefense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVDefense", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EVSpAttack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVSpAttack", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EVSpDefense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVSpDefense", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EVSpeed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVSpeed", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Partners] ([Nickname], [PokeNum], [FormID], [NatureID], [Level], [HasPokerus], [Health], [Attack], [Defense], [SpAttack], [SpDefense], [Speed], [EVHealth], [EVAttack], [EVDefense], [EVSpAttack], [EVSpDefense], [EVSpeed]) VALUES (@Nickname, @PokeNum, @FormID, @NatureID, @Level, @HasPokerus, @Health, @Attack, @Defense, @SpAttack, @SpDefense, @Speed, @EVHealth, @EVAttack, @EVDefense, @EVSpAttack, @EVSpDefense, @EVSpeed);
-SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health, Attack, Defense, SpAttack, SpDefense, Speed, EVHealth, EVAttack, EVDefense, EVSpAttack, EVSpDefense, EVSpeed FROM Partners WHERE (PartnerID = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nickname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nickname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PokeNum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PokeNum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FormID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FormID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NatureID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NatureID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Level", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Level", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HasPokerus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HasPokerus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Health", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Health", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Attack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attack", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Defense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Defense", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpAttack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpAttack", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpDefense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpDefense", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Speed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVHealth", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVHealth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVAttack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVAttack", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVDefense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVDefense", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVSpAttack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVSpAttack", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVSpDefense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVSpDefense", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVSpeed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVSpeed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Partners] SET [Nickname] = @Nickname, [PokeNum] = @PokeNum, [FormID] = @FormID, [NatureID] = @NatureID, [Level] = @Level, [HasPokerus] = @HasPokerus, [Health] = @Health, [Attack] = @Attack, [Defense] = @Defense, [SpAttack] = @SpAttack, [SpDefense] = @SpDefense, [Speed] = @Speed, [EVHealth] = @EVHealth, [EVAttack] = @EVAttack, [EVDefense] = @EVDefense, [EVSpAttack] = @EVSpAttack, [EVSpDefense] = @EVSpDefense, [EVSpeed] = @EVSpeed WHERE (([PartnerID] = @Original_PartnerID) AND ([Nickname] = @Original_Nickname) AND ([PokeNum] = @Original_PokeNum) AND ([FormID] = @Original_FormID) AND ([NatureID] = @Original_NatureID) AND ([Level] = @Original_Level) AND ([HasPokerus] = @Original_HasPokerus) AND ([Health] = @Original_Health) AND ([Attack] = @Original_Attack) AND ([Defense] = @Original_Defense) AND ([SpAttack] = @Original_SpAttack) AND ([SpDefense] = @Original_SpDefense) AND ([Speed] = @Original_Speed) AND ([EVHealth] = @Original_EVHealth) AND ([EVAttack] = @Original_EVAttack) AND ([EVDefense] = @Original_EVDefense) AND ([EVSpAttack] = @Original_EVSpAttack) AND ([EVSpDefense] = @Original_EVSpDefense) AND ([EVSpeed] = @Original_EVSpeed));
-SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health, Attack, Defense, SpAttack, SpDefense, Speed, EVHealth, EVAttack, EVDefense, EVSpAttack, EVSpDefense, EVSpeed FROM Partners WHERE (PartnerID = @PartnerID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nickname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nickname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PokeNum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PokeNum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FormID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FormID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NatureID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NatureID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Level", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Level", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HasPokerus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HasPokerus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Health", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Health", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Attack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attack", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Defense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Defense", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpAttack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpAttack", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpDefense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpDefense", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Speed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVHealth", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVHealth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVAttack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVAttack", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVDefense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVDefense", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVSpAttack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVSpAttack", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVSpDefense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVSpDefense", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVSpeed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVSpeed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PartnerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PartnerID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nickname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nickname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PokeNum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PokeNum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FormID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FormID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NatureID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NatureID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Level", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Level", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HasPokerus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HasPokerus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Health", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Health", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Attack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attack", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Defense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Defense", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SpAttack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpAttack", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SpDefense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpDefense", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Speed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speed", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EVHealth", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVHealth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EVAttack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVAttack", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EVDefense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVDefense", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EVSpAttack", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVSpAttack", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EVSpDefense", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVSpDefense", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EVSpeed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EVSpeed", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PartnerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PartnerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4310,13 +4353,66 @@ SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, [Level], HasPokerus, Healt" +
-                "h, Attack, Defense, SpAttack, SpDefense, Speed, EVHealth, EVAttack, EVDefense, E" +
-                "VSpAttack, EVSpDefense, EVSpeed FROM dbo.Partners";
+            this._commandCollection[0].CommandText = @"SELECT
+    PartnerID,
+    Nickname,
+    Partners.PokeNum,
+    Pokemon.Name AS PokeName,
+    Partners.FormID,
+    Forms.Name,
+    Partners.NatureID,
+    Natures.Name AS NatureName,
+    Level,
+    HasPokerus,
+    Health,
+    Attack,
+    Defense,
+    SpAttack,
+    SpDefense,
+    Speed,
+    EVHealth,
+    EVAttack,
+    EVDefense,
+    EVSpAttack,
+    EVSpDefense,
+    EVSpeed,
+    (EVHealth + EVAttack + EVDefense + EVSpAttack + EVSpDefense + EVSpeed) AS TotalEV
+FROM 
+    dbo.Partners 
+    JOIN dbo.Natures ON Partners.NatureID = Natures.NatureID 
+    JOIN dbo.Pokemon ON Partners.PokeNum = Pokemon.PokeNum
+    JOIN dbo.Forms ON Partners.FormID = Forms.FormID
+;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"INSERT INTO Partners
+    (Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health, Attack, Defense, SpAttack, SpDefense, Speed, EVHealth, EVAttack, EVDefense, EVSpAttack, EVSpDefense, EVSpeed)
+VALUES
+    (@Nickname,@PokeNum,@FormID,@NatureID,@Level,@HasPokerus,@Health,@Attack,@Defenes,@SpAttack,@SpDefense,@Speed,@EVHealth,@EVAttack,@EVDefenes,@EVSpAttack,@EVSpDefense,@EVSpeed)
+;";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nickname", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Nickname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PokeNum", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PokeNum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FormID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FormID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NatureID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NatureID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Level", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Level", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HasPokerus", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "HasPokerus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Health", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Health", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Attack", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Attack", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Defenes", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Defense", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpAttack", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SpAttack", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpDefense", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SpDefense", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Speed", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Speed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVHealth", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EVHealth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVAttack", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EVAttack", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVDefenes", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EVDefense", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVSpAttack", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EVSpAttack", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVSpDefense", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EVSpDefense", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EVSpeed", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EVSpeed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4346,101 +4442,8 @@ SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PokemonDataSet.PartnersDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PokemonDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Partners");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(
-                    int Original_PartnerID, 
-                    string Original_Nickname, 
-                    int Original_PokeNum, 
-                    int Original_FormID, 
-                    int Original_NatureID, 
-                    int Original_Level, 
-                    bool Original_HasPokerus, 
-                    int Original_Health, 
-                    int Original_Attack, 
-                    int Original_Defense, 
-                    int Original_SpAttack, 
-                    int Original_SpDefense, 
-                    int Original_Speed, 
-                    int Original_EVHealth, 
-                    int Original_EVAttack, 
-                    int Original_EVDefense, 
-                    int Original_EVSpAttack, 
-                    int Original_EVSpDefense, 
-                    int Original_EVSpeed) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PartnerID));
-            if ((Original_Nickname == null)) {
-                throw new global::System.ArgumentNullException("Original_Nickname");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Nickname));
-            }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_PokeNum));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_FormID));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_NatureID));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Level));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((bool)(Original_HasPokerus));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_Health));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Attack));
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_Defense));
-            this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_SpAttack));
-            this.Adapter.DeleteCommand.Parameters[11].Value = ((int)(Original_SpDefense));
-            this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_Speed));
-            this.Adapter.DeleteCommand.Parameters[13].Value = ((int)(Original_EVHealth));
-            this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_EVAttack));
-            this.Adapter.DeleteCommand.Parameters[15].Value = ((int)(Original_EVDefense));
-            this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_EVSpAttack));
-            this.Adapter.DeleteCommand.Parameters[17].Value = ((int)(Original_EVSpDefense));
-            this.Adapter.DeleteCommand.Parameters[18].Value = ((int)(Original_EVSpeed));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertData(
                     string Nickname, 
                     int PokeNum, 
                     int FormID, 
@@ -4449,205 +4452,55 @@ SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health
                     bool HasPokerus, 
                     int Health, 
                     int Attack, 
-                    int Defense, 
+                    int Defenes, 
                     int SpAttack, 
                     int SpDefense, 
                     int Speed, 
                     int EVHealth, 
                     int EVAttack, 
-                    int EVDefense, 
+                    int EVDefenes, 
                     int EVSpAttack, 
                     int EVSpDefense, 
                     int EVSpeed) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((Nickname == null)) {
                 throw new global::System.ArgumentNullException("Nickname");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nickname));
+                command.Parameters[0].Value = ((string)(Nickname));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(PokeNum));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(FormID));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(NatureID));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Level));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(HasPokerus));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Health));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Attack));
-            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(Defense));
-            this.Adapter.InsertCommand.Parameters[9].Value = ((int)(SpAttack));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((int)(SpDefense));
-            this.Adapter.InsertCommand.Parameters[11].Value = ((int)(Speed));
-            this.Adapter.InsertCommand.Parameters[12].Value = ((int)(EVHealth));
-            this.Adapter.InsertCommand.Parameters[13].Value = ((int)(EVAttack));
-            this.Adapter.InsertCommand.Parameters[14].Value = ((int)(EVDefense));
-            this.Adapter.InsertCommand.Parameters[15].Value = ((int)(EVSpAttack));
-            this.Adapter.InsertCommand.Parameters[16].Value = ((int)(EVSpDefense));
-            this.Adapter.InsertCommand.Parameters[17].Value = ((int)(EVSpeed));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+            command.Parameters[1].Value = ((int)(PokeNum));
+            command.Parameters[2].Value = ((int)(FormID));
+            command.Parameters[3].Value = ((int)(NatureID));
+            command.Parameters[4].Value = ((int)(Level));
+            command.Parameters[5].Value = ((bool)(HasPokerus));
+            command.Parameters[6].Value = ((int)(Health));
+            command.Parameters[7].Value = ((int)(Attack));
+            command.Parameters[8].Value = ((int)(Defenes));
+            command.Parameters[9].Value = ((int)(SpAttack));
+            command.Parameters[10].Value = ((int)(SpDefense));
+            command.Parameters[11].Value = ((int)(Speed));
+            command.Parameters[12].Value = ((int)(EVHealth));
+            command.Parameters[13].Value = ((int)(EVAttack));
+            command.Parameters[14].Value = ((int)(EVDefenes));
+            command.Parameters[15].Value = ((int)(EVSpAttack));
+            command.Parameters[16].Value = ((int)(EVSpDefense));
+            command.Parameters[17].Value = ((int)(EVSpeed));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
+                command.Connection.Open();
             }
+            int returnValue;
             try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
+                returnValue = command.ExecuteNonQuery();
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
+                    command.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string Nickname, 
-                    int PokeNum, 
-                    int FormID, 
-                    int NatureID, 
-                    int Level, 
-                    bool HasPokerus, 
-                    int Health, 
-                    int Attack, 
-                    int Defense, 
-                    int SpAttack, 
-                    int SpDefense, 
-                    int Speed, 
-                    int EVHealth, 
-                    int EVAttack, 
-                    int EVDefense, 
-                    int EVSpAttack, 
-                    int EVSpDefense, 
-                    int EVSpeed, 
-                    int Original_PartnerID, 
-                    string Original_Nickname, 
-                    int Original_PokeNum, 
-                    int Original_FormID, 
-                    int Original_NatureID, 
-                    int Original_Level, 
-                    bool Original_HasPokerus, 
-                    int Original_Health, 
-                    int Original_Attack, 
-                    int Original_Defense, 
-                    int Original_SpAttack, 
-                    int Original_SpDefense, 
-                    int Original_Speed, 
-                    int Original_EVHealth, 
-                    int Original_EVAttack, 
-                    int Original_EVDefense, 
-                    int Original_EVSpAttack, 
-                    int Original_EVSpDefense, 
-                    int Original_EVSpeed, 
-                    int PartnerID) {
-            if ((Nickname == null)) {
-                throw new global::System.ArgumentNullException("Nickname");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nickname));
-            }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(PokeNum));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(FormID));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(NatureID));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Level));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(HasPokerus));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Health));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Attack));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Defense));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(SpAttack));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(SpDefense));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Speed));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(EVHealth));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(EVAttack));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(EVDefense));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(EVSpAttack));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(EVSpDefense));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(EVSpeed));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_PartnerID));
-            if ((Original_Nickname == null)) {
-                throw new global::System.ArgumentNullException("Original_Nickname");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Nickname));
-            }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_PokeNum));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_FormID));
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_NatureID));
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_Level));
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((bool)(Original_HasPokerus));
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_Health));
-            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_Attack));
-            this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_Defense));
-            this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_SpAttack));
-            this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(Original_SpDefense));
-            this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(Original_Speed));
-            this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(Original_EVHealth));
-            this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(Original_EVAttack));
-            this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_EVDefense));
-            this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(Original_EVSpAttack));
-            this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(Original_EVSpDefense));
-            this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Original_EVSpeed));
-            this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(PartnerID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string Nickname, 
-                    int PokeNum, 
-                    int FormID, 
-                    int NatureID, 
-                    int Level, 
-                    bool HasPokerus, 
-                    int Health, 
-                    int Attack, 
-                    int Defense, 
-                    int SpAttack, 
-                    int SpDefense, 
-                    int Speed, 
-                    int EVHealth, 
-                    int EVAttack, 
-                    int EVDefense, 
-                    int EVSpAttack, 
-                    int EVSpDefense, 
-                    int EVSpeed, 
-                    int Original_PartnerID, 
-                    string Original_Nickname, 
-                    int Original_PokeNum, 
-                    int Original_FormID, 
-                    int Original_NatureID, 
-                    int Original_Level, 
-                    bool Original_HasPokerus, 
-                    int Original_Health, 
-                    int Original_Attack, 
-                    int Original_Defense, 
-                    int Original_SpAttack, 
-                    int Original_SpDefense, 
-                    int Original_Speed, 
-                    int Original_EVHealth, 
-                    int Original_EVAttack, 
-                    int Original_EVDefense, 
-                    int Original_EVSpAttack, 
-                    int Original_EVSpDefense, 
-                    int Original_EVSpeed) {
-            return this.Update(Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health, Attack, Defense, SpAttack, SpDefense, Speed, EVHealth, EVAttack, EVDefense, EVSpAttack, EVSpDefense, EVSpeed, Original_PartnerID, Original_Nickname, Original_PokeNum, Original_FormID, Original_NatureID, Original_Level, Original_HasPokerus, Original_Health, Original_Attack, Original_Defense, Original_SpAttack, Original_SpDefense, Original_Speed, Original_EVHealth, Original_EVAttack, Original_EVDefense, Original_EVSpAttack, Original_EVSpDefense, Original_EVSpeed, Original_PartnerID);
+            return returnValue;
         }
     }
     
@@ -4668,8 +4521,6 @@ SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health
         private PokemonTableAdapter _pokemonTableAdapter;
         
         private FormsTableAdapter _formsTableAdapter;
-        
-        private PartnersTableAdapter _partnersTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -4730,20 +4581,6 @@ SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public PartnersTableAdapter PartnersTableAdapter {
-            get {
-                return this._partnersTableAdapter;
-            }
-            set {
-                this._partnersTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -4773,10 +4610,6 @@ SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health
                             && (this._formsTableAdapter.Connection != null))) {
                     return this._formsTableAdapter.Connection;
                 }
-                if (((this._partnersTableAdapter != null) 
-                            && (this._partnersTableAdapter.Connection != null))) {
-                    return this._partnersTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -4797,9 +4630,6 @@ SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health
                     count = (count + 1);
                 }
                 if ((this._formsTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._partnersTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -4840,15 +4670,6 @@ SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._partnersTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Partners.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._partnersTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -4883,14 +4704,6 @@ SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._partnersTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Partners.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._partnersTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -4901,14 +4714,6 @@ SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(PokemonDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._partnersTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Partners.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._partnersTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._formsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Forms.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -4987,11 +4792,6 @@ SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._partnersTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._partnersTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -5049,15 +4849,6 @@ SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health
                     if (this._formsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._formsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._formsTableAdapter.Adapter);
-                    }
-                }
-                if ((this._partnersTableAdapter != null)) {
-                    revertConnections.Add(this._partnersTableAdapter, this._partnersTableAdapter.Connection);
-                    this._partnersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._partnersTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._partnersTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._partnersTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._partnersTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -5129,10 +4920,6 @@ SELECT PartnerID, Nickname, PokeNum, FormID, NatureID, Level, HasPokerus, Health
                 if ((this._formsTableAdapter != null)) {
                     this._formsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._formsTableAdapter]));
                     this._formsTableAdapter.Transaction = null;
-                }
-                if ((this._partnersTableAdapter != null)) {
-                    this._partnersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._partnersTableAdapter]));
-                    this._partnersTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
