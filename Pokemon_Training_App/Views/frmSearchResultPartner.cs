@@ -21,9 +21,8 @@ namespace Pokemon_Training_App.Views
         {
             frmSearchPartner form = new frmSearchPartner();
             form.ShowDialog();
-            // TODO: This line of code loads data into the 'pokemonDataSet.Partners' table. You can move, or remove it, as needed.
-            this.partnersTableAdapter.Fill(this.pokemonDataSet.Partners);
 
+            partnersTableAdapter.FillBySearch(pokemonDataSet.Partners, form.Number, form.Nickname, form.NatureID, form.MinLevel, form.MaxLevel, form.MinEV, form.MaxEV);
         }
     }
 }
