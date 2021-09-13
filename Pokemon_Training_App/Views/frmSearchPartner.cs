@@ -25,12 +25,14 @@ namespace Pokemon_Training_App.Views
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            // validate inputs
-            // construct query
-            // query database
-            // open frmSearchResult with query results
-            frmSearchResultPartner form = new frmSearchResultPartner();
-            form.Show();
+            // send data back to frmSearchResultPartner
+        }
+
+        private void frmSearchPartner_Load(object sender, EventArgs e)
+        {
+            // get data for combo boxes
+            pokemonTableAdapter.Fill(pokemonDataSet.Pokemon);
+            naturesTableAdapter.Fill(pokemonDataSet.Natures);
         }
     }
 }
