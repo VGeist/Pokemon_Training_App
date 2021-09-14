@@ -30,36 +30,41 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvPartners = new System.Windows.Forms.DataGridView();
-            this.pokemonDataSet = new Pokemon_Training_App.Data.PokemonDataSet();
             this.partnersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pokemonDataSet = new Pokemon_Training_App.Data.PokemonDataSet();
             this.partnersTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.PartnersTableAdapter();
             this.tableAdapterManager = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.TableAdapterManager();
-            this.partnerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nicknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pokeNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pokeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.formIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.natureIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.natureNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.levelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hasPokerusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.healthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.attackDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.defenseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.spAttackDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.spDefenseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eVHealthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eVAttackDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eVDefenseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eVSpAttackDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eVSpDefenseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eVSpeedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalEVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGroup = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.colPartnerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPokeNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPokeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFormID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFormName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNatureID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNatureName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPokerus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colHealth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAttack = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDefense = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSpAttack = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSpDefense = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHealthEV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAttackEV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDefenseEV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSpAttackEV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSpDefenseEV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSpeedEV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalEV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartners)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.partnersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPartners
@@ -71,29 +76,29 @@
             this.dgvPartners.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPartners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPartners.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.partnerIDDataGridViewTextBoxColumn,
-            this.nicknameDataGridViewTextBoxColumn,
-            this.pokeNumDataGridViewTextBoxColumn,
-            this.pokeNameDataGridViewTextBoxColumn,
-            this.formIDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.natureIDDataGridViewTextBoxColumn,
-            this.natureNameDataGridViewTextBoxColumn,
-            this.levelDataGridViewTextBoxColumn,
-            this.hasPokerusDataGridViewCheckBoxColumn,
-            this.healthDataGridViewTextBoxColumn,
-            this.attackDataGridViewTextBoxColumn,
-            this.defenseDataGridViewTextBoxColumn,
-            this.spAttackDataGridViewTextBoxColumn,
-            this.spDefenseDataGridViewTextBoxColumn,
-            this.speedDataGridViewTextBoxColumn,
-            this.eVHealthDataGridViewTextBoxColumn,
-            this.eVAttackDataGridViewTextBoxColumn,
-            this.eVDefenseDataGridViewTextBoxColumn,
-            this.eVSpAttackDataGridViewTextBoxColumn,
-            this.eVSpDefenseDataGridViewTextBoxColumn,
-            this.eVSpeedDataGridViewTextBoxColumn,
-            this.totalEVDataGridViewTextBoxColumn});
+            this.colPartnerID,
+            this.colNickname,
+            this.colPokeNum,
+            this.colPokeName,
+            this.colFormID,
+            this.colFormName,
+            this.colNatureID,
+            this.colNatureName,
+            this.colLevel,
+            this.colPokerus,
+            this.colHealth,
+            this.colAttack,
+            this.colDefense,
+            this.colSpAttack,
+            this.colSpDefense,
+            this.colSpeed,
+            this.colHealthEV,
+            this.colAttackEV,
+            this.colDefenseEV,
+            this.colSpAttackEV,
+            this.colSpDefenseEV,
+            this.colSpeedEV,
+            this.colTotalEV});
             this.dgvPartners.DataSource = this.partnersBindingSource;
             this.dgvPartners.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvPartners.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -107,15 +112,15 @@
             this.dgvPartners.TabIndex = 3;
             this.dgvPartners.TabStop = false;
             // 
-            // pokemonDataSet
-            // 
-            this.pokemonDataSet.DataSetName = "PokemonDataSet";
-            this.pokemonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // partnersBindingSource
             // 
             this.partnersBindingSource.DataMember = "Partners";
             this.partnersBindingSource.DataSource = this.pokemonDataSet;
+            // 
+            // pokemonDataSet
+            // 
+            this.pokemonDataSet.DataSetName = "PokemonDataSet";
+            this.pokemonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // partnersTableAdapter
             // 
@@ -130,204 +135,264 @@
             this.tableAdapterManager.PokemonTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Pokemon_Training_App.Data.PokemonDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // partnerIDDataGridViewTextBoxColumn
+            // btnGroup
             // 
-            this.partnerIDDataGridViewTextBoxColumn.DataPropertyName = "PartnerID";
-            this.partnerIDDataGridViewTextBoxColumn.HeaderText = "PartnerID";
-            this.partnerIDDataGridViewTextBoxColumn.Name = "partnerIDDataGridViewTextBoxColumn";
-            this.partnerIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.partnerIDDataGridViewTextBoxColumn.Visible = false;
+            this.btnGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroup.Location = new System.Drawing.Point(1542, 384);
+            this.btnGroup.Name = "btnGroup";
+            this.btnGroup.Size = new System.Drawing.Size(146, 31);
+            this.btnGroup.TabIndex = 4;
+            this.btnGroup.Text = "Add To Group";
+            this.btnGroup.UseVisualStyleBackColor = true;
+            this.btnGroup.Click += new System.EventHandler(this.btnGroup_Click);
             // 
-            // nicknameDataGridViewTextBoxColumn
+            // btnEdit
             // 
-            this.nicknameDataGridViewTextBoxColumn.DataPropertyName = "Nickname";
-            this.nicknameDataGridViewTextBoxColumn.FillWeight = 125F;
-            this.nicknameDataGridViewTextBoxColumn.HeaderText = "Nickname";
-            this.nicknameDataGridViewTextBoxColumn.Name = "nicknameDataGridViewTextBoxColumn";
-            this.nicknameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.Location = new System.Drawing.Point(1694, 384);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(59, 31);
+            this.btnEdit.TabIndex = 5;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // pokeNumDataGridViewTextBoxColumn
+            // btnNew
             // 
-            this.pokeNumDataGridViewTextBoxColumn.DataPropertyName = "PokeNum";
-            this.pokeNumDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.pokeNumDataGridViewTextBoxColumn.HeaderText = "Number";
-            this.pokeNumDataGridViewTextBoxColumn.Name = "pokeNumDataGridViewTextBoxColumn";
-            this.pokeNumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNew.Location = new System.Drawing.Point(1759, 384);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(59, 31);
+            this.btnNew.TabIndex = 6;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
-            // pokeNameDataGridViewTextBoxColumn
+            // btnClose
             // 
-            this.pokeNameDataGridViewTextBoxColumn.DataPropertyName = "PokeName";
-            this.pokeNameDataGridViewTextBoxColumn.FillWeight = 125F;
-            this.pokeNameDataGridViewTextBoxColumn.HeaderText = "Species";
-            this.pokeNameDataGridViewTextBoxColumn.Name = "pokeNameDataGridViewTextBoxColumn";
-            this.pokeNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Location = new System.Drawing.Point(1824, 384);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(68, 31);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // formIDDataGridViewTextBoxColumn
+            // btnFilter
             // 
-            this.formIDDataGridViewTextBoxColumn.DataPropertyName = "FormID";
-            this.formIDDataGridViewTextBoxColumn.HeaderText = "FormID";
-            this.formIDDataGridViewTextBoxColumn.Name = "formIDDataGridViewTextBoxColumn";
-            this.formIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.formIDDataGridViewTextBoxColumn.Visible = false;
+            this.btnFilter.Location = new System.Drawing.Point(12, 384);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(68, 31);
+            this.btnFilter.TabIndex = 8;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
-            // nameDataGridViewTextBoxColumn
+            // colPartnerID
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.FillWeight = 125F;
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Form Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colPartnerID.DataPropertyName = "PartnerID";
+            this.colPartnerID.HeaderText = "PartnerID";
+            this.colPartnerID.Name = "colPartnerID";
+            this.colPartnerID.ReadOnly = true;
+            this.colPartnerID.Visible = false;
             // 
-            // natureIDDataGridViewTextBoxColumn
+            // colNickname
             // 
-            this.natureIDDataGridViewTextBoxColumn.DataPropertyName = "NatureID";
-            this.natureIDDataGridViewTextBoxColumn.HeaderText = "NatureID";
-            this.natureIDDataGridViewTextBoxColumn.Name = "natureIDDataGridViewTextBoxColumn";
-            this.natureIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.natureIDDataGridViewTextBoxColumn.Visible = false;
+            this.colNickname.DataPropertyName = "Nickname";
+            this.colNickname.FillWeight = 125F;
+            this.colNickname.HeaderText = "Nickname";
+            this.colNickname.Name = "colNickname";
+            this.colNickname.ReadOnly = true;
             // 
-            // natureNameDataGridViewTextBoxColumn
+            // colPokeNum
             // 
-            this.natureNameDataGridViewTextBoxColumn.DataPropertyName = "NatureName";
-            this.natureNameDataGridViewTextBoxColumn.FillWeight = 125F;
-            this.natureNameDataGridViewTextBoxColumn.HeaderText = "Nature Name";
-            this.natureNameDataGridViewTextBoxColumn.Name = "natureNameDataGridViewTextBoxColumn";
-            this.natureNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colPokeNum.DataPropertyName = "PokeNum";
+            this.colPokeNum.FillWeight = 75F;
+            this.colPokeNum.HeaderText = "Number";
+            this.colPokeNum.Name = "colPokeNum";
+            this.colPokeNum.ReadOnly = true;
             // 
-            // levelDataGridViewTextBoxColumn
+            // colPokeName
             // 
-            this.levelDataGridViewTextBoxColumn.DataPropertyName = "Level";
-            this.levelDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.levelDataGridViewTextBoxColumn.HeaderText = "Level";
-            this.levelDataGridViewTextBoxColumn.Name = "levelDataGridViewTextBoxColumn";
-            this.levelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colPokeName.DataPropertyName = "PokeName";
+            this.colPokeName.FillWeight = 125F;
+            this.colPokeName.HeaderText = "Species";
+            this.colPokeName.Name = "colPokeName";
+            this.colPokeName.ReadOnly = true;
             // 
-            // hasPokerusDataGridViewCheckBoxColumn
+            // colFormID
             // 
-            this.hasPokerusDataGridViewCheckBoxColumn.DataPropertyName = "HasPokerus";
-            this.hasPokerusDataGridViewCheckBoxColumn.FillWeight = 75F;
-            this.hasPokerusDataGridViewCheckBoxColumn.HeaderText = "Pokerus";
-            this.hasPokerusDataGridViewCheckBoxColumn.Name = "hasPokerusDataGridViewCheckBoxColumn";
-            this.hasPokerusDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.colFormID.DataPropertyName = "FormID";
+            this.colFormID.HeaderText = "FormID";
+            this.colFormID.Name = "colFormID";
+            this.colFormID.ReadOnly = true;
+            this.colFormID.Visible = false;
             // 
-            // healthDataGridViewTextBoxColumn
+            // colFormName
             // 
-            this.healthDataGridViewTextBoxColumn.DataPropertyName = "Health";
-            this.healthDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.healthDataGridViewTextBoxColumn.HeaderText = "HP";
-            this.healthDataGridViewTextBoxColumn.Name = "healthDataGridViewTextBoxColumn";
-            this.healthDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colFormName.DataPropertyName = "Name";
+            this.colFormName.FillWeight = 125F;
+            this.colFormName.HeaderText = "Form";
+            this.colFormName.Name = "colFormName";
+            this.colFormName.ReadOnly = true;
             // 
-            // attackDataGridViewTextBoxColumn
+            // colNatureID
             // 
-            this.attackDataGridViewTextBoxColumn.DataPropertyName = "Attack";
-            this.attackDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.attackDataGridViewTextBoxColumn.HeaderText = "Atk";
-            this.attackDataGridViewTextBoxColumn.Name = "attackDataGridViewTextBoxColumn";
-            this.attackDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colNatureID.DataPropertyName = "NatureID";
+            this.colNatureID.HeaderText = "NatureID";
+            this.colNatureID.Name = "colNatureID";
+            this.colNatureID.ReadOnly = true;
+            this.colNatureID.Visible = false;
             // 
-            // defenseDataGridViewTextBoxColumn
+            // colNatureName
             // 
-            this.defenseDataGridViewTextBoxColumn.DataPropertyName = "Defense";
-            this.defenseDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.defenseDataGridViewTextBoxColumn.HeaderText = "Def";
-            this.defenseDataGridViewTextBoxColumn.Name = "defenseDataGridViewTextBoxColumn";
-            this.defenseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colNatureName.DataPropertyName = "NatureName";
+            this.colNatureName.FillWeight = 125F;
+            this.colNatureName.HeaderText = "Nature";
+            this.colNatureName.Name = "colNatureName";
+            this.colNatureName.ReadOnly = true;
             // 
-            // spAttackDataGridViewTextBoxColumn
+            // colLevel
             // 
-            this.spAttackDataGridViewTextBoxColumn.DataPropertyName = "SpAttack";
-            this.spAttackDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.spAttackDataGridViewTextBoxColumn.HeaderText = "SpAtk";
-            this.spAttackDataGridViewTextBoxColumn.Name = "spAttackDataGridViewTextBoxColumn";
-            this.spAttackDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colLevel.DataPropertyName = "Level";
+            this.colLevel.FillWeight = 75F;
+            this.colLevel.HeaderText = "Level";
+            this.colLevel.Name = "colLevel";
+            this.colLevel.ReadOnly = true;
             // 
-            // spDefenseDataGridViewTextBoxColumn
+            // colPokerus
             // 
-            this.spDefenseDataGridViewTextBoxColumn.DataPropertyName = "SpDefense";
-            this.spDefenseDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.spDefenseDataGridViewTextBoxColumn.HeaderText = "SpDef";
-            this.spDefenseDataGridViewTextBoxColumn.Name = "spDefenseDataGridViewTextBoxColumn";
-            this.spDefenseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colPokerus.DataPropertyName = "HasPokerus";
+            this.colPokerus.FillWeight = 75F;
+            this.colPokerus.HeaderText = "Pokerus";
+            this.colPokerus.Name = "colPokerus";
+            this.colPokerus.ReadOnly = true;
             // 
-            // speedDataGridViewTextBoxColumn
+            // colHealth
             // 
-            this.speedDataGridViewTextBoxColumn.DataPropertyName = "Speed";
-            this.speedDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.speedDataGridViewTextBoxColumn.HeaderText = "Spd";
-            this.speedDataGridViewTextBoxColumn.Name = "speedDataGridViewTextBoxColumn";
-            this.speedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colHealth.DataPropertyName = "Health";
+            this.colHealth.FillWeight = 75F;
+            this.colHealth.HeaderText = "HP";
+            this.colHealth.Name = "colHealth";
+            this.colHealth.ReadOnly = true;
             // 
-            // eVHealthDataGridViewTextBoxColumn
+            // colAttack
             // 
-            this.eVHealthDataGridViewTextBoxColumn.DataPropertyName = "EVHealth";
-            this.eVHealthDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.eVHealthDataGridViewTextBoxColumn.HeaderText = "HP EV";
-            this.eVHealthDataGridViewTextBoxColumn.Name = "eVHealthDataGridViewTextBoxColumn";
-            this.eVHealthDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colAttack.DataPropertyName = "Attack";
+            this.colAttack.FillWeight = 75F;
+            this.colAttack.HeaderText = "Atk";
+            this.colAttack.Name = "colAttack";
+            this.colAttack.ReadOnly = true;
             // 
-            // eVAttackDataGridViewTextBoxColumn
+            // colDefense
             // 
-            this.eVAttackDataGridViewTextBoxColumn.DataPropertyName = "EVAttack";
-            this.eVAttackDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.eVAttackDataGridViewTextBoxColumn.HeaderText = "Atk EV";
-            this.eVAttackDataGridViewTextBoxColumn.Name = "eVAttackDataGridViewTextBoxColumn";
-            this.eVAttackDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colDefense.DataPropertyName = "Defense";
+            this.colDefense.FillWeight = 75F;
+            this.colDefense.HeaderText = "Def";
+            this.colDefense.Name = "colDefense";
+            this.colDefense.ReadOnly = true;
             // 
-            // eVDefenseDataGridViewTextBoxColumn
+            // colSpAttack
             // 
-            this.eVDefenseDataGridViewTextBoxColumn.DataPropertyName = "EVDefense";
-            this.eVDefenseDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.eVDefenseDataGridViewTextBoxColumn.HeaderText = "Def EV";
-            this.eVDefenseDataGridViewTextBoxColumn.Name = "eVDefenseDataGridViewTextBoxColumn";
-            this.eVDefenseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colSpAttack.DataPropertyName = "SpAttack";
+            this.colSpAttack.FillWeight = 75F;
+            this.colSpAttack.HeaderText = "SpAtk";
+            this.colSpAttack.Name = "colSpAttack";
+            this.colSpAttack.ReadOnly = true;
             // 
-            // eVSpAttackDataGridViewTextBoxColumn
+            // colSpDefense
             // 
-            this.eVSpAttackDataGridViewTextBoxColumn.DataPropertyName = "EVSpAttack";
-            this.eVSpAttackDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.eVSpAttackDataGridViewTextBoxColumn.HeaderText = "SpAtk EV";
-            this.eVSpAttackDataGridViewTextBoxColumn.Name = "eVSpAttackDataGridViewTextBoxColumn";
-            this.eVSpAttackDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colSpDefense.DataPropertyName = "SpDefense";
+            this.colSpDefense.FillWeight = 75F;
+            this.colSpDefense.HeaderText = "SpDef";
+            this.colSpDefense.Name = "colSpDefense";
+            this.colSpDefense.ReadOnly = true;
             // 
-            // eVSpDefenseDataGridViewTextBoxColumn
+            // colSpeed
             // 
-            this.eVSpDefenseDataGridViewTextBoxColumn.DataPropertyName = "EVSpDefense";
-            this.eVSpDefenseDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.eVSpDefenseDataGridViewTextBoxColumn.HeaderText = "SpDef EV";
-            this.eVSpDefenseDataGridViewTextBoxColumn.Name = "eVSpDefenseDataGridViewTextBoxColumn";
-            this.eVSpDefenseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colSpeed.DataPropertyName = "Speed";
+            this.colSpeed.FillWeight = 75F;
+            this.colSpeed.HeaderText = "Spd";
+            this.colSpeed.Name = "colSpeed";
+            this.colSpeed.ReadOnly = true;
             // 
-            // eVSpeedDataGridViewTextBoxColumn
+            // colHealthEV
             // 
-            this.eVSpeedDataGridViewTextBoxColumn.DataPropertyName = "EVSpeed";
-            this.eVSpeedDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.eVSpeedDataGridViewTextBoxColumn.HeaderText = "Spd EV";
-            this.eVSpeedDataGridViewTextBoxColumn.Name = "eVSpeedDataGridViewTextBoxColumn";
-            this.eVSpeedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colHealthEV.DataPropertyName = "EVHealth";
+            this.colHealthEV.FillWeight = 75F;
+            this.colHealthEV.HeaderText = "HP EV";
+            this.colHealthEV.Name = "colHealthEV";
+            this.colHealthEV.ReadOnly = true;
             // 
-            // totalEVDataGridViewTextBoxColumn
+            // colAttackEV
             // 
-            this.totalEVDataGridViewTextBoxColumn.DataPropertyName = "TotalEV";
-            this.totalEVDataGridViewTextBoxColumn.FillWeight = 75F;
-            this.totalEVDataGridViewTextBoxColumn.HeaderText = "Total EVs";
-            this.totalEVDataGridViewTextBoxColumn.Name = "totalEVDataGridViewTextBoxColumn";
-            this.totalEVDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colAttackEV.DataPropertyName = "EVAttack";
+            this.colAttackEV.FillWeight = 75F;
+            this.colAttackEV.HeaderText = "Atk EV";
+            this.colAttackEV.Name = "colAttackEV";
+            this.colAttackEV.ReadOnly = true;
+            // 
+            // colDefenseEV
+            // 
+            this.colDefenseEV.DataPropertyName = "EVDefense";
+            this.colDefenseEV.FillWeight = 75F;
+            this.colDefenseEV.HeaderText = "Def EV";
+            this.colDefenseEV.Name = "colDefenseEV";
+            this.colDefenseEV.ReadOnly = true;
+            // 
+            // colSpAttackEV
+            // 
+            this.colSpAttackEV.DataPropertyName = "EVSpAttack";
+            this.colSpAttackEV.FillWeight = 75F;
+            this.colSpAttackEV.HeaderText = "SpAtk EV";
+            this.colSpAttackEV.Name = "colSpAttackEV";
+            this.colSpAttackEV.ReadOnly = true;
+            // 
+            // colSpDefenseEV
+            // 
+            this.colSpDefenseEV.DataPropertyName = "EVSpDefense";
+            this.colSpDefenseEV.FillWeight = 75F;
+            this.colSpDefenseEV.HeaderText = "SpDef EV";
+            this.colSpDefenseEV.Name = "colSpDefenseEV";
+            this.colSpDefenseEV.ReadOnly = true;
+            // 
+            // colSpeedEV
+            // 
+            this.colSpeedEV.DataPropertyName = "EVSpeed";
+            this.colSpeedEV.FillWeight = 75F;
+            this.colSpeedEV.HeaderText = "Spd EV";
+            this.colSpeedEV.Name = "colSpeedEV";
+            this.colSpeedEV.ReadOnly = true;
+            // 
+            // colTotalEV
+            // 
+            this.colTotalEV.DataPropertyName = "TotalEV";
+            this.colTotalEV.FillWeight = 75F;
+            this.colTotalEV.HeaderText = "Total EVs";
+            this.colTotalEV.Name = "colTotalEV";
+            this.colTotalEV.ReadOnly = true;
             // 
             // frmSearchResultPartner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1904, 501);
+            this.ClientSize = new System.Drawing.Size(1904, 427);
+            this.Controls.Add(this.btnFilter);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnNew);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnGroup);
             this.Controls.Add(this.dgvPartners);
             this.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmSearchResultPartner";
             this.Text = "frmSearchResultPartner";
+            this.Activated += new System.EventHandler(this.frmSearchResultPartner_Activated);
             this.Load += new System.EventHandler(this.frmSearchResultPartner_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartners)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.partnersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,28 +404,33 @@
         private System.Windows.Forms.BindingSource partnersBindingSource;
         private Data.PokemonDataSetTableAdapters.PartnersTableAdapter partnersTableAdapter;
         private Data.PokemonDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridViewTextBoxColumn partnerIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nicknameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pokeNumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pokeNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn formIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn natureIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn natureNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn levelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn hasPokerusDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn healthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn attackDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn defenseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn spAttackDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn spDefenseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn speedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eVHealthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eVAttackDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eVDefenseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eVSpAttackDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eVSpDefenseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eVSpeedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalEVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnGroup;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPartnerID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNickname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPokeNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPokeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFormID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFormName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNatureID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNatureName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLevel;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colPokerus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHealth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAttack;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDefense;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSpAttack;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSpDefense;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSpeed;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHealthEV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAttackEV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDefenseEV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSpAttackEV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSpDefenseEV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSpeedEV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalEV;
     }
 }

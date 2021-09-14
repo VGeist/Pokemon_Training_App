@@ -12,9 +12,13 @@ namespace Pokemon_Training_App.Views
 {
     public partial class frmEditPartner : Form
     {
-        public frmEditPartner()
+        int PartnerID;
+
+        public frmEditPartner(int id)
         {
             InitializeComponent();
+
+            PartnerID = id;
         }
     }
 }

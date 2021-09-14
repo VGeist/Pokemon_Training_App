@@ -12,7 +12,7 @@ namespace Pokemon_Training_App.Views
 {
     public partial class frmSearchPartner : Form
     {
-        // These
+        // values given here are 'default' and return all rows when using FillBySearch (see SQL)
         public int Number = -1, MinLevel = -1, MaxLevel = -1, NatureID = -1, MinEV = -1, MaxEV = -1;
         public string Nickname = "";
 
@@ -57,6 +57,7 @@ namespace Pokemon_Training_App.Views
                 MaxEV = (int)numMaxEV.Value;
             }
 
+            this.DialogResult = DialogResult.Yes;
             this.Close();
         }
 
