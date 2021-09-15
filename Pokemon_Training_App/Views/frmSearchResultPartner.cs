@@ -42,11 +42,6 @@ namespace Pokemon_Training_App.Views
         private void frmSearchResultPartner_Load(object sender, EventArgs e)
         {
             getFilterValues();
-        }
-
-        private void frmSearchResultPartner_Activated(object sender, EventArgs e)
-        {
-            // get data
             partnersTableAdapter.FillBySearch(pokemonDataSet.Partners, FilterNumber, FilterNickname, FilterNatureID, FilterMinLevel, FilterMaxLevel, FilterMinEV, FilterMaxEV);
         }
 
@@ -82,6 +77,7 @@ namespace Pokemon_Training_App.Views
         private void btnFilter_Click(object sender, EventArgs e)
         {
             getFilterValues();
+            partnersTableAdapter.FillBySearch(pokemonDataSet.Partners, FilterNumber, FilterNickname, FilterNatureID, FilterMinLevel, FilterMaxLevel, FilterMinEV, FilterMaxEV);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
