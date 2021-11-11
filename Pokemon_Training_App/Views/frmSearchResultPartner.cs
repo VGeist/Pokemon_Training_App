@@ -19,30 +19,57 @@ namespace Pokemon_Training_App.Views
         public frmSearchResultPartner()
         {
             InitializeComponent();
+            getFilterValues();
+            getData();
         }
 
+        /*** HELPERS ***/
         private void getFilterValues()
         {
+            // get filter values from user
             // open frmSearchPartner dialog
-            frmSearchPartner filter = new frmSearchPartner();
-            filter.ShowDialog();
+            frmSearchPartner searchDialog = new frmSearchPartner();
+            searchDialog.ShowDialog();
 
-            if (filter.DialogResult == DialogResult.Yes)
+            if (searchDialog.DialogResult == DialogResult.OK)
             {
                 // set filter values
-                FilterNumber = filter.Number;
-                FilterNatureID = filter.NatureID;
-                FilterMinLevel = filter.MinLevel;
-                FilterMaxLevel = filter.MaxLevel;
-                FilterMinEV = filter.MinEV;
-                FilterMaxEV = filter.MaxEV;
+                FilterNumber = searchDialog.Number;
+                FilterNickname = searchDialog.Nickname;
+                FilterNatureID = searchDialog.NatureID;
+                FilterMinLevel = searchDialog.MinLevel;
+                FilterMaxLevel = searchDialog.MaxLevel;
+                FilterMinEV = searchDialog.MinEV;
+                FilterMaxEV = searchDialog.MaxEV;
             }
         }
 
-        private void frmSearchResultPartner_Load(object sender, EventArgs e)
+        private void getData()
         {
-            getFilterValues();
+            // gets data based on filter values
             partnersTableAdapter.FillBySearch(pokemonDataSet.Partners, FilterNumber, FilterNickname, FilterNatureID, FilterMinLevel, FilterMaxLevel, FilterMinEV, FilterMaxEV);
+        }
+
+        /*** EVENTS ***/
+        private void dgvPartners_SelectionChanged(object sender, EventArgs e)
+        {
+            // enable or disable btnEdit and btnForms if no rows are selected
+            // check if rows are selected
+            if (dgvPartners.SelectedRows.Count > 0)
+            {
+                btnEdit.Enabled = true;
+                btnGroup.Enabled = true;
+            }
+            else
+            {
+                btnEdit.Enabled = false;
+                btnGroup.Enabled = false;
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            getData();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -50,11 +77,14 @@ namespace Pokemon_Training_App.Views
             // open new partner form
             frmAddPartner form = new frmAddPartner();
             form.ShowDialog();
+
+            // refresh
+            getData();
         }
 
         private void btnGroup_Click(object sender, EventArgs e)
         {
-            // add selected to group
+            // add selected to group TODO: implement
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -66,18 +96,14 @@ namespace Pokemon_Training_App.Views
             frmEditPartner form = new frmEditPartner(partnerID);
             form.ShowDialog();
 
-            if (form.DialogResult == DialogResult.Cancel)
-            {
-                // cancel search
-                this.Close();
-                return;
-            }
+            // refresh
+            getData();
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
             getFilterValues();
-            partnersTableAdapter.FillBySearch(pokemonDataSet.Partners, FilterNumber, FilterNickname, FilterNatureID, FilterMinLevel, FilterMaxLevel, FilterMinEV, FilterMaxEV);
+            getData();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

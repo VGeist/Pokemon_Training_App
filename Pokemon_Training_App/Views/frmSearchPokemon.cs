@@ -14,7 +14,6 @@ namespace Pokemon_Training_App.Views
     public partial class frmSearchPokemon : Form
     {
         public PokemonFilter Filter;
-        public bool DoFilter = true;    // used to determin if the user does not want to apply a fliter
 
         public frmSearchPokemon()
         {
@@ -23,8 +22,8 @@ namespace Pokemon_Training_App.Views
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            // clsoe this window
-            DoFilter = false;   // cancel filter application
+            this.DialogResult = DialogResult.Cancel;
+
             this.Close();
         }
 
@@ -37,7 +36,10 @@ namespace Pokemon_Training_App.Views
                 // check if valid
                 if(isPokeNumValid())
                 {
+                    // set filter and dialog resul
                     Filter = PokemonFilter.Number;
+                    this.DialogResult = DialogResult.OK;
+
                     this.Close();
                 }
             } else
@@ -46,8 +48,10 @@ namespace Pokemon_Training_App.Views
                 // check if valid
                 if (isPokeNameValid())
                 {
-                    // set filter and close
+                    // set filter and dialog resul
                     Filter = PokemonFilter.Name;
+                    this.DialogResult = DialogResult.OK;
+
                     this.Close();
                 }
             }
@@ -55,8 +59,10 @@ namespace Pokemon_Training_App.Views
 
         private void btnGetAll_Click(object sender, EventArgs e)
         {
-            // set filter to none
+            // set filter and dialog result to none
             Filter = PokemonFilter.None;
+            this.DialogResult = DialogResult.OK;
+
             this.Close();
         }
 

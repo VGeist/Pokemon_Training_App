@@ -57,7 +57,7 @@ namespace Pokemon_Training_App.Views
                 MaxEV = (int)numMaxEV.Value;
             }
 
-            this.DialogResult = DialogResult.Yes;
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 

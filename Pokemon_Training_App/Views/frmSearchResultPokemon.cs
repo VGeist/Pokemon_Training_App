@@ -27,9 +27,8 @@ namespace Pokemon_Training_App.Views
         public frmSearchResultPokemon()
         {
             InitializeComponent();
-
-            // open search form
-            searchPokemon();
+            getFilterValues();
+            getData();
         }
 
         /*** HELPERS ***/
@@ -47,6 +46,9 @@ namespace Pokemon_Training_App.Views
             {
                 this.pokemonTableAdapter.Fill(this.pokemonDataSet.Pokemon);
             }
+
+            // diagnostic TODO: remove
+            System.Diagnostics.Debug.WriteLine("data retrieved " + dgvPokemon.Rows.Count);
 
             // if no result display message
             if (dgvPokemon.RowCount == 0)
@@ -72,60 +74,40 @@ namespace Pokemon_Training_App.Views
             lblMessage.Hide();
         }
 
-        private void searchPokemon()
+        private void getFilterValues()
         {
             // get parameters from user
             frmSearchPokemon searchDialog = new frmSearchPokemon();
-            searchDialog.ShowDialog();
+            searchDialog.ShowDialog(); 
 
             // check if should apply the filter
-            if (searchDialog.DoFilter)
+            if (searchDialog.DialogResult == DialogResult.OK)
             {
                 // set parameters
                 Filter = searchDialog.Filter;
-                if (Filter == PokemonFilter.Number)
-                {
-                    PokeNum = searchDialog.getNumberValue();
-                }
-                else if (Filter == PokemonFilter.Name)
-                {
-                    PokeName = searchDialog.getNameText();
-                }
-
-                getData();
+                PokeNum = searchDialog.getNumberValue();
+                PokeName = searchDialog.getNameText();
             }
+
+            // diagnostic TODO: remvoe
+            System.Diagnostics.Debug.WriteLine("Search Dialog = " + searchDialog.DialogResult + ",   Filter = " + Filter);
         }
 
         /*** EVENTS ***/
-        private void frmSearchResultPokemon_Load(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-            // load data
-            getData();
-        }
-
-        private void frmSearchResultPokemon_Activated(object sender, EventArgs e)
-        {
-            // update data
-            getData();
-        }
-
-        private async void btnRefresh_Click(object sender, EventArgs e)
-        {
-            // refreshes the data in dgvPokemon, displays a message to the user showing that it is refreshing
-            dataMessage("Refreshing...");
-            await Task.Delay(1000);
             getData();
         }
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            // close form
             this.Close();
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            searchPokemon();
+            getFilterValues();
+            getData();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -136,12 +118,18 @@ namespace Pokemon_Training_App.Views
             // open form
             frmEditPokemon form = new frmEditPokemon(pokeNum);
             form.ShowDialog();
+
+            // refresh
+            getData();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
             frmAddPokemon form = new frmAddPokemon();
             form.ShowDialog();
+
+            // refresh
+            getData();
         }
 
         private void btnForms_Click(object sender, EventArgs e)

@@ -62,6 +62,7 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnFilter = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartners)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.partnersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
@@ -111,6 +112,7 @@
             this.dgvPartners.Size = new System.Drawing.Size(1904, 367);
             this.dgvPartners.TabIndex = 3;
             this.dgvPartners.TabStop = false;
+            this.dgvPartners.SelectionChanged += new System.EventHandler(this.dgvPartners_SelectionChanged);
             // 
             // colPartnerID
             // 
@@ -322,6 +324,7 @@
             // btnGroup
             // 
             this.btnGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroup.Enabled = false;
             this.btnGroup.Location = new System.Drawing.Point(1542, 384);
             this.btnGroup.Name = "btnGroup";
             this.btnGroup.Size = new System.Drawing.Size(146, 31);
@@ -333,6 +336,7 @@
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.Enabled = false;
             this.btnEdit.Location = new System.Drawing.Point(1694, 384);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(59, 31);
@@ -373,11 +377,22 @@
             this.btnFilter.UseVisualStyleBackColor = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(86, 384);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(88, 31);
+            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frmSearchResultPartner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 427);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnNew);
@@ -388,7 +403,6 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmSearchResultPartner";
             this.Text = "frmSearchResultPartner";
-            this.Load += new System.EventHandler(this.frmSearchResultPartner_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartners)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.partnersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
@@ -431,5 +445,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSpDefenseEV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSpeedEV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalEV;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
