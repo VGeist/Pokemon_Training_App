@@ -36,7 +36,7 @@ namespace Pokemon_Training_App.Views
                 // check if valid
                 if(isPokeNumValid())
                 {
-                    // set filter and dialog resul
+                    // set filter and dialog result
                     Filter = PokemonFilter.Number;
                     this.DialogResult = DialogResult.OK;
 
@@ -48,7 +48,7 @@ namespace Pokemon_Training_App.Views
                 // check if valid
                 if (isPokeNameValid())
                 {
-                    // set filter and dialog resul
+                    // set filter and dialog result
                     Filter = PokemonFilter.Name;
                     this.DialogResult = DialogResult.OK;
 

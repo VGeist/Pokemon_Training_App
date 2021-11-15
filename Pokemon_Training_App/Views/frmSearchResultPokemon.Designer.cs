@@ -304,6 +304,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmSearchResultPokemon";
             this.Text = "Pokemon";
+            this.Load += new System.EventHandler(this.frmSearchResultPokemon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonBindingNavigator)).EndInit();

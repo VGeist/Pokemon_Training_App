@@ -403,6 +403,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmSearchResultPartner";
             this.Text = "frmSearchResultPartner";
+            this.Load += new System.EventHandler(this.frmSearchResultPartner_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartners)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.partnersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();

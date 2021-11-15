@@ -27,8 +27,6 @@ namespace Pokemon_Training_App.Views
         public frmSearchResultPokemon()
         {
             InitializeComponent();
-            getFilterValues();
-            getData();
         }
 
         /*** HELPERS ***/
@@ -46,9 +44,6 @@ namespace Pokemon_Training_App.Views
             {
                 this.pokemonTableAdapter.Fill(this.pokemonDataSet.Pokemon);
             }
-
-            // diagnostic TODO: remove
-            System.Diagnostics.Debug.WriteLine("data retrieved " + dgvPokemon.Rows.Count);
 
             // if no result display message
             if (dgvPokemon.RowCount == 0)
@@ -88,12 +83,15 @@ namespace Pokemon_Training_App.Views
                 PokeNum = searchDialog.getNumberValue();
                 PokeName = searchDialog.getNameText();
             }
-
-            // diagnostic TODO: remvoe
-            System.Diagnostics.Debug.WriteLine("Search Dialog = " + searchDialog.DialogResult + ",   Filter = " + Filter);
         }
 
         /*** EVENTS ***/
+        private void frmSearchResultPokemon_Load(object sender, EventArgs e)
+        {
+            getFilterValues();
+            getData();
+        }
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             getData();

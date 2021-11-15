@@ -19,8 +19,6 @@ namespace Pokemon_Training_App.Views
         public frmSearchResultPartner()
         {
             InitializeComponent();
-            getFilterValues();
-            getData();
         }
 
         /*** HELPERS ***/
@@ -51,6 +49,12 @@ namespace Pokemon_Training_App.Views
         }
 
         /*** EVENTS ***/
+        private void frmSearchResultPartner_Load(object sender, EventArgs e)
+        {
+            getFilterValues();
+            getData();
+        }
+
         private void dgvPartners_SelectionChanged(object sender, EventArgs e)
         {
             // enable or disable btnEdit and btnForms if no rows are selected
