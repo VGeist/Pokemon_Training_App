@@ -30,13 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.txtNickname = new System.Windows.Forms.TextBox();
+            this.partnersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pokemonDataSet = new Pokemon_Training_App.Data.PokemonDataSet();
             this.slblLevel = new System.Windows.Forms.Label();
             this.slblNickname = new System.Windows.Forms.Label();
             this.slblPokemonNum = new System.Windows.Forms.Label();
             this.btnAddForm = new System.Windows.Forms.Button();
             this.cmbForm = new System.Windows.Forms.ComboBox();
+            this.formsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pokemonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.slblForm = new System.Windows.Forms.Label();
             this.cmbNature = new System.Windows.Forms.ComboBox();
+            this.naturesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.slblNature = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -71,7 +76,17 @@
             this.slblSpAttackEV = new System.Windows.Forms.Label();
             this.slblDefenseEV = new System.Windows.Forms.Label();
             this.slblAttackEV = new System.Windows.Forms.Label();
-            this.numPokeNum = new System.Windows.Forms.NumericUpDown();
+            this.cmbPokeNum = new System.Windows.Forms.ComboBox();
+            this.partnersTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.PartnersTableAdapter();
+            this.tableAdapterManager = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.TableAdapterManager();
+            this.pokemonTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.PokemonTableAdapter();
+            this.formsTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.FormsTableAdapter();
+            this.naturesTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.NaturesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.partnersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.naturesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpeedStat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpDefenseStat)).BeginInit();
@@ -88,15 +103,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.numDefenseEV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAttackEV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHealthEV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNickname
             // 
+            this.txtNickname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.partnersBindingSource, "Nickname", true));
             this.txtNickname.Location = new System.Drawing.Point(185, 53);
             this.txtNickname.Name = "txtNickname";
             this.txtNickname.Size = new System.Drawing.Size(180, 30);
             this.txtNickname.TabIndex = 2;
+            // 
+            // partnersBindingSource
+            // 
+            this.partnersBindingSource.DataMember = "Partners";
+            this.partnersBindingSource.DataSource = this.pokemonDataSet;
+            // 
+            // pokemonDataSet
+            // 
+            this.pokemonDataSet.DataSetName = "PokemonDataSet";
+            this.pokemonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // slblLevel
             // 
@@ -137,22 +162,28 @@
             // 
             // cmbForm
             // 
+            this.cmbForm.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.formsBindingSource, "Name", true));
+            this.cmbForm.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.partnersBindingSource, "FormID", true));
+            this.cmbForm.DataSource = this.pokemonDataSet;
+            this.cmbForm.DisplayMember = "Pokemon.FK__Forms__PokeNum__300424B4.Name";
             this.cmbForm.FormattingEnabled = true;
             this.cmbForm.ItemHeight = 22;
-            this.cmbForm.Items.AddRange(new object[] {
-            "Default",
-            "Calm",
-            "Bold",
-            "Hardy",
-            "Bashful",
-            "Relaxed",
-            "TEMPORARY"});
             this.cmbForm.Location = new System.Drawing.Point(84, 136);
             this.cmbForm.MaxDropDownItems = 32;
             this.cmbForm.Name = "cmbForm";
             this.cmbForm.Size = new System.Drawing.Size(159, 30);
             this.cmbForm.TabIndex = 5;
-            this.cmbForm.Text = "Default";
+            this.cmbForm.ValueMember = "Forms.FormID";
+            // 
+            // formsBindingSource
+            // 
+            this.formsBindingSource.DataMember = "FK__Forms__PokeNum__300424B4";
+            this.formsBindingSource.DataSource = this.pokemonBindingSource;
+            // 
+            // pokemonBindingSource
+            // 
+            this.pokemonBindingSource.DataMember = "Pokemon";
+            this.pokemonBindingSource.DataSource = this.pokemonDataSet;
             // 
             // slblForm
             // 
@@ -165,20 +196,22 @@
             // 
             // cmbNature
             // 
+            this.cmbNature.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naturesBindingSource, "Name", true));
+            this.cmbNature.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.partnersBindingSource, "NatureID", true));
+            this.cmbNature.DataSource = this.pokemonDataSet;
+            this.cmbNature.DisplayMember = "Natures.Name";
             this.cmbNature.FormattingEnabled = true;
-            this.cmbNature.Items.AddRange(new object[] {
-            "Calm",
-            "Bold",
-            "Hardy",
-            "Bashful",
-            "Relaxed",
-            "TEMPORARY"});
             this.cmbNature.Location = new System.Drawing.Point(84, 93);
             this.cmbNature.MaxDropDownItems = 32;
             this.cmbNature.Name = "cmbNature";
             this.cmbNature.Size = new System.Drawing.Size(159, 30);
             this.cmbNature.TabIndex = 3;
-            this.cmbNature.Text = "Hardy";
+            this.cmbNature.ValueMember = "Natures.NatureID";
+            // 
+            // naturesBindingSource
+            // 
+            this.naturesBindingSource.DataMember = "Natures";
+            this.naturesBindingSource.DataSource = this.pokemonDataSet;
             // 
             // slblNature
             // 
@@ -198,6 +231,7 @@
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDelete
             // 
@@ -208,6 +242,7 @@
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnConfirm
             // 
@@ -218,6 +253,7 @@
             this.btnConfirm.TabIndex = 14;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // ttpPokerus
             // 
@@ -226,6 +262,7 @@
             // chkHasPokerus
             // 
             this.chkHasPokerus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.chkHasPokerus.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.partnersBindingSource, "HasPokerus", true));
             this.chkHasPokerus.Image = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
             this.chkHasPokerus.Location = new System.Drawing.Point(301, 204);
             this.chkHasPokerus.Name = "chkHasPokerus";
@@ -236,6 +273,7 @@
             // 
             // numLevel
             // 
+            this.numLevel.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.partnersBindingSource, "Level", true));
             this.numLevel.Location = new System.Drawing.Point(325, 94);
             this.numLevel.Minimum = new decimal(new int[] {
             1,
@@ -253,6 +291,7 @@
             // 
             // numSpeedStat
             // 
+            this.numSpeedStat.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.partnersBindingSource, "Speed", true));
             this.numSpeedStat.Location = new System.Drawing.Point(142, 175);
             this.numSpeedStat.Maximum = new decimal(new int[] {
             1000,
@@ -275,6 +314,7 @@
             // 
             // numSpDefenseStat
             // 
+            this.numSpDefenseStat.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.partnersBindingSource, "SpDefense", true));
             this.numSpDefenseStat.Location = new System.Drawing.Point(142, 142);
             this.numSpDefenseStat.Maximum = new decimal(new int[] {
             1000,
@@ -297,6 +337,7 @@
             // 
             // numSpAttackStat
             // 
+            this.numSpAttackStat.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.partnersBindingSource, "SpAttack", true));
             this.numSpAttackStat.Location = new System.Drawing.Point(142, 109);
             this.numSpAttackStat.Maximum = new decimal(new int[] {
             1000,
@@ -319,6 +360,7 @@
             // 
             // numDefenseStat
             // 
+            this.numDefenseStat.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.partnersBindingSource, "Defense", true));
             this.numDefenseStat.Location = new System.Drawing.Point(142, 76);
             this.numDefenseStat.Maximum = new decimal(new int[] {
             1000,
@@ -341,6 +383,7 @@
             // 
             // numAttackStat
             // 
+            this.numAttackStat.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.partnersBindingSource, "Attack", true));
             this.numAttackStat.Location = new System.Drawing.Point(142, 43);
             this.numAttackStat.Maximum = new decimal(new int[] {
             1000,
@@ -363,6 +406,7 @@
             // 
             // numHealthStat
             // 
+            this.numHealthStat.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.partnersBindingSource, "Health", true));
             this.numHealthStat.Location = new System.Drawing.Point(142, 10);
             this.numHealthStat.Maximum = new decimal(new int[] {
             1000,
@@ -494,6 +538,7 @@
             // 
             // numSpeedEV
             // 
+            this.numSpeedEV.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.partnersBindingSource, "EVSpeed", true));
             this.numSpeedEV.Location = new System.Drawing.Point(142, 175);
             this.numSpeedEV.Maximum = new decimal(new int[] {
             255,
@@ -506,6 +551,7 @@
             // 
             // numSpDefenseEV
             // 
+            this.numSpDefenseEV.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.partnersBindingSource, "EVSpDefense", true));
             this.numSpDefenseEV.Location = new System.Drawing.Point(142, 142);
             this.numSpDefenseEV.Maximum = new decimal(new int[] {
             255,
@@ -518,6 +564,7 @@
             // 
             // numSpAttackEV
             // 
+            this.numSpAttackEV.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.partnersBindingSource, "EVSpAttack", true));
             this.numSpAttackEV.Location = new System.Drawing.Point(142, 109);
             this.numSpAttackEV.Maximum = new decimal(new int[] {
             255,
@@ -530,6 +577,7 @@
             // 
             // numDefenseEV
             // 
+            this.numDefenseEV.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.partnersBindingSource, "EVDefense", true));
             this.numDefenseEV.Location = new System.Drawing.Point(142, 76);
             this.numDefenseEV.Maximum = new decimal(new int[] {
             255,
@@ -542,6 +590,7 @@
             // 
             // numAttackEV
             // 
+            this.numAttackEV.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.partnersBindingSource, "EVAttack", true));
             this.numAttackEV.Location = new System.Drawing.Point(142, 43);
             this.numAttackEV.Maximum = new decimal(new int[] {
             255,
@@ -554,6 +603,7 @@
             // 
             // numHealthEV
             // 
+            this.numHealthEV.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.partnersBindingSource, "EVHealth", true));
             this.numHealthEV.Location = new System.Drawing.Point(142, 10);
             this.numHealthEV.Maximum = new decimal(new int[] {
             255,
@@ -618,24 +668,49 @@
             this.slblAttackEV.TabIndex = 12;
             this.slblAttackEV.Text = "Attack";
             // 
-            // numPokeNum
+            // cmbPokeNum
             // 
-            this.numPokeNum.Location = new System.Drawing.Point(185, 13);
-            this.numPokeNum.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numPokeNum.Name = "numPokeNum";
-            this.numPokeNum.Size = new System.Drawing.Size(180, 30);
-            this.numPokeNum.TabIndex = 1;
+            this.cmbPokeNum.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.partnersBindingSource, "PokeNum", true));
+            this.cmbPokeNum.DataSource = this.pokemonDataSet;
+            this.cmbPokeNum.DisplayMember = "Pokemon.PokeNum";
+            this.cmbPokeNum.FormattingEnabled = true;
+            this.cmbPokeNum.Location = new System.Drawing.Point(185, 12);
+            this.cmbPokeNum.Name = "cmbPokeNum";
+            this.cmbPokeNum.Size = new System.Drawing.Size(180, 30);
+            this.cmbPokeNum.TabIndex = 32;
+            this.cmbPokeNum.ValueMember = "Pokemon.PokeNum";
+            // 
+            // partnersTableAdapter
+            // 
+            this.partnersTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.FormsTableAdapter = null;
+            this.tableAdapterManager.NaturesTableAdapter = null;
+            this.tableAdapterManager.PokemonTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Pokemon_Training_App.Data.PokemonDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // pokemonTableAdapter
+            // 
+            this.pokemonTableAdapter.ClearBeforeFill = true;
+            // 
+            // formsTableAdapter
+            // 
+            this.formsTableAdapter.ClearBeforeFill = true;
+            // 
+            // naturesTableAdapter
+            // 
+            this.naturesTableAdapter.ClearBeforeFill = true;
             // 
             // frmEditPartner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 428);
-            this.Controls.Add(this.numPokeNum);
+            this.Controls.Add(this.cmbPokeNum);
             this.Controls.Add(this.tabStats);
             this.Controls.Add(this.numLevel);
             this.Controls.Add(this.chkHasPokerus);
@@ -655,6 +730,12 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmEditPartner";
             this.Text = "Edit Partner Entry";
+            this.Load += new System.EventHandler(this.frmEditPartner_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.partnersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.naturesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpeedStat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpDefenseStat)).EndInit();
@@ -673,7 +754,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numDefenseEV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAttackEV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHealthEV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPokeNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -722,6 +802,16 @@
         private System.Windows.Forms.Label slblSpAttackEV;
         private System.Windows.Forms.Label slblDefenseEV;
         private System.Windows.Forms.Label slblAttackEV;
-        private System.Windows.Forms.NumericUpDown numPokeNum;
+        private System.Windows.Forms.ComboBox cmbPokeNum;
+        private Data.PokemonDataSet pokemonDataSet;
+        private System.Windows.Forms.BindingSource partnersBindingSource;
+        private Data.PokemonDataSetTableAdapters.PartnersTableAdapter partnersTableAdapter;
+        private Data.PokemonDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingSource pokemonBindingSource;
+        private Data.PokemonDataSetTableAdapters.PokemonTableAdapter pokemonTableAdapter;
+        private System.Windows.Forms.BindingSource formsBindingSource;
+        private Data.PokemonDataSetTableAdapters.FormsTableAdapter formsTableAdapter;
+        private System.Windows.Forms.BindingSource naturesBindingSource;
+        private Data.PokemonDataSetTableAdapters.NaturesTableAdapter naturesTableAdapter;
     }
 }

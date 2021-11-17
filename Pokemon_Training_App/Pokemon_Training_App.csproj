@@ -66,6 +66,9 @@
     <Compile Include="Classes\PokeForm.cs" />
     <Compile Include="Classes\Partner.cs" />
     <Compile Include="Classes\Pokemon.cs" />
+    <Compile Include="Data\PokemonDataSet.cs">
+      <DependentUpon>PokemonDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\PokemonDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
