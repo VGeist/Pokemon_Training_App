@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Pokemon_Training_App.Classes;
 
 namespace Pokemon_Training_App.Classes
@@ -28,25 +29,18 @@ namespace Pokemon_Training_App.Classes
             if (slot == -1)
             {
                 // display "full party" message
+                MessageBox.Show("Party is full. Partner has not been added.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
-            // find partner in database by ID
-            // if not found - display error
-            // if found - build partner and add to available slot
+
+            // add ID to party
+            _members[slot] = partnerID;
+            MessageBox.Show("Successfully added to party.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static void removeMember(int slotNum)
         {
-            // TODO: implement
-            // delete data in 
-            return;
-        }
-
-        public static void synchronizeData()
-        {
-            // TODO:implement
-            // syncronize party member data with data from DB
+                _members[slotNum] = null;
         }
 
         /*** HELPERS ***/
