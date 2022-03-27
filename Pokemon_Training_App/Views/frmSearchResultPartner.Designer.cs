@@ -325,11 +325,11 @@
             // 
             this.btnGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGroup.Enabled = false;
-            this.btnGroup.Location = new System.Drawing.Point(1542, 384);
+            this.btnGroup.Location = new System.Drawing.Point(1504, 384);
             this.btnGroup.Name = "btnGroup";
-            this.btnGroup.Size = new System.Drawing.Size(146, 31);
+            this.btnGroup.Size = new System.Drawing.Size(184, 31);
             this.btnGroup.TabIndex = 4;
-            this.btnGroup.Text = "Add To Group";
+            this.btnGroup.Text = "Remove from Party";
             this.btnGroup.UseVisualStyleBackColor = true;
             this.btnGroup.Click += new System.EventHandler(this.btnGroup_Click);
             // 

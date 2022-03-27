@@ -14,15 +14,21 @@ namespace Pokemon_Training_App.Classes
         private static int?[] _members = new int?[6]; // stores partner IDs
 
         /*** FUNCTIONS ***/
-        public static Partner getPartnerInSlot(int num)
+        // returns ID of the given slot (slots start at 0), returns -1 for null value
+        public static int getIDBySlot(int slotNum)
         {
-            // TODO: implement
-            return new Partner(new Pokemon());
+            int? id = _members[slotNum];
+            if (id == null)
+            {
+                return -1;
+            } else
+            {
+                return (int)id;
+            }
         }
 
         public static void addMember (int partnerID)
         {
-            // TODO: implement
             // check if party is full -> T: display error and return; F: continue;
             int slot = findAvailableSlot();
 
@@ -38,9 +44,27 @@ namespace Pokemon_Training_App.Classes
             MessageBox.Show("Successfully added to party.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public static void removeMember(int slotNum)
+        public static void removeMemberBySlot(int slotNum)
         {
-                _members[slotNum] = null;
+            // removes member at the given index
+            _members[slotNum] = null;
+        }
+
+        public static void removeMemberByID(int id)
+        {
+            // removes the first instance of an id
+            for (int i = 0; i < _members.Length; i++) {
+                if (_members[i] == id)
+                {
+                    _members[i] = null;
+                    return;
+                }
+            }
+        }
+
+        public static bool containsPartner(int id)
+        {
+            return _members.Contains(id);
         }
 
         /*** HELPERS ***/
