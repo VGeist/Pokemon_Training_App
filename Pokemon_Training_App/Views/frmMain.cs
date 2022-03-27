@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pokemon_Training_App.Classes;
 
 namespace Pokemon_Training_App.Views
 {
@@ -52,6 +53,24 @@ namespace Pokemon_Training_App.Views
             // create and open an search pokemon form
             frmSearchResultPartner form = new frmSearchResultPartner();
             form.Show();
+        }
+
+        private void btnTraining_Click(object sender, EventArgs e)
+        {
+            // open training form if Party has any members
+            for (int i = 0; i < 6; i++)
+            {
+                if(Party.getIDBySlot(i) > -1)
+                {
+                    // party has at least one member, display form
+                    frmTraining form = new frmTraining();
+                    form.ShowDialog();
+                    return;
+                }
+            }
+
+            // no party members: notify user
+            MessageBox.Show("No partners in party. Please add members via Search Partners.", "No partners", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

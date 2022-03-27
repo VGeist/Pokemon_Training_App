@@ -33,12 +33,13 @@
             this.btnSearchPokemon = new System.Windows.Forms.Button();
             this.btnSearchPartner = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnTraining = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddPokemon
             // 
             this.btnAddPokemon.AutoSize = true;
-            this.btnAddPokemon.Location = new System.Drawing.Point(43, 42);
+            this.btnAddPokemon.Location = new System.Drawing.Point(43, 24);
             this.btnAddPokemon.Name = "btnAddPokemon";
             this.btnAddPokemon.Size = new System.Drawing.Size(176, 32);
             this.btnAddPokemon.TabIndex = 1;
@@ -49,7 +50,7 @@
             // btnAddPartner
             // 
             this.btnAddPartner.AutoSize = true;
-            this.btnAddPartner.Location = new System.Drawing.Point(43, 84);
+            this.btnAddPartner.Location = new System.Drawing.Point(43, 64);
             this.btnAddPartner.Name = "btnAddPartner";
             this.btnAddPartner.Size = new System.Drawing.Size(176, 32);
             this.btnAddPartner.TabIndex = 2;
@@ -60,7 +61,7 @@
             // btnSearchPokemon
             // 
             this.btnSearchPokemon.AutoSize = true;
-            this.btnSearchPokemon.Location = new System.Drawing.Point(299, 42);
+            this.btnSearchPokemon.Location = new System.Drawing.Point(299, 24);
             this.btnSearchPokemon.Name = "btnSearchPokemon";
             this.btnSearchPokemon.Size = new System.Drawing.Size(176, 32);
             this.btnSearchPokemon.TabIndex = 3;
@@ -71,7 +72,7 @@
             // btnSearchPartner
             // 
             this.btnSearchPartner.AutoSize = true;
-            this.btnSearchPartner.Location = new System.Drawing.Point(299, 84);
+            this.btnSearchPartner.Location = new System.Drawing.Point(299, 64);
             this.btnSearchPartner.Name = "btnSearchPartner";
             this.btnSearchPartner.Size = new System.Drawing.Size(176, 32);
             this.btnSearchPartner.TabIndex = 4;
@@ -82,7 +83,7 @@
             // btnExit
             // 
             this.btnExit.AutoSize = true;
-            this.btnExit.Location = new System.Drawing.Point(196, 126);
+            this.btnExit.Location = new System.Drawing.Point(196, 144);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(126, 32);
             this.btnExit.TabIndex = 5;
@@ -90,11 +91,23 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnTraining
+            // 
+            this.btnTraining.AutoSize = true;
+            this.btnTraining.Location = new System.Drawing.Point(196, 104);
+            this.btnTraining.Name = "btnTraining";
+            this.btnTraining.Size = new System.Drawing.Size(126, 32);
+            this.btnTraining.TabIndex = 6;
+            this.btnTraining.Text = "Training";
+            this.btnTraining.UseVisualStyleBackColor = true;
+            this.btnTraining.Click += new System.EventHandler(this.btnTraining_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 201);
+            this.Controls.Add(this.btnTraining);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSearchPartner);
             this.Controls.Add(this.btnSearchPokemon);
@@ -116,5 +129,6 @@
         private System.Windows.Forms.Button btnSearchPokemon;
         private System.Windows.Forms.Button btnSearchPartner;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnTraining;
     }
 }

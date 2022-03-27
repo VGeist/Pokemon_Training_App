@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Pokemon_Training_App.Classes;
 
 namespace Pokemon_Training_App.Classes
 {
