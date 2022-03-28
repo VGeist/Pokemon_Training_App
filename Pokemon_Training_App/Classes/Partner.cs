@@ -45,6 +45,8 @@ namespace Pokemon_Training_App.Classes
                         string nature = "Hardy",
                         string favoredStat = "undefined",
                         string hinderedStat = "undefined",
+                        bool hasPokerus = false,
+
                         // Stat parameters
                         int healthStat = -1,
                         int attackStat = -1,
@@ -69,6 +71,8 @@ namespace Pokemon_Training_App.Classes
             Nature = nature;
             _favoredStat = favoredStat;
             _hinderedStat = hinderedStat;
+            HasPokerus = hasPokerus;
+
             // Set Stats
             Health = healthStat;
             Attack = attackStat;

@@ -42,6 +42,7 @@ namespace Pokemon_Training_App.Views
                 partnersRow.NatureName,
                 statBonus,
                 statMalus,
+                partnersRow.HasPokerus,
 
                 // Stats
                 partnersRow.Health,
