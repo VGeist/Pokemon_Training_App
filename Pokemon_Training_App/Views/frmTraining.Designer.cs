@@ -121,6 +121,7 @@
             this.tlpMembersTable = new System.Windows.Forms.TableLayoutPanel();
             this.partnersTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.PartnersTableAdapter();
             this.naturesTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.NaturesTableAdapter();
+            this.formsTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.FormsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.picInfected5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInfected4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInfected3)).BeginInit();
@@ -155,7 +156,7 @@
             "Speed Bracelet",
             "etc.",
             "[TEMPORARY]"});
-            this.cmbHeldItem0.Location = new System.Drawing.Point(210, 11);
+            this.cmbHeldItem0.Location = new System.Drawing.Point(210, 6);
             this.cmbHeldItem0.Name = "cmbHeldItem0";
             this.cmbHeldItem0.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem0.TabIndex = 1;
@@ -165,7 +166,7 @@
             // 
             this.cmbHeldItem1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbHeldItem1.FormattingEnabled = true;
-            this.cmbHeldItem1.Location = new System.Drawing.Point(210, 54);
+            this.cmbHeldItem1.Location = new System.Drawing.Point(210, 49);
             this.cmbHeldItem1.Name = "cmbHeldItem1";
             this.cmbHeldItem1.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem1.TabIndex = 3;
@@ -185,7 +186,7 @@
             // 
             this.cmbHeldItem2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbHeldItem2.FormattingEnabled = true;
-            this.cmbHeldItem2.Location = new System.Drawing.Point(210, 97);
+            this.cmbHeldItem2.Location = new System.Drawing.Point(210, 92);
             this.cmbHeldItem2.Name = "cmbHeldItem2";
             this.cmbHeldItem2.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem2.TabIndex = 5;
@@ -205,7 +206,7 @@
             // 
             this.cmbHeldItem3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbHeldItem3.FormattingEnabled = true;
-            this.cmbHeldItem3.Location = new System.Drawing.Point(210, 140);
+            this.cmbHeldItem3.Location = new System.Drawing.Point(210, 135);
             this.cmbHeldItem3.Name = "cmbHeldItem3";
             this.cmbHeldItem3.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem3.TabIndex = 7;
@@ -225,7 +226,7 @@
             // 
             this.cmbHeldItem4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbHeldItem4.FormattingEnabled = true;
-            this.cmbHeldItem4.Location = new System.Drawing.Point(210, 183);
+            this.cmbHeldItem4.Location = new System.Drawing.Point(210, 178);
             this.cmbHeldItem4.Name = "cmbHeldItem4";
             this.cmbHeldItem4.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem4.TabIndex = 9;
@@ -245,7 +246,7 @@
             // 
             this.cmbHeldItem5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbHeldItem5.FormattingEnabled = true;
-            this.cmbHeldItem5.Location = new System.Drawing.Point(210, 226);
+            this.cmbHeldItem5.Location = new System.Drawing.Point(210, 221);
             this.cmbHeldItem5.Name = "cmbHeldItem5";
             this.cmbHeldItem5.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem5.TabIndex = 11;
@@ -1132,6 +1133,10 @@
             // 
             this.naturesTableAdapter.ClearBeforeFill = true;
             // 
+            // formsTableAdapter
+            // 
+            this.formsTableAdapter.ClearBeforeFill = true;
+            // 
             // frmTraining
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -1272,5 +1277,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpMembersTable;
         private Data.PokemonDataSetTableAdapters.PartnersTableAdapter partnersTableAdapter;
         private Data.PokemonDataSetTableAdapters.NaturesTableAdapter naturesTableAdapter;
+        private Data.PokemonDataSetTableAdapters.FormsTableAdapter formsTableAdapter;
     }
 }

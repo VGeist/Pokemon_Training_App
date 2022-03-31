@@ -16,7 +16,9 @@ namespace Pokemon_Training_App.Classes
         /*** CONSTRUCTORS ***/
         public Pokemon()
         {
-
+            PokeNumber = -1;
+            PokeName = "default";
+            FormList = new PokeForm[] { new PokeForm(-1, -1, -1, -1, -1, -1) };
         }
 
         public Pokemon(int number, string name, PokeForm[] forms)

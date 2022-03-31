@@ -54,6 +54,7 @@ namespace Pokemon_Training_App.Classes
                         int spAttackStat = -1,
                         int spDefenseStat = -1,
                         int speedStat = -1,
+
                         // EV parameters
                         int healthEV = 0,
                         int attackEV = 0,
