@@ -78,22 +78,43 @@ namespace Pokemon_Training_App.Views
 
         private void displaySlotData(int slotNum)
         {
-            Partner partner = _partyData[slotNum];
+            // check slot for partner
+            if (_partyData[slotNum] != null)
+            {
+                // set values
+                Partner partner = _partyData[slotNum];
 
-            // set values, 
-            // IMPORTANT!!!! IF CONTROL NAMES ARE CHANGED ADJUSTMENTS TO BELOW CODE WOULD BE NEEDED
-            tlpMembersTable.Controls["lblNickname"      + slotNum].Text = partner.Nickname;
-            tlpMembersTable.Controls["picInfected"      + slotNum].Visible = partner.HasPokerus;
-            tlpMembersTable.Controls["lblHealthEV"      + slotNum].Text = partner.HealthEV.ToString();
-            tlpMembersTable.Controls["lblAttackEV"      + slotNum].Text = partner.AttackEV.ToString();
-            tlpMembersTable.Controls["lblDefenseEV"     + slotNum].Text = partner.DefenseEV.ToString();
-            tlpMembersTable.Controls["lblSpAttackEV"    + slotNum].Text = partner.SpAttackEV.ToString();
-            tlpMembersTable.Controls["lblSpDefenseEV"   + slotNum].Text = partner.SpDefenseEV.ToString();
-            tlpMembersTable.Controls["lblSpeedEV"       + slotNum].Text = partner.SpeedEV.ToString();
-            tlpMembersTable.Controls["lblTotalEV"       + slotNum].Text = partner.TotalEVs().ToString();
+                // IMPORTANT!!!! IF CONTROL NAMES ARE CHANGED ADJUSTMENTS TO BELOW CODE WOULD BE NEEDED
+                tlpMembersTable.Controls["lblNickname" + slotNum].Text =        partner.Nickname;
+                tlpMembersTable.Controls["picInfected" + slotNum].Visible =     partner.HasPokerus;
+                tlpMembersTable.Controls["lblHealthEV" + slotNum].Text =        partner.HealthEV.ToString();
+                tlpMembersTable.Controls["lblAttackEV" + slotNum].Text =        partner.AttackEV.ToString();
+                tlpMembersTable.Controls["lblDefenseEV" + slotNum].Text =       partner.DefenseEV.ToString();
+                tlpMembersTable.Controls["lblSpAttackEV" + slotNum].Text =      partner.SpAttackEV.ToString();
+                tlpMembersTable.Controls["lblSpDefenseEV" + slotNum].Text =     partner.SpDefenseEV.ToString();
+                tlpMembersTable.Controls["lblSpeedEV" + slotNum].Text =         partner.SpeedEV.ToString();
+                tlpMembersTable.Controls["lblTotalEV" + slotNum].Text =         partner.TotalEVs().ToString();
+            } else
+            {
+                displaySlotDefault(slotNum);
+            }
         }
 
-        private void getPartyDataForSlot(int slotNum)
+        private void displaySlotDefault(int slotNum)
+        {
+            // sets a slot to display as empty
+            tlpMembersTable.Controls["lblNickname" + slotNum].Text =        "-- EMPTY --";
+            tlpMembersTable.Controls["picInfected" + slotNum].Visible =     false;
+            tlpMembersTable.Controls["lblHealthEV" + slotNum].Text =        "--";
+            tlpMembersTable.Controls["lblAttackEV" + slotNum].Text =        "--";
+            tlpMembersTable.Controls["lblDefenseEV" + slotNum].Text =       "--";
+            tlpMembersTable.Controls["lblSpAttackEV" + slotNum].Text =      "--";
+            tlpMembersTable.Controls["lblSpDefenseEV" + slotNum].Text =     "--";
+            tlpMembersTable.Controls["lblSpeedEV" + slotNum].Text =         "--";
+            tlpMembersTable.Controls["lblTotalEV" + slotNum].Text =         "--";
+        }
+
+        private void getPartnerDataForSlot(int slotNum)
         {
             int id = Party.getIDBySlot(slotNum);
             if (id > -1)
@@ -138,13 +159,10 @@ namespace Pokemon_Training_App.Views
         /** EVENTS **/
         private void frmTraining_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < _partyData.Length; i++)
             {
-                getPartyDataForSlot(i);
-                if (_partyData[i] != null)
-                {
-                    displaySlotData(i);
-                }
+                getPartnerDataForSlot(i);
+                displaySlotData(i);
             }
         }
     }
