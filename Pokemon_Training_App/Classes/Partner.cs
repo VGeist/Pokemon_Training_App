@@ -11,32 +11,51 @@ namespace Pokemon_Training_App.Classes
         private static float NatureBonusValue = 1.1f;
         private static float NatureMalusValue = 0.9f;
 
+        /*** BACKING FIELDS ***/
+        private string _favoredStat;   // used to calculaate IVs, MUST match the name of the stat EXACTLY
+        private string _hinderedStat;  // used to calculate IVs, MUST match the name of the stat EXACTLY
+        
+        // Stat fields
+        private int _health;
+        private int _attack;
+        private int _defense;
+        private int _spAttack;
+        private int _spDefense;
+        private int _speed;
+
+        // EV fields
+        private int _healthEV;
+        private int _attackEV;
+        private int _defenseEV;
+        private int _spAttackEV;
+        private int _spDefenseEV;
+        private int _speedEV;
+
+
         /*** PROPERTIES ***/
         public string Nickname { get; set; }
         public int Level { get; set; }
         public string Nature { get; set; }
-        private string _favoredStat;   // used to calculaate IVs, MUST match the name of the stat EXACTLY
-        private string _hinderedStat;  // used to calculate IVs, MUST match the name of the stat EXACTLY
 
         public PokeForm Form { get; set; }
 
         public bool HasPokerus { get; set; }
 
         // Stat properties
-        public int Health { get; set; }
-        public int Attack { get; set; }
-        public int Defense { get; set; }
-        public int SpAttack { get; set; }
-        public int SpDefense { get; set; }
-        public int Speed { get; set; }
+        public int Health { get => _health; set => _health = value; }
+        public int Attack { get => _attack; set => _attack = value; }
+        public int Defense { get => _defense; set => _defense = value; }
+        public int SpAttack { get => _spAttack; set => _spAttack = value; }
+        public int SpDefense { get => _spDefense; set => _spDefense = value; }
+        public int Speed { get => _speed; set => _speed = value; }
 
         // EV properteis
-        public int HealthEV { get; set; }
-        public int AttackEV { get; set; }
-        public int DefenseEV { get; set; }
-        public int SpAttackEV { get; set; }
-        public int SpDefenseEV { get; set; }
-        public int SpeedEV { get; set; }
+        public int HealthEV { get => _healthEV; set => _healthEV = value; }
+        public int AttackEV { get => _attackEV; set => _attackEV = value; }
+        public int DefenseEV { get => _defenseEV; set => _defenseEV = value; }
+        public int SpAttackEV { get => _spAttackEV; set => _spAttackEV = value; }
+        public int SpDefenseEV { get => _spDefenseEV; set => _spDefenseEV = value; }
+        public int SpeedEV { get => _speedEV; set => _speedEV = value; }
 
         /*** CONSTRUCTORS ***/
         public Partner(Pokemon species,
@@ -75,19 +94,19 @@ namespace Pokemon_Training_App.Classes
             HasPokerus = hasPokerus;
 
             // Set Stats
-            Health = healthStat;
-            Attack = attackStat;
-            Defense = defenseStat;
-            SpAttack = spAttackStat;
-            SpDefense = spDefenseStat;
-            Speed = speedStat;
+            _health = healthStat;
+            _attack = attackStat;
+            _defense = defenseStat;
+            _spAttack = spAttackStat;
+            _spDefense = spDefenseStat;
+            _speed = speedStat;
             // Set EVs
-            HealthEV = healthEV;
-            AttackEV = attackEV;
-            DefenseEV = defenseEV;
-            SpAttackEV = spAttackEV;
-            SpDefenseEV = spDefenseEV;
-            SpeedEV = speedEV;
+            _healthEV = healthEV;
+            _attackEV = attackEV;
+            _defenseEV = defenseEV;
+            _spAttackEV = spAttackEV;
+            _spDefenseEV = spDefenseEV;
+            _speedEV = speedEV;
         }
 
         /*** GETTERS ***/
@@ -200,32 +219,57 @@ namespace Pokemon_Training_App.Classes
             Form = form;
         }
 
-        public void AddEVs(string statName, int value)
+        public void AddEVs(string statName, int gain)
         {
             // adds value to given stat
+            ref int ev = ref _healthEV;
+
             if (statName.Equals("Health"))
             {
-               HealthEV += value;
+                ev = ref _healthEV;
             }
             else if (statName.Equals("Attack"))
             {
-               AttackEV += value;
+                ev = ref _attackEV;
             }
             else if (statName.Equals("Defense"))
             {
-               DefenseEV += value;
+                ev = ref _defenseEV;
             }
             else if (statName.Equals("SpAttack"))
             {
-               SpAttackEV += value;
+                ev = ref _spAttackEV;
             }
             else if (statName.Equals("SpDefense"))
             {
-               SpDefenseEV += value;
+                ev = ref _spDefenseEV;
             }
             else if (statName.Equals("Speed"))
             {
-                SpeedEV += value;
+                ev = ref _speedEV;
+            }
+
+            // apply gain
+            ev += gain;
+
+            int newTotal = TotalEVs();
+
+            if (newTotal > 510)
+            {
+                // total max exceeded; adjust ev gain
+                int excess = newTotal - 510;
+                ev -= excess;
+            }
+            
+            if (ev < 0)
+            {
+                // ev min
+                ev = 0;
+            }
+            else if (ev >= 255)
+            {
+                // ev max
+                ev = 255;
             }
         }
 
