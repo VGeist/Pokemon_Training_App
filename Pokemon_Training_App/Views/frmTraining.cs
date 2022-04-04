@@ -112,7 +112,7 @@ namespace Pokemon_Training_App.Views
                 // database queries
                 partnersRow = partnersTableAdapter.GetDataByPartnerID(id).First();
                 naturesRow = naturesTableAdapter.GetNatureByName(partnersRow.NatureName).First();
-                formsRow = formsTableAdapter.GetFormByID(partnersRow.NatureID).First();
+                formsRow = formsTableAdapter.GetFormByID(partnersRow.FormID).First();
 
                 partner = buildPartner(partnersRow, naturesRow, formsRow);
             } catch
@@ -137,6 +137,7 @@ namespace Pokemon_Training_App.Views
 
             // Form Data
             PokeForm form = new PokeForm(
+                formsRow.FormID,
                 formsRow.BaseHealth,
                 formsRow.BaseAttack,
                 formsRow.BaseDefense,
@@ -251,6 +252,60 @@ namespace Pokemon_Training_App.Views
             }
         }
 
+        private void saveToDatabase(int slot)
+        {
+            Partner partner = _partyData[slot];
+
+            string[] errors = partner.GetErrors();
+
+            // display success or faliure message
+            if (errors.Length == 0)
+            {
+                // no errors, add to database
+                PokemonDataSet.NaturesRow naturesRow;
+
+                try
+                {
+
+                    naturesRow = naturesTableAdapter.GetNatureByName(partner.Nature).First();
+
+                    partnersTableAdapter.UpdatePartnerByID(Party.getIDBySlot(slot), 
+                        partner.Nickname,
+                        partner.PokeNumber,
+                        partner.Form.GetID(),
+                        naturesRow.NatureID,
+                        partner.Level,
+                        partner.HasPokerus,
+                        partner.Health,     // stat start
+                        partner.Attack,
+                        partner.Defense,
+                        partner.SpAttack,
+                        partner.SpDefense,
+                        partner.Speed,      // stat end
+                        partner.HealthEV,   // ev start
+                        partner.AttackEV,
+                        partner.DefenseEV,
+                        partner.SpAttackEV,
+                        partner.SpDefenseEV,
+                        partner.SpeedEV);
+
+                    // success message
+                    MessageBox.Show("Successful operation", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch
+                {
+                    // database error 
+                    MessageBox.Show("The database encounterd an error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                // errors found, display message
+                string errorMsg = Program.buildErrorListMessage(errors);
+                MessageBox.Show(errorMsg, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         /** EVENTS **/
         private void frmTraining_Load(object sender, EventArgs e)
         {
@@ -268,6 +323,17 @@ namespace Pokemon_Training_App.Views
             for  (int i = 0; i < _partyData.Length; i++)
             {
                 displaySlotData(i);
+            }
+        }
+
+        private void btnConfirmTraining_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < _partyData.Length; i++)
+            {
+                if (_partyData[i] != null)
+                {
+                    saveToDatabase(i);
+                }
             }
         }
     }

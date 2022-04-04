@@ -9,6 +9,7 @@ namespace Pokemon_Training_App.Classes
     class PokeForm
     {
         // Properties
+        private int _id;
         private int _baseHealth;
         private int _baseAttack;
         private int _baseDefense;
@@ -18,12 +19,17 @@ namespace Pokemon_Training_App.Classes
         private string _formName;
 
         /** CONSTRUCTORS **/
-        public PokeForm(int baseHealth, int baseAttack, int baseDefense, int baseSpAttack, int baseSpDefense, int baseSpeed, string name = "Default")
+        public PokeForm(int id, int baseHealth, int baseAttack, int baseDefense, int baseSpAttack, int baseSpDefense, int baseSpeed, string name = "Default")
         {
-            Change(baseHealth, baseAttack, baseDefense, baseSpAttack, baseSpDefense, baseSpeed, name);
+            Change(id, baseHealth, baseAttack, baseDefense, baseSpAttack, baseSpDefense, baseSpeed, name);
         }
 
         /** GETTERS **/
+        public int GetID()
+        {
+            return _id;
+        }
+
         public int GetBaseHealth()
         {
             return _baseHealth;
@@ -60,9 +66,10 @@ namespace Pokemon_Training_App.Classes
         }
 
         /*** METHODS ***/
-        public void Change(int baseHealth, int baseAttack, int baseDefense, int baseSpAttack, int baseSpDefense, int baseSpeed, string name)
+        public void Change(int id, int baseHealth, int baseAttack, int baseDefense, int baseSpAttack, int baseSpDefense, int baseSpeed, string name)
         {
             // change form data
+            _id = id;
             _baseHealth = baseHealth;
             _baseAttack = baseAttack;
             _baseDefense = baseDefense;
