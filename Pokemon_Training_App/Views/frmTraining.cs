@@ -62,6 +62,8 @@ namespace Pokemon_Training_App.Views
 
         private void displaySlotDefault(int slotNum)
         {
+            CheckBox checkBox = (CheckBox)tlpMembersTable.Controls["chkDoTrainingPokemon" + slotNum];
+
             // sets a slot to display as empty
             tlpMembersTable.Controls["lblNickname" + slotNum].Text =        "-- EMPTY --";
             tlpMembersTable.Controls["picInfected" + slotNum].Visible =     false;
@@ -74,17 +76,20 @@ namespace Pokemon_Training_App.Views
             tlpMembersTable.Controls["lblTotalEV" + slotNum].Text =         "--";
 
             // DISABLE the slot controls
-            tlpMembersTable.Controls["chkDoTrainingPokemon" + slotNum].Enabled = true;
-            tlpMembersTable.Controls["lblNickname" + slotNum].Enabled = true;
-            tlpMembersTable.Controls["picInfected" + slotNum].Enabled = true;
-            tlpMembersTable.Controls["cmbHeldItem" + slotNum].Enabled = true;
-            tlpMembersTable.Controls["lblHealthEV" + slotNum].Enabled = true;
-            tlpMembersTable.Controls["lblAttackEV" + slotNum].Enabled = true;
-            tlpMembersTable.Controls["lblDefenseEV" + slotNum].Enabled = true;
-            tlpMembersTable.Controls["lblSpAttackEV" + slotNum].Enabled = true;
-            tlpMembersTable.Controls["lblSpDefenseEV" + slotNum].Enabled = true;
-            tlpMembersTable.Controls["lblSpeedEV" + slotNum].Enabled = true;
-            tlpMembersTable.Controls["lblTotalEV" + slotNum].Enabled = true;
+            checkBox.Enabled = false;
+            tlpMembersTable.Controls["lblNickname" + slotNum].Enabled = false;
+            tlpMembersTable.Controls["picInfected" + slotNum].Enabled = false;
+            tlpMembersTable.Controls["cmbHeldItem" + slotNum].Enabled = false;
+            tlpMembersTable.Controls["lblHealthEV" + slotNum].Enabled = false;
+            tlpMembersTable.Controls["lblAttackEV" + slotNum].Enabled = false;
+            tlpMembersTable.Controls["lblDefenseEV" + slotNum].Enabled = false;
+            tlpMembersTable.Controls["lblSpAttackEV" + slotNum].Enabled = false;
+            tlpMembersTable.Controls["lblSpDefenseEV" + slotNum].Enabled = false;
+            tlpMembersTable.Controls["lblSpeedEV" + slotNum].Enabled = false;
+            tlpMembersTable.Controls["lblTotalEV" + slotNum].Enabled = false;
+
+            // deselect slot
+            checkBox.Checked = false;
         }
 
         private void getPartnerDataForSlot(int slotNum)
@@ -306,6 +311,14 @@ namespace Pokemon_Training_App.Views
             }
         }
 
+        private void emptySlot(int slot)
+        {
+            // removes member from party, clears partyData and clears display of that slot
+            Party.removeMemberBySlot(slot);
+            _partyData[slot] = null;
+            displaySlotDefault(slot);
+        }
+
         /** EVENTS **/
         private void frmTraining_Load(object sender, EventArgs e)
         {
@@ -355,6 +368,39 @@ namespace Pokemon_Training_App.Views
             numSpAttackEV.Value = 0;
             numSpDefenseEV.Value = 0;
             numSpeedEV.Value = 0;
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            // confirm removal
+            DialogResult result = MessageBox.Show("Are you sure you want to remove the selected members from the party? Any unsaved changes will be lost.", "Unsaved Changes Will Be Lost", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                // remove selected members from party
+                CheckBox[] slotCheckBoxes = new CheckBox[] {
+                    chkDoTrainingPokemon0,
+                    chkDoTrainingPokemon1,
+                    chkDoTrainingPokemon2,
+                    chkDoTrainingPokemon3,
+                    chkDoTrainingPokemon4,
+                    chkDoTrainingPokemon5
+                };
+
+                int count = 0;
+
+                for (int i = 0; i < slotCheckBoxes.Length; i++)
+                {
+                    if (slotCheckBoxes[i].Checked && Party.getIDBySlot(i) > -1)
+                    {
+                        emptySlot(i);
+                        count++;
+                    }
+                }
+
+                // success message
+                MessageBox.Show($"Removed {count} members from party.", $"Removed {count} Members", MessageBoxButtons.OK);
+            }
         }
     }
 }
