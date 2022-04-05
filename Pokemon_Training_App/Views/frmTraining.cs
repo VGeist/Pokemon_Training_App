@@ -336,5 +336,25 @@ namespace Pokemon_Training_App.Views
                 }
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Any unsaved changes will be discarded. Is this OK?", "Discard Changes?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning); ;
+            
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void btnSetZero_Click(object sender, EventArgs e)
+        {
+            numHealthEV.Value = 0;
+            numAttackEV.Value = 0;
+            numDefenseEV.Value = 0;
+            numSpAttackEV.Value = 0;
+            numSpDefenseEV.Value = 0;
+            numSpeedEV.Value = 0;
+        }
     }
 }
