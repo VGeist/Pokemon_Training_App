@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Pokemon_Training_App.Classes
 {
-    static class Party
+    public static class Party
     {
         /*** BACKING FIELDS ***/
         private static int?[] _members = new int?[6]; // stores partner IDs

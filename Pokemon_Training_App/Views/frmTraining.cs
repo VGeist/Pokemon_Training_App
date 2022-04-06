@@ -20,16 +20,16 @@ namespace Pokemon_Training_App.Views
         }
 
         /** BACKING FIELDS **/
-        private Partner[] _partyData = new Partner[6];
+        private Partner[] _trainingData = new Partner[6];
 
         /** HELPERS **/
         private void displaySlotData(int slotNum)
         {
             // check slot for partner
-            if (_partyData[slotNum] != null)
+            if (_trainingData[slotNum] != null)
             {
                 // set values
-                Partner partner = _partyData[slotNum];
+                Partner partner = _trainingData[slotNum];
 
                 // IMPORTANT!!!! IF CONTROL NAMES ARE CHANGED ADJUSTMENTS TO BELOW CODE WOULD BE NEEDED
                 tlpMembersTable.Controls["lblNickname" + slotNum].Text =        partner.Nickname;
@@ -92,15 +92,17 @@ namespace Pokemon_Training_App.Views
             checkBox.Checked = false;
         }
 
-        private void getPartnerDataForSlot(int slotNum)
+        private Partner getPartnerDataForSlot(int slotNum)
         {
+            Partner partner = null;
             int id = Party.getIDBySlot(slotNum);
             if (id > -1)
             {
                 // slot not empty, get data
-                Partner partner = getPartnerData(id);
-                _partyData[slotNum] = partner;
+                partner = getPartnerData(id);
             }
+
+            return partner;
         }
 
         private Partner getPartnerData(int id)
@@ -192,13 +194,13 @@ namespace Pokemon_Training_App.Views
         {
             // IMPORTANT: Changes to control names may cause errors!!!
             // determine which slots are selected
-            for (int slot = 0; slot < _partyData.Length; slot++)
+            for (int slot = 0; slot < _trainingData.Length; slot++)
             {
                 // get checkbox
                 CheckBox chkBox = (CheckBox)tlpMembersTable.Controls["chkDoTrainingPokemon" + slot];
                 if (chkBox.Checked)
                 {
-                    Partner partner = _partyData[slot];
+                    Partner partner = _trainingData[slot];
 
                     int initialTotalEVs = partner.TotalEVs();
 
@@ -259,7 +261,7 @@ namespace Pokemon_Training_App.Views
 
         private void saveToDatabase(int slot)
         {
-            Partner partner = _partyData[slot];
+            Partner partner = _trainingData[slot];
 
             string[] errors = partner.GetErrors();
 
@@ -315,16 +317,16 @@ namespace Pokemon_Training_App.Views
         {
             // removes member from party, clears partyData and clears display of that slot
             Party.removeMemberBySlot(slot);
-            _partyData[slot] = null;
+            _trainingData[slot] = null;
             displaySlotDefault(slot);
         }
 
         /** EVENTS **/
         private void frmTraining_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < _partyData.Length; i++)
+            for (int i = 0; i < _trainingData.Length; i++)
             {
-                getPartnerDataForSlot(i);
+                _trainingData[i] = getPartnerDataForSlot(i);
                 displaySlotData(i);
             }
         }
@@ -333,7 +335,7 @@ namespace Pokemon_Training_App.Views
         {
             trainSelected();
 
-            for  (int i = 0; i < _partyData.Length; i++)
+            for  (int i = 0; i < _trainingData.Length; i++)
             {
                 displaySlotData(i);
             }
@@ -341,9 +343,9 @@ namespace Pokemon_Training_App.Views
 
         private void btnConfirmTraining_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < _partyData.Length; i++)
+            for (int i = 0; i < _trainingData.Length; i++)
             {
-                if (_partyData[i] != null)
+                if (_trainingData[i] != null)
                 {
                     saveToDatabase(i);
                 }
@@ -401,6 +403,24 @@ namespace Pokemon_Training_App.Views
                 // success message
                 MessageBox.Show($"Removed {count} members from party.", $"Removed {count} Members", MessageBoxButtons.OK);
             }
+        }
+
+        private void btnPreview_Click(object sender, EventArgs e)
+        {
+            // get first selected partner
+            for (int slot = 0; slot < _trainingData.Length; slot++)
+            {
+                // get checkbox
+                CheckBox chkBox = (CheckBox)tlpMembersTable.Controls["chkDoTrainingPokemon" + slot];
+                if (chkBox.Checked)
+                {
+                    frmPreview form = new frmPreview(getPartnerDataForSlot(slot), _trainingData[slot]);
+                    form.ShowDialog();
+                    return;
+                }
+            }
+
+            MessageBox.Show("No partner was selected. Select a partner to preview its changes.", "Select a Partner To Preview Changes");
         }
     }
 }

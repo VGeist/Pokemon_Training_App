@@ -417,7 +417,6 @@
             this.picArrow12.Size = new System.Drawing.Size(20, 20);
             this.picArrow12.TabIndex = 135;
             this.picArrow12.TabStop = false;
-            this.picArrow12.Visible = false;
             // 
             // picArrow10
             // 
@@ -428,7 +427,6 @@
             this.picArrow10.Size = new System.Drawing.Size(20, 20);
             this.picArrow10.TabIndex = 134;
             this.picArrow10.TabStop = false;
-            this.picArrow10.Visible = false;
             // 
             // picArrow8
             // 
@@ -439,7 +437,6 @@
             this.picArrow8.Size = new System.Drawing.Size(20, 20);
             this.picArrow8.TabIndex = 133;
             this.picArrow8.TabStop = false;
-            this.picArrow8.Visible = false;
             // 
             // picArrow6
             // 
@@ -450,7 +447,6 @@
             this.picArrow6.Size = new System.Drawing.Size(20, 20);
             this.picArrow6.TabIndex = 132;
             this.picArrow6.TabStop = false;
-            this.picArrow6.Visible = false;
             // 
             // picArrow4
             // 
@@ -461,7 +457,6 @@
             this.picArrow4.Size = new System.Drawing.Size(20, 20);
             this.picArrow4.TabIndex = 131;
             this.picArrow4.TabStop = false;
-            this.picArrow4.Visible = false;
             // 
             // picArrow2
             // 
@@ -472,7 +467,6 @@
             this.picArrow2.Size = new System.Drawing.Size(20, 20);
             this.picArrow2.TabIndex = 130;
             this.picArrow2.TabStop = false;
-            this.picArrow2.Visible = false;
             // 
             // picArrow11
             // 
@@ -483,7 +477,6 @@
             this.picArrow11.Size = new System.Drawing.Size(20, 20);
             this.picArrow11.TabIndex = 123;
             this.picArrow11.TabStop = false;
-            this.picArrow11.Visible = false;
             // 
             // picArrow9
             // 
@@ -494,7 +487,6 @@
             this.picArrow9.Size = new System.Drawing.Size(20, 20);
             this.picArrow9.TabIndex = 122;
             this.picArrow9.TabStop = false;
-            this.picArrow9.Visible = false;
             // 
             // picArrow7
             // 
@@ -505,7 +497,6 @@
             this.picArrow7.Size = new System.Drawing.Size(20, 20);
             this.picArrow7.TabIndex = 121;
             this.picArrow7.TabStop = false;
-            this.picArrow7.Visible = false;
             // 
             // picArrow5
             // 
@@ -516,7 +507,6 @@
             this.picArrow5.Size = new System.Drawing.Size(20, 20);
             this.picArrow5.TabIndex = 120;
             this.picArrow5.TabStop = false;
-            this.picArrow5.Visible = false;
             // 
             // picArrow3
             // 
@@ -527,7 +517,6 @@
             this.picArrow3.Size = new System.Drawing.Size(20, 20);
             this.picArrow3.TabIndex = 119;
             this.picArrow3.TabStop = false;
-            this.picArrow3.Visible = false;
             // 
             // picArrow1
             // 
@@ -538,7 +527,6 @@
             this.picArrow1.Size = new System.Drawing.Size(20, 20);
             this.picArrow1.TabIndex = 118;
             this.picArrow1.TabStop = false;
-            this.picArrow1.Visible = false;
             // 
             // picPokerus
             // 
@@ -560,7 +548,6 @@
             this.picArrow13.Size = new System.Drawing.Size(20, 20);
             this.picArrow13.TabIndex = 136;
             this.picArrow13.TabStop = false;
-            this.picArrow13.Visible = false;
             // 
             // lblTrainedLevel
             // 
@@ -599,7 +586,6 @@
             this.picArrow14.Size = new System.Drawing.Size(20, 20);
             this.picArrow14.TabIndex = 141;
             this.picArrow14.TabStop = false;
-            this.picArrow14.Visible = false;
             // 
             // lblCurrentNumber
             // 

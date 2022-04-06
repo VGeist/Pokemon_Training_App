@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pokemon_Training_App.Classes
 {
-    class Partner : Pokemon
+    public class Partner : Pokemon
     {
         private static float NatureBonusValue = 1.1f;
         private static float NatureMalusValue = 0.9f;

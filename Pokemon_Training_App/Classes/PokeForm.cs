@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pokemon_Training_App.Classes
 {
-    class PokeForm
+    public class PokeForm
     {
         // Properties
         private int _id;

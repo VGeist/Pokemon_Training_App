@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pokemon_Training_App.Classes
 {
-    class Pokemon
+    public class Pokemon
     {
         /*** POKEMON PROPERTIES ***/
         public int PokeNumber { get; set; }
