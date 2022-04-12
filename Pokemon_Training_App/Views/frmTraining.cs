@@ -32,21 +32,21 @@ namespace Pokemon_Training_App.Views
                 Partner partner = _trainingData[slotNum];
 
                 // IMPORTANT!!!! IF CONTROL NAMES ARE CHANGED ADJUSTMENTS TO BELOW CODE WOULD BE NEEDED
-                tlpMembersTable.Controls["lblNickname" + slotNum].Text =        partner.Nickname;
-                tlpMembersTable.Controls["picInfected" + slotNum].Visible =     partner.HasPokerus;
-                tlpMembersTable.Controls["lblHealthEV" + slotNum].Text =        partner.HealthEV.ToString();
-                tlpMembersTable.Controls["lblAttackEV" + slotNum].Text =        partner.AttackEV.ToString();
-                tlpMembersTable.Controls["lblDefenseEV" + slotNum].Text =       partner.DefenseEV.ToString();
-                tlpMembersTable.Controls["lblSpAttackEV" + slotNum].Text =      partner.SpAttackEV.ToString();
-                tlpMembersTable.Controls["lblSpDefenseEV" + slotNum].Text =     partner.SpDefenseEV.ToString();
-                tlpMembersTable.Controls["lblSpeedEV" + slotNum].Text =         partner.SpeedEV.ToString();
-                tlpMembersTable.Controls["lblTotalEV" + slotNum].Text =         partner.TotalEVs().ToString();
+                tlpMembersTable.Controls["lblNickname" + slotNum].Text = partner.Nickname;
+                tlpMembersTable.Controls["picInfected" + slotNum].Visible = partner.HasPokerus;
+                tlpMembersTable.Controls["lblHealthEV" + slotNum].Text = partner.HealthEV.ToString();
+                tlpMembersTable.Controls["lblAttackEV" + slotNum].Text = partner.AttackEV.ToString();
+                tlpMembersTable.Controls["lblDefenseEV" + slotNum].Text = partner.DefenseEV.ToString();
+                tlpMembersTable.Controls["lblSpAttackEV" + slotNum].Text = partner.SpAttackEV.ToString();
+                tlpMembersTable.Controls["lblSpDefenseEV" + slotNum].Text = partner.SpDefenseEV.ToString();
+                tlpMembersTable.Controls["lblSpeedEV" + slotNum].Text = partner.SpeedEV.ToString();
+                tlpMembersTable.Controls["lblTotalEV" + slotNum].Text = partner.TotalEVs().ToString();
 
                 // ENABLE the slot controls
                 tlpMembersTable.Controls["chkDoTrainingPokemon" + slotNum].Enabled = true;
                 tlpMembersTable.Controls["lblNickname" + slotNum].Enabled = true;
                 tlpMembersTable.Controls["picInfected" + slotNum].Enabled = true;
-                tlpMembersTable.Controls["cmbHeldItem" + slotNum].Enabled = true; 
+                tlpMembersTable.Controls["cmbHeldItem" + slotNum].Enabled = true;
                 tlpMembersTable.Controls["lblHealthEV" + slotNum].Enabled = true;
                 tlpMembersTable.Controls["lblAttackEV" + slotNum].Enabled = true;
                 tlpMembersTable.Controls["lblDefenseEV" + slotNum].Enabled = true;
@@ -65,15 +65,15 @@ namespace Pokemon_Training_App.Views
             CheckBox checkBox = (CheckBox)tlpMembersTable.Controls["chkDoTrainingPokemon" + slotNum];
 
             // sets a slot to display as empty
-            tlpMembersTable.Controls["lblNickname" + slotNum].Text =        "-- EMPTY --";
-            tlpMembersTable.Controls["picInfected" + slotNum].Visible =     false;
-            tlpMembersTable.Controls["lblHealthEV" + slotNum].Text =        "--";
-            tlpMembersTable.Controls["lblAttackEV" + slotNum].Text =        "--";
-            tlpMembersTable.Controls["lblDefenseEV" + slotNum].Text =       "--";
-            tlpMembersTable.Controls["lblSpAttackEV" + slotNum].Text =      "--";
-            tlpMembersTable.Controls["lblSpDefenseEV" + slotNum].Text =     "--";
-            tlpMembersTable.Controls["lblSpeedEV" + slotNum].Text =         "--";
-            tlpMembersTable.Controls["lblTotalEV" + slotNum].Text =         "--";
+            tlpMembersTable.Controls["lblNickname" + slotNum].Text = "-- EMPTY --";
+            tlpMembersTable.Controls["picInfected" + slotNum].Visible = false;
+            tlpMembersTable.Controls["lblHealthEV" + slotNum].Text = "--";
+            tlpMembersTable.Controls["lblAttackEV" + slotNum].Text = "--";
+            tlpMembersTable.Controls["lblDefenseEV" + slotNum].Text = "--";
+            tlpMembersTable.Controls["lblSpAttackEV" + slotNum].Text = "--";
+            tlpMembersTable.Controls["lblSpDefenseEV" + slotNum].Text = "--";
+            tlpMembersTable.Controls["lblSpeedEV" + slotNum].Text = "--";
+            tlpMembersTable.Controls["lblTotalEV" + slotNum].Text = "--";
 
             // DISABLE the slot controls
             checkBox.Enabled = false;
@@ -276,7 +276,7 @@ namespace Pokemon_Training_App.Views
 
                     naturesRow = naturesTableAdapter.GetNatureByName(partner.Nature).First();
 
-                    partnersTableAdapter.UpdatePartnerByID(Party.getIDBySlot(slot), 
+                    partnersTableAdapter.UpdatePartnerByID(Party.getIDBySlot(slot),
                         partner.Nickname,
                         partner.PokeNumber,
                         partner.Form.GetID(),
@@ -335,7 +335,7 @@ namespace Pokemon_Training_App.Views
         {
             trainSelected();
 
-            for  (int i = 0; i < _trainingData.Length; i++)
+            for (int i = 0; i < _trainingData.Length; i++)
             {
                 displaySlotData(i);
             }
@@ -355,7 +355,7 @@ namespace Pokemon_Training_App.Views
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Any unsaved changes will be discarded. Is this OK?", "Discard Changes?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning); ;
-            
+
             if (result == DialogResult.Yes)
             {
                 this.Close();
@@ -415,12 +415,37 @@ namespace Pokemon_Training_App.Views
                 if (chkBox.Checked)
                 {
                     frmPreview form = new frmPreview(getPartnerDataForSlot(slot), _trainingData[slot]);
+                    form.Text += " | " + _trainingData[slot].Nickname; // update Form title text for clarity
                     form.ShowDialog();
                     return;
                 }
             }
 
             MessageBox.Show("No partner was selected. Select a partner to preview its changes.", "Select a Partner To Preview Changes");
+        }
+
+        private void btnUseItem_Click(object sender, EventArgs e)
+        {
+            for (int slot = 0; slot < _trainingData.Length; slot++)
+            {
+                // get checkbox
+                CheckBox chkBox = (CheckBox)tlpMembersTable.Controls["chkDoTrainingPokemon" + slot];
+                if (chkBox.Checked)
+                {
+                    // open form
+                    Form form = new frmConsumables(_trainingData[slot]);
+                    form.Text += " | " + _trainingData[slot].Nickname; // update Form title text for clarity
+                    form.ShowDialog();
+
+                    // update display
+                    displaySlotData(slot);
+
+                    return;
+                }
+            }
+
+            // inform user that at least one partner needs to be selected
+            MessageBox.Show("You need to select one Partner to use items.", "No Partner Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -273,6 +273,40 @@ namespace Pokemon_Training_App.Classes
             }
         }
 
+        public int GetEV(string statName)
+        {
+            // gets the EV of the given stat, if invalid returns 0
+            if (statName.Equals("Health"))
+            {
+                return HealthEV;
+            }
+            else if (statName.Equals("Attack"))
+            {
+                return AttackEV;
+            }
+            else if (statName.Equals("Defense"))
+            {
+                return DefenseEV;
+            }
+            else if (statName.Equals("SpAttack"))
+            {
+                return SpAttackEV;
+            }
+            else if (statName.Equals("SpDefense"))
+            {
+                return SpDefenseEV;
+            }
+            else if (statName.Equals("Speed"))
+            {
+                return SpeedEV;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+
         /*** HELPER FUNCTIONS ***/
         private float GetNatureBonus(string statName)
         {
@@ -322,38 +356,6 @@ namespace Pokemon_Training_App.Classes
             else
             {
                 return -1;
-            }
-        }
-
-        private int GetEV(string statName)
-        {
-            // gets the EV of the given stat, if invalid returns 0
-            if (statName.Equals("Health")) {
-                return HealthEV;
-            }
-            else if (statName.Equals("Attack"))
-            {
-                return AttackEV;
-            }
-            else if (statName.Equals("Defense"))
-            {
-                return DefenseEV;
-            }
-            else if (statName.Equals("SpAttack"))
-            {
-                return SpAttackEV;
-            }
-            else if (statName.Equals("SpDefense"))
-            {
-                return SpDefenseEV;
-            }
-            else if (statName.Equals("Speed"))
-            {
-                return SpeedEV;
-            }
-            else
-            {
-                return 0;
             }
         }
 

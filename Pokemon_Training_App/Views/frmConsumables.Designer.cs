@@ -120,6 +120,7 @@
             this.btnCarbos.TabIndex = 5;
             this.btnCarbos.Text = "Eat";
             this.btnCarbos.UseVisualStyleBackColor = true;
+            this.btnCarbos.Click += new System.EventHandler(this.btnCarbos_Click);
             // 
             // btnZinc
             // 
@@ -129,6 +130,7 @@
             this.btnZinc.TabIndex = 4;
             this.btnZinc.Text = "Eat";
             this.btnZinc.UseVisualStyleBackColor = true;
+            this.btnZinc.Click += new System.EventHandler(this.btnZinc_Click);
             // 
             // btnCalcium
             // 
@@ -138,6 +140,7 @@
             this.btnCalcium.TabIndex = 3;
             this.btnCalcium.Text = "Eat";
             this.btnCalcium.UseVisualStyleBackColor = true;
+            this.btnCalcium.Click += new System.EventHandler(this.btnCalcium_Click);
             // 
             // btnIron
             // 
@@ -147,6 +150,7 @@
             this.btnIron.TabIndex = 2;
             this.btnIron.Text = "Eat";
             this.btnIron.UseVisualStyleBackColor = true;
+            this.btnIron.Click += new System.EventHandler(this.btnIron_Click);
             // 
             // btnProtien
             // 
@@ -156,6 +160,7 @@
             this.btnProtien.TabIndex = 1;
             this.btnProtien.Text = "Eat";
             this.btnProtien.UseVisualStyleBackColor = true;
+            this.btnProtien.Click += new System.EventHandler(this.btnProtien_Click);
             // 
             // btnHpUp
             // 
@@ -165,6 +170,7 @@
             this.btnHpUp.TabIndex = 0;
             this.btnHpUp.Text = "Eat";
             this.btnHpUp.UseVisualStyleBackColor = true;
+            this.btnHpUp.Click += new System.EventHandler(this.btnHpUp_Click);
             // 
             // slblVitaminDesc
             // 
@@ -261,6 +267,7 @@
             this.btnSwiftWing.TabIndex = 5;
             this.btnSwiftWing.Text = "Use";
             this.btnSwiftWing.UseVisualStyleBackColor = true;
+            this.btnSwiftWing.Click += new System.EventHandler(this.btnSwiftWing_Click);
             // 
             // btnCleverWing
             // 
@@ -270,6 +277,7 @@
             this.btnCleverWing.TabIndex = 4;
             this.btnCleverWing.Text = "Use";
             this.btnCleverWing.UseVisualStyleBackColor = true;
+            this.btnCleverWing.Click += new System.EventHandler(this.btnCleverWing_Click);
             // 
             // btnGeniusWing
             // 
@@ -279,6 +287,7 @@
             this.btnGeniusWing.TabIndex = 3;
             this.btnGeniusWing.Text = "Use";
             this.btnGeniusWing.UseVisualStyleBackColor = true;
+            this.btnGeniusWing.Click += new System.EventHandler(this.btnGeniusWing_Click);
             // 
             // btnResistWing
             // 
@@ -288,6 +297,7 @@
             this.btnResistWing.TabIndex = 2;
             this.btnResistWing.Text = "Use";
             this.btnResistWing.UseVisualStyleBackColor = true;
+            this.btnResistWing.Click += new System.EventHandler(this.btnResistWing_Click);
             // 
             // btnMuscleWing
             // 
@@ -297,6 +307,7 @@
             this.btnMuscleWing.TabIndex = 1;
             this.btnMuscleWing.Text = "Use";
             this.btnMuscleWing.UseVisualStyleBackColor = true;
+            this.btnMuscleWing.Click += new System.EventHandler(this.btnMuscleWing_Click);
             // 
             // btnHealthWing
             // 
@@ -306,6 +317,7 @@
             this.btnHealthWing.TabIndex = 0;
             this.btnHealthWing.Text = "Use";
             this.btnHealthWing.UseVisualStyleBackColor = true;
+            this.btnHealthWing.Click += new System.EventHandler(this.btnHealthWing_Click);
             // 
             // slblWingDesc
             // 
@@ -401,6 +413,7 @@
             this.btnTamato.TabIndex = 5;
             this.btnTamato.Text = "Eat";
             this.btnTamato.UseVisualStyleBackColor = true;
+            this.btnTamato.Click += new System.EventHandler(this.btnTamato_Click);
             // 
             // btnGrepa
             // 
@@ -410,6 +423,7 @@
             this.btnGrepa.TabIndex = 4;
             this.btnGrepa.Text = "Eat";
             this.btnGrepa.UseVisualStyleBackColor = true;
+            this.btnGrepa.Click += new System.EventHandler(this.btnGrepa_Click);
             // 
             // btnHondew
             // 
@@ -419,6 +433,7 @@
             this.btnHondew.TabIndex = 3;
             this.btnHondew.Text = "Eat";
             this.btnHondew.UseVisualStyleBackColor = true;
+            this.btnHondew.Click += new System.EventHandler(this.btnHondew_Click);
             // 
             // btnQualot
             // 
@@ -428,6 +443,7 @@
             this.btnQualot.TabIndex = 2;
             this.btnQualot.Text = "Eat";
             this.btnQualot.UseVisualStyleBackColor = true;
+            this.btnQualot.Click += new System.EventHandler(this.btnQualot_Click);
             // 
             // btnKelpsy
             // 
@@ -437,6 +453,7 @@
             this.btnKelpsy.TabIndex = 1;
             this.btnKelpsy.Text = "Eat";
             this.btnKelpsy.UseVisualStyleBackColor = true;
+            this.btnKelpsy.Click += new System.EventHandler(this.btnKelpsy_Click);
             // 
             // btnPomeg
             // 
@@ -446,6 +463,7 @@
             this.btnPomeg.TabIndex = 0;
             this.btnPomeg.Text = "Eat";
             this.btnPomeg.UseVisualStyleBackColor = true;
+            this.btnPomeg.Click += new System.EventHandler(this.btnPomeg_Click);
             // 
             // slblBerryDesc
             // 
@@ -519,6 +537,7 @@
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmConsumables
             // 

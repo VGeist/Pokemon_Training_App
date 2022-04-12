@@ -212,6 +212,9 @@
     <EmbeddedResource Include="Views\frmAddPokemon.resx">
       <DependentUpon>frmAddPokemon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmConsumables.resx">
+      <DependentUpon>frmConsumables.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmEditForm.resx">
       <DependentUpon>frmEditForm.cs</DependentUpon>
     </EmbeddedResource>
