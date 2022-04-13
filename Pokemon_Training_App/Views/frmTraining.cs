@@ -447,5 +447,29 @@ namespace Pokemon_Training_App.Views
             // inform user that at least one partner needs to be selected
             MessageBox.Show("You need to select one Partner to use items.", "No Partner Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnEvolve_Click(object sender, EventArgs e)
+        {
+            for (int slot = 0; slot < _trainingData.Length; slot++)
+            {
+                // get checkbox
+                CheckBox chkBox = (CheckBox)tlpMembersTable.Controls["chkDoTrainingPokemon" + slot];
+                if (chkBox.Checked)
+                {
+                    // open form
+                    frmEvolve form = new frmEvolve(_trainingData[slot]);
+                    form.Text += " | " + _trainingData[slot].Nickname; // update Form title text for clarity
+                    form.ShowDialog();
+
+                    // update display
+                    displaySlotData(slot);
+
+                    return;
+                }
+            }
+
+            // inform user that at least one partner needs to be selected
+            MessageBox.Show("You need to select one Partner to evolve.", "No Partner Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
