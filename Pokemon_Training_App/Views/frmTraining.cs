@@ -54,7 +54,8 @@ namespace Pokemon_Training_App.Views
                 tlpMembersTable.Controls["lblSpDefenseEV" + slotNum].Enabled = true;
                 tlpMembersTable.Controls["lblSpeedEV" + slotNum].Enabled = true;
                 tlpMembersTable.Controls["lblTotalEV" + slotNum].Enabled = true;
-            } else
+            }
+            else
             {
                 displaySlotDefault(slotNum);
             }
@@ -122,7 +123,8 @@ namespace Pokemon_Training_App.Views
                 formsRow = formsTableAdapter.GetFormByID(partnersRow.FormID).First();
 
                 partner = buildPartner(partnersRow, naturesRow, formsRow);
-            } catch
+            }
+            catch
             {
                 MessageBox.Show("Database error occured.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -470,6 +472,29 @@ namespace Pokemon_Training_App.Views
 
             // inform user that at least one partner needs to be selected
             MessageBox.Show("You need to select one Partner to evolve.", "No Partner Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnLevelUp_Click(object sender, EventArgs e)
+        {
+            for (int slot = 0; slot < _trainingData.Length; slot++)
+            {
+                // get checkbox
+                CheckBox chkBox = (CheckBox)tlpMembersTable.Controls["chkDoTrainingPokemon" + slot];
+                if (chkBox.Checked)
+                {
+                    // open form
+                    frmLevelUp form = new frmLevelUp(_trainingData[slot]);
+                    form.Text += " | " + _trainingData[slot].Nickname; // update Form title text for clarity
+                    form.ShowDialog();
+
+                    // update display
+                    displaySlotData(slot);
+
+                    return;
+                }
+            }
+            // inform user that at least one partner needs to be selected
+            MessageBox.Show("You need to select one Partner to level up.", "No Partner Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
