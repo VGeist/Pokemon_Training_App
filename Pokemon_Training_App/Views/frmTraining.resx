@@ -117,9 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ttpPokerus.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="ttpHeldItem.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>618, 17</value>
   </metadata>
+  <data name="cmbHeldItem0.ToolTip" xml:space="preserve">
+    <value>Increase EV gain with held items. NOTE: Effects apply after battles.
+- Power Weight | +4 HP
+- Power Bracer   | +4 Attack
+- Power Belt       | +4 Defense
+- Power Lense    | +4 Sp Attack
+- Power Band     | +4 Sp Defense
+- Power Anklet   | +4 Speed
+- Macho Brace doubles EV gain</value>
+  </data>
+  <data name="cmbHeldItem1.ToolTip" xml:space="preserve">
+    <value>Increase EV gain with held items. NOTE: Effects apply after battles.
+- Power Weight | +4 HP
+- Power Bracer   | +4 Attack
+- Power Belt       | +4 Defense
+- Power Lense    | +4 Sp Attack
+- Power Band     | +4 Sp Defense
+- Power Anklet   | +4 Speed
+- Macho Brace doubles EV gain</value>
+  </data>
+  <data name="cmbHeldItem2.ToolTip" xml:space="preserve">
+    <value>Increase EV gain with held items. NOTE: Effects apply after battles.
+- Power Weight | +4 HP
+- Power Bracer   | +4 Attack
+- Power Belt       | +4 Defense
+- Power Lense    | +4 Sp Attack
+- Power Band     | +4 Sp Defense
+- Power Anklet   | +4 Speed
+- Macho Brace doubles EV gain</value>
+  </data>
+  <data name="cmbHeldItem3.ToolTip" xml:space="preserve">
+    <value>Increase EV gain with held items. NOTE: Effects apply after battles.
+- Power Weight | +4 HP
+- Power Bracer   | +4 Attack
+- Power Belt       | +4 Defense
+- Power Lense    | +4 Sp Attack
+- Power Band     | +4 Sp Defense
+- Power Anklet   | +4 Speed
+- Macho Brace doubles EV gain</value>
+  </data>
+  <data name="cmbHeldItem4.ToolTip" xml:space="preserve">
+    <value>Increase EV gain with held items. NOTE: Effects apply after battles.
+- Power Weight | +4 HP
+- Power Bracer   | +4 Attack
+- Power Belt       | +4 Defense
+- Power Lense    | +4 Sp Attack
+- Power Band     | +4 Sp Defense
+- Power Anklet   | +4 Speed
+- Macho Brace doubles EV gain
+</value>
+  </data>
+  <data name="cmbHeldItem5.ToolTip" xml:space="preserve">
+    <value>Increase EV gain with held items. NOTE: Effects apply after battles.
+- Power Weight | +4 HP
+- Power Bracer   | +4 Attack
+- Power Belt       | +4 Defense
+- Power Lense    | +4 Sp Attack
+- Power Band     | +4 Sp Defense
+- Power Anklet   | +4 Speed
+- Macho Brace doubles EV gain</value>
+  </data>
   <metadata name="ttpPokerus.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

@@ -192,6 +192,11 @@ namespace Pokemon_Training_App.Views
             return partner;
         }
 
+        private void applyEVModifiers(int evGain)
+        {
+
+        }
+
         private void trainSelected()
         {
             // IMPORTANT: Changes to control names may cause errors!!!
@@ -222,6 +227,54 @@ namespace Pokemon_Training_App.Views
                     int spDefenseGain = (int)numSpDefenseEV.Value;
                     int speedGain = (int)numSpeedEV.Value;
 
+                    // apply mods
+                    // item
+                    string item = tlpMembersTable.Controls["cmbHeldItem" + slot].Text;
+                    if (item == "Power Weight")
+                    {
+                        healthGain += 4;
+                    } else if  (item == "Power Bracer")
+                    {
+                        attackGain += 4;
+                    }
+                    else if (item == "Power Belt")
+                    {
+                        defenseGain += 4;
+                    }
+                    else if (item == "Power Lens")
+                    {
+                        spAttackGain += 4;
+                    }
+                    else if (item == "Power Band")
+                    {
+                        spDefenseGain += 4;
+                    }
+                    else if (item == "Power Anklet")
+                    {
+                        speedGain += 4;
+                    }
+                    else if (item == "Macho Brace")
+                    {
+                        healthGain *= 2;
+                        attackGain *= 2;
+                        defenseGain *= 2;
+                        spAttackGain *= 2;
+                        spDefenseGain *= 2;
+                        speedGain *= 2;
+                    }
+
+                    // pokerus
+                    if (partner.HasPokerus)
+                    {
+                        healthGain *= 2;
+                        attackGain *= 2;
+                        defenseGain *= 2;
+                        spAttackGain *= 2;
+                        spDefenseGain *= 2;
+                        speedGain *= 2;
+                    }
+
+                    // Add EVs
                     // Health EV
                     if (healthGain != 0)
                     {

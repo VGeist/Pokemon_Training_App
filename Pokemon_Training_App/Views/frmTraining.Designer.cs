@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTraining));
             this.chkDoTrainingPokemon0 = new System.Windows.Forms.CheckBox();
             this.cmbHeldItem0 = new System.Windows.Forms.ComboBox();
             this.cmbHeldItem1 = new System.Windows.Forms.ComboBox();
@@ -122,6 +123,7 @@
             this.partnersTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.PartnersTableAdapter();
             this.naturesTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.NaturesTableAdapter();
             this.formsTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.FormsTableAdapter();
+            this.ttpHeldItem = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picInfected5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInfected4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInfected3)).BeginInit();
@@ -152,25 +154,40 @@
             this.cmbHeldItem0.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbHeldItem0.FormattingEnabled = true;
             this.cmbHeldItem0.Items.AddRange(new object[] {
+            "--NONE--",
             "Power Weight",
-            "Speed Bracelet",
-            "etc.",
-            "[TEMPORARY]"});
+            "Power Bracer",
+            "Power Belt",
+            "Power Lens",
+            "Power Band",
+            "Power Anklet",
+            "Macho Brace"});
             this.cmbHeldItem0.Location = new System.Drawing.Point(210, 11);
             this.cmbHeldItem0.Name = "cmbHeldItem0";
             this.cmbHeldItem0.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem0.TabIndex = 1;
-            this.cmbHeldItem0.Text = "Power Weight";
+            this.cmbHeldItem0.Text = "--NONE--";
+            this.ttpHeldItem.SetToolTip(this.cmbHeldItem0, resources.GetString("cmbHeldItem0.ToolTip"));
             // 
             // cmbHeldItem1
             // 
             this.cmbHeldItem1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbHeldItem1.FormattingEnabled = true;
+            this.cmbHeldItem1.Items.AddRange(new object[] {
+            "--NONE--",
+            "Power Weight",
+            "Power Bracer",
+            "Power Belt",
+            "Power Lens",
+            "Power Band",
+            "Power Anklet",
+            "Macho Brace"});
             this.cmbHeldItem1.Location = new System.Drawing.Point(210, 54);
             this.cmbHeldItem1.Name = "cmbHeldItem1";
             this.cmbHeldItem1.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem1.TabIndex = 3;
-            this.cmbHeldItem1.Text = "Power Weight";
+            this.cmbHeldItem1.Text = "--NONE--";
+            this.ttpHeldItem.SetToolTip(this.cmbHeldItem1, resources.GetString("cmbHeldItem1.ToolTip"));
             // 
             // chkDoTrainingPokemon1
             // 
@@ -186,11 +203,21 @@
             // 
             this.cmbHeldItem2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbHeldItem2.FormattingEnabled = true;
+            this.cmbHeldItem2.Items.AddRange(new object[] {
+            "--NONE--",
+            "Power Weight",
+            "Power Bracer",
+            "Power Belt",
+            "Power Lens",
+            "Power Band",
+            "Power Anklet",
+            "Macho Brace"});
             this.cmbHeldItem2.Location = new System.Drawing.Point(210, 97);
             this.cmbHeldItem2.Name = "cmbHeldItem2";
             this.cmbHeldItem2.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem2.TabIndex = 5;
-            this.cmbHeldItem2.Text = "Power Weight";
+            this.cmbHeldItem2.Text = "--NONE--";
+            this.ttpHeldItem.SetToolTip(this.cmbHeldItem2, resources.GetString("cmbHeldItem2.ToolTip"));
             // 
             // chkDoTrainingPokemon2
             // 
@@ -206,11 +233,21 @@
             // 
             this.cmbHeldItem3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbHeldItem3.FormattingEnabled = true;
+            this.cmbHeldItem3.Items.AddRange(new object[] {
+            "--NONE--",
+            "Power Weight",
+            "Power Bracer",
+            "Power Belt",
+            "Power Lens",
+            "Power Band",
+            "Power Anklet",
+            "Macho Brace"});
             this.cmbHeldItem3.Location = new System.Drawing.Point(210, 140);
             this.cmbHeldItem3.Name = "cmbHeldItem3";
             this.cmbHeldItem3.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem3.TabIndex = 7;
-            this.cmbHeldItem3.Text = "Power Weight";
+            this.cmbHeldItem3.Text = "--NONE--";
+            this.ttpHeldItem.SetToolTip(this.cmbHeldItem3, resources.GetString("cmbHeldItem3.ToolTip"));
             // 
             // chkDoTrainingPokemon3
             // 
@@ -230,7 +267,8 @@
             this.cmbHeldItem4.Name = "cmbHeldItem4";
             this.cmbHeldItem4.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem4.TabIndex = 9;
-            this.cmbHeldItem4.Text = "Power Weight";
+            this.cmbHeldItem4.Text = "--NONE--";
+            this.ttpHeldItem.SetToolTip(this.cmbHeldItem4, resources.GetString("cmbHeldItem4.ToolTip"));
             // 
             // chkDoTrainingPokemon4
             // 
@@ -246,11 +284,21 @@
             // 
             this.cmbHeldItem5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbHeldItem5.FormattingEnabled = true;
+            this.cmbHeldItem5.Items.AddRange(new object[] {
+            "--NONE--",
+            "Power Weight",
+            "Power Bracer",
+            "Power Belt",
+            "Power Lens",
+            "Power Band",
+            "Power Anklet",
+            "Macho Brace"});
             this.cmbHeldItem5.Location = new System.Drawing.Point(210, 226);
             this.cmbHeldItem5.Name = "cmbHeldItem5";
             this.cmbHeldItem5.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem5.TabIndex = 11;
-            this.cmbHeldItem5.Text = "Power Weight";
+            this.cmbHeldItem5.Text = "--NONE--";
+            this.ttpHeldItem.SetToolTip(this.cmbHeldItem5, resources.GetString("cmbHeldItem5.ToolTip"));
             // 
             // chkDoTrainingPokemon5
             // 
@@ -272,7 +320,7 @@
             this.picInfected5.Size = new System.Drawing.Size(20, 20);
             this.picInfected5.TabIndex = 87;
             this.picInfected5.TabStop = false;
-            this.ttpPokerus.SetToolTip(this.picInfected5, "This pokemon is infected with the Pokerus.");
+            this.ttpPokerus.SetToolTip(this.picInfected5, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
             this.picInfected5.Visible = false;
             // 
             // picInfected4
@@ -285,7 +333,7 @@
             this.picInfected4.Size = new System.Drawing.Size(20, 20);
             this.picInfected4.TabIndex = 88;
             this.picInfected4.TabStop = false;
-            this.ttpPokerus.SetToolTip(this.picInfected4, "This pokemon is infected with the Pokerus.");
+            this.ttpPokerus.SetToolTip(this.picInfected4, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
             this.picInfected4.Visible = false;
             // 
             // picInfected3
@@ -298,7 +346,7 @@
             this.picInfected3.Size = new System.Drawing.Size(20, 20);
             this.picInfected3.TabIndex = 89;
             this.picInfected3.TabStop = false;
-            this.ttpPokerus.SetToolTip(this.picInfected3, "This pokemon is infected with the Pokerus.");
+            this.ttpPokerus.SetToolTip(this.picInfected3, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
             this.picInfected3.Visible = false;
             // 
             // picInfected2
@@ -311,7 +359,7 @@
             this.picInfected2.Size = new System.Drawing.Size(20, 20);
             this.picInfected2.TabIndex = 90;
             this.picInfected2.TabStop = false;
-            this.ttpPokerus.SetToolTip(this.picInfected2, "This pokemon is infected with the Pokerus.");
+            this.ttpPokerus.SetToolTip(this.picInfected2, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
             this.picInfected2.Visible = false;
             // 
             // picInfected1
@@ -324,7 +372,7 @@
             this.picInfected1.Size = new System.Drawing.Size(20, 20);
             this.picInfected1.TabIndex = 91;
             this.picInfected1.TabStop = false;
-            this.ttpPokerus.SetToolTip(this.picInfected1, "This pokemon is infected with the Pokerus.");
+            this.ttpPokerus.SetToolTip(this.picInfected1, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
             this.picInfected1.Visible = false;
             // 
             // picInfected0
@@ -337,7 +385,7 @@
             this.picInfected0.Size = new System.Drawing.Size(20, 20);
             this.picInfected0.TabIndex = 92;
             this.picInfected0.TabStop = false;
-            this.ttpPokerus.SetToolTip(this.picInfected0, "This pokemon is infected with the Pokerus.");
+            this.ttpPokerus.SetToolTip(this.picInfected0, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
             this.picInfected0.Visible = false;
             // 
             // lblNickname0
@@ -990,6 +1038,11 @@
             // numHealthEV
             // 
             this.numHealthEV.Location = new System.Drawing.Point(379, 320);
+            this.numHealthEV.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numHealthEV.Name = "numHealthEV";
             this.numHealthEV.Size = new System.Drawing.Size(42, 30);
             this.numHealthEV.TabIndex = 17;
@@ -997,6 +1050,11 @@
             // numAttackEV
             // 
             this.numAttackEV.Location = new System.Drawing.Point(449, 320);
+            this.numAttackEV.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numAttackEV.Name = "numAttackEV";
             this.numAttackEV.Size = new System.Drawing.Size(42, 30);
             this.numAttackEV.TabIndex = 18;
@@ -1004,6 +1062,11 @@
             // numDefenseEV
             // 
             this.numDefenseEV.Location = new System.Drawing.Point(519, 320);
+            this.numDefenseEV.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numDefenseEV.Name = "numDefenseEV";
             this.numDefenseEV.Size = new System.Drawing.Size(42, 30);
             this.numDefenseEV.TabIndex = 19;
@@ -1011,6 +1074,11 @@
             // numSpAttackEV
             // 
             this.numSpAttackEV.Location = new System.Drawing.Point(589, 320);
+            this.numSpAttackEV.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numSpAttackEV.Name = "numSpAttackEV";
             this.numSpAttackEV.Size = new System.Drawing.Size(42, 30);
             this.numSpAttackEV.TabIndex = 20;
@@ -1018,6 +1086,11 @@
             // numSpDefenseEV
             // 
             this.numSpDefenseEV.Location = new System.Drawing.Point(659, 320);
+            this.numSpDefenseEV.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numSpDefenseEV.Name = "numSpDefenseEV";
             this.numSpDefenseEV.Size = new System.Drawing.Size(42, 30);
             this.numSpDefenseEV.TabIndex = 21;
@@ -1025,6 +1098,11 @@
             // numSpeedEV
             // 
             this.numSpeedEV.Location = new System.Drawing.Point(729, 320);
+            this.numSpeedEV.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numSpeedEV.Name = "numSpeedEV";
             this.numSpeedEV.Size = new System.Drawing.Size(42, 30);
             this.numSpeedEV.TabIndex = 22;
@@ -1145,6 +1223,13 @@
             // formsTableAdapter
             // 
             this.formsTableAdapter.ClearBeforeFill = true;
+            // 
+            // ttpHeldItem
+            // 
+            this.ttpHeldItem.AutoPopDelay = 17000;
+            this.ttpHeldItem.InitialDelay = 500;
+            this.ttpHeldItem.ReshowDelay = 100;
+            this.ttpHeldItem.ToolTipTitle = "Held Items";
             // 
             // frmTraining
             // 
@@ -1287,5 +1372,6 @@
         private Data.PokemonDataSetTableAdapters.PartnersTableAdapter partnersTableAdapter;
         private Data.PokemonDataSetTableAdapters.NaturesTableAdapter naturesTableAdapter;
         private Data.PokemonDataSetTableAdapters.FormsTableAdapter formsTableAdapter;
+        private System.Windows.Forms.ToolTip ttpHeldItem;
     }
 }
