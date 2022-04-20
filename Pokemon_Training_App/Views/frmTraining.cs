@@ -192,11 +192,6 @@ namespace Pokemon_Training_App.Views
             return partner;
         }
 
-        private void applyEVModifiers(int evGain)
-        {
-
-        }
-
         private void trainSelected()
         {
             // IMPORTANT: Changes to control names may cause errors!!!
