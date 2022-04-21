@@ -63,6 +63,9 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnFilter = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnStats = new System.Windows.Forms.Button();
+            this.naturesTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.NaturesTableAdapter();
+            this.formsTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.FormsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartners)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.partnersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
@@ -325,7 +328,7 @@
             // 
             this.btnGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGroup.Enabled = false;
-            this.btnGroup.Location = new System.Drawing.Point(1504, 384);
+            this.btnGroup.Location = new System.Drawing.Point(1439, 384);
             this.btnGroup.Name = "btnGroup";
             this.btnGroup.Size = new System.Drawing.Size(184, 31);
             this.btnGroup.TabIndex = 4;
@@ -387,11 +390,32 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // btnStats
+            // 
+            this.btnStats.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStats.Enabled = false;
+            this.btnStats.Location = new System.Drawing.Point(1629, 384);
+            this.btnStats.Name = "btnStats";
+            this.btnStats.Size = new System.Drawing.Size(59, 31);
+            this.btnStats.TabIndex = 10;
+            this.btnStats.Text = "Stats";
+            this.btnStats.UseVisualStyleBackColor = true;
+            this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
+            // 
+            // naturesTableAdapter
+            // 
+            this.naturesTableAdapter.ClearBeforeFill = true;
+            // 
+            // formsTableAdapter
+            // 
+            this.formsTableAdapter.ClearBeforeFill = true;
+            // 
             // frmSearchResultPartner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 427);
+            this.Controls.Add(this.btnStats);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.btnClose);
@@ -447,5 +471,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSpeedEV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalEV;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnStats;
+        private Data.PokemonDataSetTableAdapters.NaturesTableAdapter naturesTableAdapter;
+        private Data.PokemonDataSetTableAdapters.FormsTableAdapter formsTableAdapter;
     }
 }

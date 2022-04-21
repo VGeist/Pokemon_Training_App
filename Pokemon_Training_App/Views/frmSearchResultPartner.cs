@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pokemon_Training_App.Classes;
+using Pokemon_Training_App.Data;
 
 namespace Pokemon_Training_App.Views
 {
@@ -55,7 +56,93 @@ namespace Pokemon_Training_App.Views
             // get selected partner
             int? partnerID = (int?)dgvPartners.SelectedRows[0].Cells[colPartnerID.Index].Value;
             return partnerID;
-        } 
+        }
+
+        private Partner buildPartner(PokemonDataSet.PartnersRow partnersRow, PokemonDataSet.NaturesRow naturesRow, PokemonDataSet.FormsRow formsRow)
+        {
+            // determine favored/hindered stat
+            string statBonus = naturesRow.StatBonus;
+            string statMalus = naturesRow.StatBonus;
+
+            // Form Data
+            PokeForm form = new PokeForm(
+                formsRow.FormID,
+                formsRow.BaseHealth,
+                formsRow.BaseAttack,
+                formsRow.BaseDefense,
+                formsRow.BaseSpAttack,
+                formsRow.BaseSpDefense,
+                formsRow.BaseSpeed,
+                formsRow.Name
+                );
+
+            // Species data
+            Pokemon species = new Pokemon();
+
+            species.PokeNumber = partnersRow.PokeNum;
+            species.PokeName = partnersRow.PokeName;
+
+            Partner partner = new Partner(species,
+                partnersRow.Nickname,
+                partnersRow.Level,
+                partnersRow.NatureName,
+                statBonus,
+                statMalus,
+                partnersRow.HasPokerus,
+
+                // Stats
+                partnersRow.Health,
+                partnersRow.Attack,
+                partnersRow.Defense,
+                partnersRow.SpAttack,
+                partnersRow.SpDefense,
+                partnersRow.Speed,
+
+                // EVs
+                partnersRow.EVHealth,
+                partnersRow.EVAttack,
+                partnersRow.EVDefense,
+                partnersRow.EVSpAttack,
+                partnersRow.EVSpDefense,
+                partnersRow.EVSpeed
+                );
+
+            partner.Form = form;
+
+            return partner;
+        }
+
+        private Partner buildSelectedPartner(int id)
+        {
+            // get partner from database by ID
+            PokemonDataSet.PartnersRow partnersRow;
+            PokemonDataSet.NaturesRow naturesRow;
+            PokemonDataSet.FormsRow formsRow;
+
+            Partner partner;
+
+            try
+            {
+                // database queries
+                partnersRow = partnersTableAdapter.GetDataByPartnerID(id).First();
+                naturesRow = naturesTableAdapter.GetNatureByName(partnersRow.NatureName).First();
+                formsRow = formsTableAdapter.GetFormByID(partnersRow.FormID).First();
+
+                partner = buildPartner(partnersRow, naturesRow, formsRow);
+            }
+            catch
+            {
+                MessageBox.Show("Database error occured.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                Pokemon species = new Pokemon();
+                species.PokeName = "default";
+                species.PokeNumber = -1;
+
+                partner = new Partner(species);
+            }
+
+            return partner;
+        }
 
         /*** EVENTS ***/
         private void frmSearchResultPartner_Load(object sender, EventArgs e)
@@ -73,6 +160,7 @@ namespace Pokemon_Training_App.Views
                 // enable
                 btnEdit.Enabled = true;
                 btnGroup.Enabled = true;
+                btnStats.Enabled = true;
 
                 // update btnGroup if selected row is already in party
                 if (Party.containsPartner((int)getSelectedID()))
@@ -90,12 +178,25 @@ namespace Pokemon_Training_App.Views
                 // disable
                 btnEdit.Enabled = false;
                 btnGroup.Enabled = false;
+                btnStats.Enabled = false;
             }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             getData();
+        }
+
+        private void btnStats_Click(object sender, EventArgs e)
+        {
+            int partnerID = (int)getSelectedID(); // TODO: possible error, only prevented by disabling Stats button when no rows are selected
+
+            Partner partner = buildSelectedPartner(partnerID);
+
+            // open form
+            frmStats form = new frmStats(partner);
+            form.Text += " | " + partner.Nickname; // update Form title text for clarity
+            form.ShowDialog();
         }
 
         private void btnNew_Click(object sender, EventArgs e)

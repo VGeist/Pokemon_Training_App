@@ -63,19 +63,14 @@
             this.lblNickname = new System.Windows.Forms.Label();
             this.lblLevel = new System.Windows.Forms.Label();
             this.lblForm = new System.Windows.Forms.Label();
-            this.btnAddToGroup = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnEvolve = new System.Windows.Forms.Button();
-            this.btnChangeForm = new System.Windows.Forms.Button();
-            this.btnLevelUp = new System.Windows.Forms.Button();
-            this.picPokerus = new System.Windows.Forms.PictureBox();
             this.ttpPokerus = new System.Windows.Forms.ToolTip(this.components);
+            this.picPokerus = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPokerus)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSpeedIV
             // 
-            this.lblSpeedIV.Location = new System.Drawing.Point(343, 259);
+            this.lblSpeedIV.Location = new System.Drawing.Point(391, 259);
             this.lblSpeedIV.Name = "lblSpeedIV";
             this.lblSpeedIV.Size = new System.Drawing.Size(134, 22);
             this.lblSpeedIV.TabIndex = 77;
@@ -84,7 +79,7 @@
             // 
             // lblSpDefenseIV
             // 
-            this.lblSpDefenseIV.Location = new System.Drawing.Point(343, 226);
+            this.lblSpDefenseIV.Location = new System.Drawing.Point(391, 226);
             this.lblSpDefenseIV.Name = "lblSpDefenseIV";
             this.lblSpDefenseIV.Size = new System.Drawing.Size(134, 22);
             this.lblSpDefenseIV.TabIndex = 76;
@@ -93,7 +88,7 @@
             // 
             // lblSpAttackIV
             // 
-            this.lblSpAttackIV.Location = new System.Drawing.Point(343, 195);
+            this.lblSpAttackIV.Location = new System.Drawing.Point(391, 195);
             this.lblSpAttackIV.Name = "lblSpAttackIV";
             this.lblSpAttackIV.Size = new System.Drawing.Size(134, 22);
             this.lblSpAttackIV.TabIndex = 75;
@@ -102,7 +97,7 @@
             // 
             // lblDefenseIV
             // 
-            this.lblDefenseIV.Location = new System.Drawing.Point(343, 161);
+            this.lblDefenseIV.Location = new System.Drawing.Point(391, 161);
             this.lblDefenseIV.Name = "lblDefenseIV";
             this.lblDefenseIV.Size = new System.Drawing.Size(134, 22);
             this.lblDefenseIV.TabIndex = 74;
@@ -111,7 +106,7 @@
             // 
             // lblAttackIV
             // 
-            this.lblAttackIV.Location = new System.Drawing.Point(343, 128);
+            this.lblAttackIV.Location = new System.Drawing.Point(391, 128);
             this.lblAttackIV.Name = "lblAttackIV";
             this.lblAttackIV.Size = new System.Drawing.Size(134, 22);
             this.lblAttackIV.TabIndex = 73;
@@ -120,7 +115,7 @@
             // 
             // lblHealthIV
             // 
-            this.lblHealthIV.Location = new System.Drawing.Point(343, 94);
+            this.lblHealthIV.Location = new System.Drawing.Point(391, 94);
             this.lblHealthIV.Name = "lblHealthIV";
             this.lblHealthIV.Size = new System.Drawing.Size(134, 22);
             this.lblHealthIV.TabIndex = 72;
@@ -129,7 +124,7 @@
             // 
             // lblSpeedEV
             // 
-            this.lblSpeedEV.Location = new System.Drawing.Point(231, 259);
+            this.lblSpeedEV.Location = new System.Drawing.Point(255, 259);
             this.lblSpeedEV.Name = "lblSpeedEV";
             this.lblSpeedEV.Size = new System.Drawing.Size(60, 22);
             this.lblSpeedEV.TabIndex = 70;
@@ -138,7 +133,7 @@
             // 
             // lblSpDefenseEV
             // 
-            this.lblSpDefenseEV.Location = new System.Drawing.Point(231, 226);
+            this.lblSpDefenseEV.Location = new System.Drawing.Point(255, 226);
             this.lblSpDefenseEV.Name = "lblSpDefenseEV";
             this.lblSpDefenseEV.Size = new System.Drawing.Size(60, 22);
             this.lblSpDefenseEV.TabIndex = 69;
@@ -147,7 +142,7 @@
             // 
             // lblSpAttackEV
             // 
-            this.lblSpAttackEV.Location = new System.Drawing.Point(231, 195);
+            this.lblSpAttackEV.Location = new System.Drawing.Point(255, 195);
             this.lblSpAttackEV.Name = "lblSpAttackEV";
             this.lblSpAttackEV.Size = new System.Drawing.Size(60, 22);
             this.lblSpAttackEV.TabIndex = 68;
@@ -156,7 +151,7 @@
             // 
             // lblDefenseEV
             // 
-            this.lblDefenseEV.Location = new System.Drawing.Point(231, 161);
+            this.lblDefenseEV.Location = new System.Drawing.Point(255, 161);
             this.lblDefenseEV.Name = "lblDefenseEV";
             this.lblDefenseEV.Size = new System.Drawing.Size(60, 22);
             this.lblDefenseEV.TabIndex = 67;
@@ -165,7 +160,7 @@
             // 
             // lblAttackEV
             // 
-            this.lblAttackEV.Location = new System.Drawing.Point(231, 128);
+            this.lblAttackEV.Location = new System.Drawing.Point(255, 128);
             this.lblAttackEV.Name = "lblAttackEV";
             this.lblAttackEV.Size = new System.Drawing.Size(60, 22);
             this.lblAttackEV.TabIndex = 66;
@@ -174,7 +169,7 @@
             // 
             // lblHealthEV
             // 
-            this.lblHealthEV.Location = new System.Drawing.Point(231, 94);
+            this.lblHealthEV.Location = new System.Drawing.Point(255, 94);
             this.lblHealthEV.Name = "lblHealthEV";
             this.lblHealthEV.Size = new System.Drawing.Size(60, 22);
             this.lblHealthEV.TabIndex = 65;
@@ -184,7 +179,7 @@
             // lblIV
             // 
             this.lblIV.AutoSize = true;
-            this.lblIV.Location = new System.Drawing.Point(307, 94);
+            this.lblIV.Location = new System.Drawing.Point(355, 94);
             this.lblIV.Name = "lblIV";
             this.lblIV.Size = new System.Drawing.Size(27, 22);
             this.lblIV.TabIndex = 64;
@@ -193,7 +188,7 @@
             // lblEV
             // 
             this.lblEV.AutoSize = true;
-            this.lblEV.Location = new System.Drawing.Point(190, 94);
+            this.lblEV.Location = new System.Drawing.Point(214, 94);
             this.lblEV.Name = "lblEV";
             this.lblEV.Size = new System.Drawing.Size(32, 22);
             this.lblEV.TabIndex = 63;
@@ -383,50 +378,9 @@
             this.lblForm.TabIndex = 80;
             this.lblForm.Text = "[POKEMONFORM] Form";
             // 
-            // btnAddToGroup
+            // ttpPokerus
             // 
-            this.btnAddToGroup.Location = new System.Drawing.Point(483, 249);
-            this.btnAddToGroup.Name = "btnAddToGroup";
-            this.btnAddToGroup.Size = new System.Drawing.Size(132, 31);
-            this.btnAddToGroup.TabIndex = 5;
-            this.btnAddToGroup.Text = "Add to Group";
-            this.btnAddToGroup.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(483, 210);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(132, 31);
-            this.btnEdit.TabIndex = 4;
-            this.btnEdit.Text = "Edit Data";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnEvolve
-            // 
-            this.btnEvolve.Location = new System.Drawing.Point(483, 132);
-            this.btnEvolve.Name = "btnEvolve";
-            this.btnEvolve.Size = new System.Drawing.Size(132, 31);
-            this.btnEvolve.TabIndex = 2;
-            this.btnEvolve.Text = "Evolve";
-            this.btnEvolve.UseVisualStyleBackColor = true;
-            // 
-            // btnChangeForm
-            // 
-            this.btnChangeForm.Location = new System.Drawing.Point(483, 171);
-            this.btnChangeForm.Name = "btnChangeForm";
-            this.btnChangeForm.Size = new System.Drawing.Size(132, 31);
-            this.btnChangeForm.TabIndex = 3;
-            this.btnChangeForm.Text = "Change Form";
-            this.btnChangeForm.UseVisualStyleBackColor = true;
-            // 
-            // btnLevelUp
-            // 
-            this.btnLevelUp.Location = new System.Drawing.Point(483, 93);
-            this.btnLevelUp.Name = "btnLevelUp";
-            this.btnLevelUp.Size = new System.Drawing.Size(132, 31);
-            this.btnLevelUp.TabIndex = 1;
-            this.btnLevelUp.Text = "Level Up";
-            this.btnLevelUp.UseVisualStyleBackColor = true;
+            this.ttpPokerus.ToolTipTitle = "Pokerus";
             // 
             // picPokerus
             // 
@@ -440,21 +394,12 @@
             this.ttpPokerus.SetToolTip(this.picPokerus, "This pokemon is infected with the Pokerus.\r\nEVs are gained at double rate.");
             this.picPokerus.Visible = false;
             // 
-            // ttpPokerus
-            // 
-            this.ttpPokerus.ToolTipTitle = "Pokerus";
-            // 
             // frmStats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 291);
+            this.ClientSize = new System.Drawing.Size(557, 291);
             this.Controls.Add(this.picPokerus);
-            this.Controls.Add(this.btnLevelUp);
-            this.Controls.Add(this.btnChangeForm);
-            this.Controls.Add(this.btnEvolve);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnAddToGroup);
             this.Controls.Add(this.lblForm);
             this.Controls.Add(this.lblLevel);
             this.Controls.Add(this.lblSpeedIV);
@@ -493,6 +438,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmStats";
             this.Text = "Stats";
+            this.Load += new System.EventHandler(this.frmStats_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picPokerus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -534,11 +480,6 @@
         private System.Windows.Forms.Label lblNickname;
         private System.Windows.Forms.Label lblLevel;
         private System.Windows.Forms.Label lblForm;
-        private System.Windows.Forms.Button btnAddToGroup;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnEvolve;
-        private System.Windows.Forms.Button btnChangeForm;
-        private System.Windows.Forms.Button btnLevelUp;
         private System.Windows.Forms.PictureBox picPokerus;
         private System.Windows.Forms.ToolTip ttpPokerus;
     }

@@ -544,5 +544,71 @@ namespace Pokemon_Training_App.Views
             // inform user that at least one partner needs to be selected
             MessageBox.Show("You need to select one Partner to level up.", "No Partner Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnInfect_Click(object sender, EventArgs e)
+        {
+            // TODO: use code bolow to create getSelected() and replace where needed
+            int[] selected = new int[0];
+
+            for (int slot = 0; slot < _trainingData.Length; slot++)
+            {
+                // get checkbox
+                CheckBox chkBox = (CheckBox)tlpMembersTable.Controls["chkDoTrainingPokemon" + slot];
+                if (chkBox.Checked)
+                {
+                    // mark slot for edit
+                    selected = selected.Append(slot).ToArray();
+                }
+            }
+
+            if (selected.Length == 0)
+            {
+                // inform user that at least one partner needs to be selected
+                MessageBox.Show("You need to select at least one Partner to infect.", "No Partner Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Cannot be undone messge.
+            DialogResult result = MessageBox.Show(
+                "You are about to infect " + selected.Length + " partner(s) with pokerus." + Environment.NewLine +
+                "This action cannot be undone without leaving the Training Utility." + Environment.NewLine + 
+                "Double check that you have selected the correct partners." + Environment.NewLine +
+                "Infection is not saved to database until Confirm Training is clicked." + Environment.NewLine + 
+                "Do you want to proceed?", 
+                "Infect Pokerus", 
+                MessageBoxButtons.OKCancel, 
+                MessageBoxIcon.Warning);
+
+            if (result == DialogResult.OK)
+            {
+                // infect selected
+                for (int i = 0; i < selected.Length; i ++)
+                {
+                    _trainingData[selected[i]].HasPokerus = true;
+                    displaySlotData(selected[i]);
+                }
+            }
+        }
+
+        private void btnStats_Click(object sender, EventArgs e)
+        {
+            for (int slot = 0; slot < _trainingData.Length; slot++)
+            {
+                // get checkbox
+                CheckBox chkBox = (CheckBox)tlpMembersTable.Controls["chkDoTrainingPokemon" + slot];
+                if (chkBox.Checked)
+                {
+                    // open form
+                    frmStats form = new frmStats(_trainingData[slot]);
+                    form.Text += " | " + _trainingData[slot].Nickname; // update Form title text for clarity
+                    form.ShowDialog();
+
+                    return;
+                }
+            }
+
+            // inform user that at least one partner needs to be selected
+            MessageBox.Show("You need to select one Partner to view stats.", "No Partner Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

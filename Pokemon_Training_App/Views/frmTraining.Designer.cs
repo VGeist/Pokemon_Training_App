@@ -42,12 +42,6 @@
             this.chkDoTrainingPokemon4 = new System.Windows.Forms.CheckBox();
             this.cmbHeldItem5 = new System.Windows.Forms.ComboBox();
             this.chkDoTrainingPokemon5 = new System.Windows.Forms.CheckBox();
-            this.picInfected5 = new System.Windows.Forms.PictureBox();
-            this.picInfected4 = new System.Windows.Forms.PictureBox();
-            this.picInfected3 = new System.Windows.Forms.PictureBox();
-            this.picInfected2 = new System.Windows.Forms.PictureBox();
-            this.picInfected1 = new System.Windows.Forms.PictureBox();
-            this.picInfected0 = new System.Windows.Forms.PictureBox();
             this.lblNickname0 = new System.Windows.Forms.Label();
             this.lblNickname1 = new System.Windows.Forms.Label();
             this.lblNickname2 = new System.Windows.Forms.Label();
@@ -119,23 +113,31 @@
             this.numSpDefenseEV = new System.Windows.Forms.NumericUpDown();
             this.numSpeedEV = new System.Windows.Forms.NumericUpDown();
             this.ttpPokerus = new System.Windows.Forms.ToolTip(this.components);
+            this.picInfected0 = new System.Windows.Forms.PictureBox();
+            this.picInfected5 = new System.Windows.Forms.PictureBox();
+            this.picInfected4 = new System.Windows.Forms.PictureBox();
+            this.picInfected3 = new System.Windows.Forms.PictureBox();
+            this.picInfected2 = new System.Windows.Forms.PictureBox();
+            this.picInfected1 = new System.Windows.Forms.PictureBox();
             this.tlpMembersTable = new System.Windows.Forms.TableLayoutPanel();
             this.partnersTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.PartnersTableAdapter();
             this.naturesTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.NaturesTableAdapter();
             this.formsTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.FormsTableAdapter();
             this.ttpHeldItem = new System.Windows.Forms.ToolTip(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.picInfected5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInfected4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInfected3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInfected2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInfected1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInfected0)).BeginInit();
+            this.btnStats = new System.Windows.Forms.Button();
+            this.btnInfect = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numHealthEV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAttackEV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDefenseEV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpAttackEV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpDefenseEV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpeedEV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInfected0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInfected5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInfected4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInfected3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInfected2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInfected1)).BeginInit();
             this.tlpMembersTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -309,84 +311,6 @@
             this.chkDoTrainingPokemon5.Size = new System.Drawing.Size(14, 14);
             this.chkDoTrainingPokemon5.TabIndex = 10;
             this.chkDoTrainingPokemon5.UseVisualStyleBackColor = true;
-            // 
-            // picInfected5
-            // 
-            this.picInfected5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picInfected5.BackgroundImage = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
-            this.picInfected5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picInfected5.Location = new System.Drawing.Point(175, 226);
-            this.picInfected5.Name = "picInfected5";
-            this.picInfected5.Size = new System.Drawing.Size(20, 20);
-            this.picInfected5.TabIndex = 87;
-            this.picInfected5.TabStop = false;
-            this.ttpPokerus.SetToolTip(this.picInfected5, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
-            this.picInfected5.Visible = false;
-            // 
-            // picInfected4
-            // 
-            this.picInfected4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picInfected4.BackgroundImage = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
-            this.picInfected4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picInfected4.Location = new System.Drawing.Point(175, 183);
-            this.picInfected4.Name = "picInfected4";
-            this.picInfected4.Size = new System.Drawing.Size(20, 20);
-            this.picInfected4.TabIndex = 88;
-            this.picInfected4.TabStop = false;
-            this.ttpPokerus.SetToolTip(this.picInfected4, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
-            this.picInfected4.Visible = false;
-            // 
-            // picInfected3
-            // 
-            this.picInfected3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picInfected3.BackgroundImage = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
-            this.picInfected3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picInfected3.Location = new System.Drawing.Point(175, 140);
-            this.picInfected3.Name = "picInfected3";
-            this.picInfected3.Size = new System.Drawing.Size(20, 20);
-            this.picInfected3.TabIndex = 89;
-            this.picInfected3.TabStop = false;
-            this.ttpPokerus.SetToolTip(this.picInfected3, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
-            this.picInfected3.Visible = false;
-            // 
-            // picInfected2
-            // 
-            this.picInfected2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picInfected2.BackgroundImage = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
-            this.picInfected2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picInfected2.Location = new System.Drawing.Point(175, 97);
-            this.picInfected2.Name = "picInfected2";
-            this.picInfected2.Size = new System.Drawing.Size(20, 20);
-            this.picInfected2.TabIndex = 90;
-            this.picInfected2.TabStop = false;
-            this.ttpPokerus.SetToolTip(this.picInfected2, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
-            this.picInfected2.Visible = false;
-            // 
-            // picInfected1
-            // 
-            this.picInfected1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picInfected1.BackgroundImage = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
-            this.picInfected1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picInfected1.Location = new System.Drawing.Point(175, 54);
-            this.picInfected1.Name = "picInfected1";
-            this.picInfected1.Size = new System.Drawing.Size(20, 20);
-            this.picInfected1.TabIndex = 91;
-            this.picInfected1.TabStop = false;
-            this.ttpPokerus.SetToolTip(this.picInfected1, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
-            this.picInfected1.Visible = false;
-            // 
-            // picInfected0
-            // 
-            this.picInfected0.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picInfected0.BackgroundImage = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
-            this.picInfected0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picInfected0.Location = new System.Drawing.Point(175, 11);
-            this.picInfected0.Name = "picInfected0";
-            this.picInfected0.Size = new System.Drawing.Size(20, 20);
-            this.picInfected0.TabIndex = 92;
-            this.picInfected0.TabStop = false;
-            this.ttpPokerus.SetToolTip(this.picInfected0, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
-            this.picInfected0.Visible = false;
             // 
             // lblNickname0
             // 
@@ -977,7 +901,7 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(207, 359);
+            this.btnRemove.Location = new System.Drawing.Point(249, 355);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(92, 33);
             this.btnRemove.TabIndex = 16;
@@ -987,7 +911,7 @@
             // 
             // btnPreview
             // 
-            this.btnPreview.Location = new System.Drawing.Point(85, 359);
+            this.btnPreview.Location = new System.Drawing.Point(143, 355);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(92, 33);
             this.btnPreview.TabIndex = 15;
@@ -997,7 +921,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(405, 366);
+            this.btnAdd.Location = new System.Drawing.Point(484, 366);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 33);
             this.btnAdd.TabIndex = 24;
@@ -1007,7 +931,7 @@
             // 
             // btnConfirmTraining
             // 
-            this.btnConfirmTraining.Location = new System.Drawing.Point(531, 366);
+            this.btnConfirmTraining.Location = new System.Drawing.Point(589, 366);
             this.btnConfirmTraining.Name = "btnConfirmTraining";
             this.btnConfirmTraining.Size = new System.Drawing.Size(158, 33);
             this.btnConfirmTraining.TabIndex = 25;
@@ -1017,7 +941,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(729, 366);
+            this.btnCancel.Location = new System.Drawing.Point(766, 366);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(86, 33);
             this.btnCancel.TabIndex = 26;
@@ -1110,6 +1034,84 @@
             // ttpPokerus
             // 
             this.ttpPokerus.ToolTipTitle = "Pokerus";
+            // 
+            // picInfected0
+            // 
+            this.picInfected0.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picInfected0.BackgroundImage = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
+            this.picInfected0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picInfected0.Location = new System.Drawing.Point(175, 11);
+            this.picInfected0.Name = "picInfected0";
+            this.picInfected0.Size = new System.Drawing.Size(20, 20);
+            this.picInfected0.TabIndex = 92;
+            this.picInfected0.TabStop = false;
+            this.ttpPokerus.SetToolTip(this.picInfected0, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
+            this.picInfected0.Visible = false;
+            // 
+            // picInfected5
+            // 
+            this.picInfected5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picInfected5.BackgroundImage = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
+            this.picInfected5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picInfected5.Location = new System.Drawing.Point(175, 226);
+            this.picInfected5.Name = "picInfected5";
+            this.picInfected5.Size = new System.Drawing.Size(20, 20);
+            this.picInfected5.TabIndex = 87;
+            this.picInfected5.TabStop = false;
+            this.ttpPokerus.SetToolTip(this.picInfected5, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
+            this.picInfected5.Visible = false;
+            // 
+            // picInfected4
+            // 
+            this.picInfected4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picInfected4.BackgroundImage = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
+            this.picInfected4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picInfected4.Location = new System.Drawing.Point(175, 183);
+            this.picInfected4.Name = "picInfected4";
+            this.picInfected4.Size = new System.Drawing.Size(20, 20);
+            this.picInfected4.TabIndex = 88;
+            this.picInfected4.TabStop = false;
+            this.ttpPokerus.SetToolTip(this.picInfected4, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
+            this.picInfected4.Visible = false;
+            // 
+            // picInfected3
+            // 
+            this.picInfected3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picInfected3.BackgroundImage = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
+            this.picInfected3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picInfected3.Location = new System.Drawing.Point(175, 140);
+            this.picInfected3.Name = "picInfected3";
+            this.picInfected3.Size = new System.Drawing.Size(20, 20);
+            this.picInfected3.TabIndex = 89;
+            this.picInfected3.TabStop = false;
+            this.ttpPokerus.SetToolTip(this.picInfected3, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
+            this.picInfected3.Visible = false;
+            // 
+            // picInfected2
+            // 
+            this.picInfected2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picInfected2.BackgroundImage = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
+            this.picInfected2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picInfected2.Location = new System.Drawing.Point(175, 97);
+            this.picInfected2.Name = "picInfected2";
+            this.picInfected2.Size = new System.Drawing.Size(20, 20);
+            this.picInfected2.TabIndex = 90;
+            this.picInfected2.TabStop = false;
+            this.ttpPokerus.SetToolTip(this.picInfected2, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
+            this.picInfected2.Visible = false;
+            // 
+            // picInfected1
+            // 
+            this.picInfected1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picInfected1.BackgroundImage = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
+            this.picInfected1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picInfected1.Location = new System.Drawing.Point(175, 54);
+            this.picInfected1.Name = "picInfected1";
+            this.picInfected1.Size = new System.Drawing.Size(20, 20);
+            this.picInfected1.TabIndex = 91;
+            this.picInfected1.TabStop = false;
+            this.ttpPokerus.SetToolTip(this.picInfected1, "This pokemon is infected with the Pokerus.\r\nGain Double EVs after battle!");
+            this.picInfected1.Visible = false;
             // 
             // tlpMembersTable
             // 
@@ -1231,12 +1233,34 @@
             this.ttpHeldItem.ReshowDelay = 100;
             this.ttpHeldItem.ToolTipTitle = "Held Items";
             // 
+            // btnStats
+            // 
+            this.btnStats.Location = new System.Drawing.Point(37, 355);
+            this.btnStats.Name = "btnStats";
+            this.btnStats.Size = new System.Drawing.Size(92, 33);
+            this.btnStats.TabIndex = 107;
+            this.btnStats.Text = "Stats";
+            this.btnStats.UseVisualStyleBackColor = true;
+            this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
+            // 
+            // btnInfect
+            // 
+            this.btnInfect.Location = new System.Drawing.Point(379, 366);
+            this.btnInfect.Name = "btnInfect";
+            this.btnInfect.Size = new System.Drawing.Size(86, 33);
+            this.btnInfect.TabIndex = 108;
+            this.btnInfect.Text = "Infect";
+            this.btnInfect.UseVisualStyleBackColor = true;
+            this.btnInfect.Click += new System.EventHandler(this.btnInfect_Click);
+            // 
             // frmTraining
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(868, 410);
+            this.Controls.Add(this.btnInfect);
+            this.Controls.Add(this.btnStats);
             this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnUseItem);
@@ -1258,18 +1282,18 @@
             this.Name = "frmTraining";
             this.Text = "Training Utility";
             this.Load += new System.EventHandler(this.frmTraining_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picInfected5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInfected4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInfected3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInfected2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInfected1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInfected0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHealthEV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAttackEV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDefenseEV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpAttackEV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpDefenseEV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpeedEV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInfected0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInfected5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInfected4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInfected3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInfected2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInfected1)).EndInit();
             this.tlpMembersTable.ResumeLayout(false);
             this.tlpMembersTable.PerformLayout();
             this.ResumeLayout(false);
@@ -1373,5 +1397,7 @@
         private Data.PokemonDataSetTableAdapters.NaturesTableAdapter naturesTableAdapter;
         private Data.PokemonDataSetTableAdapters.FormsTableAdapter formsTableAdapter;
         private System.Windows.Forms.ToolTip ttpHeldItem;
+        private System.Windows.Forms.Button btnStats;
+        private System.Windows.Forms.Button btnInfect;
     }
 }
