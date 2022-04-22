@@ -54,7 +54,7 @@ namespace Pokemon_Training_App.Views
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            _partner.LevelUp((int)numLevel.Value, (int)numHealth.Value, (int)numHealth.Value, (int)numHealth.Value, (int)numHealth.Value, (int)numHealth.Value, (int)numHealth.Value);
+            _partner.LevelUp((int)numLevel.Value, (int)numHealth.Value, (int)numAttack.Value, (int)numDefense.Value, (int)numSpAttack.Value, (int)numSpDefense.Value, (int)numSpeed.Value);
             this.Close();
         }
     }
