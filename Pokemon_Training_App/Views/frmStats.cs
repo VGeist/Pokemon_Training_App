@@ -34,35 +34,61 @@ namespace Pokemon_Training_App.Views
             lblNature.Text = _partner.Nature;
             lblForm.Text = _partner.Form.GetFormName() + " Form";
 
+            int[] ivRange;
+
             // Health values
             lblHealth.Text = _partner.Health.ToString();
             lblHealthEV.Text = _partner.HealthEV.ToString();
-            lblHealthIV.Text = _partner.MinHealthIV() + " to " + _partner.MaxHealthIV();
+            ivRange = _partner.GetIVRange("Health");
+            lblHealthIV.Text = getIvRangeString(ivRange[0], ivRange[1]);
 
             // Attack values
             lblAttack.Text = _partner.Attack.ToString();
             lblAttackEV.Text = _partner.AttackEV.ToString();
-            lblAttackIV.Text = _partner.MinStatIV("Attack", _partner.Attack) + " to " + _partner.MaxStatIV("Attack", _partner.Attack);
+            ivRange = _partner.GetIVRange("Attack");
+            lblAttackIV.Text = getIvRangeString(ivRange[0], ivRange[1]);
 
             // Defense values
             lblDefense.Text = _partner.Defense.ToString();
             lblDefenseEV.Text = _partner.DefenseEV.ToString();
-            lblDefenseIV.Text = _partner.MinStatIV("Defense", _partner.Defense) + " to " + _partner.MaxStatIV("Defense", _partner.Defense);
+            ivRange = _partner.GetIVRange("Defense");
+            lblDefenseIV.Text = getIvRangeString(ivRange[0], ivRange[1]);
 
             // SpAttack values
             lblSpAttack.Text = _partner.SpAttack.ToString();
             lblSpAttackEV.Text = _partner.SpAttackEV.ToString();
-            lblSpAttackIV.Text = _partner.MinStatIV("SpAttack", _partner.SpAttack) + " to " + _partner.MaxStatIV("SpAttack", _partner.SpAttack);
+            ivRange = _partner.GetIVRange("SpAttack");
+            lblSpAttackIV.Text = getIvRangeString(ivRange[0], ivRange[1]);
 
             // SpDefense values
             lblSpDefense.Text = _partner.SpDefense.ToString();
             lblSpDefenseEV.Text = _partner.SpDefenseEV.ToString();
-            lblSpDefenseIV.Text = _partner.MinStatIV("SpDefense", _partner.SpDefense) + " to " + _partner.MaxStatIV("SpDefense", _partner.SpDefense);
+            ivRange = _partner.GetIVRange("SpDefense");
+            lblSpDefenseIV.Text = getIvRangeString(ivRange[0], ivRange[1]);
 
             // Speed values
             lblSpeed.Text = _partner.Speed.ToString();
             lblSpeedEV.Text = _partner.SpeedEV.ToString();
-            lblSpeedIV.Text = _partner.MinStatIV("Speed", _partner.Speed) + " to " + _partner.MaxStatIV("Speed", _partner.Speed);
+            ivRange = _partner.GetIVRange("Speed");
+            lblSpeedIV.Text = getIvRangeString(ivRange[0], ivRange[1]);
+        }
+
+        /** HELPER **/
+        private string getIvRangeString(int min, int max)
+        {
+            /*
+            if (min == max)
+            {
+                return min.ToString();
+            } else if (min > max)
+            {
+                return "Impossible Stat";
+            } else
+            {
+                return min + " to " + max;
+            }
+            */
+            return min + " to " + max;
         }
 
         /** EVENTS **/

@@ -142,7 +142,7 @@ namespace Pokemon_Training_App.Views
         {
             // determine favored/hindered stat
             string statBonus = naturesRow.StatBonus;
-            string statMalus = naturesRow.StatBonus;
+            string statMalus = naturesRow.StatMalus;
 
             // Form Data
             PokeForm form = new PokeForm(

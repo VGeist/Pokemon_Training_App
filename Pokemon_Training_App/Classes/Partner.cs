@@ -8,13 +8,13 @@ namespace Pokemon_Training_App.Classes
 {
     public class Partner : Pokemon
     {
-        private static float NatureBonusValue = 1.1f;
-        private static float NatureMalusValue = 0.9f;
+        private static double NatureBonusValue = 1.1;
+        private static double NatureMalusValue = 0.9;
 
         /*** BACKING FIELDS ***/
         private string _favoredStat;   // used to calculaate IVs, MUST match the name of the stat EXACTLY
         private string _hinderedStat;  // used to calculate IVs, MUST match the name of the stat EXACTLY
-        
+
         // Stat fields
         private int _health;
         private int _attack;
@@ -120,59 +120,43 @@ namespace Pokemon_Training_App.Classes
             return _hinderedStat;
         }
 
+        public int GetStatByName(string statName)
+        {
+            // gets the EV of the given stat, if invalid returns 0
+            if (statName.Equals("Health"))
+            {
+                return Health;
+            }
+            else if (statName.Equals("Attack"))
+            {
+                return Attack;
+            }
+            else if (statName.Equals("Defense"))
+            {
+                return Defense;
+            }
+            else if (statName.Equals("SpAttack"))
+            {
+                return SpAttack;
+            }
+            else if (statName.Equals("SpDefense"))
+            {
+                return SpDefense;
+            }
+            else if (statName.Equals("Speed"))
+            {
+                return Speed;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
         /*** METHODS ***/
         public int TotalEVs()
         {
             return this.HealthEV + this.AttackEV + this.DefenseEV + this.SpAttackEV + this.SpDefenseEV + this.SpeedEV;
-        }
-
-        public int MaxStatIV(string statName, int stat)
-        {
-            // find the max possible IV for the given stat
-
-            // get the nature bonus
-            float natureBonus = GetNatureBonus(statName);
-
-            // add one to stat, sets calculation up for upper bound
-            double iv = stat + 1;
-
-            // apply nature bonus
-            iv *= natureBonus;
-
-            // finish calculation
-            return FinalizeStatIV(statName, iv);
-        }
-
-        public int MinStatIV(string statName, int stat)
-        {
-            // find min possible IV for the given stat
-
-            // initialize iv equal to stat
-            double iv = stat;
-
-            // get the nature bonus
-            float natureBonus = GetNatureBonus(statName);
-
-            // apply nature bonus
-            iv *= natureBonus;
-
-            // finish calculation
-            return FinalizeStatIV(statName, iv);
-        }
-
-        // Health stat uses different calculations for IVs
-        public int MaxHealthIV()
-        {
-            // find max possible Health IV
-            // do common operations and return value, an input of 900 returns Max value
-            return EstimateHealthIV(900);
-        }
-
-        public int MinHealthIV()
-        {
-            // find min possible Health IV
-            // do common operations and return value, an input of 1000 returns Min value
-            return EstimateHealthIV(1000);
         }
 
         public void ChangeNature(string name, string favored, string hindered)
@@ -185,6 +169,133 @@ namespace Pokemon_Training_App.Classes
         public void FormToDefault()
         {
             Form = this.FormList[0];
+        }
+
+        public int[] GetValidStatRange(string statName)
+        {
+            double min = GetTrueStat(statName, 0);
+            double max = GetTrueStat(statName, 31);
+
+            // apply nature bonus
+            double natureBonus = GetNatureBonus(statName);
+
+            min *= natureBonus;
+            max *= natureBonus;
+
+            return new int[] { (int)min, (int)max };
+        }
+
+        private int[] BruteForceIVRange(string statName)
+        {
+            // Gets the IV Range by brute force, returns -1 for invalid values
+            int stat = GetStatByName(statName);
+            double natureBonus = GetNatureBonus(statName);
+
+            int minIV = 0;
+
+            // round before applying nature (converting to int) apply natureBonus and round down again
+            while (minIV <= 31 && (int)((int)GetTrueStat(statName, minIV) * natureBonus) != stat)
+            {
+                // not equal, try the next one
+                minIV++;
+            }
+
+            int maxIV = minIV + 1;
+            while (maxIV <= 31 && (int)(((int)GetTrueStat(statName, maxIV)) * natureBonus) == stat)
+            {
+                maxIV++;
+            }
+            maxIV--;
+
+            /*
+            int maxIV = 31;
+            while (maxIV > minIV && (int)(((int)GetTrueStat(statName, maxIV)) * natureBonus) != stat)
+            {
+                maxIV--;
+            }
+            */
+
+            // check for invalid results
+            if (minIV > 32)
+            {
+                minIV = -1;
+            }
+
+            return new int[] { minIV, maxIV};
+        }
+
+        public int[] GetIVRange(string statName)
+        {
+            int maxIV;
+            int minIV;
+
+            if (GetNatureBonus(statName) != 1)
+            {
+                // Impossible to adjust for rounding when nature is involved, use brute force.
+                return BruteForceIVRange(statName);
+            }
+
+            // nature not applied, do quick calculation
+            // The code below calculates ivs by checking how many IVs would THEORETICALLY be needed to reach the given stat value. 
+            // IMPORTANT: DOES NOT APPLY NATURE BONUS
+            int stat = GetStatByName(statName);
+            double trueMin = GetTrueStat(statName, 0);
+            double ivBoost = (Level / 100D); // determine the value of an IV at current level
+
+            double temp = stat - trueMin;   // Get the difference between stat and trueMin
+            temp = Math.Round(temp, 4);     // round off any trailing decimal, causes errors when rounding up
+
+            minIV = (int)Math.Ceiling(temp / ivBoost); // minIV is how many times ivBoost goes into temp (i.e. temp / ivBoost), round up. (concept applies to maxIV)
+
+            // calculating maxIV, add one before dividing
+            temp++; // add one to determine how many IVs we would need to get to the next point
+            temp /= ivBoost;
+            temp = Math.Round(temp, 4); // round off any trailing decimal, causes errors when rounding up
+
+            maxIV = (int)Math.Ceiling(temp) - 1; // round up and subtract one, we don't actually have the next stat point
+
+            /* The method below returns is a more accurate version of the one above and can accomodate nature bonus.
+             * This method is accurate in cases where the nature bonus is 1 (not affected by nature). 
+             * The decimal value of trueMin (designated trueRound) is not affected by nature because nature is applied after rounding down.
+             * Due to rounding, it is impossible to adjust for the nature bonus and causes a loss of precision in this method.
+             * While an estimate may be generated, it cannot be 100% accurate. The resulting output is usualy slightly below the real value.
+            
+            double natureBonus = GetNatureBonus(statName);
+            int stat = GetStatByName(statName);
+            double trueMin = GetTrueStat(statName, 0);      // trueStat is a stat without rounding and before natureBonus is applied
+            double trueRound = trueMin % 1;                 // trueRound is the decimal value of trueMin. trueRound does not have nature applied to it, because Stats are rounded prior to the bonus being applied.
+            trueMin = Math.Floor(trueMin);                  // round down trueMin
+            trueMin *= natureBonus;                         // apply nature
+            trueMin += trueRound;                           // add trueRound back to trueMin
+
+            double ivBoost = (Level / 100D) * natureBonus;  // determine how much one IV point is worth at this level, apply nature bonus
+
+            double temp = stat - trueMin;                   // get the difference between stat and trueMin
+            temp = Math.Round(temp, 4);                     // round off any trailing decimal, causes errors when rounding up
+
+            // calculate minIV
+            minIV = (int)Math.Ceiling(temp / ivBoost);      // minIV is how many times ivBoost goes into temp (i.e. temp / ivBoost), round up
+
+            // calculate maxIV
+            temp += natureBonus;        // add natureBonus to estimate how many IVs are needed for the next stat point
+            temp /= ivBoost;
+            temp = Math.Round(temp, 4); // round off any trailing decimal, causes errors when rounding up
+
+            maxIV = (int)Math.Ceiling(temp) - 1; // subtract one, we don't actually have the next stat point
+            */
+
+            // Because this function determines how many IVs would THEORETICALLY be needed, values out of range are eliminated
+            if (minIV < 0)
+            {
+                minIV = 0;
+            }
+
+            if (maxIV > 31)
+            {
+                maxIV = 31;
+            }
+
+            return new int[] { minIV, maxIV };
         }
 
         /* TRAINING methods */
@@ -260,7 +371,7 @@ namespace Pokemon_Training_App.Classes
                 int excess = newTotal - 510;
                 ev -= excess;
             }
-            
+
             if (ev < 0)
             {
                 // ev min
@@ -306,9 +417,31 @@ namespace Pokemon_Training_App.Classes
             }
         }
 
-
         /*** HELPER FUNCTIONS ***/
-        private float GetNatureBonus(string statName)
+        private double GetTrueStat(string statName, int iv)
+        {
+            /* Gets a decimal accurate stat given an IV for that stat.
+            * Does NOT apply Nature. Apply any nature bonus AFTER calling this method.
+            * IV must be between 0 and 31 to be valid.
+            */
+            int baseStat = GetBase(statName);
+            int sigEV = GetSignificantEVs(GetEV(statName));
+
+            double trueStat = (2 * baseStat) + iv + sigEV;
+            trueStat *= Level / 100D;
+
+            if (statName == "Health")
+            {
+                trueStat += Level + 10;
+            } else
+            {
+                trueStat += 5;
+            }
+
+            return Math.Round(trueStat, 4);
+        }
+
+        private double GetNatureBonus(string statName)
         {
             // returns nature bonus value if the given name matches the favored or hindered stat
             // if name given does not match, bonus is 1
@@ -357,59 +490,6 @@ namespace Pokemon_Training_App.Classes
             {
                 return -1;
             }
-        }
-
-        private int FinalizeStatIV(string statName, double value)
-        {
-            // set of operations that occur in both upper and lower bound stat IV calculation
-            // set boundary and apply nature bonus before using this function
-
-            // get base
-            int baseValue = GetBase(statName);
-
-            // get ev
-            int ev = GetEV(statName);
-
-            // calculate
-            value *= 100;
-            value -= 500;
-            value /= Level;
-            value -= 2 * baseValue;
-            value -= GetSignificantEVs(ev);
-            
-            // drop decimal and return value
-            return (int)value;
-        }
-
-        private int EstimateHealthIV(double value)
-        {
-            // calculates IV for Health stat
-            /* NOTE: due to the nature of the calculation the returned value will be wildy 
-             * inaccurate and should only be used to get the MAX and MIN possible values for Health IV.
-             * An input of 1000 will get the MIN possible IV and an input of 900 will get the 
-             * MAX possible IV.
-             */
-            // get base health
-            int baseValue = Form.GetBaseHealth();
-
-            // calculate
-            value /= Level;
-            value -= 100 * Health / Level;
-            value -= 100;
-            value -= 2 * baseValue;
-            value -= GetSignificantEVs(HealthEV);
-
-            // round
-            value = Math.Round(value);
-
-            // if a negative number set to 0
-            if (value < 0)
-            {
-                value = 0;
-            }
-
-            // convert to int and return value
-            return (int)value;
         }
 
         private int GetSignificantEVs(int ev)
