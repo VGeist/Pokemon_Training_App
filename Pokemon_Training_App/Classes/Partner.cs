@@ -185,45 +185,6 @@ namespace Pokemon_Training_App.Classes
             return new int[] { (int)min, (int)max };
         }
 
-        private int[] BruteForceIVRange(string statName)
-        {
-            // Gets the IV Range by brute force, returns -1 for invalid values
-            int stat = GetStatByName(statName);
-            double natureBonus = GetNatureBonus(statName);
-
-            int minIV = 0;
-
-            // round before applying nature (converting to int) apply natureBonus and round down again
-            while (minIV <= 31 && (int)((int)GetTrueStat(statName, minIV) * natureBonus) != stat)
-            {
-                // not equal, try the next one
-                minIV++;
-            }
-
-            int maxIV = minIV + 1;
-            while (maxIV <= 31 && (int)(((int)GetTrueStat(statName, maxIV)) * natureBonus) == stat)
-            {
-                maxIV++;
-            }
-            maxIV--;
-
-            /*
-            int maxIV = 31;
-            while (maxIV > minIV && (int)(((int)GetTrueStat(statName, maxIV)) * natureBonus) != stat)
-            {
-                maxIV--;
-            }
-            */
-
-            // check for invalid results
-            if (minIV > 32)
-            {
-                minIV = -1;
-            }
-
-            return new int[] { minIV, maxIV};
-        }
-
         public int[] GetIVRange(string statName)
         {
             int maxIV;
@@ -293,6 +254,37 @@ namespace Pokemon_Training_App.Classes
             if (maxIV > 31)
             {
                 maxIV = 31;
+            }
+
+            return new int[] { minIV, maxIV };
+        }
+
+        private int[] BruteForceIVRange(string statName)
+        {
+            // Gets the IV Range by brute force, returns -1 for invalid values
+            int stat = GetStatByName(statName);
+            double natureBonus = GetNatureBonus(statName);
+
+            int minIV = 0;
+
+            // round before applying nature (converting to int) apply natureBonus and round down again
+            while (minIV <= 31 && (int)((int)GetTrueStat(statName, minIV) * natureBonus) != stat)
+            {
+                // not equal, try the next one
+                minIV++;
+            }
+
+            int maxIV = minIV + 1;
+            while (maxIV <= 31 && (int)(((int)GetTrueStat(statName, maxIV)) * natureBonus) == stat)
+            {
+                maxIV++;
+            }
+            maxIV--;
+
+            // check for invalid results
+            if (minIV > 32)
+            {
+                minIV = -1;
             }
 
             return new int[] { minIV, maxIV };
@@ -515,6 +507,16 @@ namespace Pokemon_Training_App.Classes
             // check level
             errors.Add(GetLevelError());
 
+            // check stat values
+            /*
+            errors.Add(GetStatError(Health, "Health", healthStatLabel));
+            errors.Add(GetStatError(Attack, "Attack", attackStatLabel));
+            errors.Add(GetStatError(Defense, "Defense", defenseStatLabel));
+            errors.Add(GetStatError(Attack, "Attack", spAttackStatLabel));
+            errors.Add(GetStatError(SpDefense, "SpDefense", spDefenseStatLabel));
+            errors.Add(GetStatError(Speed, "Speed", speedStatLabel));
+            */
+
             // EV error checking
             errors.Add(GetEVError(this.HealthEV, healthStatLabel + " EV"));
             errors.Add(GetEVError(this.AttackEV, attackStatLabel + " EV"));
@@ -539,7 +541,7 @@ namespace Pokemon_Training_App.Classes
                 return displayString + " must be zero or greater.";
             } else if (ev > 255)
             {
-               return displayString + " cannot be greater than 255.";
+                return displayString + " cannot be greater than 255.";
             } else
             {
                 return null;
@@ -552,6 +554,20 @@ namespace Pokemon_Training_App.Classes
             if (total > 510)
             {
                 return "EVs may not total more than 510.";
+            } else
+            {
+                return null;
+            }
+        }
+
+        public string GetStatError(int value, string statName, string displayString)
+        {
+            // checks that the given value is a valid stat
+            int[] statRange = GetValidStatRange(statName);
+
+            if (value < statRange[0] || value > statRange[1])
+            {
+                return $"{displayString} is not valid. The stat should be between {statRange[0]} and {statRange[1]}. Check that other values are correct.";
             } else
             {
                 return null;

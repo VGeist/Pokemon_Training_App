@@ -76,7 +76,6 @@ namespace Pokemon_Training_App.Views
         /** HELPER **/
         private string getIvRangeString(int min, int max)
         {
-            /*
             if (min == max)
             {
                 return min.ToString();
@@ -87,8 +86,6 @@ namespace Pokemon_Training_App.Views
             {
                 return min + " to " + max;
             }
-            */
-            return min + " to " + max;
         }
 
         /** EVENTS **/
