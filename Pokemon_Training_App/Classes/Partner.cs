@@ -176,6 +176,10 @@ namespace Pokemon_Training_App.Classes
             double min = GetTrueStat(statName, 0);
             double max = GetTrueStat(statName, 31);
 
+            // round
+            min = Math.Floor(min);
+            max = Math.Floor(max);
+
             // apply nature bonus
             double natureBonus = GetNatureBonus(statName);
 
@@ -508,14 +512,12 @@ namespace Pokemon_Training_App.Classes
             errors.Add(GetLevelError());
 
             // check stat values
-            /*
             errors.Add(GetStatError(Health, "Health", healthStatLabel));
             errors.Add(GetStatError(Attack, "Attack", attackStatLabel));
             errors.Add(GetStatError(Defense, "Defense", defenseStatLabel));
-            errors.Add(GetStatError(Attack, "Attack", spAttackStatLabel));
+            errors.Add(GetStatError(SpAttack, "SpAttack", spAttackStatLabel));
             errors.Add(GetStatError(SpDefense, "SpDefense", spDefenseStatLabel));
             errors.Add(GetStatError(Speed, "Speed", speedStatLabel));
-            */
 
             // EV error checking
             errors.Add(GetEVError(this.HealthEV, healthStatLabel + " EV"));
@@ -567,7 +569,9 @@ namespace Pokemon_Training_App.Classes
 
             if (value < statRange[0] || value > statRange[1])
             {
-                return $"{displayString} is not valid. The stat should be between {statRange[0]} and {statRange[1]}. Check that other values are correct.";
+                // build error message; if range values are the same, display only min value
+                string rangeString = statRange[0] == statRange[1] ? statRange[0].ToString() : $"between {statRange[0]} and {statRange[1]}";
+                return displayString + " is not valid. The stat should be " + rangeString + ".";
             } else
             {
                 return null;

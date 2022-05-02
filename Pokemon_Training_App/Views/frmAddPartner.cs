@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pokemon_Training_App.Classes;
+using Pokemon_Training_App.Data;
 
 namespace Pokemon_Training_App.Views
 {
@@ -37,9 +38,47 @@ namespace Pokemon_Training_App.Views
             return isValid;
         }
 
+        private PokeForm getForm()
+        {
+            // gets currently selected form
+            int formID = (int)cmbForm.SelectedValue;
+            PokemonDataSet.FormsRow row = null;
+            try
+            {
+                row = formsTableAdapter.GetFormByID(formID).First();
+            } catch (Exception e)
+            {
+                MessageBox.Show("Database error occured:" + Environment.NewLine + e.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return new PokeForm(-1, -1, -1, -1, -1, -1, -1);
+            }
+
+            PokeForm pokeForm = new PokeForm(formID, row.BaseHealth, row.BaseAttack, row.BaseDefense, row.BaseSpAttack, row.BaseSpDefense, row.BaseSpeed, row.Name);
+            return pokeForm;
+        }
+
+        private string[] getNatureBonusAndMalus()
+        {
+            // returns string arry { nameOfStatWithbonus, nameOfStatWithMalus }
+            string name = cmbNature.Text;
+            PokemonDataSet.NaturesRow row = null;
+
+            try
+            {
+                row = naturesTableAdapter.GetNatureByName(name).First();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Database error occured:" + Environment.NewLine + e.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return new string[] { "", "" };
+            }
+
+            return new string[] { row.StatBonus, row.StatMalus };
+        }
+
         private Partner buildPartner()
         {
-
             // build partner
             Pokemon species = new Pokemon();
             Partner partner = new Partner(species);
@@ -49,6 +88,13 @@ namespace Pokemon_Training_App.Views
             partner.Nickname = txtNickname.Text;
             partner.Level = (int)numLevel.Value;
             partner.HasPokerus = chkHasPokerus.Checked;
+
+            // Nature
+            string[] natureBonusAndMalus = getNatureBonusAndMalus();
+            partner.ChangeNature(cmbNature.SelectedText, natureBonusAndMalus[0], natureBonusAndMalus[1]);
+
+            // Form
+            partner.Form = getForm();
 
             // Stats
             partner.Health = (int)numHealthStat.Value;
@@ -108,7 +154,8 @@ namespace Pokemon_Training_App.Views
                 // no errors, add to database
                 try
                 {
-                    partnersTableAdapter.InsertData(partner.Nickname,
+                    partnersTableAdapter.InsertData(
+                        partner.Nickname,
                         partner.PokeNumber,
                         (int)cmbForm.SelectedValue,
                         (int)cmbNature.SelectedValue,
