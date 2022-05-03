@@ -17,6 +17,18 @@ namespace Pokemon_Training_App.Views
         /** Fields **/
         private Partner _partner;
 
+        // start values
+        private int _startPokeNum;
+        private PokeForm _startForm;
+        private int _startHealth;
+        private int _startAttack;
+        private int _startDefense;
+        private int _startSpAttack;
+        private int _startSpDefense;
+        private int _startSpeed;
+
+        private bool commitChange = false;
+
         public Partner Partner { get => _partner; }
 
         public frmEvolve(Partner partner)
@@ -65,15 +77,25 @@ namespace Pokemon_Training_App.Views
 
         private void resetValues()
         {
-            // reset input values to that of the partner
-            cmbPokeNum.SelectedValue = _partner.PokeNumber;
-            cmbForm.SelectedValue = _partner.Form.GetID();
-            numHealth.Value = _partner.Health;
-            numAttack.Value = _partner.Attack;
-            numDefense.Value = _partner.Defense;
-            numSpAttack.Value = _partner.SpAttack;
-            numSpDefense.Value = _partner.SpDefense;
-            numSpeed.Value = _partner.Speed;
+            // reset input values to initial state
+            cmbPokeNum.SelectedValue = _startPokeNum;
+            cmbForm.SelectedValue = _startForm.GetID();
+            numHealth.Value = _startHealth;
+            numAttack.Value = _startAttack;
+            numDefense.Value = _startDefense;
+            numSpAttack.Value = _startSpAttack;
+            numSpDefense.Value = _startSpDefense;
+            numSpeed.Value = _startSpeed;
+
+            // set _partner back to start values
+            _partner.PokeNumber = _startPokeNum;
+            _partner.Form = _startForm;
+            _partner.Health = _startHealth;
+            _partner.Attack = _startAttack;
+            _partner.Defense = _startDefense;
+            _partner.SpAttack = _startSpAttack;
+            _partner.SpDefense = _startSpDefense;
+            _partner.Speed = _startSpeed;
         }
 
         /** EVENTS **/
@@ -81,13 +103,27 @@ namespace Pokemon_Training_App.Views
         {
             // retrieve Pokemon Data from selected number
             Pokemon evolved = getPokemonData();
-
             _partner.Evolve(evolved, (int)numHealth.Value, (int)numAttack.Value, (int)numDefense.Value, (int)numSpAttack.Value, (int)numSpDefense.Value, (int)numSpeed.Value, evolved.FormList[0]);
-            this.Close();
+
+            // get errors
+            string[] errors = _partner.GetErrors();
+            if (errors.Length == 0)
+            {
+                // mark for change and exit form
+                commitChange = true;
+                this.Close();
+            }
+            else
+            {
+                // errors found, display message
+                string errorMsg = Program.buildErrorListMessage(errors);
+                MessageBox.Show(errorMsg, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            resetValues();
             this.Close();
         }
 
@@ -101,7 +137,28 @@ namespace Pokemon_Training_App.Views
             // populate combobox data
             pokemonTableAdapter.Fill(pokemonDataSet.Pokemon);
             formsTableAdapter.Fill(pokemonDataSet.Forms);
+
+            // initialize start values
+            _startPokeNum = _partner.PokeNumber;
+            _startForm = _partner.Form;
+            _startHealth = _partner.Health;
+            _startAttack = _partner.Attack;
+            _startDefense = _partner.Defense;
+            _startSpAttack = _partner.SpAttack;
+            _startSpDefense = _partner.SpDefense;
+            _startSpeed = _partner.Speed;
+
             resetValues();
+        }
+
+        private void frmEvolve_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // NOT commitChange
+            if (!commitChange)
+            {
+                // undo changes
+                resetValues();
+            }
         }
     }
 }

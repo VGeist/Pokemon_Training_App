@@ -45,8 +45,8 @@
             this.numSpDefense = new System.Windows.Forms.NumericUpDown();
             this.numSpeed = new System.Windows.Forms.NumericUpDown();
             this.cmbPokeNum = new System.Windows.Forms.ComboBox();
-            this.pokemonDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokemonDataSet = new Pokemon_Training_App.Data.PokemonDataSet();
+            this.pokemonDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokemonTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.PokemonTableAdapter();
             this.pokemonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmbForm = new System.Windows.Forms.ComboBox();
@@ -59,8 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numSpAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpDefense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpeed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -294,15 +294,15 @@
             this.cmbPokeNum.TabIndex = 43;
             this.cmbPokeNum.ValueMember = "Pokemon.PokeNum";
             // 
-            // pokemonDataSetBindingSource
-            // 
-            this.pokemonDataSetBindingSource.DataSource = this.pokemonDataSet;
-            this.pokemonDataSetBindingSource.Position = 0;
-            // 
             // pokemonDataSet
             // 
             this.pokemonDataSet.DataSetName = "PokemonDataSet";
             this.pokemonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pokemonDataSetBindingSource
+            // 
+            this.pokemonDataSetBindingSource.DataSource = this.pokemonDataSet;
+            this.pokemonDataSetBindingSource.Position = 0;
             // 
             // pokemonTableAdapter
             // 
@@ -378,6 +378,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmEvolve";
             this.Text = "Evolve";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEvolve_FormClosing);
             this.Load += new System.EventHandler(this.frmEvolve_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numHealth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAttack)).EndInit();
@@ -385,8 +386,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numSpAttack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpDefense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpeed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

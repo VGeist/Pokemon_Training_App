@@ -325,6 +325,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmLevelUp";
             this.Text = "Level Up";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLevelUp_FormClosing);
             this.Load += new System.EventHandler(this.frmLevelUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSpDefense)).EndInit();
