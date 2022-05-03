@@ -214,6 +214,12 @@ namespace Pokemon_Training_App.Views
                     // delete the Partner
                     this.partnersTableAdapter.DeletePartnerByID(PartnerID);
 
+                    // if the partner is in the paty, remove it
+                    if (Party.containsPartner(PartnerID))
+                    {
+                        Party.removeMemberByID(PartnerID);
+                    }
+
                     this.Close();
                 }
                 catch (Exception ex)

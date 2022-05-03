@@ -214,7 +214,7 @@
             // 
             this.numMaxEV.Location = new System.Drawing.Point(260, 228);
             this.numMaxEV.Maximum = new decimal(new int[] {
-            255,
+            510,
             0,
             0,
             0});
@@ -227,7 +227,7 @@
             // 
             this.numMinEV.Location = new System.Drawing.Point(166, 228);
             this.numMinEV.Maximum = new decimal(new int[] {
-            255,
+            510,
             0,
             0,
             0});
