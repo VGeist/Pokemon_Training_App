@@ -46,8 +46,18 @@ namespace Pokemon_Training_App.Views
 
         private void getData()
         {
-            // gets data based on filter values
+            // gets data based on filter values and display information
             partnersTableAdapter.FillBySearch(pokemonDataSet.Partners, FilterNumber, FilterNickname, FilterNatureID, FilterMinLevel, FilterMaxLevel, FilterMinEV, FilterMaxEV);
+
+            // loop through rows and highlight any Partners in the party
+            foreach (DataGridViewRow row in dgvPartners.Rows)
+            {
+                int partnerID = (int)row.Cells[colPartnerID.Index].Value;
+                if (Party.containsPartner(partnerID))
+                {
+                    row.DefaultCellStyle.BackColor = Color.PaleGoldenrod;
+                }
+            }
         }
 
         // returns null if nothing is selected
@@ -199,6 +209,19 @@ namespace Pokemon_Training_App.Views
             form.ShowDialog();
         }
 
+        private void dgvPartners_Sorted(object sender, EventArgs e)
+        {
+            // loop through rows and highlight any Partners in the party
+            foreach (DataGridViewRow row in dgvPartners.Rows)
+            {
+                int partnerID = (int)row.Cells[colPartnerID.Index].Value;
+                if (Party.containsPartner(partnerID))
+                {
+                    row.DefaultCellStyle.BackColor = Color.PaleGoldenrod;
+                }
+            }
+        }
+
         private void btnNew_Click(object sender, EventArgs e)
         {
             // open new partner form
@@ -211,18 +234,22 @@ namespace Pokemon_Training_App.Views
 
         private void btnGroup_Click(object sender, EventArgs e)
         {
+            // get selected Row
+            DataGridViewRow row = dgvPartners.SelectedRows[0];
             int selectedId = (int)getSelectedID(); // TODO: possible error, only prevented by disabling Edit button when no rows are selected
             if (Party.containsPartner(selectedId))
             {
                 // Partner already in party
                 Party.removeMemberByID(selectedId);
                 btnGroup.Text = "Add to Party";
+                row.DefaultCellStyle.BackColor = Color.White;
             }
             else
             {
                 // Partner not in Party
                 Party.addMember(selectedId);
                 btnGroup.Text = "Remove from Party";
+                row.DefaultCellStyle.BackColor = Color.PaleGoldenrod;
             }
         }
 

@@ -116,6 +116,7 @@
             this.dgvPartners.TabIndex = 3;
             this.dgvPartners.TabStop = false;
             this.dgvPartners.SelectionChanged += new System.EventHandler(this.dgvPartners_SelectionChanged);
+            this.dgvPartners.Sorted += new System.EventHandler(this.dgvPartners_Sorted);
             // 
             // colPartnerID
             // 
