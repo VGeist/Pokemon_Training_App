@@ -38,7 +38,7 @@
             this.slblPokemonNumber = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.txtPokemonName = new System.Windows.Forms.TextBox();
             this.slblBaseHealth = new System.Windows.Forms.Label();
             this.slblStatsNotice = new System.Windows.Forms.Label();
@@ -149,15 +149,15 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnCancel
+            // btnClose
             // 
-            this.btnCancel.Location = new System.Drawing.Point(300, 441);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 30);
-            this.btnCancel.TabIndex = 12;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnClose.Location = new System.Drawing.Point(300, 441);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 30);
+            this.btnClose.TabIndex = 12;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtPokemonName
             // 
@@ -389,7 +389,7 @@
             this.Controls.Add(this.slblPokemonNumber);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtPokemonName);
             this.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -420,7 +420,7 @@
         private System.Windows.Forms.Label slblPokemonNumber;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TextBox txtPokemonName;
         private System.Windows.Forms.Label slblBaseHealth;
         private System.Windows.Forms.Label slblStatsNotice;

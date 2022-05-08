@@ -402,16 +402,6 @@ namespace Pokemon_Training_App.Views
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Any unsaved changes will be discarded. Is this OK?", "Discard Changes?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning); ;
-
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
-
         private void btnSetZero_Click(object sender, EventArgs e)
         {
             numHealthEV.Value = 0;
@@ -609,6 +599,16 @@ namespace Pokemon_Training_App.Views
 
             // inform user that at least one partner needs to be selected
             MessageBox.Show("You need to select one Partner to view stats.", "No Partner Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Any unsaved changes will be discarded. Is this OK?", "Discard Changes?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning); ;
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

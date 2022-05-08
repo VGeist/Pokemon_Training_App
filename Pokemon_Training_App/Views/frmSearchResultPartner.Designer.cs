@@ -427,7 +427,7 @@
             this.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmSearchResultPartner";
-            this.Text = "frmSearchResultPartner";
+            this.Text = "Partners";
             this.Load += new System.EventHandler(this.frmSearchResultPartner_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartners)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.partnersBindingSource)).EndInit();

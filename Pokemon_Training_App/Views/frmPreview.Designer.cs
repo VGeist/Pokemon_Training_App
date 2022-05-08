@@ -293,12 +293,14 @@
             // lblNickname
             // 
             this.lblNickname.AutoEllipsis = true;
+            this.lblNickname.AutoSize = true;
             this.lblNickname.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNickname.Location = new System.Drawing.Point(140, 7);
+            this.lblNickname.Location = new System.Drawing.Point(150, 7);
             this.lblNickname.Name = "lblNickname";
-            this.lblNickname.Size = new System.Drawing.Size(202, 28);
+            this.lblNickname.Size = new System.Drawing.Size(193, 28);
             this.lblNickname.TabIndex = 87;
             this.lblNickname.Text = "[PARTNERNAME]";
+            this.lblNickname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTrainedSpeed
             // 
@@ -532,7 +534,7 @@
             // 
             this.picPokerus.BackgroundImage = global::Pokemon_Training_App.Properties.Resources.PokérusIC_infected;
             this.picPokerus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPokerus.Location = new System.Drawing.Point(342, 11);
+            this.picPokerus.Location = new System.Drawing.Point(341, 12);
             this.picPokerus.Name = "picPokerus";
             this.picPokerus.Size = new System.Drawing.Size(20, 20);
             this.picPokerus.TabIndex = 111;

@@ -83,7 +83,7 @@ namespace Pokemon_Training_App.Views
             numPokeNum.Focus();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             // close this window
             this.Close();

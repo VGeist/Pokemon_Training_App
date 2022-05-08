@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.slblPokemonNum = new System.Windows.Forms.Label();
             this.slblNickname = new System.Windows.Forms.Label();
             this.slblNature = new System.Windows.Forms.Label();
@@ -118,16 +118,16 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btnCancel
+            // btnClose
             // 
-            this.btnCancel.AutoSize = true;
-            this.btnCancel.Location = new System.Drawing.Point(292, 387);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(91, 32);
-            this.btnCancel.TabIndex = 16;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnClose.AutoSize = true;
+            this.btnClose.Location = new System.Drawing.Point(292, 387);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(91, 32);
+            this.btnClose.TabIndex = 16;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // slblPokemonNum
             // 
@@ -667,7 +667,7 @@
             this.Controls.Add(this.slblNature);
             this.Controls.Add(this.slblNickname);
             this.Controls.Add(this.slblPokemonNum);
-            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAdd);
             this.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -703,7 +703,7 @@
 
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label slblPokemonNum;
         private System.Windows.Forms.Label slblNickname;
         private System.Windows.Forms.Label slblNature;

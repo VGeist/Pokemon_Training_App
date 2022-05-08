@@ -104,7 +104,7 @@
             this.btnPreview = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnConfirmTraining = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.btnSetZero = new System.Windows.Forms.Button();
             this.numHealthEV = new System.Windows.Forms.NumericUpDown();
             this.numAttackEV = new System.Windows.Forms.NumericUpDown();
@@ -939,15 +939,15 @@
             this.btnConfirmTraining.UseVisualStyleBackColor = true;
             this.btnConfirmTraining.Click += new System.EventHandler(this.btnConfirmTraining_Click);
             // 
-            // btnCancel
+            // btnClose
             // 
-            this.btnCancel.Location = new System.Drawing.Point(766, 366);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(86, 33);
-            this.btnCancel.TabIndex = 26;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnClose.Location = new System.Drawing.Point(766, 366);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(86, 33);
+            this.btnClose.TabIndex = 26;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSetZero
             // 
@@ -1274,7 +1274,7 @@
             this.Controls.Add(this.numAttackEV);
             this.Controls.Add(this.numHealthEV);
             this.Controls.Add(this.btnSetZero);
-            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnConfirmTraining);
             this.Controls.Add(this.btnAdd);
             this.Font = new System.Drawing.Font("Cambria", 14.25F);
@@ -1383,7 +1383,7 @@
         private System.Windows.Forms.Button btnPreview;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnConfirmTraining;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSetZero;
         private System.Windows.Forms.NumericUpDown numHealthEV;
         private System.Windows.Forms.NumericUpDown numAttackEV;
