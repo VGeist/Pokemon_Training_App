@@ -32,7 +32,7 @@ namespace Pokemon_Training_App.Views
             // set properties to be accessed by parent form
             if (chkFilterNumber.Checked)
             {
-                Number = (int)cmbNumber.SelectedValue;
+                Number = (int)numPokeNum.Value;
             }
 
             if (chkFilterNickname.Checked)
