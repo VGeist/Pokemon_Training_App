@@ -286,6 +286,7 @@
             this.cmbPokeNum.BackColor = System.Drawing.SystemColors.Window;
             this.cmbPokeNum.DataSource = this.pokemonDataSet;
             this.cmbPokeNum.DisplayMember = "Pokemon.PokeNum";
+            this.cmbPokeNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPokeNum.FormattingEnabled = true;
             this.cmbPokeNum.Location = new System.Drawing.Point(178, 7);
             this.cmbPokeNum.MaxDropDownItems = 32;
@@ -318,6 +319,7 @@
             this.cmbForm.BackColor = System.Drawing.SystemColors.Window;
             this.cmbForm.DataSource = this.pokemonDataSet;
             this.cmbForm.DisplayMember = "Pokemon.FK__Forms__PokeNum__300424B4.Name";
+            this.cmbForm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbForm.FormattingEnabled = true;
             this.cmbForm.Location = new System.Drawing.Point(178, 41);
             this.cmbForm.MaxDropDownItems = 32;

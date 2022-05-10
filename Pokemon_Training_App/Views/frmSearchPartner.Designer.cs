@@ -116,6 +116,7 @@
             // 
             this.cmbNature.DataSource = this.pokemonDataSet;
             this.cmbNature.DisplayMember = "Natures.Name";
+            this.cmbNature.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNature.FormattingEnabled = true;
             this.cmbNature.Location = new System.Drawing.Point(195, 131);
             this.cmbNature.Name = "cmbNature";

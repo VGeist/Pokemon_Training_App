@@ -154,6 +154,7 @@
             // cmbHeldItem0
             // 
             this.cmbHeldItem0.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmbHeldItem0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHeldItem0.FormattingEnabled = true;
             this.cmbHeldItem0.Items.AddRange(new object[] {
             "--NONE--",
@@ -164,16 +165,16 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem0.Location = new System.Drawing.Point(210, 11);
+            this.cmbHeldItem0.Location = new System.Drawing.Point(210, 6);
             this.cmbHeldItem0.Name = "cmbHeldItem0";
             this.cmbHeldItem0.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem0.TabIndex = 1;
-            this.cmbHeldItem0.Text = "--NONE--";
             this.ttpHeldItem.SetToolTip(this.cmbHeldItem0, resources.GetString("cmbHeldItem0.ToolTip"));
             // 
             // cmbHeldItem1
             // 
             this.cmbHeldItem1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmbHeldItem1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHeldItem1.FormattingEnabled = true;
             this.cmbHeldItem1.Items.AddRange(new object[] {
             "--NONE--",
@@ -184,11 +185,10 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem1.Location = new System.Drawing.Point(210, 54);
+            this.cmbHeldItem1.Location = new System.Drawing.Point(210, 49);
             this.cmbHeldItem1.Name = "cmbHeldItem1";
             this.cmbHeldItem1.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem1.TabIndex = 3;
-            this.cmbHeldItem1.Text = "--NONE--";
             this.ttpHeldItem.SetToolTip(this.cmbHeldItem1, resources.GetString("cmbHeldItem1.ToolTip"));
             // 
             // chkDoTrainingPokemon1
@@ -204,6 +204,7 @@
             // cmbHeldItem2
             // 
             this.cmbHeldItem2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmbHeldItem2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHeldItem2.FormattingEnabled = true;
             this.cmbHeldItem2.Items.AddRange(new object[] {
             "--NONE--",
@@ -214,11 +215,10 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem2.Location = new System.Drawing.Point(210, 97);
+            this.cmbHeldItem2.Location = new System.Drawing.Point(210, 92);
             this.cmbHeldItem2.Name = "cmbHeldItem2";
             this.cmbHeldItem2.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem2.TabIndex = 5;
-            this.cmbHeldItem2.Text = "--NONE--";
             this.ttpHeldItem.SetToolTip(this.cmbHeldItem2, resources.GetString("cmbHeldItem2.ToolTip"));
             // 
             // chkDoTrainingPokemon2
@@ -234,6 +234,7 @@
             // cmbHeldItem3
             // 
             this.cmbHeldItem3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmbHeldItem3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHeldItem3.FormattingEnabled = true;
             this.cmbHeldItem3.Items.AddRange(new object[] {
             "--NONE--",
@@ -244,11 +245,10 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem3.Location = new System.Drawing.Point(210, 140);
+            this.cmbHeldItem3.Location = new System.Drawing.Point(210, 135);
             this.cmbHeldItem3.Name = "cmbHeldItem3";
             this.cmbHeldItem3.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem3.TabIndex = 7;
-            this.cmbHeldItem3.Text = "--NONE--";
             this.ttpHeldItem.SetToolTip(this.cmbHeldItem3, resources.GetString("cmbHeldItem3.ToolTip"));
             // 
             // chkDoTrainingPokemon3
@@ -264,12 +264,12 @@
             // cmbHeldItem4
             // 
             this.cmbHeldItem4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmbHeldItem4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHeldItem4.FormattingEnabled = true;
-            this.cmbHeldItem4.Location = new System.Drawing.Point(210, 183);
+            this.cmbHeldItem4.Location = new System.Drawing.Point(210, 178);
             this.cmbHeldItem4.Name = "cmbHeldItem4";
             this.cmbHeldItem4.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem4.TabIndex = 9;
-            this.cmbHeldItem4.Text = "--NONE--";
             this.ttpHeldItem.SetToolTip(this.cmbHeldItem4, resources.GetString("cmbHeldItem4.ToolTip"));
             // 
             // chkDoTrainingPokemon4
@@ -285,6 +285,7 @@
             // cmbHeldItem5
             // 
             this.cmbHeldItem5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmbHeldItem5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHeldItem5.FormattingEnabled = true;
             this.cmbHeldItem5.Items.AddRange(new object[] {
             "--NONE--",
@@ -295,11 +296,10 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem5.Location = new System.Drawing.Point(210, 226);
+            this.cmbHeldItem5.Location = new System.Drawing.Point(210, 221);
             this.cmbHeldItem5.Name = "cmbHeldItem5";
             this.cmbHeldItem5.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem5.TabIndex = 11;
-            this.cmbHeldItem5.Text = "--NONE--";
             this.ttpHeldItem.SetToolTip(this.cmbHeldItem5, resources.GetString("cmbHeldItem5.ToolTip"));
             // 
             // chkDoTrainingPokemon5
