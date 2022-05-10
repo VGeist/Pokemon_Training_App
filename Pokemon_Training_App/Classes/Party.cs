@@ -34,13 +34,12 @@ namespace Pokemon_Training_App.Classes
             if (slot == -1)
             {
                 // display "full party" message
-                MessageBox.Show("Party is full. Partner has not been added.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show("Party is full. Partner has not been added.", "Party Full", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else
+            {
+                // add ID to party
+                _members[slot] = partnerID;
             }
-
-            // add ID to party
-            _members[slot] = partnerID;
-            MessageBox.Show("Successfully added to party.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static void removeMemberBySlot(int slotNum)
