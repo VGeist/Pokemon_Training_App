@@ -124,6 +124,7 @@ namespace Pokemon_Training_App.Views
                 // a pokemon is selected, open frmAddForm as a modal window
                 frmAddForm form = new frmAddForm((int)cmbPokeNum.SelectedValue);
                 form.ShowDialog();
+                formsTableAdapter.Fill(pokemonDataSet.Forms);
             } else
             {
                 // no pokemon selected, error message and focus on control

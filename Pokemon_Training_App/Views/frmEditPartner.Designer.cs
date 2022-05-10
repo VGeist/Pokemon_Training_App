@@ -159,6 +159,7 @@
             this.btnAddForm.TabIndex = 6;
             this.btnAddForm.Text = "Add Form";
             this.btnAddForm.UseVisualStyleBackColor = true;
+            this.btnAddForm.Click += new System.EventHandler(this.btnAddForm_Click);
             // 
             // cmbForm
             // 

@@ -234,5 +234,23 @@ namespace Pokemon_Training_App.Views
         {
             this.Close();
         }
+
+        private void btnAddForm_Click(object sender, EventArgs e)
+        {
+            // check that a pokemon is selected
+            if (cmbPokeNum.SelectedIndex > -1)
+            {
+                // a pokemon is selected, open frmAddForm as a modal window
+                frmAddForm form = new frmAddForm((int)cmbPokeNum.SelectedValue);
+                form.ShowDialog();
+                formsTableAdapter.Fill(pokemonDataSet.Forms);
+            }
+            else
+            {
+                // no pokemon selected, error message and focus on control
+                MessageBox.Show("You need to select a pokemon from the dropdown list.", "Please select a Pokemon", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                cmbPokeNum.Focus();
+            }
+        }
     }
 }
