@@ -309,7 +309,8 @@ namespace Pokemon_Training_App.Views
             }
         }
 
-        private void saveToDatabase(int slot)
+        private bool trySaveToDatabase(int slot)
+        // returns true if successful
         {
             Partner partner = _trainingData[slot];
 
@@ -323,7 +324,6 @@ namespace Pokemon_Training_App.Views
 
                 try
                 {
-
                     naturesRow = naturesTableAdapter.GetNatureByName(partner.Nature).First();
 
                     partnersTableAdapter.UpdatePartnerByID(Party.getIDBySlot(slot),
@@ -346,20 +346,26 @@ namespace Pokemon_Training_App.Views
                         partner.SpDefenseEV,
                         partner.SpeedEV);
 
-                    // success message
-                    MessageBox.Show("Successful operation", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // success
+                    return true;
                 }
                 catch
                 {
                     // database error 
                     MessageBox.Show("The database encounterd an error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    // failure
+                    return false;
                 }
             }
             else
             {
                 // errors found, display message
                 string errorMsg = Program.buildErrorListMessage(errors);
-                MessageBox.Show(errorMsg, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorMsg + Environment.NewLine + "Changes not saved to database.", $"{slot + 1} | {partner.Nickname} has errors.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                // failure
+                return false;
             }
         }
 
@@ -393,12 +399,22 @@ namespace Pokemon_Training_App.Views
 
         private void btnConfirmTraining_Click(object sender, EventArgs e)
         {
+            int count = 0;
             for (int i = 0; i < _trainingData.Length; i++)
             {
                 if (_trainingData[i] != null)
                 {
-                    saveToDatabase(i);
+                    if (trySaveToDatabase(i))
+                    {
+                        // save succeeded
+                        count++;
+                    }
                 }
+            }
+            
+            if (count > 0)
+            {
+                MessageBox.Show(count + " Partners successfully updated.", "Success");
             }
         }
 

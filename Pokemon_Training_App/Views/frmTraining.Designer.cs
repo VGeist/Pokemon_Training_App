@@ -165,7 +165,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem0.Location = new System.Drawing.Point(210, 6);
+            this.cmbHeldItem0.Location = new System.Drawing.Point(210, 11);
             this.cmbHeldItem0.Name = "cmbHeldItem0";
             this.cmbHeldItem0.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem0.TabIndex = 1;
@@ -185,7 +185,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem1.Location = new System.Drawing.Point(210, 49);
+            this.cmbHeldItem1.Location = new System.Drawing.Point(210, 54);
             this.cmbHeldItem1.Name = "cmbHeldItem1";
             this.cmbHeldItem1.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem1.TabIndex = 3;
@@ -215,7 +215,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem2.Location = new System.Drawing.Point(210, 92);
+            this.cmbHeldItem2.Location = new System.Drawing.Point(210, 97);
             this.cmbHeldItem2.Name = "cmbHeldItem2";
             this.cmbHeldItem2.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem2.TabIndex = 5;
@@ -245,7 +245,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem3.Location = new System.Drawing.Point(210, 135);
+            this.cmbHeldItem3.Location = new System.Drawing.Point(210, 140);
             this.cmbHeldItem3.Name = "cmbHeldItem3";
             this.cmbHeldItem3.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem3.TabIndex = 7;
@@ -266,7 +266,16 @@
             this.cmbHeldItem4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbHeldItem4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHeldItem4.FormattingEnabled = true;
-            this.cmbHeldItem4.Location = new System.Drawing.Point(210, 178);
+            this.cmbHeldItem4.Items.AddRange(new object[] {
+            "--NONE--",
+            "Power Weight",
+            "Power Bracer",
+            "Power Belt",
+            "Power Lens",
+            "Power Band",
+            "Power Anklet",
+            "Macho Brace"});
+            this.cmbHeldItem4.Location = new System.Drawing.Point(210, 183);
             this.cmbHeldItem4.Name = "cmbHeldItem4";
             this.cmbHeldItem4.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem4.TabIndex = 9;
@@ -296,7 +305,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem5.Location = new System.Drawing.Point(210, 221);
+            this.cmbHeldItem5.Location = new System.Drawing.Point(210, 226);
             this.cmbHeldItem5.Name = "cmbHeldItem5";
             this.cmbHeldItem5.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem5.TabIndex = 11;
