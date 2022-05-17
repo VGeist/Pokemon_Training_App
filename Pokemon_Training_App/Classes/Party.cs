@@ -65,6 +65,21 @@ namespace Pokemon_Training_App.Classes
             return _members.Contains(id);
         }
 
+        public static int count()
+        {
+            int count = 0;
+
+            for (int i = 0;  i < _members.Length; i++)
+            {
+                if (_members[i].HasValue)
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
         /*** HELPERS ***/
         private static int findAvailableSlot()
         {

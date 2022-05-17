@@ -195,116 +195,113 @@ namespace Pokemon_Training_App.Views
         private void trainSelected()
         {
             // IMPORTANT: Changes to control names may cause errors!!!
-            // determine which slots are selected
-            for (int slot = 0; slot < _trainingData.Length; slot++)
+            int[] selected = getSelectedSlots();
+
+            for (int i = 0; i < selected.Length; i++)
             {
-                // get checkbox
-                CheckBox chkBox = (CheckBox)tlpMembersTable.Controls["chkDoTrainingPokemon" + slot];
-                if (chkBox.Checked)
+                Partner partner = _trainingData[selected[i]];
+
+                int initialTotalEVs = partner.TotalEVs();
+
+                // check if already at max 
+                if (initialTotalEVs == 510)
                 {
-                    Partner partner = _trainingData[slot];
+                    // Total is greater than 510 maximum; notify user and go to next partner
+                    MessageBox.Show(partner.Nickname + " has reached peak performance and can no longer gain EVs!", "Total EVs at maximum");
+                    continue;
+                }
 
-                    int initialTotalEVs = partner.TotalEVs();
+                // get gains
+                int healthGain = (int)numHealthEV.Value;
+                int attackGain = (int)numAttackEV.Value;
+                int defenseGain = (int)numDefenseEV.Value;
+                int spAttackGain = (int)numSpAttackEV.Value;
+                int spDefenseGain = (int)numSpDefenseEV.Value;
+                int speedGain = (int)numSpeedEV.Value;
 
-                    // check if already at max 
-                    if (initialTotalEVs == 510)
-                    {
-                        // Total is greater than 510 maximum; notify user and go to next partner
-                        MessageBox.Show(partner.Nickname + " has reached peak performance and can no longer gain EVs!", "Total EVs at maximum");
-                        continue;
-                    }
+                // apply mods
+                // item
+                string item = tlpMembersTable.Controls["cmbHeldItem" + selected[i]].Text;
+                if (item == "Power Weight")
+                {
+                    healthGain += 4;
+                }
+                else if (item == "Power Bracer")
+                {
+                    attackGain += 4;
+                }
+                else if (item == "Power Belt")
+                {
+                    defenseGain += 4;
+                }
+                else if (item == "Power Lens")
+                {
+                    spAttackGain += 4;
+                }
+                else if (item == "Power Band")
+                {
+                    spDefenseGain += 4;
+                }
+                else if (item == "Power Anklet")
+                {
+                    speedGain += 4;
+                }
+                else if (item == "Macho Brace")
+                {
+                    healthGain *= 2;
+                    attackGain *= 2;
+                    defenseGain *= 2;
+                    spAttackGain *= 2;
+                    spDefenseGain *= 2;
+                    speedGain *= 2;
+                }
 
-                    // get gains
-                    int healthGain = (int)numHealthEV.Value;
-                    int attackGain = (int)numAttackEV.Value;
-                    int defenseGain = (int)numDefenseEV.Value;
-                    int spAttackGain = (int)numSpAttackEV.Value;
-                    int spDefenseGain = (int)numSpDefenseEV.Value;
-                    int speedGain = (int)numSpeedEV.Value;
+                // pokerus
+                if (partner.HasPokerus)
+                {
+                    healthGain *= 2;
+                    attackGain *= 2;
+                    defenseGain *= 2;
+                    spAttackGain *= 2;
+                    spDefenseGain *= 2;
+                    speedGain *= 2;
+                }
 
-                    // apply mods
-                    // item
-                    string item = tlpMembersTable.Controls["cmbHeldItem" + slot].Text;
-                    if (item == "Power Weight")
-                    {
-                        healthGain += 4;
-                    } else if  (item == "Power Bracer")
-                    {
-                        attackGain += 4;
-                    }
-                    else if (item == "Power Belt")
-                    {
-                        defenseGain += 4;
-                    }
-                    else if (item == "Power Lens")
-                    {
-                        spAttackGain += 4;
-                    }
-                    else if (item == "Power Band")
-                    {
-                        spDefenseGain += 4;
-                    }
-                    else if (item == "Power Anklet")
-                    {
-                        speedGain += 4;
-                    }
-                    else if (item == "Macho Brace")
-                    {
-                        healthGain *= 2;
-                        attackGain *= 2;
-                        defenseGain *= 2;
-                        spAttackGain *= 2;
-                        spDefenseGain *= 2;
-                        speedGain *= 2;
-                    }
+                // Add EVs
+                // Health EV
+                if (healthGain != 0)
+                {
+                    partner.AddEVs("Health", healthGain);
+                }
 
-                    // pokerus
-                    if (partner.HasPokerus)
-                    {
-                        healthGain *= 2;
-                        attackGain *= 2;
-                        defenseGain *= 2;
-                        spAttackGain *= 2;
-                        spDefenseGain *= 2;
-                        speedGain *= 2;
-                    }
+                // Attack EV
+                if (attackGain != 0)
+                {
+                    partner.AddEVs("Attack", attackGain);
+                }
 
-                    // Add EVs
-                    // Health EV
-                    if (healthGain != 0)
-                    {
-                        partner.AddEVs("Health", healthGain);
-                    }
+                // Defense EV
+                if (defenseGain != 0)
+                {
+                    partner.AddEVs("Defense", defenseGain);
+                }
 
-                    // Attack EV
-                    if (attackGain != 0)
-                    {
-                        partner.AddEVs("Attack", attackGain);
-                    }
+                // SpAttack EV
+                if (spAttackGain != 0)
+                {
+                    partner.AddEVs("SpAttack", spAttackGain);
+                }
 
-                    // Defense EV
-                    if (defenseGain != 0)
-                    {
-                        partner.AddEVs("Defense", defenseGain);
-                    }
+                // SpDefense EV
+                if (spDefenseGain != 0)
+                {
+                    partner.AddEVs("SpDefense", spDefenseGain);
+                }
 
-                    // SpAttack EV
-                    if (spAttackGain != 0)
-                    {
-                        partner.AddEVs("SpAttack", spAttackGain);
-                    }
-
-                    // SpDefense EV
-                    if (spDefenseGain != 0)
-                    {
-                        partner.AddEVs("SpDefense", spDefenseGain);
-                    }
-
-                    // Speed EV
-                    if (speedGain != 0)
-                    {
-                        partner.AddEVs("Speed", speedGain);
-                    }
+                // Speed EV
+                if (speedGain != 0)
+                {
+                    partner.AddEVs("Speed", speedGain);
                 }
             }
         }
@@ -377,6 +374,25 @@ namespace Pokemon_Training_App.Views
             displaySlotDefault(slot);
         }
 
+        private int[] getSelectedSlots()
+        // returns slot numbers of selected partners
+        {
+            int[] selected = new int[0];
+
+            for (int slot = 0; slot < _trainingData.Length; slot++)
+            {
+                // get checkbox
+                CheckBox chkBox = (CheckBox)tlpMembersTable.Controls["chkDoTrainingPokemon" + slot];
+                if (chkBox.Checked)
+                {
+                    // mark slot for edit
+                    selected = selected.Append(slot).ToArray();
+                }
+            }
+
+            return selected;
+        }
+
         /** EVENTS **/
         private void frmTraining_Load(object sender, EventArgs e)
         {
@@ -430,34 +446,32 @@ namespace Pokemon_Training_App.Views
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            // confirm removal
-            DialogResult result = MessageBox.Show("Are you sure you want to remove the selected members from the party? Any unsaved changes will be lost.", "Unsaved Changes Will Be Lost", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            int[] selected = getSelectedSlots();
 
-            if (result == DialogResult.Yes)
+            int partyCount = Party.count();
+
+            // check that partners are selected
+            if (selected.Length <= 0)
             {
-                // remove selected members from party
-                CheckBox[] slotCheckBoxes = new CheckBox[] {
-                    chkDoTrainingPokemon0,
-                    chkDoTrainingPokemon1,
-                    chkDoTrainingPokemon2,
-                    chkDoTrainingPokemon3,
-                    chkDoTrainingPokemon4,
-                    chkDoTrainingPokemon5
-                };
+                // none selected; display "No Partner Selected" message
+                MessageBox.Show("You need to select at least one partner to remove.", "No Partner Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else if (selected.Length == partyCount)
+            {
+                // if the number of selected partners is equal to the number in the party cancel the operation and notify user
+                MessageBox.Show("You must have at least one party member to continue training. Please check your selection.", "Cannot Remove Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else
+            {
+                // confirm removal
+                DialogResult result = MessageBox.Show("Are you sure you want to remove the selected member(s) from the party? Any unsaved changes will be lost.", "Unsaved Changes Will Be Lost", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                int count = 0;
-
-                for (int i = 0; i < slotCheckBoxes.Length; i++)
+                if (result == DialogResult.Yes)
                 {
-                    if (slotCheckBoxes[i].Checked && Party.getIDBySlot(i) > -1)
+                    // remove all selected
+                    for(int i = 0; i < selected.Length; i++)
                     {
-                        emptySlot(i);
-                        count++;
+                        emptySlot(selected[i]);
                     }
                 }
-
-                // success message
-                MessageBox.Show($"Removed {count} members from party.", $"Removed {count} Members", MessageBoxButtons.OK);
             }
         }
 
@@ -553,19 +567,7 @@ namespace Pokemon_Training_App.Views
 
         private void btnInfect_Click(object sender, EventArgs e)
         {
-            // TODO: use code bolow to create getSelected() and replace where needed
-            int[] selected = new int[0];
-
-            for (int slot = 0; slot < _trainingData.Length; slot++)
-            {
-                // get checkbox
-                CheckBox chkBox = (CheckBox)tlpMembersTable.Controls["chkDoTrainingPokemon" + slot];
-                if (chkBox.Checked)
-                {
-                    // mark slot for edit
-                    selected = selected.Append(slot).ToArray();
-                }
-            }
+            int[] selected = getSelectedSlots();
 
             if (selected.Length == 0)
             {
