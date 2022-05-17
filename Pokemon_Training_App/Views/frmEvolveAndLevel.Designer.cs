@@ -1,6 +1,6 @@
 ﻿namespace Pokemon_Training_App.Views
 {
-    partial class frmEvolve
+    partial class frmEvolveAndLevel
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnEvolve = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.slblNumber = new System.Windows.Forms.Label();
             this.slblHealthStat = new System.Windows.Forms.Label();
             this.slblSpeedStat = new System.Windows.Forms.Label();
@@ -53,6 +53,8 @@
             this.slblForm = new System.Windows.Forms.Label();
             this.formsTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.FormsTableAdapter();
             this.btnReset = new System.Windows.Forms.Button();
+            this.numLevel = new System.Windows.Forms.NumericUpDown();
+            this.slblLevel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numHealth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDefense)).BeginInit();
@@ -62,12 +64,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLevel)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
             this.btnCancel.AutoSize = true;
-            this.btnCancel.Location = new System.Drawing.Point(226, 282);
+            this.btnCancel.Location = new System.Drawing.Point(226, 355);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(85, 32);
             this.btnCancel.TabIndex = 9;
@@ -75,21 +78,21 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnEvolve
+            // btnConfirm
             // 
-            this.btnEvolve.AutoSize = true;
-            this.btnEvolve.Location = new System.Drawing.Point(18, 282);
-            this.btnEvolve.Name = "btnEvolve";
-            this.btnEvolve.Size = new System.Drawing.Size(87, 32);
-            this.btnEvolve.TabIndex = 8;
-            this.btnEvolve.Text = "Evolve";
-            this.btnEvolve.UseVisualStyleBackColor = true;
-            this.btnEvolve.Click += new System.EventHandler(this.btnEvolve_Click);
+            this.btnConfirm.AutoSize = true;
+            this.btnConfirm.Location = new System.Drawing.Point(18, 355);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(87, 32);
+            this.btnConfirm.TabIndex = 8;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // slblNumber
             // 
             this.slblNumber.AutoSize = true;
-            this.slblNumber.Location = new System.Drawing.Point(11, 10);
+            this.slblNumber.Location = new System.Drawing.Point(12, 10);
             this.slblNumber.Name = "slblNumber";
             this.slblNumber.Size = new System.Drawing.Size(103, 22);
             this.slblNumber.TabIndex = 42;
@@ -98,7 +101,7 @@
             // slblHealthStat
             // 
             this.slblHealthStat.AutoSize = true;
-            this.slblHealthStat.Location = new System.Drawing.Point(11, 78);
+            this.slblHealthStat.Location = new System.Drawing.Point(12, 124);
             this.slblHealthStat.Name = "slblHealthStat";
             this.slblHealthStat.Size = new System.Drawing.Size(62, 22);
             this.slblHealthStat.TabIndex = 41;
@@ -107,7 +110,7 @@
             // slblSpeedStat
             // 
             this.slblSpeedStat.AutoSize = true;
-            this.slblSpeedStat.Location = new System.Drawing.Point(11, 248);
+            this.slblSpeedStat.Location = new System.Drawing.Point(12, 314);
             this.slblSpeedStat.Name = "slblSpeedStat";
             this.slblSpeedStat.Size = new System.Drawing.Size(59, 22);
             this.slblSpeedStat.TabIndex = 40;
@@ -116,7 +119,7 @@
             // slblSpDefenseStat
             // 
             this.slblSpDefenseStat.AutoSize = true;
-            this.slblSpDefenseStat.Location = new System.Drawing.Point(11, 214);
+            this.slblSpDefenseStat.Location = new System.Drawing.Point(12, 276);
             this.slblSpDefenseStat.Name = "slblSpDefenseStat";
             this.slblSpDefenseStat.Size = new System.Drawing.Size(95, 22);
             this.slblSpDefenseStat.TabIndex = 39;
@@ -125,7 +128,7 @@
             // slblSpAttackStat
             // 
             this.slblSpAttackStat.AutoSize = true;
-            this.slblSpAttackStat.Location = new System.Drawing.Point(11, 180);
+            this.slblSpAttackStat.Location = new System.Drawing.Point(12, 238);
             this.slblSpAttackStat.Name = "slblSpAttackStat";
             this.slblSpAttackStat.Size = new System.Drawing.Size(81, 22);
             this.slblSpAttackStat.TabIndex = 38;
@@ -134,7 +137,7 @@
             // slblDefenseStat
             // 
             this.slblDefenseStat.AutoSize = true;
-            this.slblDefenseStat.Location = new System.Drawing.Point(11, 146);
+            this.slblDefenseStat.Location = new System.Drawing.Point(12, 200);
             this.slblDefenseStat.Name = "slblDefenseStat";
             this.slblDefenseStat.Size = new System.Drawing.Size(75, 22);
             this.slblDefenseStat.TabIndex = 37;
@@ -143,7 +146,7 @@
             // slblAttackStat
             // 
             this.slblAttackStat.AutoSize = true;
-            this.slblAttackStat.Location = new System.Drawing.Point(11, 112);
+            this.slblAttackStat.Location = new System.Drawing.Point(12, 162);
             this.slblAttackStat.Name = "slblAttackStat";
             this.slblAttackStat.Size = new System.Drawing.Size(61, 22);
             this.slblAttackStat.TabIndex = 36;
@@ -151,7 +154,7 @@
             // 
             // numHealth
             // 
-            this.numHealth.Location = new System.Drawing.Point(178, 75);
+            this.numHealth.Location = new System.Drawing.Point(177, 122);
             this.numHealth.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -173,7 +176,7 @@
             // 
             // numAttack
             // 
-            this.numAttack.Location = new System.Drawing.Point(178, 109);
+            this.numAttack.Location = new System.Drawing.Point(177, 160);
             this.numAttack.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -195,7 +198,7 @@
             // 
             // numDefense
             // 
-            this.numDefense.Location = new System.Drawing.Point(178, 143);
+            this.numDefense.Location = new System.Drawing.Point(177, 198);
             this.numDefense.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -217,7 +220,7 @@
             // 
             // numSpAttack
             // 
-            this.numSpAttack.Location = new System.Drawing.Point(178, 177);
+            this.numSpAttack.Location = new System.Drawing.Point(177, 236);
             this.numSpAttack.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -239,7 +242,7 @@
             // 
             // numSpDefense
             // 
-            this.numSpDefense.Location = new System.Drawing.Point(178, 211);
+            this.numSpDefense.Location = new System.Drawing.Point(177, 274);
             this.numSpDefense.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -261,7 +264,7 @@
             // 
             // numSpeed
             // 
-            this.numSpeed.Location = new System.Drawing.Point(178, 245);
+            this.numSpeed.Location = new System.Drawing.Point(177, 312);
             this.numSpeed.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -288,7 +291,7 @@
             this.cmbPokeNum.DisplayMember = "Pokemon.PokeNum";
             this.cmbPokeNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPokeNum.FormattingEnabled = true;
-            this.cmbPokeNum.Location = new System.Drawing.Point(178, 7);
+            this.cmbPokeNum.Location = new System.Drawing.Point(177, 7);
             this.cmbPokeNum.MaxDropDownItems = 32;
             this.cmbPokeNum.Name = "cmbPokeNum";
             this.cmbPokeNum.Size = new System.Drawing.Size(139, 30);
@@ -321,7 +324,7 @@
             this.cmbForm.DisplayMember = "Pokemon.FK__Forms__PokeNum__300424B4.Name";
             this.cmbForm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbForm.FormattingEnabled = true;
-            this.cmbForm.Location = new System.Drawing.Point(178, 41);
+            this.cmbForm.Location = new System.Drawing.Point(177, 45);
             this.cmbForm.MaxDropDownItems = 32;
             this.cmbForm.Name = "cmbForm";
             this.cmbForm.Size = new System.Drawing.Size(139, 30);
@@ -331,7 +334,7 @@
             // slblForm
             // 
             this.slblForm.AutoSize = true;
-            this.slblForm.Location = new System.Drawing.Point(11, 44);
+            this.slblForm.Location = new System.Drawing.Point(12, 48);
             this.slblForm.Name = "slblForm";
             this.slblForm.Size = new System.Drawing.Size(53, 22);
             this.slblForm.TabIndex = 44;
@@ -344,7 +347,7 @@
             // btnReset
             // 
             this.btnReset.AutoSize = true;
-            this.btnReset.Location = new System.Drawing.Point(122, 282);
+            this.btnReset.Location = new System.Drawing.Point(122, 355);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(87, 32);
             this.btnReset.TabIndex = 46;
@@ -352,11 +355,39 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // numLevel
+            // 
+            this.numLevel.Location = new System.Drawing.Point(177, 84);
+            this.numLevel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numLevel.Name = "numLevel";
+            this.numLevel.Size = new System.Drawing.Size(139, 30);
+            this.numLevel.TabIndex = 47;
+            this.numLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // slblLevel
+            // 
+            this.slblLevel.AutoSize = true;
+            this.slblLevel.Location = new System.Drawing.Point(12, 86);
+            this.slblLevel.Name = "slblLevel";
+            this.slblLevel.Size = new System.Drawing.Size(53, 22);
+            this.slblLevel.TabIndex = 48;
+            this.slblLevel.Text = "Level";
+            // 
             // frmEvolve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 321);
+            this.ClientSize = new System.Drawing.Size(328, 399);
+            this.Controls.Add(this.numLevel);
+            this.Controls.Add(this.slblLevel);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.cmbForm);
             this.Controls.Add(this.slblForm);
@@ -368,7 +399,7 @@
             this.Controls.Add(this.numAttack);
             this.Controls.Add(this.numHealth);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnEvolve);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.slblNumber);
             this.Controls.Add(this.slblHealthStat);
             this.Controls.Add(this.slblSpeedStat);
@@ -391,6 +422,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokemonBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLevel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,7 +431,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnEvolve;
+        private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Label slblNumber;
         private System.Windows.Forms.Label slblHealthStat;
         private System.Windows.Forms.Label slblSpeedStat;
@@ -422,5 +454,7 @@
         private System.Windows.Forms.Label slblForm;
         private Data.PokemonDataSetTableAdapters.FormsTableAdapter formsTableAdapter;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.NumericUpDown numLevel;
+        private System.Windows.Forms.Label slblLevel;
     }
 }

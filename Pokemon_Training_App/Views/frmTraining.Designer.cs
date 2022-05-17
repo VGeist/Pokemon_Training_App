@@ -97,8 +97,7 @@
             this.lblDefenseEV1 = new System.Windows.Forms.Label();
             this.lblTotalEV1 = new System.Windows.Forms.Label();
             this.lblSpAttackEV1 = new System.Windows.Forms.Label();
-            this.btnEvolve = new System.Windows.Forms.Button();
-            this.btnLevelUp = new System.Windows.Forms.Button();
+            this.btnEvolveAndLevel = new System.Windows.Forms.Button();
             this.btnUseItem = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnPreview = new System.Windows.Forms.Button();
@@ -878,29 +877,19 @@
             this.lblSpAttackEV1.Text = "###";
             this.lblSpAttackEV1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnEvolve
+            // btnEvolveAndLevel
             // 
-            this.btnEvolve.Location = new System.Drawing.Point(37, 303);
-            this.btnEvolve.Name = "btnEvolve";
-            this.btnEvolve.Size = new System.Drawing.Size(92, 33);
-            this.btnEvolve.TabIndex = 12;
-            this.btnEvolve.Text = "Evolve";
-            this.btnEvolve.UseVisualStyleBackColor = true;
-            this.btnEvolve.Click += new System.EventHandler(this.btnEvolve_Click);
-            // 
-            // btnLevelUp
-            // 
-            this.btnLevelUp.Location = new System.Drawing.Point(143, 303);
-            this.btnLevelUp.Name = "btnLevelUp";
-            this.btnLevelUp.Size = new System.Drawing.Size(92, 33);
-            this.btnLevelUp.TabIndex = 13;
-            this.btnLevelUp.Text = "Level Up";
-            this.btnLevelUp.UseVisualStyleBackColor = true;
-            this.btnLevelUp.Click += new System.EventHandler(this.btnLevelUp_Click);
+            this.btnEvolveAndLevel.Location = new System.Drawing.Point(57, 307);
+            this.btnEvolveAndLevel.Name = "btnEvolveAndLevel";
+            this.btnEvolveAndLevel.Size = new System.Drawing.Size(144, 33);
+            this.btnEvolveAndLevel.TabIndex = 12;
+            this.btnEvolveAndLevel.Text = "Evolve/Level";
+            this.btnEvolveAndLevel.UseVisualStyleBackColor = true;
+            this.btnEvolveAndLevel.Click += new System.EventHandler(this.btnEvolveAndLevel_Click);
             // 
             // btnUseItem
             // 
-            this.btnUseItem.Location = new System.Drawing.Point(249, 303);
+            this.btnUseItem.Location = new System.Drawing.Point(215, 307);
             this.btnUseItem.Name = "btnUseItem";
             this.btnUseItem.Size = new System.Drawing.Size(92, 33);
             this.btnUseItem.TabIndex = 14;
@@ -1273,8 +1262,7 @@
             this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnUseItem);
-            this.Controls.Add(this.btnLevelUp);
-            this.Controls.Add(this.btnEvolve);
+            this.Controls.Add(this.btnEvolveAndLevel);
             this.Controls.Add(this.tlpMembersTable);
             this.Controls.Add(this.numSpeedEV);
             this.Controls.Add(this.numSpDefenseEV);
@@ -1385,8 +1373,7 @@
         private System.Windows.Forms.Label lblDefenseEV2;
         private System.Windows.Forms.Label lblTotalEV2;
         private System.Windows.Forms.Label lblSpAttackEV2;
-        private System.Windows.Forms.Button btnEvolve;
-        private System.Windows.Forms.Button btnLevelUp;
+        private System.Windows.Forms.Button btnEvolveAndLevel;
         private System.Windows.Forms.Button btnUseItem;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnPreview;

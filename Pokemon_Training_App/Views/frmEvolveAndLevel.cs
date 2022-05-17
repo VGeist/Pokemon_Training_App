@@ -12,7 +12,7 @@ using Pokemon_Training_App.Data;
 
 namespace Pokemon_Training_App.Views
 {
-    public partial class frmEvolve : Form
+    public partial class frmEvolveAndLevel : Form
     {
         /** Fields **/
         private Partner _partner;
@@ -20,6 +20,7 @@ namespace Pokemon_Training_App.Views
         // start values
         private int _startPokeNum;
         private PokeForm _startForm;
+        private int _startLevel;
         private int _startHealth;
         private int _startAttack;
         private int _startDefense;
@@ -31,7 +32,7 @@ namespace Pokemon_Training_App.Views
 
         public Partner Partner { get => _partner; }
 
-        public frmEvolve(Partner partner)
+        public frmEvolveAndLevel(Partner partner)
         {
             InitializeComponent();
             _partner = partner;
@@ -80,6 +81,7 @@ namespace Pokemon_Training_App.Views
             // reset input values to initial state
             cmbPokeNum.SelectedValue = _startPokeNum;
             cmbForm.SelectedValue = _startForm.GetID();
+            numLevel.Value = _startLevel;
             numHealth.Value = _startHealth;
             numAttack.Value = _startAttack;
             numDefense.Value = _startDefense;
@@ -89,6 +91,7 @@ namespace Pokemon_Training_App.Views
 
             // set _partner back to start values
             _partner.PokeNumber = _startPokeNum;
+            _partner.Level = _startLevel;
             _partner.Form = _startForm;
             _partner.Health = _startHealth;
             _partner.Attack = _startAttack;
@@ -99,39 +102,6 @@ namespace Pokemon_Training_App.Views
         }
 
         /** EVENTS **/
-        private void btnEvolve_Click(object sender, EventArgs e)
-        {
-            // retrieve Pokemon Data from selected number
-            Pokemon evolved = getPokemonData();
-            _partner.Evolve(evolved, (int)numHealth.Value, (int)numAttack.Value, (int)numDefense.Value, (int)numSpAttack.Value, (int)numSpDefense.Value, (int)numSpeed.Value, evolved.FormList[0]);
-
-            // get errors
-            string[] errors = _partner.GetErrors();
-            if (errors.Length == 0)
-            {
-                // mark for change and exit form
-                commitChange = true;
-                this.Close();
-            }
-            else
-            {
-                // errors found, display message
-                string errorMsg = Program.buildErrorListMessage(errors);
-                MessageBox.Show(errorMsg, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            resetValues();
-            this.Close();
-        }
-
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            resetValues();
-        }
-
         private void frmEvolve_Load(object sender, EventArgs e)
         {
             // populate combobox data
@@ -141,6 +111,7 @@ namespace Pokemon_Training_App.Views
             // initialize start values
             _startPokeNum = _partner.PokeNumber;
             _startForm = _partner.Form;
+            _startLevel = _partner.Level;
             _startHealth = _partner.Health;
             _startAttack = _partner.Attack;
             _startDefense = _partner.Defense;
@@ -159,6 +130,40 @@ namespace Pokemon_Training_App.Views
                 // undo changes
                 resetValues();
             }
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            // retrieve Pokemon Data from selected number
+            Pokemon evolved = getPokemonData();
+            _partner.Level = (int)numLevel.Value;
+            _partner.Evolve(evolved, (int)numHealth.Value, (int)numAttack.Value, (int)numDefense.Value, (int)numSpAttack.Value, (int)numSpDefense.Value, (int)numSpeed.Value, evolved.FormList[0]);
+            
+            // get errors
+            string[] errors = _partner.GetErrors();
+            if (errors.Length == 0)
+            {
+                // mark for change and exit form
+                commitChange = true;
+                this.Close();
+            }
+            else
+            {
+                // errors found, display message
+                string errorMsg = Program.buildErrorListMessage(errors);
+                MessageBox.Show(errorMsg, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            resetValues();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            resetValues();
+            this.Close();
         }
     }
 }

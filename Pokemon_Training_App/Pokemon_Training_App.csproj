@@ -127,17 +127,11 @@
     <Compile Include="Views\frmEditPokemon.Designer.cs">
       <DependentUpon>frmEditPokemon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmEvolve.cs">
+    <Compile Include="Views\frmEvolveAndLevel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmEvolve.Designer.cs">
-      <DependentUpon>frmEvolve.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\frmLevelUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmLevelUp.Designer.cs">
-      <DependentUpon>frmLevelUp.cs</DependentUpon>
+    <Compile Include="Views\frmEvolveAndLevel.Designer.cs">
+      <DependentUpon>frmEvolveAndLevel.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmMain.cs">
       <SubType>Form</SubType>
@@ -224,11 +218,8 @@
     <EmbeddedResource Include="Views\frmEditPokemon.resx">
       <DependentUpon>frmEditPokemon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmEvolve.resx">
-      <DependentUpon>frmEvolve.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmLevelUp.resx">
-      <DependentUpon>frmLevelUp.cs</DependentUpon>
+    <EmbeddedResource Include="Views\frmEvolveAndLevel.resx">
+      <DependentUpon>frmEvolveAndLevel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
