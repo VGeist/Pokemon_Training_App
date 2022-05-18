@@ -164,7 +164,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem0.Location = new System.Drawing.Point(210, 11);
+            this.cmbHeldItem0.Location = new System.Drawing.Point(210, 6);
             this.cmbHeldItem0.Name = "cmbHeldItem0";
             this.cmbHeldItem0.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem0.TabIndex = 1;
@@ -184,7 +184,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem1.Location = new System.Drawing.Point(210, 54);
+            this.cmbHeldItem1.Location = new System.Drawing.Point(210, 49);
             this.cmbHeldItem1.Name = "cmbHeldItem1";
             this.cmbHeldItem1.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem1.TabIndex = 3;
@@ -214,7 +214,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem2.Location = new System.Drawing.Point(210, 97);
+            this.cmbHeldItem2.Location = new System.Drawing.Point(210, 92);
             this.cmbHeldItem2.Name = "cmbHeldItem2";
             this.cmbHeldItem2.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem2.TabIndex = 5;
@@ -244,7 +244,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem3.Location = new System.Drawing.Point(210, 140);
+            this.cmbHeldItem3.Location = new System.Drawing.Point(210, 135);
             this.cmbHeldItem3.Name = "cmbHeldItem3";
             this.cmbHeldItem3.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem3.TabIndex = 7;
@@ -274,7 +274,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem4.Location = new System.Drawing.Point(210, 183);
+            this.cmbHeldItem4.Location = new System.Drawing.Point(210, 178);
             this.cmbHeldItem4.Name = "cmbHeldItem4";
             this.cmbHeldItem4.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem4.TabIndex = 9;
@@ -304,7 +304,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem5.Location = new System.Drawing.Point(210, 226);
+            this.cmbHeldItem5.Location = new System.Drawing.Point(210, 221);
             this.cmbHeldItem5.Name = "cmbHeldItem5";
             this.cmbHeldItem5.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem5.TabIndex = 11;
@@ -968,6 +968,7 @@
             this.numHealthEV.Name = "numHealthEV";
             this.numHealthEV.Size = new System.Drawing.Size(42, 30);
             this.numHealthEV.TabIndex = 17;
+            this.numHealthEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numAttackEV
             // 
@@ -980,6 +981,7 @@
             this.numAttackEV.Name = "numAttackEV";
             this.numAttackEV.Size = new System.Drawing.Size(42, 30);
             this.numAttackEV.TabIndex = 18;
+            this.numAttackEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numDefenseEV
             // 
@@ -992,6 +994,7 @@
             this.numDefenseEV.Name = "numDefenseEV";
             this.numDefenseEV.Size = new System.Drawing.Size(42, 30);
             this.numDefenseEV.TabIndex = 19;
+            this.numDefenseEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numSpAttackEV
             // 
@@ -1004,6 +1007,7 @@
             this.numSpAttackEV.Name = "numSpAttackEV";
             this.numSpAttackEV.Size = new System.Drawing.Size(42, 30);
             this.numSpAttackEV.TabIndex = 20;
+            this.numSpAttackEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numSpDefenseEV
             // 
@@ -1016,6 +1020,7 @@
             this.numSpDefenseEV.Name = "numSpDefenseEV";
             this.numSpDefenseEV.Size = new System.Drawing.Size(42, 30);
             this.numSpDefenseEV.TabIndex = 21;
+            this.numSpDefenseEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numSpeedEV
             // 
@@ -1028,6 +1033,7 @@
             this.numSpeedEV.Name = "numSpeedEV";
             this.numSpeedEV.Size = new System.Drawing.Size(42, 30);
             this.numSpeedEV.TabIndex = 22;
+            this.numSpeedEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // ttpPokerus
             // 

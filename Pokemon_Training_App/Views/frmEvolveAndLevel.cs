@@ -191,5 +191,12 @@ namespace Pokemon_Training_App.Views
             resetValues();
             this.Close();
         }
+
+        private void NumUpDown_Enter(object sender, EventArgs e)
+        {
+            // event only for numericUpDown controls
+            NumericUpDown numeric = (NumericUpDown)sender;
+            numeric.Select(0, numeric.Text.Length); // NOTE: Text property is hidden by IntelliSense for NumericUpDown objects :(
+        }
     }
 }

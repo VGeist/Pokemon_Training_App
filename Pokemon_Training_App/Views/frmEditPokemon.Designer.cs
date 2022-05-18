@@ -99,6 +99,7 @@
             this.txtPokemonName.Name = "txtPokemonName";
             this.txtPokemonName.Size = new System.Drawing.Size(185, 30);
             this.txtPokemonName.TabIndex = 2;
+            this.txtPokemonName.Enter += new System.EventHandler(this.txtPokemonName_Enter);
             // 
             // pokemonBindingSource
             // 

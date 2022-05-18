@@ -173,6 +173,7 @@
             0,
             0,
             0});
+            this.numHealth.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numAttack
             // 
@@ -195,6 +196,7 @@
             0,
             0,
             0});
+            this.numAttack.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numDefense
             // 
@@ -217,6 +219,7 @@
             0,
             0,
             0});
+            this.numDefense.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numSpAttack
             // 
@@ -239,6 +242,7 @@
             0,
             0,
             0});
+            this.numSpAttack.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numSpDefense
             // 
@@ -261,6 +265,7 @@
             0,
             0,
             0});
+            this.numSpDefense.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numSpeed
             // 
@@ -283,6 +288,7 @@
             0,
             0,
             0});
+            this.numSpeed.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // cmbPokeNum
             // 
@@ -371,6 +377,7 @@
             0,
             0,
             0});
+            this.numLevel.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // slblLevel
             // 
@@ -381,7 +388,7 @@
             this.slblLevel.TabIndex = 48;
             this.slblLevel.Text = "Level";
             // 
-            // frmEvolve
+            // frmEvolveAndLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -409,7 +416,7 @@
             this.Controls.Add(this.slblAttackStat);
             this.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "frmEvolve";
+            this.Name = "frmEvolveAndLevel";
             this.Text = "Evolve";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEvolve_FormClosing);
             this.Load += new System.EventHandler(this.frmEvolve_Load);

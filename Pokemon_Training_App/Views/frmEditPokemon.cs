@@ -93,5 +93,10 @@ namespace Pokemon_Training_App.Views
             // close the form
             this.Close();
         }
+
+        private void txtPokemonName_Enter(object sender, EventArgs e)
+        {
+            txtPokemonName.SelectAll();
+        }
     }
 }

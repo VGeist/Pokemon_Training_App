@@ -142,5 +142,15 @@ namespace Pokemon_Training_App.Views
         {
             return (int)numPokeNum.Value; // removes any decimal value
         }
+
+        private void numPokeNum_Enter(object sender, EventArgs e)
+        {
+            numPokeNum.Select(0, numPokeNum.Text.Length); // NOTE: Text property is hidden by IntelliSense for NumericUpDown objects :(
+        }
+
+        private void txtPokemonName_Enter(object sender, EventArgs e)
+        {
+            txtPokemonName.SelectAll();
+        }
     }
 }

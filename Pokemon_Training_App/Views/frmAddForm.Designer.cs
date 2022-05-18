@@ -82,6 +82,7 @@
             this.txtFormName.Name = "txtFormName";
             this.txtFormName.Size = new System.Drawing.Size(185, 30);
             this.txtFormName.TabIndex = 2;
+            this.txtFormName.Enter += new System.EventHandler(this.txtFormName_Enter);
             // 
             // slblBaseHealth
             // 
@@ -188,6 +189,7 @@
             0,
             0,
             0});
+            this.numBaseDefense.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseAttack
             // 
@@ -210,6 +212,7 @@
             0,
             0,
             0});
+            this.numBaseAttack.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseHealth
             // 
@@ -232,6 +235,7 @@
             0,
             0,
             0});
+            this.numBaseHealth.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseSpAttack
             // 
@@ -254,6 +258,7 @@
             0,
             0,
             0});
+            this.numBaseSpAttack.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseSpDefense
             // 
@@ -276,6 +281,7 @@
             0,
             0,
             0});
+            this.numBaseSpDefense.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseSpeed
             // 
@@ -298,6 +304,7 @@
             0,
             0,
             0});
+            this.numBaseSpeed.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // formsTableAdapter
             // 

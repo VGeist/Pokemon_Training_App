@@ -72,6 +72,7 @@
             this.txtPokemonName.Name = "txtPokemonName";
             this.txtPokemonName.Size = new System.Drawing.Size(201, 30);
             this.txtPokemonName.TabIndex = 2;
+            this.txtPokemonName.Enter += new System.EventHandler(this.txtPokemonName_Enter);
             // 
             // btnApply
             // 
@@ -142,6 +143,7 @@
             this.numPokeNum.Name = "numPokeNum";
             this.numPokeNum.Size = new System.Drawing.Size(85, 30);
             this.numPokeNum.TabIndex = 1;
+            this.numPokeNum.Enter += new System.EventHandler(this.numPokeNum_Enter);
             // 
             // btnGetAll
             // 

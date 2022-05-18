@@ -165,6 +165,7 @@
             this.txtPokemonName.Name = "txtPokemonName";
             this.txtPokemonName.Size = new System.Drawing.Size(185, 30);
             this.txtPokemonName.TabIndex = 2;
+            this.txtPokemonName.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
             // slblBaseHealth
             // 
@@ -219,6 +220,7 @@
             this.numPokeNum.Name = "numPokeNum";
             this.numPokeNum.Size = new System.Drawing.Size(185, 30);
             this.numPokeNum.TabIndex = 1;
+            this.numPokeNum.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseHealth
             // 
@@ -241,6 +243,7 @@
             0,
             0,
             0});
+            this.numBaseHealth.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseAttack
             // 
@@ -263,6 +266,7 @@
             0,
             0,
             0});
+            this.numBaseAttack.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseDefense
             // 
@@ -285,6 +289,7 @@
             0,
             0,
             0});
+            this.numBaseDefense.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseSpAttack
             // 
@@ -307,6 +312,7 @@
             0,
             0,
             0});
+            this.numBaseSpAttack.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseSpDefense
             // 
@@ -329,6 +335,7 @@
             0,
             0,
             0});
+            this.numBaseSpDefense.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseSpeed
             // 
@@ -351,6 +358,7 @@
             0,
             0,
             0});
+            this.numBaseSpeed.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // txtFormName
             // 
@@ -359,6 +367,7 @@
             this.txtFormName.Size = new System.Drawing.Size(185, 30);
             this.txtFormName.TabIndex = 3;
             this.txtFormName.Text = "default";
+            this.txtFormName.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
             // formsTableAdapter
             // 

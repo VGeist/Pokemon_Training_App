@@ -171,6 +171,7 @@
             this.txtNickname.Name = "txtNickname";
             this.txtNickname.Size = new System.Drawing.Size(129, 30);
             this.txtNickname.TabIndex = 2;
+            this.txtNickname.Enter += new System.EventHandler(this.txtNickname_Enter);
             // 
             // ttpPokerus
             // 
@@ -193,6 +194,7 @@
             0,
             0});
             this.numMinLevel.ValueChanged += new System.EventHandler(this.numMinLevel_ValueChanged);
+            this.numMinLevel.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numMaxLevel
             // 
@@ -211,6 +213,7 @@
             0,
             0});
             this.numMaxLevel.ValueChanged += new System.EventHandler(this.numMaxLevel_ValueChanged);
+            this.numMaxLevel.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numMaxEV
             // 
@@ -224,6 +227,7 @@
             this.numMaxEV.Size = new System.Drawing.Size(56, 30);
             this.numMaxEV.TabIndex = 7;
             this.numMaxEV.ValueChanged += new System.EventHandler(this.numMaxEV_ValueChanged);
+            this.numMaxEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numMinEV
             // 
@@ -237,6 +241,7 @@
             this.numMinEV.Size = new System.Drawing.Size(56, 30);
             this.numMinEV.TabIndex = 6;
             this.numMinEV.ValueChanged += new System.EventHandler(this.numMinEV_ValueChanged);
+            this.numMinEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // slblFilter
             // 
@@ -316,6 +321,7 @@
             this.numPokeNum.Name = "numPokeNum";
             this.numPokeNum.Size = new System.Drawing.Size(85, 30);
             this.numPokeNum.TabIndex = 25;
+            this.numPokeNum.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // frmSearchPartner
             // 

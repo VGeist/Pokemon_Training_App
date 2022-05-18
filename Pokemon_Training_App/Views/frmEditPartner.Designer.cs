@@ -112,6 +112,7 @@
             this.txtNickname.Name = "txtNickname";
             this.txtNickname.Size = new System.Drawing.Size(180, 30);
             this.txtNickname.TabIndex = 2;
+            this.txtNickname.TextChanged += new System.EventHandler(this.txtNickname_TextChanged);
             // 
             // partnersBindingSource
             // 
@@ -291,6 +292,7 @@
             0,
             0,
             0});
+            this.numLevel.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numSpeedStat
             // 
@@ -314,6 +316,7 @@
             0,
             0,
             0});
+            this.numSpeedStat.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numSpDefenseStat
             // 
@@ -337,6 +340,7 @@
             0,
             0,
             0});
+            this.numSpDefenseStat.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numSpAttackStat
             // 
@@ -360,6 +364,7 @@
             0,
             0,
             0});
+            this.numSpAttackStat.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numDefenseStat
             // 
@@ -383,6 +388,7 @@
             0,
             0,
             0});
+            this.numDefenseStat.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numAttackStat
             // 
@@ -406,6 +412,7 @@
             0,
             0,
             0});
+            this.numAttackStat.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numHealthStat
             // 
@@ -429,6 +436,7 @@
             0,
             0,
             0});
+            this.numHealthStat.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // tabStats
             // 
@@ -551,6 +559,7 @@
             this.numSpeedEV.Name = "numSpeedEV";
             this.numSpeedEV.Size = new System.Drawing.Size(100, 30);
             this.numSpeedEV.TabIndex = 27;
+            this.numSpeedEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numSpDefenseEV
             // 
@@ -564,6 +573,7 @@
             this.numSpDefenseEV.Name = "numSpDefenseEV";
             this.numSpDefenseEV.Size = new System.Drawing.Size(100, 30);
             this.numSpDefenseEV.TabIndex = 26;
+            this.numSpDefenseEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numSpAttackEV
             // 
@@ -577,6 +587,7 @@
             this.numSpAttackEV.Name = "numSpAttackEV";
             this.numSpAttackEV.Size = new System.Drawing.Size(100, 30);
             this.numSpAttackEV.TabIndex = 25;
+            this.numSpAttackEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numDefenseEV
             // 
@@ -590,6 +601,7 @@
             this.numDefenseEV.Name = "numDefenseEV";
             this.numDefenseEV.Size = new System.Drawing.Size(100, 30);
             this.numDefenseEV.TabIndex = 24;
+            this.numDefenseEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numAttackEV
             // 
@@ -603,6 +615,7 @@
             this.numAttackEV.Name = "numAttackEV";
             this.numAttackEV.Size = new System.Drawing.Size(100, 30);
             this.numAttackEV.TabIndex = 23;
+            this.numAttackEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numHealthEV
             // 
@@ -616,6 +629,7 @@
             this.numHealthEV.Name = "numHealthEV";
             this.numHealthEV.Size = new System.Drawing.Size(100, 30);
             this.numHealthEV.TabIndex = 22;
+            this.numHealthEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // slblHealthEV
             // 

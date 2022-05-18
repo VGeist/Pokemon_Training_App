@@ -33,6 +33,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.slblFormName = new System.Windows.Forms.Label();
             this.txtFormName = new System.Windows.Forms.TextBox();
+            this.formsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pokemonDataSet = new Pokemon_Training_App.Data.PokemonDataSet();
             this.slblBaseHealth = new System.Windows.Forms.Label();
             this.slblBaseSpeed = new System.Windows.Forms.Label();
             this.slblBaseSpDef = new System.Windows.Forms.Label();
@@ -48,18 +50,16 @@
             this.numBaseDefense = new System.Windows.Forms.NumericUpDown();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lblPokeNum = new System.Windows.Forms.Label();
-            this.pokemonDataSet = new Pokemon_Training_App.Data.PokemonDataSet();
-            this.formsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.formsTableAdapter = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.FormsTableAdapter();
             this.tableAdapterManager = new Pokemon_Training_App.Data.PokemonDataSetTableAdapters.TableAdapterManager();
+            ((System.ComponentModel.ISupportInitialize)(this.formsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpDefense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseHealth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseDefense)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConfirm
@@ -98,6 +98,17 @@
             this.txtFormName.Name = "txtFormName";
             this.txtFormName.Size = new System.Drawing.Size(185, 30);
             this.txtFormName.TabIndex = 2;
+            this.txtFormName.Enter += new System.EventHandler(this.txtFormName_Enter);
+            // 
+            // formsBindingSource
+            // 
+            this.formsBindingSource.DataMember = "Forms";
+            this.formsBindingSource.DataSource = this.pokemonDataSet;
+            // 
+            // pokemonDataSet
+            // 
+            this.pokemonDataSet.DataSetName = "PokemonDataSet";
+            this.pokemonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // slblBaseHealth
             // 
@@ -184,6 +195,7 @@
             0,
             0,
             0});
+            this.numBaseSpeed.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseSpDefense
             // 
@@ -207,6 +219,7 @@
             0,
             0,
             0});
+            this.numBaseSpDefense.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseSpAttack
             // 
@@ -230,6 +243,7 @@
             0,
             0,
             0});
+            this.numBaseSpAttack.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseHealth
             // 
@@ -253,6 +267,7 @@
             0,
             0,
             0});
+            this.numBaseHealth.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseAttack
             // 
@@ -276,6 +291,7 @@
             0,
             0,
             0});
+            this.numBaseAttack.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numBaseDefense
             // 
@@ -299,6 +315,7 @@
             0,
             0,
             0});
+            this.numBaseDefense.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // btnDelete
             // 
@@ -319,16 +336,6 @@
             this.lblPokeNum.Size = new System.Drawing.Size(22, 22);
             this.lblPokeNum.TabIndex = 73;
             this.lblPokeNum.Text = "#";
-            // 
-            // pokemonDataSet
-            // 
-            this.pokemonDataSet.DataSetName = "PokemonDataSet";
-            this.pokemonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // formsBindingSource
-            // 
-            this.formsBindingSource.DataMember = "Forms";
-            this.formsBindingSource.DataSource = this.pokemonDataSet;
             // 
             // formsTableAdapter
             // 
@@ -371,14 +378,14 @@
             this.Name = "frmEditForm";
             this.Text = "Edit Form";
             this.Load += new System.EventHandler(this.frmEditForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.formsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpDefense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseSpAttack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseHealth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseAttack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBaseDefense)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokemonDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
