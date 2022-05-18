@@ -72,7 +72,7 @@ namespace Pokemon_Training_App.Views
         private void getFilterValues()
         {
             // get parameters from user
-            frmSearchPokemon searchDialog = new frmSearchPokemon();
+            frmSearchPokemon searchDialog = new frmSearchPokemon(Filter, PokeNum, PokeName);
             searchDialog.ShowDialog(); 
 
             // check if should apply the filter

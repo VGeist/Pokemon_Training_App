@@ -16,9 +16,17 @@ namespace Pokemon_Training_App.Views
         public int Number = -1, MinLevel = -1, MaxLevel = -1, NatureID = -1, MinEV = -1, MaxEV = -1;
         public string Nickname = "";
 
-        public frmSearchPartner()
+        public frmSearchPartner(int pokeNum = -1, int minLevel = -1, int maxLevel = -1, int natureID = -1, int minEV = -1, int maxEV = -1, string nickname = "")
         {
             InitializeComponent();
+
+            Number = pokeNum;
+            MinLevel = minLevel;
+            MaxLevel = maxLevel;
+            NatureID = natureID;
+            MinEV = minEV;
+            MaxEV = maxEV;
+            Nickname = nickname;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -34,15 +42,27 @@ namespace Pokemon_Training_App.Views
             {
                 Number = (int)numPokeNum.Value;
             }
+            else
+            {
+                Number = -1;
+            }
 
             if (chkFilterNickname.Checked)
             {
                 Nickname = txtNickname.Text;
             }
+            else
+            {
+                Nickname = "";
+            }
 
             if (chkFilterNature.Checked)
             {
                 NatureID = (int)cmbNature.SelectedValue;
+            }
+            else
+            {
+                NatureID = -1;
             }
 
             if (chkFilterLevel.Checked)
@@ -50,11 +70,20 @@ namespace Pokemon_Training_App.Views
                 MinLevel = (int)numMinLevel.Value;
                 MaxLevel = (int)numMaxLevel.Value;
             }
+            else
+            {
+                MinLevel = -1;
+                MaxLevel = -1;
+            }
 
             if (chkFilterEV.Checked)
             {
                 MinEV = (int)numMinEV.Value;
                 MaxEV = (int)numMaxEV.Value;
+            } else
+            {
+                MinEV = -1;
+                MaxEV = -1;
             }
 
             this.DialogResult = DialogResult.OK;
@@ -78,6 +107,91 @@ namespace Pokemon_Training_App.Views
             // get data for combo boxes
             pokemonTableAdapter.Fill(pokemonDataSet.Pokemon);
             naturesTableAdapter.Fill(pokemonDataSet.Natures);
+
+            // Assign NUMBER
+            if (Number == -1)
+            {
+                chkFilterNumber.Checked = false;
+                numPokeNum.Value = 0;
+            }
+            else
+            {
+                chkFilterNumber.Checked = true;
+                numPokeNum.Value = Number;
+            }
+
+            // Assign NICKNAME
+            if (String.IsNullOrEmpty(Nickname))
+            {
+                chkFilterNickname.Checked = false;
+                txtNickname.Text = "";
+            }
+            else
+            {
+                chkFilterNickname.Checked = true;
+                txtNickname.Text = Nickname;
+            }
+
+            // Assign NATURE
+            if (NatureID == -1)
+            {
+                chkFilterNature.Checked = false;
+                cmbNature.SelectedIndex = 0;
+            }
+            else
+            {
+                chkFilterNature.Checked = true;
+                cmbNature.SelectedValue = NatureID;
+            }
+
+            // Assign MINLEVEL
+            if (MinLevel == -1)
+            {
+                chkFilterLevel.Checked = false;
+                numMinLevel.Value = 1;
+            }
+            else
+            {
+                chkFilterLevel.Checked = true;
+                numMinLevel.Value = MinLevel;
+            }
+
+            // Assign MAXLEVEL
+            if (MaxLevel == -1)
+            {
+                chkFilterLevel.Checked = false;
+                numMaxLevel.Value = 1;
+            }
+            else
+            {
+                chkFilterLevel.Checked = true;
+                numMaxLevel.Value = MaxLevel;
+            }
+
+
+            // Assign MINEV
+            if (MinEV == -1)
+            {
+                chkFilterEV.Checked = false;
+                numMinEV.Value = 0;
+            }
+            else
+            {
+                chkFilterEV.Checked = true;
+                numMinEV.Value = MinEV;
+            }
+
+            // Assign MAXEV
+            if (MaxEV == -1)
+            {
+                chkFilterEV.Checked = false;
+                numMaxEV.Value = 0;
+            }
+            else
+            {
+                chkFilterEV.Checked = true;
+                numMaxEV.Value = MaxEV;
+            }
         }
 
         private void numMinLevel_ValueChanged(object sender, EventArgs e)

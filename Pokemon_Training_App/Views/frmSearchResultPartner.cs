@@ -28,7 +28,7 @@ namespace Pokemon_Training_App.Views
         {
             // get filter values from user
             // open frmSearchPartner dialog
-            frmSearchPartner searchDialog = new frmSearchPartner();
+            frmSearchPartner searchDialog = new frmSearchPartner(FilterNumber, FilterMinLevel, FilterMaxLevel, FilterNatureID, FilterMinEV, FilterMaxEV, FilterNickname);
             searchDialog.ShowDialog();
 
             if (searchDialog.DialogResult == DialogResult.OK)

@@ -15,11 +15,59 @@ namespace Pokemon_Training_App.Views
     {
         public PokemonFilter Filter;
 
-        public frmSearchPokemon()
+        public frmSearchPokemon(PokemonFilter filter = 0, int pokeNum = 0, string pokeName = "")
         {
             InitializeComponent();
+
+            numPokeNum.Value = pokeNum;
+            txtPokemonName.Text = pokeName;
+
+            if (filter == PokemonFilter.Name)
+            {
+                radName.Checked = true;
+            }
         }
 
+        /** HELPERS **/
+        private bool isPokeNumValid()
+        {
+            // check if the number is positive
+            if (numPokeNum.Value < 0)
+            {
+                // value is negative, invalid
+                MessageBox.Show("Number must be greater than zero.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+        private bool isPokeNameValid()
+        {
+            // check if null or empty
+            if (String.IsNullOrEmpty(txtPokemonName.Text))
+            {
+                MessageBox.Show("Name cannot be empty.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        /** fUNCTIONS **/
+        public string getNameText()
+        {
+            return txtPokemonName.Text;
+        }
+
+        public int getNumberValue()
+        {
+            return (int)numPokeNum.Value; // removes any decimal value
+        }
+
+
+        /** EVENTS **/
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -106,41 +154,6 @@ namespace Pokemon_Training_App.Views
                 // set number to 1
                 numPokeNum.Value = 1;
             }
-        }
-
-        private bool isPokeNumValid()
-        {
-            // check if the number is positive
-            if (numPokeNum.Value < 0)
-            {
-                // value is negative, invalid
-                MessageBox.Show("Number must be greater than zero.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            return true;
-        }
-
-        private bool isPokeNameValid()
-        {
-            // check if null or empty
-            if (String.IsNullOrEmpty(txtPokemonName.Text))
-            {
-                MessageBox.Show("Name cannot be empty.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            } else
-            {
-                return true;
-            }
-        }
-
-        public string getNameText()
-        {
-            return txtPokemonName.Text;
-        }
-
-        public int getNumberValue()
-        {
-            return (int)numPokeNum.Value; // removes any decimal value
         }
 
         private void numPokeNum_Enter(object sender, EventArgs e)
