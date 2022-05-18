@@ -71,7 +71,7 @@
             this.txtPokemonName.Location = new System.Drawing.Point(216, 73);
             this.txtPokemonName.Name = "txtPokemonName";
             this.txtPokemonName.Size = new System.Drawing.Size(201, 30);
-            this.txtPokemonName.TabIndex = 2;
+            this.txtPokemonName.TabIndex = 3;
             this.txtPokemonName.Enter += new System.EventHandler(this.txtPokemonName_Enter);
             // 
             // btnApply
@@ -80,7 +80,7 @@
             this.btnApply.Location = new System.Drawing.Point(173, 126);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(85, 32);
-            this.btnApply.TabIndex = 3;
+            this.btnApply.TabIndex = 5;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
@@ -91,7 +91,7 @@
             this.btnCancel.Location = new System.Drawing.Point(296, 126);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(85, 32);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -102,7 +102,7 @@
             this.radName.Location = new System.Drawing.Point(17, 80);
             this.radName.Name = "radName";
             this.radName.Size = new System.Drawing.Size(14, 13);
-            this.radName.TabIndex = 10;
+            this.radName.TabIndex = 2;
             this.radName.UseVisualStyleBackColor = true;
             this.radName.CheckedChanged += new System.EventHandler(this.radName_CheckedChanged);
             // 
@@ -113,7 +113,7 @@
             this.radNumber.Location = new System.Drawing.Point(17, 27);
             this.radNumber.Name = "radNumber";
             this.radNumber.Size = new System.Drawing.Size(14, 13);
-            this.radNumber.TabIndex = 10;
+            this.radNumber.TabIndex = 0;
             this.radNumber.TabStop = true;
             this.radNumber.UseVisualStyleBackColor = true;
             this.radNumber.CheckedChanged += new System.EventHandler(this.radNumber_CheckedChanged);
@@ -150,7 +150,7 @@
             this.btnGetAll.Location = new System.Drawing.Point(50, 126);
             this.btnGetAll.Name = "btnGetAll";
             this.btnGetAll.Size = new System.Drawing.Size(85, 32);
-            this.btnGetAll.TabIndex = 12;
+            this.btnGetAll.TabIndex = 4;
             this.btnGetAll.Text = "Get All";
             this.btnGetAll.UseVisualStyleBackColor = true;
             this.btnGetAll.Click += new System.EventHandler(this.btnGetAll_Click);

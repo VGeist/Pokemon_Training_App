@@ -111,7 +111,7 @@
             this.txtNickname.Location = new System.Drawing.Point(185, 53);
             this.txtNickname.Name = "txtNickname";
             this.txtNickname.Size = new System.Drawing.Size(180, 30);
-            this.txtNickname.TabIndex = 2;
+            this.txtNickname.TabIndex = 1;
             this.txtNickname.TextChanged += new System.EventHandler(this.txtNickname_TextChanged);
             // 
             // partnersBindingSource
@@ -157,7 +157,7 @@
             this.btnAddForm.Location = new System.Drawing.Point(264, 135);
             this.btnAddForm.Name = "btnAddForm";
             this.btnAddForm.Size = new System.Drawing.Size(101, 32);
-            this.btnAddForm.TabIndex = 6;
+            this.btnAddForm.TabIndex = 5;
             this.btnAddForm.Text = "Add Form";
             this.btnAddForm.UseVisualStyleBackColor = true;
             this.btnAddForm.Click += new System.EventHandler(this.btnAddForm_Click);
@@ -175,7 +175,7 @@
             this.cmbForm.MaxDropDownItems = 32;
             this.cmbForm.Name = "cmbForm";
             this.cmbForm.Size = new System.Drawing.Size(159, 30);
-            this.cmbForm.TabIndex = 5;
+            this.cmbForm.TabIndex = 4;
             this.cmbForm.ValueMember = "Forms.FormID";
             // 
             // formsBindingSource
@@ -209,7 +209,7 @@
             this.cmbNature.MaxDropDownItems = 32;
             this.cmbNature.Name = "cmbNature";
             this.cmbNature.Size = new System.Drawing.Size(159, 30);
-            this.cmbNature.TabIndex = 3;
+            this.cmbNature.TabIndex = 2;
             this.cmbNature.ValueMember = "Natures.NatureID";
             // 
             // naturesBindingSource
@@ -286,7 +286,7 @@
             0});
             this.numLevel.Name = "numLevel";
             this.numLevel.Size = new System.Drawing.Size(58, 30);
-            this.numLevel.TabIndex = 4;
+            this.numLevel.TabIndex = 3;
             this.numLevel.Value = new decimal(new int[] {
             1,
             0,
@@ -446,7 +446,7 @@
             this.tabStats.Name = "tabStats";
             this.tabStats.SelectedIndex = 0;
             this.tabStats.Size = new System.Drawing.Size(258, 248);
-            this.tabStats.TabIndex = 31;
+            this.tabStats.TabIndex = 6;
             this.tabStats.TabStop = false;
             // 
             // tpgStats
@@ -558,7 +558,7 @@
             0});
             this.numSpeedEV.Name = "numSpeedEV";
             this.numSpeedEV.Size = new System.Drawing.Size(100, 30);
-            this.numSpeedEV.TabIndex = 27;
+            this.numSpeedEV.TabIndex = 12;
             this.numSpeedEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numSpDefenseEV
@@ -572,7 +572,7 @@
             0});
             this.numSpDefenseEV.Name = "numSpDefenseEV";
             this.numSpDefenseEV.Size = new System.Drawing.Size(100, 30);
-            this.numSpDefenseEV.TabIndex = 26;
+            this.numSpDefenseEV.TabIndex = 11;
             this.numSpDefenseEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numSpAttackEV
@@ -586,7 +586,7 @@
             0});
             this.numSpAttackEV.Name = "numSpAttackEV";
             this.numSpAttackEV.Size = new System.Drawing.Size(100, 30);
-            this.numSpAttackEV.TabIndex = 25;
+            this.numSpAttackEV.TabIndex = 10;
             this.numSpAttackEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numDefenseEV
@@ -600,7 +600,7 @@
             0});
             this.numDefenseEV.Name = "numDefenseEV";
             this.numDefenseEV.Size = new System.Drawing.Size(100, 30);
-            this.numDefenseEV.TabIndex = 24;
+            this.numDefenseEV.TabIndex = 9;
             this.numDefenseEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numAttackEV
@@ -614,7 +614,7 @@
             0});
             this.numAttackEV.Name = "numAttackEV";
             this.numAttackEV.Size = new System.Drawing.Size(100, 30);
-            this.numAttackEV.TabIndex = 23;
+            this.numAttackEV.TabIndex = 8;
             this.numAttackEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // numHealthEV
@@ -628,7 +628,7 @@
             0});
             this.numHealthEV.Name = "numHealthEV";
             this.numHealthEV.Size = new System.Drawing.Size(100, 30);
-            this.numHealthEV.TabIndex = 22;
+            this.numHealthEV.TabIndex = 7;
             this.numHealthEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // slblHealthEV
@@ -695,7 +695,7 @@
             this.cmbPokeNum.Location = new System.Drawing.Point(185, 12);
             this.cmbPokeNum.Name = "cmbPokeNum";
             this.cmbPokeNum.Size = new System.Drawing.Size(180, 30);
-            this.cmbPokeNum.TabIndex = 32;
+            this.cmbPokeNum.TabIndex = 0;
             this.cmbPokeNum.ValueMember = "Pokemon.PokeNum";
             // 
             // partnersTableAdapter

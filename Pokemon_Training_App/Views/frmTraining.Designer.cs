@@ -164,7 +164,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem0.Location = new System.Drawing.Point(210, 6);
+            this.cmbHeldItem0.Location = new System.Drawing.Point(210, 11);
             this.cmbHeldItem0.Name = "cmbHeldItem0";
             this.cmbHeldItem0.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem0.TabIndex = 1;
@@ -184,7 +184,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem1.Location = new System.Drawing.Point(210, 49);
+            this.cmbHeldItem1.Location = new System.Drawing.Point(210, 54);
             this.cmbHeldItem1.Name = "cmbHeldItem1";
             this.cmbHeldItem1.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem1.TabIndex = 3;
@@ -214,7 +214,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem2.Location = new System.Drawing.Point(210, 92);
+            this.cmbHeldItem2.Location = new System.Drawing.Point(210, 97);
             this.cmbHeldItem2.Name = "cmbHeldItem2";
             this.cmbHeldItem2.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem2.TabIndex = 5;
@@ -244,7 +244,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem3.Location = new System.Drawing.Point(210, 135);
+            this.cmbHeldItem3.Location = new System.Drawing.Point(210, 140);
             this.cmbHeldItem3.Name = "cmbHeldItem3";
             this.cmbHeldItem3.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem3.TabIndex = 7;
@@ -274,7 +274,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem4.Location = new System.Drawing.Point(210, 178);
+            this.cmbHeldItem4.Location = new System.Drawing.Point(210, 183);
             this.cmbHeldItem4.Name = "cmbHeldItem4";
             this.cmbHeldItem4.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem4.TabIndex = 9;
@@ -304,7 +304,7 @@
             "Power Band",
             "Power Anklet",
             "Macho Brace"});
-            this.cmbHeldItem5.Location = new System.Drawing.Point(210, 221);
+            this.cmbHeldItem5.Location = new System.Drawing.Point(210, 226);
             this.cmbHeldItem5.Name = "cmbHeldItem5";
             this.cmbHeldItem5.Size = new System.Drawing.Size(138, 30);
             this.cmbHeldItem5.TabIndex = 11;
@@ -892,7 +892,7 @@
             this.btnUseItem.Location = new System.Drawing.Point(215, 307);
             this.btnUseItem.Name = "btnUseItem";
             this.btnUseItem.Size = new System.Drawing.Size(92, 33);
-            this.btnUseItem.TabIndex = 14;
+            this.btnUseItem.TabIndex = 13;
             this.btnUseItem.Text = "Use Item";
             this.btnUseItem.UseVisualStyleBackColor = true;
             this.btnUseItem.Click += new System.EventHandler(this.btnUseItem_Click);
@@ -922,7 +922,7 @@
             this.btnAdd.Location = new System.Drawing.Point(484, 366);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 33);
-            this.btnAdd.TabIndex = 24;
+            this.btnAdd.TabIndex = 25;
             this.btnAdd.Text = "Add EVs";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -932,7 +932,7 @@
             this.btnConfirmTraining.Location = new System.Drawing.Point(589, 366);
             this.btnConfirmTraining.Name = "btnConfirmTraining";
             this.btnConfirmTraining.Size = new System.Drawing.Size(158, 33);
-            this.btnConfirmTraining.TabIndex = 25;
+            this.btnConfirmTraining.TabIndex = 26;
             this.btnConfirmTraining.Text = "Confirm Training";
             this.btnConfirmTraining.UseVisualStyleBackColor = true;
             this.btnConfirmTraining.Click += new System.EventHandler(this.btnConfirmTraining_Click);
@@ -942,7 +942,7 @@
             this.btnClose.Location = new System.Drawing.Point(766, 366);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(86, 33);
-            this.btnClose.TabIndex = 26;
+            this.btnClose.TabIndex = 27;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -1242,7 +1242,7 @@
             this.btnStats.Location = new System.Drawing.Point(37, 355);
             this.btnStats.Name = "btnStats";
             this.btnStats.Size = new System.Drawing.Size(92, 33);
-            this.btnStats.TabIndex = 107;
+            this.btnStats.TabIndex = 14;
             this.btnStats.Text = "Stats";
             this.btnStats.UseVisualStyleBackColor = true;
             this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
@@ -1252,7 +1252,7 @@
             this.btnInfect.Location = new System.Drawing.Point(379, 366);
             this.btnInfect.Name = "btnInfect";
             this.btnInfect.Size = new System.Drawing.Size(86, 33);
-            this.btnInfect.TabIndex = 108;
+            this.btnInfect.TabIndex = 24;
             this.btnInfect.Text = "Infect";
             this.btnInfect.UseVisualStyleBackColor = true;
             this.btnInfect.Click += new System.EventHandler(this.btnInfect_Click);

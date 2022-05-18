@@ -332,7 +332,7 @@
             this.btnGroup.Location = new System.Drawing.Point(1439, 384);
             this.btnGroup.Name = "btnGroup";
             this.btnGroup.Size = new System.Drawing.Size(184, 31);
-            this.btnGroup.TabIndex = 4;
+            this.btnGroup.TabIndex = 2;
             this.btnGroup.Text = "Remove from Party";
             this.btnGroup.UseVisualStyleBackColor = true;
             this.btnGroup.Click += new System.EventHandler(this.btnGroup_Click);
@@ -344,7 +344,7 @@
             this.btnEdit.Location = new System.Drawing.Point(1694, 384);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(59, 31);
-            this.btnEdit.TabIndex = 5;
+            this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -355,7 +355,7 @@
             this.btnNew.Location = new System.Drawing.Point(1759, 384);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(59, 31);
-            this.btnNew.TabIndex = 6;
+            this.btnNew.TabIndex = 5;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -366,7 +366,7 @@
             this.btnClose.Location = new System.Drawing.Point(1824, 384);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(68, 31);
-            this.btnClose.TabIndex = 7;
+            this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -376,7 +376,7 @@
             this.btnFilter.Location = new System.Drawing.Point(12, 384);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(68, 31);
-            this.btnFilter.TabIndex = 8;
+            this.btnFilter.TabIndex = 0;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
@@ -386,7 +386,7 @@
             this.btnRefresh.Location = new System.Drawing.Point(86, 384);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(88, 31);
-            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.TabIndex = 1;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -398,7 +398,7 @@
             this.btnStats.Location = new System.Drawing.Point(1629, 384);
             this.btnStats.Name = "btnStats";
             this.btnStats.Size = new System.Drawing.Size(59, 31);
-            this.btnStats.TabIndex = 10;
+            this.btnStats.TabIndex = 3;
             this.btnStats.Text = "Stats";
             this.btnStats.UseVisualStyleBackColor = true;
             this.btnStats.Click += new System.EventHandler(this.btnStats_Click);

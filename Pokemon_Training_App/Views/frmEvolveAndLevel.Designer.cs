@@ -73,7 +73,7 @@
             this.btnCancel.Location = new System.Drawing.Point(226, 355);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(85, 32);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -84,7 +84,7 @@
             this.btnConfirm.Location = new System.Drawing.Point(18, 355);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(87, 32);
-            this.btnConfirm.TabIndex = 8;
+            this.btnConfirm.TabIndex = 9;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
@@ -167,7 +167,7 @@
             0});
             this.numHealth.Name = "numHealth";
             this.numHealth.Size = new System.Drawing.Size(139, 30);
-            this.numHealth.TabIndex = 2;
+            this.numHealth.TabIndex = 3;
             this.numHealth.Value = new decimal(new int[] {
             4,
             0,
@@ -190,7 +190,7 @@
             0});
             this.numAttack.Name = "numAttack";
             this.numAttack.Size = new System.Drawing.Size(139, 30);
-            this.numAttack.TabIndex = 3;
+            this.numAttack.TabIndex = 4;
             this.numAttack.Value = new decimal(new int[] {
             4,
             0,
@@ -213,7 +213,7 @@
             0});
             this.numDefense.Name = "numDefense";
             this.numDefense.Size = new System.Drawing.Size(139, 30);
-            this.numDefense.TabIndex = 4;
+            this.numDefense.TabIndex = 5;
             this.numDefense.Value = new decimal(new int[] {
             4,
             0,
@@ -236,7 +236,7 @@
             0});
             this.numSpAttack.Name = "numSpAttack";
             this.numSpAttack.Size = new System.Drawing.Size(139, 30);
-            this.numSpAttack.TabIndex = 5;
+            this.numSpAttack.TabIndex = 6;
             this.numSpAttack.Value = new decimal(new int[] {
             4,
             0,
@@ -259,9 +259,9 @@
             0});
             this.numSpDefense.Name = "numSpDefense";
             this.numSpDefense.Size = new System.Drawing.Size(139, 30);
-            this.numSpDefense.TabIndex = 6;
+            this.numSpDefense.TabIndex = 7;
             this.numSpDefense.Value = new decimal(new int[] {
-            4,
+            6,
             0,
             0,
             0});
@@ -282,7 +282,7 @@
             0});
             this.numSpeed.Name = "numSpeed";
             this.numSpeed.Size = new System.Drawing.Size(139, 30);
-            this.numSpeed.TabIndex = 7;
+            this.numSpeed.TabIndex = 8;
             this.numSpeed.Value = new decimal(new int[] {
             4,
             0,
@@ -301,7 +301,7 @@
             this.cmbPokeNum.MaxDropDownItems = 32;
             this.cmbPokeNum.Name = "cmbPokeNum";
             this.cmbPokeNum.Size = new System.Drawing.Size(139, 30);
-            this.cmbPokeNum.TabIndex = 43;
+            this.cmbPokeNum.TabIndex = 0;
             this.cmbPokeNum.ValueMember = "Pokemon.PokeNum";
             // 
             // pokemonDataSet
@@ -334,7 +334,7 @@
             this.cmbForm.MaxDropDownItems = 32;
             this.cmbForm.Name = "cmbForm";
             this.cmbForm.Size = new System.Drawing.Size(139, 30);
-            this.cmbForm.TabIndex = 45;
+            this.cmbForm.TabIndex = 1;
             this.cmbForm.ValueMember = "Forms.FormID";
             // 
             // slblForm
@@ -356,7 +356,7 @@
             this.btnReset.Location = new System.Drawing.Point(122, 355);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(87, 32);
-            this.btnReset.TabIndex = 46;
+            this.btnReset.TabIndex = 10;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -371,7 +371,7 @@
             0});
             this.numLevel.Name = "numLevel";
             this.numLevel.Size = new System.Drawing.Size(139, 30);
-            this.numLevel.TabIndex = 47;
+            this.numLevel.TabIndex = 2;
             this.numLevel.Value = new decimal(new int[] {
             1,
             0,

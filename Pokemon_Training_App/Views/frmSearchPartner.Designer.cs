@@ -96,7 +96,7 @@
             this.btnSearch.Location = new System.Drawing.Point(140, 273);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(85, 32);
-            this.btnSearch.TabIndex = 8;
+            this.btnSearch.TabIndex = 12;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -107,7 +107,7 @@
             this.btnCancel.Location = new System.Drawing.Point(231, 273);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(85, 32);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -121,7 +121,7 @@
             this.cmbNature.Location = new System.Drawing.Point(195, 131);
             this.cmbNature.Name = "cmbNature";
             this.cmbNature.Size = new System.Drawing.Size(121, 30);
-            this.cmbNature.TabIndex = 3;
+            this.cmbNature.TabIndex = 5;
             this.cmbNature.ValueMember = "Natures.NatureID";
             // 
             // pokemonDataSet
@@ -170,7 +170,7 @@
             this.txtNickname.Location = new System.Drawing.Point(187, 83);
             this.txtNickname.Name = "txtNickname";
             this.txtNickname.Size = new System.Drawing.Size(129, 30);
-            this.txtNickname.TabIndex = 2;
+            this.txtNickname.TabIndex = 3;
             this.txtNickname.Enter += new System.EventHandler(this.txtNickname_Enter);
             // 
             // ttpPokerus
@@ -187,7 +187,7 @@
             0});
             this.numMinLevel.Name = "numMinLevel";
             this.numMinLevel.Size = new System.Drawing.Size(56, 30);
-            this.numMinLevel.TabIndex = 4;
+            this.numMinLevel.TabIndex = 7;
             this.numMinLevel.Value = new decimal(new int[] {
             1,
             0,
@@ -206,7 +206,7 @@
             0});
             this.numMaxLevel.Name = "numMaxLevel";
             this.numMaxLevel.Size = new System.Drawing.Size(56, 30);
-            this.numMaxLevel.TabIndex = 5;
+            this.numMaxLevel.TabIndex = 8;
             this.numMaxLevel.Value = new decimal(new int[] {
             1,
             0,
@@ -225,7 +225,7 @@
             0});
             this.numMaxEV.Name = "numMaxEV";
             this.numMaxEV.Size = new System.Drawing.Size(56, 30);
-            this.numMaxEV.TabIndex = 7;
+            this.numMaxEV.TabIndex = 11;
             this.numMaxEV.ValueChanged += new System.EventHandler(this.numMaxEV_ValueChanged);
             this.numMaxEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
@@ -239,7 +239,7 @@
             0});
             this.numMinEV.Name = "numMinEV";
             this.numMinEV.Size = new System.Drawing.Size(56, 30);
-            this.numMinEV.TabIndex = 6;
+            this.numMinEV.TabIndex = 10;
             this.numMinEV.ValueChanged += new System.EventHandler(this.numMinEV_ValueChanged);
             this.numMinEV.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
@@ -258,8 +258,7 @@
             this.chkFilterNumber.Location = new System.Drawing.Point(31, 42);
             this.chkFilterNumber.Name = "chkFilterNumber";
             this.chkFilterNumber.Size = new System.Drawing.Size(15, 14);
-            this.chkFilterNumber.TabIndex = 20;
-            this.chkFilterNumber.TabStop = false;
+            this.chkFilterNumber.TabIndex = 0;
             this.chkFilterNumber.UseVisualStyleBackColor = true;
             // 
             // chkFilterNature
@@ -268,8 +267,7 @@
             this.chkFilterNature.Location = new System.Drawing.Point(31, 139);
             this.chkFilterNature.Name = "chkFilterNature";
             this.chkFilterNature.Size = new System.Drawing.Size(15, 14);
-            this.chkFilterNature.TabIndex = 21;
-            this.chkFilterNature.TabStop = false;
+            this.chkFilterNature.TabIndex = 4;
             this.chkFilterNature.UseVisualStyleBackColor = true;
             // 
             // chkFilterLevel
@@ -278,8 +276,7 @@
             this.chkFilterLevel.Location = new System.Drawing.Point(31, 187);
             this.chkFilterLevel.Name = "chkFilterLevel";
             this.chkFilterLevel.Size = new System.Drawing.Size(15, 14);
-            this.chkFilterLevel.TabIndex = 22;
-            this.chkFilterLevel.TabStop = false;
+            this.chkFilterLevel.TabIndex = 6;
             this.chkFilterLevel.UseVisualStyleBackColor = true;
             // 
             // chkFilterNickname
@@ -288,8 +285,7 @@
             this.chkFilterNickname.Location = new System.Drawing.Point(31, 91);
             this.chkFilterNickname.Name = "chkFilterNickname";
             this.chkFilterNickname.Size = new System.Drawing.Size(15, 14);
-            this.chkFilterNickname.TabIndex = 23;
-            this.chkFilterNickname.TabStop = false;
+            this.chkFilterNickname.TabIndex = 2;
             this.chkFilterNickname.UseVisualStyleBackColor = true;
             // 
             // chkFilterEV
@@ -298,8 +294,7 @@
             this.chkFilterEV.Location = new System.Drawing.Point(31, 235);
             this.chkFilterEV.Name = "chkFilterEV";
             this.chkFilterEV.Size = new System.Drawing.Size(15, 14);
-            this.chkFilterEV.TabIndex = 24;
-            this.chkFilterEV.TabStop = false;
+            this.chkFilterEV.TabIndex = 9;
             this.chkFilterEV.UseVisualStyleBackColor = true;
             // 
             // naturesTableAdapter
@@ -320,7 +315,7 @@
             0});
             this.numPokeNum.Name = "numPokeNum";
             this.numPokeNum.Size = new System.Drawing.Size(85, 30);
-            this.numPokeNum.TabIndex = 25;
+            this.numPokeNum.TabIndex = 1;
             this.numPokeNum.Enter += new System.EventHandler(this.NumUpDown_Enter);
             // 
             // frmSearchPartner

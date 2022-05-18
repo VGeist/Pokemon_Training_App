@@ -170,7 +170,7 @@
             this.txtNickname.Location = new System.Drawing.Point(185, 53);
             this.txtNickname.Name = "txtNickname";
             this.txtNickname.Size = new System.Drawing.Size(180, 30);
-            this.txtNickname.TabIndex = 2;
+            this.txtNickname.TabIndex = 1;
             this.txtNickname.Enter += new System.EventHandler(this.txtNickname_Enter);
             // 
             // cmbNature
@@ -183,7 +183,7 @@
             this.cmbNature.MaxDropDownItems = 32;
             this.cmbNature.Name = "cmbNature";
             this.cmbNature.Size = new System.Drawing.Size(159, 30);
-            this.cmbNature.TabIndex = 3;
+            this.cmbNature.TabIndex = 2;
             this.cmbNature.ValueMember = "Natures.NatureID";
             // 
             // pokemonDataSet
@@ -199,7 +199,7 @@
             this.tabStats.Name = "tabStats";
             this.tabStats.SelectedIndex = 0;
             this.tabStats.Size = new System.Drawing.Size(258, 248);
-            this.tabStats.TabIndex = 7;
+            this.tabStats.TabIndex = 6;
             this.tabStats.TabStop = false;
             // 
             // tpgStats
@@ -580,7 +580,7 @@
             this.cmbForm.MaxDropDownItems = 32;
             this.cmbForm.Name = "cmbForm";
             this.cmbForm.Size = new System.Drawing.Size(159, 30);
-            this.cmbForm.TabIndex = 5;
+            this.cmbForm.TabIndex = 4;
             this.cmbForm.ValueMember = "Forms.FormID";
             // 
             // slblForm
@@ -598,7 +598,7 @@
             this.btnAddForm.Location = new System.Drawing.Point(264, 135);
             this.btnAddForm.Name = "btnAddForm";
             this.btnAddForm.Size = new System.Drawing.Size(101, 32);
-            this.btnAddForm.TabIndex = 6;
+            this.btnAddForm.TabIndex = 5;
             this.btnAddForm.Text = "Add Form";
             this.btnAddForm.UseVisualStyleBackColor = true;
             this.btnAddForm.Click += new System.EventHandler(this.btnAddForm_Click);
@@ -628,7 +628,7 @@
             0});
             this.numLevel.Name = "numLevel";
             this.numLevel.Size = new System.Drawing.Size(58, 30);
-            this.numLevel.TabIndex = 4;
+            this.numLevel.TabIndex = 3;
             this.numLevel.Value = new decimal(new int[] {
             1,
             0,
@@ -659,7 +659,7 @@
             this.cmbPokeNum.MaxDropDownItems = 32;
             this.cmbPokeNum.Name = "cmbPokeNum";
             this.cmbPokeNum.Size = new System.Drawing.Size(180, 30);
-            this.cmbPokeNum.TabIndex = 17;
+            this.cmbPokeNum.TabIndex = 0;
             this.cmbPokeNum.ValueMember = "Pokemon.PokeNum";
             // 
             // pokemonTableAdapter
