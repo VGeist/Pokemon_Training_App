@@ -615,5 +615,42 @@ namespace Pokemon_Training_App.Views
 
             e.Cancel = (result == DialogResult.No);
         }
+
+        private void CheckedChanged(object sender, EventArgs e)
+        {
+            // enable conrols appropriate for numSelected
+            int numSelected = getSelectedSlots().Length;
+            if (numSelected == 0)
+            {
+                // disable all buttons
+                btnEvolveAndLevel.Enabled = false;
+                btnUseItem.Enabled = false;
+                btnStats.Enabled = false;
+                btnPreview.Enabled = false;
+                btnRemove.Enabled = false;
+                btnInfect.Enabled = false;
+                btnAdd.Enabled = false;
+            } else if (numSelected == 1)
+            {
+                // enable all buttons
+                btnEvolveAndLevel.Enabled = true;
+                btnUseItem.Enabled = true;
+                btnStats.Enabled = true;
+                btnPreview.Enabled = true;
+                btnRemove.Enabled = true;
+                btnInfect.Enabled = true;
+                btnAdd.Enabled = true;
+            } else
+            {
+                // enable only multi-select friendly buttons and disable single-select friendly buttons
+                btnEvolveAndLevel.Enabled = false;
+                btnUseItem.Enabled = false;
+                btnStats.Enabled = false;
+                btnPreview.Enabled = false;
+                btnRemove.Enabled = true;
+                btnInfect.Enabled = true;
+                btnAdd.Enabled = true;
+            }
+        }
     }
 }

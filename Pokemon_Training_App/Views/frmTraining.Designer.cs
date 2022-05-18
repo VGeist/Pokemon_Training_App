@@ -149,6 +149,7 @@
             this.chkDoTrainingPokemon0.Size = new System.Drawing.Size(14, 14);
             this.chkDoTrainingPokemon0.TabIndex = 0;
             this.chkDoTrainingPokemon0.UseVisualStyleBackColor = true;
+            this.chkDoTrainingPokemon0.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // cmbHeldItem0
             // 
@@ -199,6 +200,7 @@
             this.chkDoTrainingPokemon1.Size = new System.Drawing.Size(14, 14);
             this.chkDoTrainingPokemon1.TabIndex = 2;
             this.chkDoTrainingPokemon1.UseVisualStyleBackColor = true;
+            this.chkDoTrainingPokemon1.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // cmbHeldItem2
             // 
@@ -229,6 +231,7 @@
             this.chkDoTrainingPokemon2.Size = new System.Drawing.Size(14, 14);
             this.chkDoTrainingPokemon2.TabIndex = 4;
             this.chkDoTrainingPokemon2.UseVisualStyleBackColor = true;
+            this.chkDoTrainingPokemon2.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // cmbHeldItem3
             // 
@@ -259,6 +262,7 @@
             this.chkDoTrainingPokemon3.Size = new System.Drawing.Size(14, 14);
             this.chkDoTrainingPokemon3.TabIndex = 6;
             this.chkDoTrainingPokemon3.UseVisualStyleBackColor = true;
+            this.chkDoTrainingPokemon3.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // cmbHeldItem4
             // 
@@ -289,6 +293,7 @@
             this.chkDoTrainingPokemon4.Size = new System.Drawing.Size(14, 14);
             this.chkDoTrainingPokemon4.TabIndex = 8;
             this.chkDoTrainingPokemon4.UseVisualStyleBackColor = true;
+            this.chkDoTrainingPokemon4.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // cmbHeldItem5
             // 
@@ -319,6 +324,7 @@
             this.chkDoTrainingPokemon5.Size = new System.Drawing.Size(14, 14);
             this.chkDoTrainingPokemon5.TabIndex = 10;
             this.chkDoTrainingPokemon5.UseVisualStyleBackColor = true;
+            this.chkDoTrainingPokemon5.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // lblNickname0
             // 
@@ -879,6 +885,7 @@
             // 
             // btnEvolveAndLevel
             // 
+            this.btnEvolveAndLevel.Enabled = false;
             this.btnEvolveAndLevel.Location = new System.Drawing.Point(57, 307);
             this.btnEvolveAndLevel.Name = "btnEvolveAndLevel";
             this.btnEvolveAndLevel.Size = new System.Drawing.Size(144, 33);
@@ -889,6 +896,7 @@
             // 
             // btnUseItem
             // 
+            this.btnUseItem.Enabled = false;
             this.btnUseItem.Location = new System.Drawing.Point(215, 307);
             this.btnUseItem.Name = "btnUseItem";
             this.btnUseItem.Size = new System.Drawing.Size(92, 33);
@@ -899,6 +907,7 @@
             // 
             // btnRemove
             // 
+            this.btnRemove.Enabled = false;
             this.btnRemove.Location = new System.Drawing.Point(249, 355);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(92, 33);
@@ -909,6 +918,7 @@
             // 
             // btnPreview
             // 
+            this.btnPreview.Enabled = false;
             this.btnPreview.Location = new System.Drawing.Point(143, 355);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(92, 33);
@@ -919,6 +929,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Enabled = false;
             this.btnAdd.Location = new System.Drawing.Point(484, 366);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 33);
@@ -1240,6 +1251,7 @@
             // 
             // btnStats
             // 
+            this.btnStats.Enabled = false;
             this.btnStats.Location = new System.Drawing.Point(37, 355);
             this.btnStats.Name = "btnStats";
             this.btnStats.Size = new System.Drawing.Size(92, 33);
@@ -1250,6 +1262,7 @@
             // 
             // btnInfect
             // 
+            this.btnInfect.Enabled = false;
             this.btnInfect.Location = new System.Drawing.Point(379, 366);
             this.btnInfect.Name = "btnInfect";
             this.btnInfect.Size = new System.Drawing.Size(86, 33);
