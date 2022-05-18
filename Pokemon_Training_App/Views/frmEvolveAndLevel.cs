@@ -49,7 +49,8 @@ namespace Pokemon_Training_App.Views
                 // get data from database
                 pokemonRow = pokemonTableAdapter.GetByPokeNum((int)cmbPokeNum.SelectedValue).First();
                 formsRow = formsTableAdapter.GetFormByID((int)cmbForm.SelectedValue).First();
-            } catch
+            }
+            catch
             {
                 MessageBox.Show("A database error occured. No changes were made.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
@@ -138,21 +139,46 @@ namespace Pokemon_Training_App.Views
             Pokemon evolved = getPokemonData();
             _partner.Level = (int)numLevel.Value;
             _partner.Evolve(evolved, (int)numHealth.Value, (int)numAttack.Value, (int)numDefense.Value, (int)numSpAttack.Value, (int)numSpDefense.Value, (int)numSpeed.Value, evolved.FormList[0]);
-            
+
             // get errors
             string[] errors = _partner.GetErrors();
-            if (errors.Length == 0)
-            {
-                // mark for change and exit form
-                commitChange = true;
-                this.Close();
-            }
-            else
+
+            string[] statErrors = _partner.GetStatErrors();
+
+            // check for errors
+            if (errors.Length > 0)
             {
                 // errors found, display message
                 string errorMsg = Program.buildErrorListMessage(errors);
                 MessageBox.Show(errorMsg, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                // cancel save
+                return;
             }
+            else if (statErrors.Count() > 0)
+            {
+                // stat errors exist; build message and display
+                string statErrorsMsg = "These stats are out of range:";
+                for (int i = 0; i < statErrors.Length; i++)
+                {
+                    statErrorsMsg += Environment.NewLine + statErrors[i];
+                }
+
+                statErrorsMsg += Environment.NewLine + "Do you want to save anyway?";
+
+                // ask user if invalid stats are ok
+                DialogResult dialogResult = MessageBox.Show(statErrorsMsg, _partner.Nickname + " | Unexpected Stat Values", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.No)
+                {
+                    // cancel save
+                    return;
+                }
+            }
+
+            // mark for change and exit form
+            commitChange = true;
+            this.Close();
         }
 
         private void btnReset_Click(object sender, EventArgs e)

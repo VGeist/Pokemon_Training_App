@@ -149,9 +149,33 @@ namespace Pokemon_Training_App.Views
             // find errors
             string[] errors = partner.GetErrors();
 
+            string[] statErrors = partner.GetStatErrors();
+
             // display success or faliure message
             if (errors.Length == 0)
             {
+                // check for stat errors
+                if (statErrors.Count() > 0)
+                {
+                    // errors exist; build message and display
+                    string statErrorsMsg = "These stats are out of range:";
+                    for (int i = 0; i < statErrors.Length; i++)
+                    {
+                        statErrorsMsg += Environment.NewLine + statErrors[i];
+                    }
+
+                    statErrorsMsg += Environment.NewLine + "Do you want to save anyway?";
+
+                    // ask user if invalid stats are ok
+                    DialogResult dialogResult = MessageBox.Show(statErrorsMsg, partner.Nickname + " | Unexpected Stat Values", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (dialogResult == DialogResult.No)
+                    {
+                        // do not save
+                        return;
+                    }
+                }
+
                 // no errors, add to database
                 try
                 {

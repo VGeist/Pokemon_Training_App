@@ -511,14 +511,6 @@ namespace Pokemon_Training_App.Classes
             // check level
             errors.Add(GetLevelError());
 
-            // check stat values
-            errors.Add(GetStatError(Health, "Health", healthStatLabel));
-            errors.Add(GetStatError(Attack, "Attack", attackStatLabel));
-            errors.Add(GetStatError(Defense, "Defense", defenseStatLabel));
-            errors.Add(GetStatError(SpAttack, "SpAttack", spAttackStatLabel));
-            errors.Add(GetStatError(SpDefense, "SpDefense", spDefenseStatLabel));
-            errors.Add(GetStatError(Speed, "Speed", speedStatLabel));
-
             // EV error checking
             errors.Add(GetEVError(this.HealthEV, healthStatLabel + " EV"));
             errors.Add(GetEVError(this.AttackEV, attackStatLabel + " EV"));
@@ -532,6 +524,24 @@ namespace Pokemon_Training_App.Classes
             errors.RemoveAll(error => error == null);
 
             return errors.ToArray();
+        }
+
+        // function to get stat errors
+        public string[] GetStatErrors()
+        {
+            List<string> statErrors = new List<string>
+            {
+                GetStatError(Health, "Health", "Health"),
+                GetStatError(Attack, "Attack", "Attack"),
+                GetStatError(Defense, "Defense", "Defense"),
+                GetStatError(SpAttack, "SpAttack", "Sp. Attack"),
+                GetStatError(SpDefense, "SpDefense", "Sp. Defense"),
+                GetStatError(Speed, "Speed", "Speed")
+            };
+
+            statErrors.RemoveAll(error => error == null);
+
+            return statErrors.ToArray();
         }
 
         // funcitons that check a single field - return error messages; if no error is found retuns null 

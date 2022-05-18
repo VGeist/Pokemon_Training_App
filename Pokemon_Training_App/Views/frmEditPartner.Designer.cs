@@ -228,7 +228,7 @@
             // btnCancel
             // 
             this.btnCancel.AutoSize = true;
-            this.btnCancel.Location = new System.Drawing.Point(292, 387);
+            this.btnCancel.Location = new System.Drawing.Point(292, 385);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(91, 32);
             this.btnCancel.TabIndex = 16;
@@ -239,7 +239,7 @@
             // btnDelete
             // 
             this.btnDelete.AutoSize = true;
-            this.btnDelete.Location = new System.Drawing.Point(292, 349);
+            this.btnDelete.Location = new System.Drawing.Point(292, 348);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(91, 32);
             this.btnDelete.TabIndex = 15;
@@ -713,7 +713,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 428);
+            this.ClientSize = new System.Drawing.Size(395, 427);
             this.Controls.Add(this.cmbPokeNum);
             this.Controls.Add(this.tabStats);
             this.Controls.Add(this.numLevel);
