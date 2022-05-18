@@ -199,6 +199,7 @@
             // 
             // btnDone
             // 
+            this.btnDone.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnDone.Location = new System.Drawing.Point(295, 189);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(80, 31);
@@ -291,6 +292,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnDone;
             this.ClientSize = new System.Drawing.Size(387, 249);
             this.Controls.Add(this.btnForms);
             this.Controls.Add(this.btnFilter);
