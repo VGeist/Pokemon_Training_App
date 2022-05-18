@@ -1287,6 +1287,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmTraining";
             this.Text = "Training Utility";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTraining_FormClosing);
             this.Load += new System.EventHandler(this.frmTraining_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numHealthEV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAttackEV)).EndInit();

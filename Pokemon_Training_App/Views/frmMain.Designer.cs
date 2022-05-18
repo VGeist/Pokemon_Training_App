@@ -86,7 +86,7 @@
             this.btnExit.Location = new System.Drawing.Point(196, 144);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(126, 32);
-            this.btnExit.TabIndex = 5;
+            this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Exit Program";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -97,7 +97,7 @@
             this.btnTraining.Location = new System.Drawing.Point(196, 104);
             this.btnTraining.Name = "btnTraining";
             this.btnTraining.Size = new System.Drawing.Size(126, 32);
-            this.btnTraining.TabIndex = 6;
+            this.btnTraining.TabIndex = 5;
             this.btnTraining.Text = "Training";
             this.btnTraining.UseVisualStyleBackColor = true;
             this.btnTraining.Click += new System.EventHandler(this.btnTraining_Click);

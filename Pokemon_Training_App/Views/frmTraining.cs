@@ -599,12 +599,7 @@ namespace Pokemon_Training_App.Views
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Any unsaved changes will be discarded. Is this OK?", "Discard Changes?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning); ;
-
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            this.Close();
         }
 
         private void NumUpDown_Enter(object sender, EventArgs e)
@@ -612,6 +607,13 @@ namespace Pokemon_Training_App.Views
             // event only for numericUpDown controls
             NumericUpDown numeric = (NumericUpDown)sender;
             numeric.Select(0, numeric.Text.Length); // NOTE: Text property is hidden by IntelliSense for NumericUpDown objects :(
+        }
+
+        private void frmTraining_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Any unsaved changes will be discarded. Is this OK?", "Discard Changes?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning); ;
+
+            e.Cancel = (result == DialogResult.No);
         }
     }
 }
