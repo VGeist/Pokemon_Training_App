@@ -200,11 +200,11 @@ namespace Pokemon_Training_App.Views
                         partner.SpeedEV);
 
                     // success message
-                    MessageBox.Show("Successful operation", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(partner.Nickname + " successfully added!", "Success", MessageBoxButtons.OK);
                 } catch 
                 {
                     // database error 
-                    MessageBox.Show("The database encounterd an error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The database encounterd an error. Check that everything is correct and try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } else
             {

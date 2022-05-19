@@ -57,14 +57,14 @@ namespace Pokemon_Training_App.Views
                         );
 
                     // success message
-                    MessageBox.Show("Successful operation!", "Success", MessageBoxButtons.OK);
+                    MessageBox.Show(txtFormName.Text + " has been updated!", "Success", MessageBoxButtons.OK);
 
                     // close form
                     this.Close();
                 } catch
                 {
                     // database error
-                    MessageBox.Show("There was a problem with the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("There was a problem with the database. Check that everything is correct.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } else
             {
@@ -91,10 +91,10 @@ namespace Pokemon_Training_App.Views
 
                     this.Close();
                 }
-                catch (Exception ex)
+                catch
                 {
                     // exception message
-                    MessageBox.Show("A problem occured: " + Environment.NewLine + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("A problem occured. A partner may currently have this form. To delete, make sure all partners do not have this form.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

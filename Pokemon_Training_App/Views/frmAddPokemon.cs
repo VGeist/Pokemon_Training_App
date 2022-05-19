@@ -44,15 +44,19 @@ namespace Pokemon_Training_App.Views
                     // add form data
                     formsTableAdapter.InsertForm((int)numPokeNum.Value, txtFormName.Text, (int)numBaseHealth.Value, (int)numBaseAttack.Value, (int)numBaseDefense.Value, (int)numBaseSpAttack.Value, (int)numBaseSpDefense.Value, (int)numBaseSpeed.Value);
 
-                    MessageBox.Show("Successful operation!", "Success", MessageBoxButtons.OK);
+                    MessageBox.Show(txtPokemonName.Text + " successfully added!", "Success", MessageBoxButtons.OK);
                 } catch
                 {
-                    MessageBox.Show("There was a problem with the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("There was a problem with the database. Check that the Pokemon you tried to enter is not already in the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // prepare inputs for new entry
-                numPokeNum.Value++;
+                // prepare inputs for new entry; only add if not at max input value
+                if (numPokeNum.Value < numPokeNum.Maximum)
+                {
+                    numPokeNum.Value++;
+                }
+
                 txtPokemonName.Clear();
                 txtPokemonName.Focus();
                 txtFormName.Text = "default";

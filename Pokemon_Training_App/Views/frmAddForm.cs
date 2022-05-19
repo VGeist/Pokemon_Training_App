@@ -58,14 +58,14 @@ namespace Pokemon_Training_App.Views
                         );
 
                     // success message
-                    MessageBox.Show("Successful operation!", "Success", MessageBoxButtons.OK);
+                    MessageBox.Show("Successfully added the " + txtFormName.Text + " form!", "Success", MessageBoxButtons.OK);
 
                     // close form
                     this.Close();
                 } catch
                 {
                     // database error
-                    MessageBox.Show("There was a problem with the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("There was a problem with the database. Check that everyting is correct.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } else
             {

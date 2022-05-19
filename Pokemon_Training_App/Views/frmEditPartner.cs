@@ -208,7 +208,7 @@ namespace Pokemon_Training_App.Views
                         partner.SpeedEV);
 
                     // success message
-                    MessageBox.Show("Successful operation", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Successfully updated " + partner.Nickname + "?", "Success", MessageBoxButtons.OK);
 
                     // close form
                     this.Close();

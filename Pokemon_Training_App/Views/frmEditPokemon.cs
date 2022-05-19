@@ -54,11 +54,14 @@ namespace Pokemon_Training_App.Views
                     // update the Pokemon
                     this.pokemonTableAdapter.UpdatePokemon(PokeNum, newName);
 
+                    // success message
+                    MessageBox.Show("Succesfully updated " + newName + "!", "Success", MessageBoxButtons.OK);
+
                     this.Close();
                 } catch (Exception ex)
                 {
                     // exception message
-                    MessageBox.Show("A problem occured: " + Environment.NewLine + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("A problem occured:" + Environment.NewLine + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } else
             {
@@ -80,10 +83,10 @@ namespace Pokemon_Training_App.Views
                     this.pokemonTableAdapter.DeletePokemon(PokeNum);
 
                     this.Close();
-                } catch (Exception ex)
+                } catch
                 {
                     // exception message
-                    MessageBox.Show("A problem occured: " + Environment.NewLine + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("A problem occured. NOTE: All partners and forms that use this pokemon need to be deleted before deletion.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
