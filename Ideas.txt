@@ -1,0 +1,24 @@
+TODOs
+- Publish app with Setup wizard to allow users to choose directory
+	- use custom action to create database at installation (see resources)
+
+Critical Fixes
+NONE
+
+UX Ideas
+- have SearchResult(s) close if cancel is pressed on initial search dialog cancel
+- add datamessage to frmSearchResultPartner
+- add Clone button to SearchResultPartner
+- combine Forms table view with frmEditPokemon, use dropdown to select a form and fill that form's infromation into appropriate fields
+- use cascade delete for pokemon and form entries, warn user about loss of associated partners and forms
+- Add EV values to Pokemon table to make EV training eaisier
+
+Optimization Ideas
+- convert String names of stats to an enum in Partner classs
+- combine Add/Edit forms to reduce code redundancy where possible
+- frmSearchResultPartner and frmTraining uses the same buildPartner(row, row, row) function, move this to Partner class as a constructor and replace where needed
+- condense Party highlight checks to single event, if possible
+- add Pagination to SearchResult forms
+
+Uncategorized Ideas
+NONE
